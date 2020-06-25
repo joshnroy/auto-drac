@@ -66,7 +66,7 @@ class ConvDrAC():
             for sample in data_generator:
                 obs_batch, recurrent_hidden_states_batch, actions_batch, \
                 value_preds_batch, return_batch, masks_batch, old_action_log_probs_batch, \
-                        adv_targ = sample
+                        adv_targ, next_obs_batch = sample
                 
                 values, action_log_probs, dist_entropy, _ = self.actor_critic.evaluate_actions(
                     obs_batch, recurrent_hidden_states_batch, masks_batch,
@@ -76,7 +76,10 @@ class ConvDrAC():
                 predicted_next_states = torch.stack([predicted_state[action] for predicted_state, action in zip(predicted_next_states, actions_batch)])
                 predicted_rewards = torch.stack([predicted_reward[action] for predicted_reward, action in zip(predicted_rewards, actions_batch)])
 
-                next_state_loss = 0.
+                next_obs_features = self.actor_critic.base(next_obs_batch, recurrent_hidden_states_batch, masks_batch)[1]
+                next_obs_features = torch.reshape(next_obs_features, (-1, 1) + self.actor_critic.state_shape)
+
+                next_state_loss = torch.mean((next_obs_features - predicted_next_states)**2.)
                 reward_loss = torch.mean((return_batch - predicted_rewards)**2.)
                 model_loss = next_state_loss + reward_loss
 
@@ -123,7 +126,7 @@ class ConvDrAC():
                 value_loss_epoch += value_loss.item()
                 action_loss_epoch += action_loss.item()
                 dist_entropy_epoch += dist_entropy.item()
-                # transition_model_loss_epoch += next_state_loss.item()
+                transition_model_loss_epoch += next_state_loss.item()
                 reward_model_loss_epoch += reward_loss.item()
 
                 if self.aug_func:

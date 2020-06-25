@@ -1,0 +1,1599 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALREADY_INITIALIZED	baselines/baselines/common/tf_util.py	/^ALREADY_INITIALIZED = set()$/;"	v
+AbstractEnvRunner	baselines/baselines/common/runners.py	/^class AbstractEnvRunner(ABC):$/;"	c
+Acer	baselines/baselines/acer/acer.py	/^class Acer():$/;"	c
+AcerCnnPolicy	baselines/baselines/acer/policies.py	/^class AcerCnnPolicy(object):$/;"	c
+AcerLstmPolicy	baselines/baselines/acer/policies.py	/^class AcerLstmPolicy(object):$/;"	c
+ActWrapper	baselines/baselines/deepq/deepq.py	/^class ActWrapper(object):$/;"	c
+ActionNoise	baselines/baselines/ddpg/noise.py	/^class ActionNoise(object):$/;"	c
+Actor	baselines/baselines/ddpg/models.py	/^class Actor(Model):$/;"	c
+ActorCritic	baselines/baselines/her/actor_critic.py	/^class ActorCritic:$/;"	c
+AdaptiveParamNoiseSpec	baselines/baselines/ddpg/noise.py	/^class AdaptiveParamNoiseSpec(object):$/;"	c
+AllowBacktracking	baselines/baselines/common/retro_wrappers.py	/^class AllowBacktracking(gym.Wrapper):$/;"	c
+AlreadySteppingError	baselines/baselines/common/vec_env/vec_env.py	/^class AlreadySteppingError(Exception):$/;"	c
+AppendTimeout	baselines/baselines/common/retro_wrappers.py	/^class AppendTimeout(gym.Wrapper):$/;"	c
+AugCNN	ucb_rl2_meta/model.py	/^class AugCNN(nn.Module):$/;"	c
+BasicBlock	ucb_rl2_meta/model.py	/^class BasicBlock(nn.Module):$/;"	c
+BernoulliPd	baselines/baselines/common/distributions.py	/^class BernoulliPd(Pd):$/;"	c
+BernoulliPdType	baselines/baselines/common/distributions.py	/^class BernoulliPdType(PdType):$/;"	c
+BiggerRolloutStorage	ucb_rl2_meta/storage.py	/^class BiggerRolloutStorage(object):$/;"	c
+BoxIdentityEnv	baselines/baselines/common/tests/envs/identity_env.py	/^class BoxIdentityEnv(IdentityEnv):$/;"	c
+Buffer	baselines/baselines/acer/buffer.py	/^class Buffer(object):$/;"	c
+CACHED_ENVS	baselines/baselines/her/experiment/config.py	/^CACHED_ENVS = {}$/;"	v
+COLORS	baselines/baselines/common/plot_util.py	/^COLORS = ['blue', 'green', 'red', 'cyan', 'magenta', 'yellow', 'black', 'purple', 'pink',$/;"	v
+COLORS	baselines/baselines/results_plotter.py	/^COLORS = ['blue', 'green', 'red', 'cyan', 'magenta', 'yellow', 'black', 'purple', 'pink',$/;"	v
+CONFIG	baselines/baselines/gail/gail-eval.py	/^CONFIG = {$/;"	v
+CSVOutputFormat	baselines/baselines/logger.py	/^class CSVOutputFormat(KVWriter):$/;"	c
+CURRENT	baselines/baselines/logger.py	/^    CURRENT = None  # Current logger being used by the free functions above$/;"	v	class:Logger
+Categorical	ucb_rl2_meta/distributions.py	/^class Categorical(nn.Module):$/;"	c
+CategoricalPd	baselines/baselines/common/distributions.py	/^class CategoricalPd(Pd):$/;"	c
+CategoricalPdType	baselines/baselines/common/distributions.py	/^class CategoricalPdType(PdType):$/;"	c
+ClipActionsWrapper	baselines/baselines/common/wrappers.py	/^class ClipActionsWrapper(gym.Wrapper):$/;"	c
+ClipRewardEnv	baselines/baselines/common/atari_wrappers.py	/^class ClipRewardEnv(gym.RewardWrapper):$/;"	c
+CloudpickleWrapper	baselines/baselines/common/vec_env/vec_env.py	/^class CloudpickleWrapper(object):$/;"	c
+CnnPolicy	baselines/baselines/ppo1/cnn_policy.py	/^class CnnPolicy(object):$/;"	c
+ColorJitter	data_augs.py	/^class ColorJitter(nn.Module):$/;"	c
+ConstantSchedule	baselines/baselines/common/schedules.py	/^class ConstantSchedule(object):$/;"	c
+Conv2d_tf	ucb_rl2_meta/model.py	/^class Conv2d_tf(nn.Conv2d):$/;"	c
+ConvDrAC	ucb_rl2_meta/algo/conv_drac.py	/^class ConvDrAC():$/;"	c
+Critic	baselines/baselines/ddpg/models.py	/^class Critic(Model):$/;"	c
+Crop	data_augs.py	/^class Crop(object):$/;"	c
+Cutout	data_augs.py	/^class Cutout(object):$/;"	c
+CutoutColor	data_augs.py	/^class CutoutColor(object):$/;"	c
+DDPG	baselines/baselines/ddpg/ddpg_learner.py	/^class DDPG(object):$/;"	c
+DDPG	baselines/baselines/her/ddpg.py	/^class DDPG(object):$/;"	c
+DEBUG	baselines/baselines/logger.py	/^DEBUG = 10$/;"	v
+DEFAULT	baselines/baselines/logger.py	/^    DEFAULT = None  # A logger with no output files. (See right below class definition)$/;"	v	class:Logger
+DEFAULT_ENV_PARAMS	baselines/baselines/her/experiment/config.py	/^DEFAULT_ENV_PARAMS = {$/;"	v
+DEFAULT_PARAMS	baselines/baselines/her/experiment/config.py	/^DEFAULT_PARAMS = {$/;"	v
+DISABLED	baselines/baselines/logger.py	/^DISABLED = 50$/;"	v
+Dataset	baselines/baselines/common/dataset.py	/^class Dataset(object):$/;"	c
+DiagGaussianPd	baselines/baselines/common/distributions.py	/^class DiagGaussianPd(Pd):$/;"	c
+DiagGaussianPdType	baselines/baselines/common/distributions.py	/^class DiagGaussianPdType(PdType):$/;"	c
+DiscreteIdentityEnv	baselines/baselines/common/tests/envs/identity_env.py	/^class DiscreteIdentityEnv(IdentityEnv):$/;"	c
+Downsample	baselines/baselines/common/retro_wrappers.py	/^class Downsample(gym.ObservationWrapper):$/;"	c
+DrAC	ucb_rl2_meta/algo/drac.py	/^class DrAC():$/;"	c
+Dset	baselines/baselines/gail/dataset/mujoco_dset.py	/^class Dset(object):$/;"	c
+DummyVecEnv	baselines/baselines/common/vec_env/dummy_vec_env.py	/^class DummyVecEnv(VecEnv):$/;"	c
+EPISODES_WINDOW	baselines/baselines/results_plotter.py	/^EPISODES_WINDOW = 100$/;"	v
+ERROR	baselines/baselines/logger.py	/^ERROR = 40$/;"	v
+EXT	baselines/baselines/bench/monitor.py	/^    EXT = "monitor.csv"$/;"	v	class:Monitor
+EpisodeStats	baselines/baselines/a2c/utils.py	/^class EpisodeStats:$/;"	c
+EpisodicLifeEnv	baselines/baselines/common/atari_wrappers.py	/^class EpisodicLifeEnv(gym.Wrapper):$/;"	c
+EzPickle	baselines/baselines/common/misc_util.py	/^class EzPickle(object):$/;"	c
+FireResetEnv	baselines/baselines/common/atari_wrappers.py	/^class FireResetEnv(gym.Wrapper):$/;"	c
+FixedCategorical	ucb_rl2_meta/distributions.py	/^class FixedCategorical(torch.distributions.Categorical):$/;"	c
+FixedSequenceEnv	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^class FixedSequenceEnv(Env):$/;"	c
+Flatten	ucb_rl2_meta/model.py	/^class Flatten(nn.Module):$/;"	c
+Flip	data_augs.py	/^class Flip(object):$/;"	c
+FrameStack	baselines/baselines/common/atari_wrappers.py	/^class FrameStack(gym.Wrapper):$/;"	c
+GetFlat	baselines/baselines/common/tf_util.py	/^class GetFlat(object):$/;"	c
+Grayscale	data_augs.py	/^class Grayscale(object):$/;"	c
+HumanOutputFormat	baselines/baselines/logger.py	/^class HumanOutputFormat(KVWriter, SeqWriter):$/;"	c
+INFO	baselines/baselines/logger.py	/^INFO = 20$/;"	v
+Identity	data_augs.py	/^def Identity(x):$/;"	f
+IdentityEnv	baselines/baselines/common/tests/envs/identity_env.py	/^class IdentityEnv(Env):$/;"	c
+IdentityNormalizer	baselines/baselines/her/normalizer.py	/^class IdentityNormalizer:$/;"	c
+JSONOutputFormat	baselines/baselines/logger.py	/^class JSONOutputFormat(KVWriter):$/;"	c
+KFAC_DEBUG	baselines/baselines/acktr/kfac.py	/^KFAC_DEBUG = False$/;"	v
+KFAC_OPS	baselines/baselines/acktr/kfac.py	/^KFAC_OPS = ['MatMul', 'Conv2D', 'BiasAdd']$/;"	v
+KVWriter	baselines/baselines/logger.py	/^class KVWriter(object):$/;"	c
+KfacOptimizer	baselines/baselines/acktr/kfac.py	/^class KfacOptimizer():$/;"	c
+LazyFrames	baselines/baselines/common/atari_wrappers.py	/^class LazyFrames(object):$/;"	c
+LinearSchedule	baselines/baselines/common/schedules.py	/^class LinearSchedule(object):$/;"	c
+LoadMonitorResultsError	baselines/baselines/bench/monitor.py	/^class LoadMonitorResultsError(Exception):$/;"	c
+Logger	baselines/baselines/logger.py	/^class Logger(object):$/;"	c
+MESSAGE_DEPTH	baselines/baselines/common/console_util.py	/^MESSAGE_DEPTH = 0$/;"	v
+MLPBase	ucb_rl2_meta/model.py	/^class MLPBase(NNBase):$/;"	c
+MPI	baselines/baselines/common/cmd_util.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/common/mpi_adam.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/common/mpi_adam_optimizer.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/common/mpi_running_mean_std.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/common/mpi_util.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/common/test_mpi_util.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/common/tests/test_with_mpi.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/ddpg/ddpg.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/ddpg/ddpg_learner.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/ppo2/model.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/ppo2/ppo2.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/run.py	/^    MPI = None$/;"	v
+MPI	baselines/baselines/trpo_mpi/trpo_mpi.py	/^    MPI = None$/;"	v
+MaxAndSkipEnv	baselines/baselines/common/atari_wrappers.py	/^class MaxAndSkipEnv(gym.Wrapper):$/;"	c
+Memory	baselines/baselines/ddpg/memory.py	/^class Memory(object):$/;"	c
+MetaDrAC	ucb_rl2_meta/algo/meta_drac.py	/^class MetaDrAC():$/;"	c
+MicrobatchedModel	baselines/baselines/ppo2/microbatched_model.py	/^class MicrobatchedModel(Model):$/;"	c
+MinSegmentTree	baselines/baselines/common/segment_tree.py	/^class MinSegmentTree(SegmentTree):$/;"	c
+MlpPolicy	baselines/baselines/gail/mlp_policy.py	/^class MlpPolicy(object):$/;"	c
+MlpPolicy	baselines/baselines/ppo1/mlp_policy.py	/^class MlpPolicy(object):$/;"	c
+MnistEnv	baselines/baselines/common/tests/envs/mnist_env.py	/^class MnistEnv(Env):$/;"	c
+Model	baselines/baselines/a2c/a2c.py	/^class Model(object):$/;"	c
+Model	baselines/baselines/acer/acer.py	/^class Model(object):$/;"	c
+Model	baselines/baselines/acktr/acktr.py	/^class Model(object):$/;"	c
+Model	baselines/baselines/ddpg/models.py	/^class Model(object):$/;"	c
+Model	baselines/baselines/ppo2/model.py	/^class Model(object):$/;"	c
+ModelBasedPolicy	ucb_rl2_meta/model.py	/^class ModelBasedPolicy(Policy):$/;"	c
+Monitor	baselines/baselines/bench/monitor.py	/^class Monitor(Wrapper):$/;"	c
+MovieRecord	baselines/baselines/common/retro_wrappers.py	/^class MovieRecord(gym.Wrapper):$/;"	c
+MpiAdam	baselines/baselines/common/mpi_adam.py	/^class MpiAdam(object):$/;"	c
+MpiAdamOptimizer	baselines/baselines/common/mpi_adam_optimizer.py	/^class MpiAdamOptimizer(tf.train.AdamOptimizer):$/;"	c
+Mujoco_Dset	baselines/baselines/gail/dataset/mujoco_dset.py	/^class Mujoco_Dset(object):$/;"	c
+MultiCategoricalPd	baselines/baselines/common/distributions.py	/^class MultiCategoricalPd(Pd):$/;"	c
+MultiCategoricalPdType	baselines/baselines/common/distributions.py	/^class MultiCategoricalPdType(PdType):$/;"	c
+MultiDiscreteIdentityEnv	baselines/baselines/common/tests/envs/identity_env.py	/^class MultiDiscreteIdentityEnv(IdentityEnv):$/;"	c
+N	baselines/baselines/common/plot_util.py	/^        N = len(sk2r)$/;"	v
+NNBase	ucb_rl2_meta/model.py	/^class NNBase(nn.Module):$/;"	c
+N_EPISODES	baselines/baselines/common/tests/util.py	/^N_EPISODES = 100$/;"	v
+N_TRIALS	baselines/baselines/common/tests/util.py	/^N_TRIALS = 10000$/;"	v
+NoopResetEnv	baselines/baselines/common/atari_wrappers.py	/^class NoopResetEnv(gym.Wrapper):$/;"	c
+NormalActionNoise	baselines/baselines/ddpg/noise.py	/^class NormalActionNoise(ActionNoise):$/;"	c
+Normalizer	baselines/baselines/her/normalizer.py	/^class Normalizer:$/;"	c
+NotSteppingError	baselines/baselines/common/vec_env/vec_env.py	/^class NotSteppingError(Exception):$/;"	c
+ObservationInput	baselines/baselines/deepq/utils.py	/^class ObservationInput(PlaceholderTfInput):$/;"	c
+OrnsteinUhlenbeckActionNoise	baselines/baselines/ddpg/noise.py	/^class OrnsteinUhlenbeckActionNoise(ActionNoise):$/;"	c
+POSSIBLE_X_AXES	baselines/baselines/results_plotter.py	/^POSSIBLE_X_AXES = [X_TIMESTEPS, X_EPISODES, X_WALLTIME]$/;"	v
+PartialFrameStack	baselines/baselines/common/retro_wrappers.py	/^class PartialFrameStack(gym.Wrapper):$/;"	c
+Pd	baselines/baselines/common/distributions.py	/^class Pd(object):$/;"	c
+PdType	baselines/baselines/common/distributions.py	/^class PdType(object):$/;"	c
+PiecewiseSchedule	baselines/baselines/common/schedules.py	/^class PiecewiseSchedule(object):$/;"	c
+PlaceholderTfInput	baselines/baselines/deepq/utils.py	/^class PlaceholderTfInput(TfInput):$/;"	c
+Policy	ucb_rl2_meta/model.py	/^class Policy(nn.Module):$/;"	c
+PolicyWithValue	baselines/baselines/common/policies.py	/^class PolicyWithValue(object):$/;"	c
+PrioritizedReplayBuffer	baselines/baselines/deepq/replay_buffer.py	/^class PrioritizedReplayBuffer(ReplayBuffer):$/;"	c
+RL2DrAC	ucb_rl2_meta/algo/rl2_drac.py	/^class RL2DrAC():$/;"	c
+RandomConv	data_augs.py	/^class RandomConv(object):$/;"	c
+ReplayBuffer	baselines/baselines/deepq/replay_buffer.py	/^class ReplayBuffer(object):$/;"	c
+ReplayBuffer	baselines/baselines/her/replay_buffer.py	/^class ReplayBuffer:$/;"	c
+ResNetBase	ucb_rl2_meta/model.py	/^class ResNetBase(NNBase):$/;"	c
+Result	baselines/baselines/common/plot_util.py	/^Result = namedtuple('Result', 'monitor progress dirname metadata')$/;"	v
+ResultsWriter	baselines/baselines/bench/monitor.py	/^class ResultsWriter(object):$/;"	c
+RewScale	baselines/baselines/ppo1/run_humanoid.py	/^class RewScale(gym.RewardWrapper):$/;"	c
+RewardModel	ucb_rl2_meta/model.py	/^class RewardModel(nn.Module):$/;"	c
+RewardScaler	baselines/baselines/common/retro_wrappers.py	/^class RewardScaler(gym.RewardWrapper):$/;"	c
+Rgb2gray	baselines/baselines/common/retro_wrappers.py	/^class Rgb2gray(gym.ObservationWrapper):$/;"	c
+RingBuffer	baselines/baselines/ddpg/memory.py	/^class RingBuffer(object):$/;"	c
+RolloutStorage	ucb_rl2_meta/storage.py	/^class RolloutStorage(object):$/;"	c
+RolloutWorker	baselines/baselines/her/rollout.py	/^class RolloutWorker:$/;"	c
+Rotate	data_augs.py	/^class Rotate(object):$/;"	c
+Runner	baselines/baselines/a2c/runner.py	/^class Runner(AbstractEnvRunner):$/;"	c
+Runner	baselines/baselines/acer/runner.py	/^class Runner(AbstractEnvRunner):$/;"	c
+Runner	baselines/baselines/ppo2/runner.py	/^class Runner(AbstractEnvRunner):$/;"	c
+RunningAvg	baselines/baselines/common/misc_util.py	/^class RunningAvg(object):$/;"	c
+RunningMeanStd	baselines/baselines/common/mpi_running_mean_std.py	/^class RunningMeanStd(object):$/;"	c
+RunningMeanStd	baselines/baselines/common/running_mean_std.py	/^class RunningMeanStd(object):$/;"	c
+SCRIPT_DIR	baselines/baselines/bench/benchmarks.py	/^SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))$/;"	v
+ScaledFloatFrame	baselines/baselines/common/atari_wrappers.py	/^class ScaledFloatFrame(gym.ObservationWrapper):$/;"	c
+Schedule	baselines/baselines/common/schedules.py	/^class Schedule(object):$/;"	c
+Scheduler	baselines/baselines/a2c/utils.py	/^class Scheduler(object):$/;"	c
+SegmentTree	baselines/baselines/common/segment_tree.py	/^class SegmentTree(object):$/;"	c
+SeqWriter	baselines/baselines/logger.py	/^class SeqWriter(object):$/;"	c
+SetFromFlat	baselines/baselines/common/tf_util.py	/^class SetFromFlat(object):$/;"	c
+ShmemVecEnv	baselines/baselines/common/vec_env/shmem_vec_env.py	/^class ShmemVecEnv(VecEnv):$/;"	c
+SimpleEnv	baselines/baselines/common/vec_env/test_vec_env.py	/^class SimpleEnv(gym.Env):$/;"	c
+SonicDiscretizer	baselines/baselines/common/retro_wrappers.py	/^class SonicDiscretizer(gym.ActionWrapper):$/;"	c
+StartDoingRandomActionsWrapper	baselines/baselines/common/retro_wrappers.py	/^class StartDoingRandomActionsWrapper(gym.Wrapper):$/;"	c
+StochasticFrameSkip	baselines/baselines/common/retro_wrappers.py	/^class StochasticFrameSkip(gym.Wrapper):$/;"	c
+SubprocVecEnv	baselines/baselines/common/vec_env/subproc_vec_env.py	/^class SubprocVecEnv(VecEnv):$/;"	c
+SumSegmentTree	baselines/baselines/common/segment_tree.py	/^class SumSegmentTree(SegmentTree):$/;"	c
+TensorBoardOutputFormat	baselines/baselines/logger.py	/^class TensorBoardOutputFormat(KVWriter):$/;"	c
+TfInput	baselines/baselines/deepq/utils.py	/^class TfInput(object):$/;"	c
+TfRunningMeanStd	baselines/baselines/common/running_mean_std.py	/^class TfRunningMeanStd(object):$/;"	c
+TimeLimit	baselines/baselines/common/wrappers.py	/^class TimeLimit(gym.Wrapper):$/;"	c
+TransitionClassifier	baselines/baselines/gail/adversary.py	/^class TransitionClassifier(object):$/;"	c
+TransitionModel	ucb_rl2_meta/model.py	/^class TransitionModel(nn.Module):$/;"	c
+TransposeImageProcgen	ucb_rl2_meta/envs.py	/^class TransposeImageProcgen(TransposeObs):$/;"	c
+TransposeObs	ucb_rl2_meta/envs.py	/^class TransposeObs(gym.ObservationWrapper):$/;"	c
+UCBDrAC	ucb_rl2_meta/algo/ucb_drac.py	/^class UCBDrAC():$/;"	c
+VecEnv	baselines/baselines/common/vec_env/vec_env.py	/^class VecEnv(ABC):$/;"	c
+VecEnvObservationWrapper	baselines/baselines/common/vec_env/vec_env.py	/^class VecEnvObservationWrapper(VecEnvWrapper):$/;"	c
+VecEnvWrapper	baselines/baselines/common/vec_env/vec_env.py	/^class VecEnvWrapper(VecEnv):$/;"	c
+VecExtractDictObs	baselines/baselines/common/vec_env/vec_remove_dict_obs.py	/^class VecExtractDictObs(VecEnvObservationWrapper):$/;"	c
+VecFrameStack	baselines/baselines/common/vec_env/vec_frame_stack.py	/^class VecFrameStack(VecEnvWrapper):$/;"	c
+VecMonitor	baselines/baselines/common/vec_env/vec_monitor.py	/^class VecMonitor(VecEnvWrapper):$/;"	c
+VecNormalize	baselines/baselines/common/vec_env/vec_normalize.py	/^class VecNormalize(VecEnvWrapper):$/;"	c
+VecPyTorchProcgen	ucb_rl2_meta/envs.py	/^class VecPyTorchProcgen(VecEnvWrapper):$/;"	c
+VecVideoRecorder	baselines/baselines/common/vec_env/vec_video_recorder.py	/^class VecVideoRecorder(VecEnvWrapper):$/;"	c
+WARN	baselines/baselines/logger.py	/^WARN = 30$/;"	v
+WarpFrame	baselines/baselines/common/atari_wrappers.py	/^class WarpFrame(gym.ObservationWrapper):$/;"	c
+X_EPISODES	baselines/baselines/results_plotter.py	/^X_EPISODES = 'episodes'$/;"	v
+X_TIMESTEPS	baselines/baselines/results_plotter.py	/^X_TIMESTEPS = 'timesteps'$/;"	v
+X_WALLTIME	baselines/baselines/results_plotter.py	/^X_WALLTIME = 'walltime_hrs'$/;"	v
+Y_REWARD	baselines/baselines/results_plotter.py	/^Y_REWARD = 'reward'$/;"	v
+Y_TIMESTEPS	baselines/baselines/results_plotter.py	/^Y_TIMESTEPS = 'timesteps'$/;"	v
+_ATARI_SUFFIX	baselines/baselines/bench/benchmarks.py	/^_ATARI_SUFFIX = 'NoFrameskip-v4'$/;"	v
+_BENCHMARKS	baselines/baselines/bench/benchmarks.py	/^_BENCHMARKS = []$/;"	v
+_Function	baselines/baselines/common/tf_util.py	/^class _Function(object):$/;"	c
+_NP_TO_CT	baselines/baselines/common/vec_env/shmem_vec_env.py	/^_NP_TO_CT = {np.float32: ctypes.c_float,$/;"	v
+_PLACEHOLDER_CACHE	baselines/baselines/common/tf_util.py	/^_PLACEHOLDER_CACHE = {}  # name -> (placeholder, dtype, shape)$/;"	v
+__all__	baselines/baselines/bench/monitor.py	/^__all__ = ['Monitor', 'get_monitor_files', 'load_results']$/;"	v
+__all__	baselines/baselines/common/vec_env/__init__.py	/^__all__ = ['AlreadySteppingError', 'NotSteppingError', 'VecEnv', 'VecEnvWrapper', 'VecEnvObservationWrapper', 'CloudpickleWrapper', 'DummyVecEnv', 'ShmemVecEnv', 'SubprocVecEnv', 'VecFrameStack', 'VecMonitor', 'VecNormalize', 'VecExtractDictObs']$/;"	v
+__array__	baselines/baselines/common/atari_wrappers.py	/^    def __array__(self, dtype=None):$/;"	m	class:LazyFrames	file:
+__call__	baselines/baselines/common/tf_util.py	/^    def __call__(self):$/;"	m	class:GetFlat	file:
+__call__	baselines/baselines/common/tf_util.py	/^    def __call__(self, *args, **kwargs):$/;"	m	class:_Function	file:
+__call__	baselines/baselines/common/tf_util.py	/^    def __call__(self, theta):$/;"	m	class:SetFromFlat	file:
+__call__	baselines/baselines/ddpg/models.py	/^    def __call__(self, obs, action, reuse=False):$/;"	m	class:Critic	file:
+__call__	baselines/baselines/ddpg/models.py	/^    def __call__(self, obs, reuse=False):$/;"	m	class:Actor	file:
+__call__	baselines/baselines/ddpg/noise.py	/^    def __call__(self):$/;"	m	class:NormalActionNoise	file:
+__call__	baselines/baselines/ddpg/noise.py	/^    def __call__(self):$/;"	m	class:OrnsteinUhlenbeckActionNoise	file:
+__call__	baselines/baselines/deepq/deepq.py	/^    def __call__(self, *args, **kwargs):$/;"	m	class:ActWrapper	file:
+__del__	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def __del__(self):$/;"	m	class:SubprocVecEnv	file:
+__del__	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def __del__(self):$/;"	m	class:VecVideoRecorder	file:
+__eq__	baselines/baselines/common/distributions.py	/^    def __eq__(self, other):$/;"	m	class:PdType	file:
+__float__	baselines/baselines/common/misc_util.py	/^    def __float__(self):$/;"	m	class:RunningAvg	file:
+__getattr__	baselines/baselines/common/vec_env/vec_env.py	/^    def __getattr__(self, name):$/;"	m	class:VecEnvWrapper	file:
+__getitem__	baselines/baselines/common/atari_wrappers.py	/^    def __getitem__(self, i):$/;"	m	class:LazyFrames	file:
+__getitem__	baselines/baselines/common/distributions.py	/^    def __getitem__(self, idx):$/;"	m	class:Pd	file:
+__getitem__	baselines/baselines/common/segment_tree.py	/^    def __getitem__(self, idx):$/;"	m	class:SegmentTree	file:
+__getitem__	baselines/baselines/ddpg/memory.py	/^    def __getitem__(self, idx):$/;"	m	class:RingBuffer	file:
+__getstate__	baselines/baselines/common/misc_util.py	/^    def __getstate__(self):$/;"	m	class:EzPickle	file:
+__getstate__	baselines/baselines/common/vec_env/vec_env.py	/^    def __getstate__(self):$/;"	m	class:CloudpickleWrapper	file:
+__getstate__	baselines/baselines/her/ddpg.py	/^    def __getstate__(self):$/;"	m	class:DDPG	file:
+__init__	baselines/baselines/a2c/a2c.py	/^    def __init__(self, policy, env, nsteps,$/;"	m	class:Model
+__init__	baselines/baselines/a2c/runner.py	/^    def __init__(self, env, model, nsteps=5, gamma=0.99):$/;"	m	class:Runner
+__init__	baselines/baselines/a2c/utils.py	/^    def __init__(self, nsteps, nenvs):$/;"	m	class:EpisodeStats
+__init__	baselines/baselines/a2c/utils.py	/^    def __init__(self, v, nvalues, schedule):$/;"	m	class:Scheduler
+__init__	baselines/baselines/acer/acer.py	/^    def __init__(self, policy, ob_space, ac_space, nenvs, nsteps, ent_coef, q_coef, gamma, max_grad_norm, lr,$/;"	m	class:Model
+__init__	baselines/baselines/acer/acer.py	/^    def __init__(self, runner, model, buffer, log_interval):$/;"	m	class:Acer
+__init__	baselines/baselines/acer/buffer.py	/^    def __init__(self, env, nsteps, size=50000):$/;"	m	class:Buffer
+__init__	baselines/baselines/acer/policies.py	/^    def __init__(self, sess, ob_space, ac_space, nenv, nsteps, nstack, reuse=False):$/;"	m	class:AcerCnnPolicy
+__init__	baselines/baselines/acer/policies.py	/^    def __init__(self, sess, ob_space, ac_space, nenv, nsteps, nstack, reuse=False, nlstm=256):$/;"	m	class:AcerLstmPolicy
+__init__	baselines/baselines/acer/runner.py	/^    def __init__(self, env, model, nsteps):$/;"	m	class:Runner
+__init__	baselines/baselines/acktr/acktr.py	/^    def __init__(self, policy, ob_space, ac_space, nenvs,total_timesteps, nprocs=32, nsteps=20,$/;"	m	class:Model
+__init__	baselines/baselines/acktr/kfac.py	/^    def __init__(self, learning_rate=0.01, momentum=0.9, clip_kl=0.01, kfac_update=2, stats_accum_iter=60, full_stats_init=False, cold_iter=100, cold_lr=None, is_async=False, async_stats=False, epsilon=1e-2, stats_decay=0.95, blockdiag_bias=False, channel_fac=False, factored_damping=False, approxT2=False, use_float64=False, weight_decay_dict={},max_grad_norm=0.5):$/;"	m	class:KfacOptimizer
+__init__	baselines/baselines/bench/monitor.py	/^    def __init__(self, env, filename, allow_early_resets=False, reset_keywords=(), info_keywords=()):$/;"	m	class:Monitor
+__init__	baselines/baselines/bench/monitor.py	/^    def __init__(self, filename, header='', extra_keys=()):$/;"	m	class:ResultsWriter
+__init__	baselines/baselines/common/atari_wrappers.py	/^    def __init__(self, env):$/;"	m	class:ClipRewardEnv
+__init__	baselines/baselines/common/atari_wrappers.py	/^    def __init__(self, env):$/;"	m	class:EpisodicLifeEnv
+__init__	baselines/baselines/common/atari_wrappers.py	/^    def __init__(self, env):$/;"	m	class:FireResetEnv
+__init__	baselines/baselines/common/atari_wrappers.py	/^    def __init__(self, env):$/;"	m	class:ScaledFloatFrame
+__init__	baselines/baselines/common/atari_wrappers.py	/^    def __init__(self, env, k):$/;"	m	class:FrameStack
+__init__	baselines/baselines/common/atari_wrappers.py	/^    def __init__(self, env, noop_max=30):$/;"	m	class:NoopResetEnv
+__init__	baselines/baselines/common/atari_wrappers.py	/^    def __init__(self, env, skip=4):$/;"	m	class:MaxAndSkipEnv
+__init__	baselines/baselines/common/atari_wrappers.py	/^    def __init__(self, env, width=84, height=84, grayscale=True, dict_space_key=None):$/;"	m	class:WarpFrame
+__init__	baselines/baselines/common/atari_wrappers.py	/^    def __init__(self, frames):$/;"	m	class:LazyFrames
+__init__	baselines/baselines/common/dataset.py	/^    def __init__(self, data_map, deterministic=False, shuffle=True):$/;"	m	class:Dataset
+__init__	baselines/baselines/common/distributions.py	/^    def __init__(self, flat):$/;"	m	class:DiagGaussianPd
+__init__	baselines/baselines/common/distributions.py	/^    def __init__(self, logits):$/;"	m	class:BernoulliPd
+__init__	baselines/baselines/common/distributions.py	/^    def __init__(self, logits):$/;"	m	class:CategoricalPd
+__init__	baselines/baselines/common/distributions.py	/^    def __init__(self, ncat):$/;"	m	class:CategoricalPdType
+__init__	baselines/baselines/common/distributions.py	/^    def __init__(self, nvec):$/;"	m	class:MultiCategoricalPdType
+__init__	baselines/baselines/common/distributions.py	/^    def __init__(self, nvec, flat):$/;"	m	class:MultiCategoricalPd
+__init__	baselines/baselines/common/distributions.py	/^    def __init__(self, size):$/;"	m	class:BernoulliPdType
+__init__	baselines/baselines/common/distributions.py	/^    def __init__(self, size):$/;"	m	class:DiagGaussianPdType
+__init__	baselines/baselines/common/misc_util.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:EzPickle
+__init__	baselines/baselines/common/misc_util.py	/^    def __init__(self, gamma, init_value=None):$/;"	m	class:RunningAvg
+__init__	baselines/baselines/common/mpi_adam.py	/^    def __init__(self, var_list, *, beta1=0.9, beta2=0.999, epsilon=1e-08, scale_grad_by_procs=True, comm=None):$/;"	m	class:MpiAdam
+__init__	baselines/baselines/common/mpi_adam_optimizer.py	/^    def __init__(self, comm, grad_clip=None, mpi_rank_weight=1, **kwargs):$/;"	m	class:MpiAdamOptimizer
+__init__	baselines/baselines/common/mpi_running_mean_std.py	/^    def __init__(self, epsilon=1e-2, shape=()):$/;"	m	class:RunningMeanStd
+__init__	baselines/baselines/common/policies.py	/^    def __init__(self, env, observations, latent, estimate_q=False, vf_latent=None, sess=None, **tensors):$/;"	m	class:PolicyWithValue
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env):$/;"	m	class:AllowBacktracking
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env):$/;"	m	class:AppendTimeout
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env):$/;"	m	class:Rgb2gray
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env):$/;"	m	class:SonicDiscretizer
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env, k, channel=1):$/;"	m	class:PartialFrameStack
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env, max_random_steps, on_startup=True, every_episode=False):$/;"	m	class:StartDoingRandomActionsWrapper
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env, n, stickprob):$/;"	m	class:StochasticFrameSkip
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env, ratio):$/;"	m	class:Downsample
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env, savedir, k):$/;"	m	class:MovieRecord
+__init__	baselines/baselines/common/retro_wrappers.py	/^    def __init__(self, env, scale=0.01):$/;"	m	class:RewardScaler
+__init__	baselines/baselines/common/runners.py	/^    def __init__(self, *, env, model, nsteps):$/;"	m	class:AbstractEnvRunner
+__init__	baselines/baselines/common/running_mean_std.py	/^    def __init__(self, epsilon=1e-4, shape=()):$/;"	m	class:RunningMeanStd
+__init__	baselines/baselines/common/running_mean_std.py	/^    def __init__(self, epsilon=1e-4, shape=(), scope=''):$/;"	m	class:TfRunningMeanStd
+__init__	baselines/baselines/common/schedules.py	/^    def __init__(self, endpoints, interpolation=linear_interpolation, outside_value=None):$/;"	m	class:PiecewiseSchedule
+__init__	baselines/baselines/common/schedules.py	/^    def __init__(self, schedule_timesteps, final_p, initial_p=1.0):$/;"	m	class:LinearSchedule
+__init__	baselines/baselines/common/schedules.py	/^    def __init__(self, value):$/;"	m	class:ConstantSchedule
+__init__	baselines/baselines/common/segment_tree.py	/^    def __init__(self, capacity):$/;"	m	class:MinSegmentTree
+__init__	baselines/baselines/common/segment_tree.py	/^    def __init__(self, capacity):$/;"	m	class:SumSegmentTree
+__init__	baselines/baselines/common/segment_tree.py	/^    def __init__(self, capacity, operation, neutral_element):$/;"	m	class:SegmentTree
+__init__	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^    def __init__($/;"	m	class:FixedSequenceEnv
+__init__	baselines/baselines/common/tests/envs/identity_env.py	/^    def __init__($/;"	m	class:BoxIdentityEnv
+__init__	baselines/baselines/common/tests/envs/identity_env.py	/^    def __init__($/;"	m	class:DiscreteIdentityEnv
+__init__	baselines/baselines/common/tests/envs/identity_env.py	/^    def __init__($/;"	m	class:IdentityEnv
+__init__	baselines/baselines/common/tests/envs/identity_env.py	/^    def __init__($/;"	m	class:MultiDiscreteIdentityEnv
+__init__	baselines/baselines/common/tests/envs/mnist_env.py	/^    def __init__($/;"	m	class:MnistEnv
+__init__	baselines/baselines/common/tf_util.py	/^    def __init__(self, inputs, outputs, updates, givens):$/;"	m	class:_Function
+__init__	baselines/baselines/common/tf_util.py	/^    def __init__(self, var_list):$/;"	m	class:GetFlat
+__init__	baselines/baselines/common/tf_util.py	/^    def __init__(self, var_list, dtype=tf.float32):$/;"	m	class:SetFromFlat
+__init__	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def __init__(self, env_fns):$/;"	m	class:DummyVecEnv
+__init__	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def __init__(self, env_fns, spaces=None, context='spawn'):$/;"	m	class:ShmemVecEnv
+__init__	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def __init__(self, env_fns, spaces=None, context='spawn', in_series=1):$/;"	m	class:SubprocVecEnv
+__init__	baselines/baselines/common/vec_env/test_vec_env.py	/^    def __init__(self, seed, shape, dtype):$/;"	m	class:SimpleEnv
+__init__	baselines/baselines/common/vec_env/vec_env.py	/^    def __init__(self):$/;"	m	class:AlreadySteppingError
+__init__	baselines/baselines/common/vec_env/vec_env.py	/^    def __init__(self):$/;"	m	class:NotSteppingError
+__init__	baselines/baselines/common/vec_env/vec_env.py	/^    def __init__(self, num_envs, observation_space, action_space):$/;"	m	class:VecEnv
+__init__	baselines/baselines/common/vec_env/vec_env.py	/^    def __init__(self, venv, observation_space=None, action_space=None):$/;"	m	class:VecEnvWrapper
+__init__	baselines/baselines/common/vec_env/vec_env.py	/^    def __init__(self, x):$/;"	m	class:CloudpickleWrapper
+__init__	baselines/baselines/common/vec_env/vec_frame_stack.py	/^    def __init__(self, venv, nstack):$/;"	m	class:VecFrameStack
+__init__	baselines/baselines/common/vec_env/vec_monitor.py	/^    def __init__(self, venv, filename=None, keep_buf=0, info_keywords=()):$/;"	m	class:VecMonitor
+__init__	baselines/baselines/common/vec_env/vec_normalize.py	/^    def __init__(self, venv, ob=True, ret=True, clipob=10., cliprew=10., gamma=0.99, epsilon=1e-8, use_tf=False):$/;"	m	class:VecNormalize
+__init__	baselines/baselines/common/vec_env/vec_remove_dict_obs.py	/^    def __init__(self, venv, key):$/;"	m	class:VecExtractDictObs
+__init__	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def __init__(self, venv, directory, record_video_trigger, video_length=200):$/;"	m	class:VecVideoRecorder
+__init__	baselines/baselines/common/wrappers.py	/^    def __init__(self, env, max_episode_steps=None):$/;"	m	class:TimeLimit
+__init__	baselines/baselines/ddpg/ddpg_learner.py	/^    def __init__(self, actor, critic, memory, observation_shape, action_shape, param_noise=None, action_noise=None,$/;"	m	class:DDPG
+__init__	baselines/baselines/ddpg/memory.py	/^    def __init__(self, limit, action_shape, observation_shape):$/;"	m	class:Memory
+__init__	baselines/baselines/ddpg/memory.py	/^    def __init__(self, maxlen, shape, dtype='float32'):$/;"	m	class:RingBuffer
+__init__	baselines/baselines/ddpg/models.py	/^    def __init__(self, name, network='mlp', **network_kwargs):$/;"	m	class:Model
+__init__	baselines/baselines/ddpg/models.py	/^    def __init__(self, name='critic', network='mlp', **network_kwargs):$/;"	m	class:Critic
+__init__	baselines/baselines/ddpg/models.py	/^    def __init__(self, nb_actions, name='actor', network='mlp', **network_kwargs):$/;"	m	class:Actor
+__init__	baselines/baselines/ddpg/noise.py	/^    def __init__(self, initial_stddev=0.1, desired_action_stddev=0.1, adoption_coefficient=1.01):$/;"	m	class:AdaptiveParamNoiseSpec
+__init__	baselines/baselines/ddpg/noise.py	/^    def __init__(self, mu, sigma):$/;"	m	class:NormalActionNoise
+__init__	baselines/baselines/ddpg/noise.py	/^    def __init__(self, mu, sigma, theta=.15, dt=1e-2, x0=None):$/;"	m	class:OrnsteinUhlenbeckActionNoise
+__init__	baselines/baselines/deepq/deepq.py	/^    def __init__(self, act, act_params):$/;"	m	class:ActWrapper
+__init__	baselines/baselines/deepq/replay_buffer.py	/^    def __init__(self, size):$/;"	m	class:ReplayBuffer
+__init__	baselines/baselines/deepq/replay_buffer.py	/^    def __init__(self, size, alpha):$/;"	m	class:PrioritizedReplayBuffer
+__init__	baselines/baselines/deepq/utils.py	/^    def __init__(self, name="(unnamed)"):$/;"	m	class:TfInput
+__init__	baselines/baselines/deepq/utils.py	/^    def __init__(self, observation_space, name=None):$/;"	m	class:ObservationInput
+__init__	baselines/baselines/deepq/utils.py	/^    def __init__(self, placeholder):$/;"	m	class:PlaceholderTfInput
+__init__	baselines/baselines/gail/adversary.py	/^    def __init__(self, env, hidden_size, entcoeff=0.001, lr_rate=1e-3, scope="adversary"):$/;"	m	class:TransitionClassifier
+__init__	baselines/baselines/gail/dataset/mujoco_dset.py	/^    def __init__(self, expert_path, train_fraction=0.7, traj_limitation=-1, randomize=True):$/;"	m	class:Mujoco_Dset
+__init__	baselines/baselines/gail/dataset/mujoco_dset.py	/^    def __init__(self, inputs, labels, randomize):$/;"	m	class:Dset
+__init__	baselines/baselines/gail/mlp_policy.py	/^    def __init__(self, name, reuse=False, *args, **kwargs):$/;"	m	class:MlpPolicy
+__init__	baselines/baselines/gail/statistics.py	/^    def __init__(self, scalar_keys=[], histogram_keys=[]):$/;"	m	class:stats
+__init__	baselines/baselines/her/actor_critic.py	/^    def __init__(self, inputs_tf, dimo, dimg, dimu, max_u, o_stats, g_stats, hidden, layers,$/;"	m	class:ActorCritic
+__init__	baselines/baselines/her/ddpg.py	/^    def __init__(self, input_dims, buffer_size, hidden, layers, network_class, polyak, batch_size,$/;"	m	class:DDPG
+__init__	baselines/baselines/her/normalizer.py	/^    def __init__(self, size, eps=1e-2, default_clip_range=np.inf, sess=None):$/;"	m	class:Normalizer
+__init__	baselines/baselines/her/normalizer.py	/^    def __init__(self, size, std=1.):$/;"	m	class:IdentityNormalizer
+__init__	baselines/baselines/her/replay_buffer.py	/^    def __init__(self, buffer_shapes, size_in_transitions, T, sample_transitions):$/;"	m	class:ReplayBuffer
+__init__	baselines/baselines/her/rollout.py	/^    def __init__(self, venv, policy, dims, logger, T, rollout_batch_size=1,$/;"	m	class:RolloutWorker
+__init__	baselines/baselines/logger.py	/^    def __init__(self, dir):$/;"	m	class:TensorBoardOutputFormat
+__init__	baselines/baselines/logger.py	/^    def __init__(self, dir, output_formats, comm=None):$/;"	m	class:Logger
+__init__	baselines/baselines/logger.py	/^    def __init__(self, filename):$/;"	m	class:CSVOutputFormat
+__init__	baselines/baselines/logger.py	/^    def __init__(self, filename):$/;"	m	class:JSONOutputFormat
+__init__	baselines/baselines/logger.py	/^    def __init__(self, filename_or_file):$/;"	m	class:HumanOutputFormat
+__init__	baselines/baselines/ppo1/cnn_policy.py	/^    def __init__(self, name, ob_space, ac_space, kind='large'):$/;"	m	class:CnnPolicy
+__init__	baselines/baselines/ppo1/mlp_policy.py	/^    def __init__(self, name, *args, **kwargs):$/;"	m	class:MlpPolicy
+__init__	baselines/baselines/ppo1/run_humanoid.py	/^    def __init__(self, env, scale):$/;"	m	class:RewScale
+__init__	baselines/baselines/ppo2/microbatched_model.py	/^    def __init__(self, *, policy, ob_space, ac_space, nbatch_act, nbatch_train,$/;"	m	class:MicrobatchedModel
+__init__	baselines/baselines/ppo2/model.py	/^    def __init__(self, *, policy, ob_space, ac_space, nbatch_act, nbatch_train,$/;"	m	class:Model
+__init__	baselines/baselines/ppo2/runner.py	/^    def __init__(self, *, env, model, nsteps, gamma, lam):$/;"	m	class:Runner
+__init__	data_augs.py	/^    def __init__(self,  $/;"	m	class:Crop
+__init__	data_augs.py	/^    def __init__(self,  $/;"	m	class:Flip
+__init__	data_augs.py	/^    def __init__(self,  $/;"	m	class:Grayscale
+__init__	data_augs.py	/^    def __init__(self,  $/;"	m	class:RandomConv
+__init__	data_augs.py	/^    def __init__(self,  $/;"	m	class:Rotate
+__init__	data_augs.py	/^    def __init__(self, $/;"	m	class:ColorJitter
+__init__	data_augs.py	/^    def __init__(self, $/;"	m	class:Cutout
+__init__	data_augs.py	/^    def __init__(self, $/;"	m	class:CutoutColor
+__init__	ucb_rl2_meta/algo/conv_drac.py	/^    def __init__(self,$/;"	m	class:ConvDrAC
+__init__	ucb_rl2_meta/algo/drac.py	/^    def __init__(self,$/;"	m	class:DrAC
+__init__	ucb_rl2_meta/algo/meta_drac.py	/^    def __init__(self,$/;"	m	class:MetaDrAC
+__init__	ucb_rl2_meta/algo/rl2_drac.py	/^    def __init__(self,$/;"	m	class:RL2DrAC
+__init__	ucb_rl2_meta/algo/ucb_drac.py	/^    def __init__(self,$/;"	m	class:UCBDrAC
+__init__	ucb_rl2_meta/distributions.py	/^    def __init__(self, num_inputs, num_outputs):$/;"	m	class:Categorical
+__init__	ucb_rl2_meta/envs.py	/^    def __init__(self, env=None):$/;"	m	class:TransposeObs
+__init__	ucb_rl2_meta/envs.py	/^    def __init__(self, env=None, op=[0, 3, 2, 1]):$/;"	m	class:TransposeImageProcgen
+__init__	ucb_rl2_meta/envs.py	/^    def __init__(self, venv, device):$/;"	m	class:VecPyTorchProcgen
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self):$/;"	m	class:AugCNN
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:Conv2d_tf
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, n_channels, stride=1):$/;"	m	class:BasicBlock
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, num_inputs, recurrent=False, hidden_size=256, channels=[16,32,32]):$/;"	m	class:ResNetBase
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, num_inputs, recurrent=False, hidden_size=64):$/;"	m	class:MLPBase
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:ModelBasedPolicy
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:Policy
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, recurrent, recurrent_input_size, hidden_size):$/;"	m	class:NNBase
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, num_actions, kernel_size=1):$/;"	m	class:RewardModel
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, num_actions, kernel_size=3):$/;"	m	class:TransitionModel
+__init__	ucb_rl2_meta/storage.py	/^    def __init__(self, num_steps, num_processes, obs_shape, action_space,$/;"	m	class:BiggerRolloutStorage
+__init__	ucb_rl2_meta/storage.py	/^    def __init__(self, num_steps, num_processes, obs_shape, action_space,$/;"	m	class:RolloutStorage
+__len__	baselines/baselines/common/atari_wrappers.py	/^    def __len__(self):$/;"	m	class:LazyFrames	file:
+__len__	baselines/baselines/ddpg/memory.py	/^    def __len__(self):$/;"	m	class:RingBuffer	file:
+__len__	baselines/baselines/deepq/replay_buffer.py	/^    def __len__(self):$/;"	m	class:ReplayBuffer	file:
+__repr__	baselines/baselines/ddpg/noise.py	/^    def __repr__(self):$/;"	m	class:AdaptiveParamNoiseSpec	file:
+__repr__	baselines/baselines/ddpg/noise.py	/^    def __repr__(self):$/;"	m	class:NormalActionNoise	file:
+__repr__	baselines/baselines/ddpg/noise.py	/^    def __repr__(self):$/;"	m	class:OrnsteinUhlenbeckActionNoise	file:
+__setitem__	baselines/baselines/common/segment_tree.py	/^    def __setitem__(self, idx, val):$/;"	m	class:SegmentTree	file:
+__setstate__	baselines/baselines/common/misc_util.py	/^    def __setstate__(self, d):$/;"	m	class:EzPickle	file:
+__setstate__	baselines/baselines/common/vec_env/vec_env.py	/^    def __setstate__(self, ob):$/;"	m	class:CloudpickleWrapper	file:
+__setstate__	baselines/baselines/her/ddpg.py	/^    def __setstate__(self, state):$/;"	m	class:DDPG	file:
+_apply_stats	baselines/baselines/acktr/kfac.py	/^    def _apply_stats(self, statsUpdates, accumulate=False, accumulateCoeff=0.):$/;"	m	class:KfacOptimizer
+_assert_not_closed	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def _assert_not_closed(self):$/;"	m	class:SubprocVecEnv
+_atari50	baselines/baselines/bench/benchmarks.py	/^_atari50 = [  # actually 47$/;"	v
+_atari7	baselines/baselines/bench/benchmarks.py	/^_atari7 = ['BeamRider', 'Breakout', 'Enduro', 'Pong', 'Qbert', 'Seaquest', 'SpaceInvaders']$/;"	v
+_atariexpl7	baselines/baselines/bench/benchmarks.py	/^_atariexpl7 = ['Freeway', 'Gravitar', 'MontezumaRevenge', 'Pitfall', 'PrivateEye', 'Solaris', 'Venture']$/;"	v
+_bulletsmall	baselines/baselines/bench/benchmarks.py	/^_bulletsmall = [$/;"	v
+_bulletsmall	baselines/baselines/bench/benchmarks.py	/^_bulletsmall = [e + 'BulletEnv-v0' for e in _bulletsmall]$/;"	v
+_check_input	data_augs.py	/^    def _check_input(self, value, name, center=1, bound=(0, float('inf')), clip_first_on_zero=True):$/;"	m	class:ColorJitter
+_check_shape	baselines/baselines/common/tf_util.py	/^def _check_shape(placeholder_shape, data_shape):$/;"	f
+_choose_next_state	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^    def _choose_next_state(self):$/;"	m	class:FixedSequenceEnv
+_choose_next_state	baselines/baselines/common/tests/envs/mnist_env.py	/^    def _choose_next_state(self):$/;"	m	class:MnistEnv
+_collect_grads	baselines/baselines/common/mpi_adam_optimizer.py	/^        def _collect_grads(flat_grad, np_stat):$/;"	f	function:MpiAdamOptimizer.compute_gradients
+_compute_padding	ucb_rl2_meta/model.py	/^    def _compute_padding(self, input, dim):$/;"	m	class:Conv2d_tf
+_configure_default_logger	baselines/baselines/logger.py	/^def _configure_default_logger():$/;"	f
+_create_network	baselines/baselines/her/ddpg.py	/^    def _create_network(self, reuse=False):$/;"	m	class:DDPG
+_decode_obses	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def _decode_obses(self, obs):$/;"	m	class:ShmemVecEnv
+_demo	baselines/baselines/logger.py	/^def _demo():$/;"	f
+_do_log	baselines/baselines/logger.py	/^    def _do_log(self, args):$/;"	m	class:Logger
+_encode_sample	baselines/baselines/deepq/replay_buffer.py	/^    def _encode_sample(self, idxes):$/;"	m	class:ReplayBuffer
+_evaluate	baselines/baselines/common/policies.py	/^    def _evaluate(self, variables, observation, **extra_feed):$/;"	m	class:PolicyWithValue
+_feed_input	baselines/baselines/common/tf_util.py	/^    def _feed_input(self, feed_dict, inpt, value):$/;"	m	class:_Function
+_fetch_tasks	baselines/baselines/bench/benchmarks.py	/^_fetch_tasks = ['FetchReach-v1', 'FetchPush-v1', 'FetchSlide-v1']$/;"	v
+_flatten_helper	ucb_rl2_meta/storage.py	/^def _flatten_helper(T, N, _tensor):$/;"	f
+_flatten_list	baselines/baselines/common/vec_env/subproc_vec_env.py	/^def _flatten_list(l):$/;"	f
+_flatten_obs	baselines/baselines/common/vec_env/subproc_vec_env.py	/^def _flatten_obs(obs):$/;"	f
+_force	baselines/baselines/common/atari_wrappers.py	/^    def _force(self):$/;"	m	class:LazyFrames
+_forward_gru	ucb_rl2_meta/model.py	/^    def _forward_gru(self, x, hxs, masks):$/;"	m	class:NNBase
+_game_envs	baselines/baselines/run.py	/^_game_envs = defaultdict(set)$/;"	v
+_get_action_stats	baselines/baselines/common/tests/test_serialization.py	/^def _get_action_stats(model, ob):$/;"	f
+_get_ob	baselines/baselines/common/atari_wrappers.py	/^    def _get_ob(self):$/;"	m	class:FrameStack
+_get_ob	baselines/baselines/common/retro_wrappers.py	/^    def _get_ob(self):$/;"	m	class:PartialFrameStack
+_get_reward	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^    def _get_reward(self, actions):$/;"	m	class:FixedSequenceEnv
+_get_reward	baselines/baselines/common/tests/envs/identity_env.py	/^    def _get_reward(self, state, actions):$/;"	m	class:BoxIdentityEnv
+_get_reward	baselines/baselines/common/tests/envs/identity_env.py	/^    def _get_reward(self, state, actions):$/;"	m	class:DiscreteIdentityEnv
+_get_reward	baselines/baselines/common/tests/envs/identity_env.py	/^    def _get_reward(self, state, actions):$/;"	m	class:IdentityEnv
+_get_reward	baselines/baselines/common/tests/envs/identity_env.py	/^    def _get_reward(self, state, actions):$/;"	m	class:MultiDiscreteIdentityEnv
+_get_reward	baselines/baselines/common/tests/envs/mnist_env.py	/^    def _get_reward(self, actions):$/;"	m	class:MnistEnv
+_get_storage_idx	baselines/baselines/her/replay_buffer.py	/^    def _get_storage_idx(self, inc=None):$/;"	m	class:ReplayBuffer
+_global_vars	baselines/baselines/her/ddpg.py	/^    def _global_vars(self, scope):$/;"	m	class:DDPG
+_grads	baselines/baselines/her/ddpg.py	/^    def _grads(self):$/;"	m	class:DDPG
+_helper_runningmeanstd	baselines/baselines/common/mpi_moments.py	/^def _helper_runningmeanstd():$/;"	f
+_init	baselines/baselines/gail/mlp_policy.py	/^    def _init(self, ob_space, ac_space, hid_size, num_hid_layers, gaussian_fixed_var=True):$/;"	m	class:MlpPolicy
+_init	baselines/baselines/ppo1/cnn_policy.py	/^    def _init(self, ob_space, ac_space, kind):$/;"	m	class:CnnPolicy
+_init	baselines/baselines/ppo1/mlp_policy.py	/^    def _init(self, ob_space, ac_space, hid_size, num_hid_layers, gaussian_fixed_var=True):$/;"	m	class:MlpPolicy
+_init_target_net	baselines/baselines/her/ddpg.py	/^    def _init_target_net(self):$/;"	m	class:DDPG
+_initializer	baselines/baselines/common/tf_util.py	/^    def _initializer(shape, dtype=None, partition_info=None):  # pylint: disable=W0613$/;"	f	function:normc_initializer
+_ln	baselines/baselines/a2c/utils.py	/^def _ln(x, g, b, e=1e-5, axes=[1]):$/;"	f
+_make_layer	ucb_rl2_meta/model.py	/^    def _make_layer(self, in_channels, out_channels, stride=1):$/;"	m	class:ResNetBase
+_matching_fc	baselines/baselines/common/distributions.py	/^def _matching_fc(tensor, name, size, init_scale, init_bias):$/;"	f
+_mpi_average	baselines/baselines/her/normalizer.py	/^    def _mpi_average(self, x):$/;"	m	class:Normalizer
+_mujoco_present	baselines/baselines/common/tests/test_doc_examples.py	/^    _mujoco_present = False$/;"	v
+_mujoco_present	baselines/baselines/common/tests/test_doc_examples.py	/^    _mujoco_present = True$/;"	v
+_mujocosmall	baselines/baselines/bench/benchmarks.py	/^_mujocosmall = [$/;"	v
+_normalize_clip_observation	baselines/baselines/common/models.py	/^def _normalize_clip_observation(x, clip_range=[-5.0, 5.0]):$/;"	f
+_normalize_clip_observation	baselines/baselines/common/policies.py	/^def _normalize_clip_observation(x, clip_range=[-5.0, 5.0]):$/;"	f
+_obfilt	baselines/baselines/common/vec_env/vec_normalize.py	/^    def _obfilt(self, obs):$/;"	m	class:VecNormalize
+_obs_from_buf	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def _obs_from_buf(self):$/;"	m	class:DummyVecEnv
+_ortho_init	baselines/baselines/a2c/utils.py	/^    def _ortho_init(shape, dtype, partition_info=None):$/;"	f	function:ortho_init
+_preprocess_og	baselines/baselines/her/ddpg.py	/^    def _preprocess_og(self, o, ag, g):$/;"	m	class:DDPG
+_process	baselines/baselines/common/retro_wrappers.py	/^    def _process(self, ob):$/;"	m	class:AppendTimeout
+_random_action	baselines/baselines/her/ddpg.py	/^    def _random_action(self, n):$/;"	m	class:DDPG
+_reduce_helper	baselines/baselines/common/segment_tree.py	/^    def _reduce_helper(self, start, end, node, node_start, node_end):$/;"	m	class:SegmentTree
+_run	baselines/baselines/ddpg/test_smoke.py	/^def _run(argstr):$/;"	f
+_sample_her_transitions	baselines/baselines/her/her_sampler.py	/^    def _sample_her_transitions(episode_batch, batch_size_in_transitions):$/;"	f	function:make_sample_her_transitions
+_sample_proportional	baselines/baselines/deepq/replay_buffer.py	/^    def _sample_proportional(self, batch_size):$/;"	m	class:PrioritizedReplayBuffer
+_save_obs	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def _save_obs(self, e, obs):$/;"	m	class:DummyVecEnv
+_serialize_variables	baselines/baselines/common/tests/test_serialization.py	/^def _serialize_variables():$/;"	f
+_sess_config	baselines/baselines/common/tests/util.py	/^_sess_config = tf.ConfigProto($/;"	v
+_set_mean_var_count	baselines/baselines/common/running_mean_std.py	/^    def _set_mean_var_count(self):$/;"	m	class:TfRunningMeanStd
+_squeeze_shape	baselines/baselines/common/tf_util.py	/^def _squeeze_shape(shape):$/;"	f
+_stack_obs	baselines/baselines/acer/buffer.py	/^def _stack_obs(enc_obs, dones, nsteps):$/;"	f
+_stack_obs_ref	baselines/baselines/acer/buffer.py	/^def _stack_obs_ref(enc_obs, dones, nsteps):$/;"	f
+_step	baselines/baselines/acer/acer.py	/^        def _step(observation, **kwargs):$/;"	f	function:Model.__init__
+_subproc_worker	baselines/baselines/common/vec_env/shmem_vec_env.py	/^def _subproc_worker(pipe, parent_pipe, env_fn_wrapper, obs_bufs, obs_shapes, obs_dtypes, keys):$/;"	f
+_sync_optimizers	baselines/baselines/her/ddpg.py	/^    def _sync_optimizers(self):$/;"	m	class:DDPG
+_thunk	baselines/baselines/common/models.py	/^    def _thunk(func):$/;"	f	function:register
+_truncate	baselines/baselines/logger.py	/^    def _truncate(self, s):$/;"	m	class:HumanOutputFormat
+_update	baselines/baselines/her/ddpg.py	/^    def _update(self, Q_grad, pi_grad):$/;"	m	class:DDPG
+_vars	baselines/baselines/her/ddpg.py	/^    def _vars(self, scope):$/;"	m	class:DDPG
+_video_enabled	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def _video_enabled(self):$/;"	m	class:VecVideoRecorder
+_write_obs	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def _write_obs(maybe_dict_obs):$/;"	f	function:_subproc_worker
+absolute_scope_name	baselines/baselines/deepq/build_graph.py	/^def absolute_scope_name(relative_scope_name):$/;"	f
+act	baselines/baselines/acer/policies.py	/^        def act(ob, *args, **kwargs):$/;"	f	function:AcerCnnPolicy.__init__
+act	baselines/baselines/deepq/build_graph.py	/^        def act(ob, reset=False, update_param_noise_threshold=False, update_param_noise_scale=False, stochastic=True, update_eps=-1):$/;"	f	function:build_act_with_param_noise
+act	baselines/baselines/deepq/build_graph.py	/^        def act(ob, stochastic=True, update_eps=-1):$/;"	f	function:build_act
+act	baselines/baselines/gail/mlp_policy.py	/^    def act(self, stochastic, ob):$/;"	m	class:MlpPolicy
+act	baselines/baselines/ppo1/cnn_policy.py	/^    def act(self, stochastic, ob):$/;"	m	class:CnnPolicy
+act	baselines/baselines/ppo1/mlp_policy.py	/^    def act(self, stochastic, ob):$/;"	m	class:MlpPolicy
+act	ucb_rl2_meta/model.py	/^    def act(self, inputs, rnn_hxs, masks, deterministic=False):$/;"	m	class:Policy
+action	baselines/baselines/common/retro_wrappers.py	/^    def action(self, a): # pylint: disable=W0221$/;"	m	class:SonicDiscretizer
+action	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            action = act(obs[None], update_eps=exploration.value(t))[0]$/;"	v
+action	ucb_rl2_meta/arguments.py	/^    action='store_true',$/;"	v
+actions	baselines/baselines/her/experiment/data_generation/fetch_data_generation.py	/^actions = []$/;"	v
+adapt	baselines/baselines/ddpg/noise.py	/^    def adapt(self, distance):$/;"	m	class:AdaptiveParamNoiseSpec
+adapt_param_noise	baselines/baselines/ddpg/ddpg_learner.py	/^    def adapt_param_noise(self):$/;"	m	class:DDPG
+add	baselines/baselines/deepq/replay_buffer.py	/^    def add(self, *args, **kwargs):$/;"	m	class:PrioritizedReplayBuffer
+add	baselines/baselines/deepq/replay_buffer.py	/^    def add(self, obs_t, action, reward, obs_tp1, done):$/;"	m	class:ReplayBuffer
+add_all_summary	baselines/baselines/gail/statistics.py	/^    def add_all_summary(self, writer, values, iter):$/;"	m	class:stats
+add_vtarg_and_adv	baselines/baselines/gail/trpo_mpi.py	/^def add_vtarg_and_adv(seg, gamma, lam):$/;"	f
+add_vtarg_and_adv	baselines/baselines/ppo1/pposgd_simple.py	/^def add_vtarg_and_adv(seg, gamma, lam):$/;"	f
+add_vtarg_and_adv	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def add_vtarg_and_adv(seg, gamma, lam):$/;"	f
+adjust_brightness	data_augs.py	/^    def adjust_brightness(self, x):$/;"	m	class:ColorJitter
+adjust_contrast	data_augs.py	/^    def adjust_contrast(self, x):$/;"	m	class:ColorJitter
+adjust_hue	data_augs.py	/^    def adjust_hue(self, x):$/;"	m	class:ColorJitter
+adjust_saturate	data_augs.py	/^    def adjust_saturate(self, x):$/;"	m	class:ColorJitter
+adjust_shape	baselines/baselines/common/tf_util.py	/^def adjust_shape(placeholder, data):$/;"	f
+after_update	ucb_rl2_meta/storage.py	/^    def after_update(self):$/;"	m	class:BiggerRolloutStorage
+after_update	ucb_rl2_meta/storage.py	/^    def after_update(self):$/;"	m	class:RolloutStorage
+alg_list	baselines/baselines/common/tests/test_fixed_sequence.py	/^alg_list = learn_kwargs.keys()$/;"	v
+algos	baselines/baselines/common/tests/test_env_after_learn.py	/^algos = ['a2c', 'acer', 'acktr', 'deepq', 'ppo2', 'trpo_mpi']$/;"	v
+algos_cont	baselines/baselines/common/tests/test_identity.py	/^algos_cont = ['a2c', 'acktr', 'ddpg',  'ppo2', 'trpo_mpi']$/;"	v
+algos_disc	baselines/baselines/common/tests/test_identity.py	/^algos_disc = ['a2c', 'acktr', 'deepq', 'ppo2', 'trpo_mpi']$/;"	v
+algos_multidisc	baselines/baselines/common/tests/test_identity.py	/^algos_multidisc = ['a2c', 'acktr', 'ppo2', 'trpo_mpi']$/;"	v
+all_deps	baselines/setup.py	/^all_deps = []$/;"	v
+allequal	baselines/baselines/common/plot_util.py	/^                def allequal(qs):$/;"	f
+allmean	baselines/baselines/gail/trpo_mpi.py	/^    def allmean(x):$/;"	f	function:learn
+allmean	baselines/baselines/trpo_mpi/trpo_mpi.py	/^    def allmean(x):$/;"	f	function:learn
+allow_soft_placement	baselines/baselines/common/tests/util.py	/^    allow_soft_placement=True,$/;"	v
+append	baselines/baselines/ddpg/memory.py	/^    def append(self, obs0, action, reward, obs1, terminal1, training=True):$/;"	m	class:Memory
+append	baselines/baselines/ddpg/memory.py	/^    def append(self, v):$/;"	m	class:RingBuffer
+applyStatsEigen	baselines/baselines/acktr/kfac.py	/^    def applyStatsEigen(self, eigen_list):$/;"	m	class:KfacOptimizer
+apply_gradients	baselines/baselines/acktr/kfac.py	/^    def apply_gradients(self, grads):$/;"	m	class:KfacOptimizer
+apply_gradients_kfac	baselines/baselines/acktr/kfac.py	/^    def apply_gradients_kfac(self, grads):$/;"	m	class:KfacOptimizer
+apply_init_	ucb_rl2_meta/model.py	/^def apply_init_(modules):$/;"	f
+apply_stats	baselines/baselines/acktr/kfac.py	/^    def apply_stats(self, statsUpdates):$/;"	m	class:KfacOptimizer
+arg_parser	baselines/baselines/common/cmd_util.py	/^def arg_parser():$/;"	f
+args	baselines/baselines/gail/dataset/mujoco_dset.py	/^    args = parser.parse_args()$/;"	v
+args	baselines/baselines/gail/gail-eval.py	/^    args = argsparser()$/;"	v
+args	baselines/baselines/gail/run_mujoco.py	/^    args = argsparser()$/;"	v
+args	baselines/baselines/her/experiment/plot.py	/^args = parser.parse_args()$/;"	v
+args	train.py	/^    args = parser.parse_args()$/;"	v
+argsparser	baselines/baselines/gail/behavior_clone.py	/^def argsparser():$/;"	f
+argsparser	baselines/baselines/gail/gail-eval.py	/^def argsparser():$/;"	f
+argsparser	baselines/baselines/gail/run_mujoco.py	/^def argsparser():$/;"	f
+array_min2d	baselines/baselines/ddpg/memory.py	/^def array_min2d(x):$/;"	f
+as_scalar	baselines/baselines/ddpg/ddpg.py	/^        def as_scalar(x):$/;"	f	function:learn
+assert_venvs_equal	baselines/baselines/common/vec_env/test_vec_env.py	/^def assert_venvs_equal(venv1, venv2, num_steps):$/;"	f
+atari	baselines/baselines/acer/defaults.py	/^def atari():$/;"	f
+atari	baselines/baselines/deepq/defaults.py	/^def atari():$/;"	f
+atari	baselines/baselines/ppo2/defaults.py	/^def atari():$/;"	f
+atari	baselines/baselines/trpo_mpi/defaults.py	/^def atari():$/;"	f
+atari_arg_parser	baselines/baselines/common/cmd_util.py	/^def atari_arg_parser():$/;"	f
+aug_to_func	train.py	/^aug_to_func = {    $/;"	v
+author	baselines/setup.py	/^      author='OpenAI',$/;"	v
+author_email	baselines/setup.py	/^      author_email='gym@openai.com',$/;"	v
+avg_norm	baselines/baselines/a2c/utils.py	/^def avg_norm(t):$/;"	f
+ax	baselines/baselines/common/plot_util.py	/^        ax = axarr[idx_row][idx_col]$/;"	v
+batch_to_seq	baselines/baselines/a2c/utils.py	/^def batch_to_seq(h, nbatch, nsteps, flat=False):$/;"	f
+bbox_to_anchor	baselines/baselines/common/plot_util.py	/^                bbox_to_anchor=(1,1) if legend_outside else None)$/;"	v
+blue	baselines/baselines/common/console_util.py	/^    blue=34,$/;"	v
+boolean_flag	baselines/baselines/common/misc_util.py	/^def boolean_flag(parser, name, default=False, help=None):$/;"	f
+build_act	baselines/baselines/deepq/build_graph.py	/^def build_act(make_obs_ph, q_func, num_actions, scope="deepq", reuse=None):$/;"	f
+build_act_with_param_noise	baselines/baselines/deepq/build_graph.py	/^def build_act_with_param_noise(make_obs_ph, q_func, num_actions, scope="deepq", reuse=None, param_noise_filter_func=None):$/;"	f
+build_env	baselines/baselines/run.py	/^def build_env(args):$/;"	f
+build_graph	baselines/baselines/gail/adversary.py	/^    def build_graph(self, obs_ph, acs_ph, reuse=False):$/;"	m	class:TransitionClassifier
+build_impala_cnn	baselines/baselines/common/models.py	/^def build_impala_cnn(unscaled_images, depths=[16,32,32], **conv_kwargs):$/;"	f
+build_ph	baselines/baselines/gail/adversary.py	/^    def build_ph(self):$/;"	m	class:TransitionClassifier
+build_policy	baselines/baselines/common/policies.py	/^def build_policy(env, policy_network, value_network=None,  normalize_observations=False, estimate_q=False, **policy_kwargs):$/;"	f
+build_q_func	baselines/baselines/deepq/models.py	/^def build_q_func(network, hiddens=[256], dueling=True, layer_norm=False, **network_kwargs):$/;"	f
+build_train	baselines/baselines/deepq/build_graph.py	/^def build_train(make_obs_ph, q_func, num_actions, optimizer, grad_norm_clipping=None, gamma=1.0,$/;"	f
+cached_make_env	baselines/baselines/her/experiment/config.py	/^def cached_make_env(make_env):$/;"	f
+call	baselines/baselines/acer/acer.py	/^    def call(self, on_policy):$/;"	m	class:Acer
+callback	baselines/baselines/deepq/experiments/train_cartpole.py	/^def callback(lcl, _glb):$/;"	f
+can_sample	baselines/baselines/acer/buffer.py	/^    def can_sample(self):$/;"	m	class:Buffer
+cat_entropy	baselines/baselines/a2c/utils.py	/^def cat_entropy(logits):$/;"	f
+cat_entropy_softmax	baselines/baselines/a2c/utils.py	/^def cat_entropy_softmax(p0):$/;"	f
+ccap	baselines/baselines/common/console_util.py	/^def ccap(cmd, dry=False, env=None, **kwargs):$/;"	f
+cg	baselines/baselines/common/cg.py	/^def cg(f_Ax, b, cg_iters=10, callback=None, verbose=False, residual_tol=1e-10):$/;"	f
+change_randomization_params	data_augs.py	/^    def change_randomization_params(self, index_):$/;"	m	class:ColorJitter
+change_randomization_params	data_augs.py	/^    def change_randomization_params(self, index_):$/;"	m	class:Crop
+change_randomization_params	data_augs.py	/^    def change_randomization_params(self, index_):$/;"	m	class:Cutout
+change_randomization_params	data_augs.py	/^    def change_randomization_params(self, index_):$/;"	m	class:CutoutColor
+change_randomization_params	data_augs.py	/^    def change_randomization_params(self, index_):$/;"	m	class:Flip
+change_randomization_params	data_augs.py	/^    def change_randomization_params(self, index_):$/;"	m	class:Grayscale
+change_randomization_params	data_augs.py	/^    def change_randomization_params(self, index_):$/;"	m	class:RandomConv
+change_randomization_params	data_augs.py	/^    def change_randomization_params(self, index_):$/;"	m	class:Rotate
+change_randomization_params_all	data_augs.py	/^    def change_randomization_params_all(self):$/;"	m	class:ColorJitter
+change_randomization_params_all	data_augs.py	/^    def change_randomization_params_all(self):$/;"	m	class:Crop
+change_randomization_params_all	data_augs.py	/^    def change_randomization_params_all(self):$/;"	m	class:Cutout
+change_randomization_params_all	data_augs.py	/^    def change_randomization_params_all(self):$/;"	m	class:CutoutColor
+change_randomization_params_all	data_augs.py	/^    def change_randomization_params_all(self):$/;"	m	class:Flip
+change_randomization_params_all	data_augs.py	/^    def change_randomization_params_all(self):$/;"	m	class:Grayscale
+change_randomization_params_all	data_augs.py	/^    def change_randomization_params_all(self):$/;"	m	class:RandomConv
+change_randomization_params_all	data_augs.py	/^    def change_randomization_params_all(self):$/;"	m	class:Rotate
+check_shape	baselines/baselines/a2c/utils.py	/^def check_shape(ts,shapes):$/;"	f
+check_synced	baselines/baselines/common/mpi_adam.py	/^    def check_synced(self):$/;"	m	class:MpiAdam
+check_synced	baselines/baselines/common/mpi_adam_optimizer.py	/^def check_synced(localval, comm=None):$/;"	f
+checkallclose	baselines/baselines/common/mpi_running_mean_std.py	/^    def checkallclose(x,y):$/;"	f	function:test_dist
+cleanup_log_dir	ucb_rl2_meta/utils.py	/^def cleanup_log_dir(log_dir):$/;"	f
+clear_buffer	baselines/baselines/her/ddpg.py	/^    def clear_buffer(self):$/;"	m	class:DDPG
+clear_buffer	baselines/baselines/her/replay_buffer.py	/^    def clear_buffer(self):$/;"	m	class:ReplayBuffer
+clear_history	baselines/baselines/her/rollout.py	/^    def clear_history(self):$/;"	m	class:RolloutWorker
+clear_mpi_env_vars	baselines/baselines/common/vec_env/vec_env.py	/^def clear_mpi_env_vars():$/;"	f
+clipoutNeg	baselines/baselines/acktr/kfac_utils.py	/^def clipoutNeg(vec, threshold=1e-6):$/;"	f
+close	baselines/baselines/bench/monitor.py	/^    def close(self):$/;"	m	class:Monitor
+close	baselines/baselines/common/vec_env/vec_env.py	/^    def close(self):$/;"	m	class:VecEnv
+close	baselines/baselines/common/vec_env/vec_env.py	/^    def close(self):$/;"	m	class:VecEnvWrapper
+close	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def close(self):$/;"	m	class:VecVideoRecorder
+close	baselines/baselines/logger.py	/^    def close(self):$/;"	m	class:CSVOutputFormat
+close	baselines/baselines/logger.py	/^    def close(self):$/;"	m	class:HumanOutputFormat
+close	baselines/baselines/logger.py	/^    def close(self):$/;"	m	class:JSONOutputFormat
+close	baselines/baselines/logger.py	/^    def close(self):$/;"	m	class:Logger
+close	baselines/baselines/logger.py	/^    def close(self):$/;"	m	class:TensorBoardOutputFormat
+close_extras	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def close_extras(self):$/;"	m	class:ShmemVecEnv
+close_extras	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def close_extras(self):$/;"	m	class:SubprocVecEnv
+close_extras	baselines/baselines/common/vec_env/vec_env.py	/^    def close_extras(self):$/;"	m	class:VecEnv
+close_video_recorder	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def close_video_recorder(self):$/;"	m	class:VecVideoRecorder
+closed	baselines/baselines/common/vec_env/vec_env.py	/^    closed = False$/;"	v	class:VecEnv
+cnn	baselines/baselines/common/models.py	/^def cnn(**conv_kwargs):$/;"	f
+cnn_lnlstm	baselines/baselines/common/models.py	/^def cnn_lnlstm(nlstm=128, **conv_kwargs):$/;"	f
+cnn_lstm	baselines/baselines/common/models.py	/^def cnn_lstm(nlstm=128, layer_norm=False, conv_fn=nature_cnn, **conv_kwargs):$/;"	f
+cnn_small	baselines/baselines/common/models.py	/^def cnn_small(**conv_kwargs):$/;"	f
+coldSGDstart	baselines/baselines/acktr/kfac.py	/^        def coldSGDstart():$/;"	f	function:KfacOptimizer.apply_gradients
+color	baselines/baselines/common/plot_util.py	/^                color = COLORS[groups.index(group) % len(COLORS)]$/;"	v
+color2num	baselines/baselines/common/console_util.py	/^color2num = dict($/;"	v
+colorize	baselines/baselines/common/console_util.py	/^def colorize(string, color='green', bold=False, highlight=False):$/;"	f
+common_arg_parser	baselines/baselines/common/cmd_util.py	/^def common_arg_parser():$/;"	f
+common_kwargs	baselines/baselines/common/tests/test_cartpole.py	/^common_kwargs = dict($/;"	v
+common_kwargs	baselines/baselines/common/tests/test_fetchreach.py	/^common_kwargs = dict($/;"	v
+common_kwargs	baselines/baselines/common/tests/test_fixed_sequence.py	/^common_kwargs = dict($/;"	v
+common_kwargs	baselines/baselines/common/tests/test_identity.py	/^common_kwargs = dict($/;"	v
+common_kwargs	baselines/baselines/common/tests/test_mnist.py	/^common_kwargs = {$/;"	v
+computeStatsEigen	baselines/baselines/acktr/kfac.py	/^    def computeStatsEigen(self):$/;"	m	class:KfacOptimizer
+compute_and_apply_stats	baselines/baselines/acktr/kfac.py	/^    def compute_and_apply_stats(self, loss_sampled, var_list=None):$/;"	m	class:KfacOptimizer
+compute_gradients	baselines/baselines/acktr/kfac.py	/^    def compute_gradients(self, loss, var_list=None):$/;"	m	class:KfacOptimizer
+compute_gradients	baselines/baselines/common/mpi_adam_optimizer.py	/^    def compute_gradients(self, loss, var_list, **kwargs):$/;"	m	class:MpiAdamOptimizer
+compute_returns	ucb_rl2_meta/storage.py	/^    def compute_returns(self,$/;"	m	class:BiggerRolloutStorage
+compute_returns	ucb_rl2_meta/storage.py	/^    def compute_returns(self,$/;"	m	class:RolloutStorage
+compute_stats	baselines/baselines/acktr/kfac.py	/^    def compute_stats(self, loss_sampled, var_list=None):$/;"	m	class:KfacOptimizer
+config	baselines/baselines/her/experiment/plot.py	/^        config = 'ddpg'$/;"	v
+config	baselines/baselines/her/experiment/plot.py	/^        config = 'her'$/;"	v
+configure	baselines/baselines/logger.py	/^def configure(dir=None, format_strs=None, comm=None, log_suffix=''):$/;"	f
+configure_ddpg	baselines/baselines/her/experiment/config.py	/^def configure_ddpg(dims, params, reuse=False, use_mpi=True, clip_return=True):$/;"	f
+configure_dims	baselines/baselines/her/experiment/config.py	/^def configure_dims(params):$/;"	f
+configure_her	baselines/baselines/her/experiment/config.py	/^def configure_her(params):$/;"	f
+configure_logger	baselines/baselines/run.py	/^def configure_logger(log_path, **kwargs):$/;"	f
+constant	baselines/baselines/a2c/utils.py	/^def constant(p):$/;"	f
+constfn	baselines/baselines/ppo2/ppo2.py	/^def constfn(val):$/;"	f
+conv	baselines/baselines/a2c/utils.py	/^def conv(x, scope, *, nf, rf, stride, pad='VALID', init_scale=1.0, data_format='NHWC', one_dim_bias=False):$/;"	f
+conv2d	baselines/baselines/common/tf_util.py	/^def conv2d(x, num_filters, name, filter_size=(3, 3), stride=(1, 1), pad="SAME", dtype=tf.float32, collections=None,$/;"	f
+conv_layer	baselines/baselines/common/models.py	/^    def conv_layer(out, depth):$/;"	f	function:build_impala_cnn
+conv_only	baselines/baselines/common/models.py	/^def conv_only(convs=[(32, 8, 4), (64, 4, 2), (64, 3, 1)], **conv_kwargs):$/;"	f
+conv_sequence	baselines/baselines/common/models.py	/^    def conv_sequence(inputs, depth):$/;"	f	function:build_impala_cnn
+conv_to_fc	baselines/baselines/a2c/utils.py	/^def conv_to_fc(x):$/;"	f
+convert_episode_to_batch_major	baselines/baselines/her/util.py	/^def convert_episode_to_batch_major(episode):$/;"	f
+convert_to_onehot	ucb_rl2_meta/algo/rl2_drac.py	/^    def convert_to_onehot(self, action_value):$/;"	m	class:RL2DrAC
+copyStats	baselines/baselines/acktr/kfac.py	/^            def copyStats(var_list):$/;"	f	function:KfacOptimizer.computeStatsEigen
+copy_obs_dict	baselines/baselines/common/vec_env/util.py	/^def copy_obs_dict(obs):$/;"	f
+count	baselines/baselines/common/atari_wrappers.py	/^    def count(self):$/;"	m	class:LazyFrames
+crimson	baselines/baselines/common/console_util.py	/^    crimson=38$/;"	v
+current_mean_Q	baselines/baselines/her/rollout.py	/^    def current_mean_Q(self):$/;"	m	class:RolloutWorker
+current_success_rate	baselines/baselines/her/rollout.py	/^    def current_success_rate(self):$/;"	m	class:RolloutWorker
+custom_getter	baselines/baselines/acer/acer.py	/^        def custom_getter(getter, *args, **kwargs):$/;"	f	function:Model.__init__
+cyan	baselines/baselines/common/console_util.py	/^    cyan=36,$/;"	v
+data	baselines/baselines/her/experiment/plot.py	/^data = {}$/;"	v
+debug	baselines/baselines/logger.py	/^def debug(*args):$/;"	f
+decode	baselines/baselines/acer/buffer.py	/^    def decode(self, enc_obs, dones):$/;"	m	class:Buffer
+decorator_with_name	baselines/baselines/logger.py	/^    def decorator_with_name(func):$/;"	f	function:profile
+default	ucb_rl2_meta/arguments.py	/^    default='\/tmp\/drac\/',$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default='bigfish',$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default='crop',$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default='drac',$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default='easy',$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0, $/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0.001,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0.01,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0.1, $/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0.10, $/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0.2,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0.5,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0.95,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0.99,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=0.999,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=1, $/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=10, $/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=10,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=100, $/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=100,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=12, $/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=1e-5,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=200,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=256,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=25e6,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=3,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=32,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=5e-4, $/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=64, $/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=64,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=8,$/;"	v
+default	ucb_rl2_meta/arguments.py	/^    default=False,$/;"	v
+default_param_noise_filter	baselines/baselines/deepq/build_graph.py	/^def default_param_noise_filter(var):$/;"	f
+default_samples	baselines/baselines/common/plot_util.py	/^    default_samples = 512$/;"	v
+default_split_fn	baselines/baselines/common/plot_util.py	/^def default_split_fn(r):$/;"	f
+default_xy_fn	baselines/baselines/common/plot_util.py	/^def default_xy_fn(r):$/;"	f
+denormalize	baselines/baselines/ddpg/ddpg_learner.py	/^def denormalize(x, stats):$/;"	f
+denormalize	baselines/baselines/her/normalizer.py	/^    def denormalize(self, v):$/;"	m	class:Normalizer
+denormalize	baselines/baselines/her/normalizer.py	/^    def denormalize(self, x):$/;"	m	class:IdentityNormalizer
+dense	baselines/baselines/acktr/utils.py	/^def dense(x, size, name, weight_init=None, bias_init=0, weight_loss_dict=None, reuse=None):$/;"	f
+dequeue_op	baselines/baselines/acktr/kfac.py	/^            def dequeue_op():$/;"	f	function:KfacOptimizer.apply_gradients_kfac
+dequeue_stats_op	baselines/baselines/acktr/kfac.py	/^            def dequeue_stats_op():$/;"	f	function:KfacOptimizer.apply_stats.updateRunningAvgStats
+description	baselines/setup.py	/^      description='OpenAI baselines: high quality implementations of reinforcement learning algorithms',$/;"	v
+detectMinVal	baselines/baselines/acktr/kfac_utils.py	/^def detectMinVal(input_mat, var, threshold=1e-6, name='', debug=False):$/;"	f
+dict_gather	baselines/baselines/common/mpi_util.py	/^def dict_gather(comm, d, op='mean', assert_all_have_data=True):$/;"	f
+dict_to_obs	baselines/baselines/common/vec_env/util.py	/^def dict_to_obs(obs_dict):$/;"	f
+dims	baselines/baselines/her/her.py	/^    dims = config.configure_dims(params)$/;"	v
+dims_to_shapes	baselines/baselines/her/ddpg.py	/^def dims_to_shapes(input_dims):$/;"	f
+discount	baselines/baselines/common/math_util.py	/^def discount(x, gamma):$/;"	f
+discount_with_boundaries	baselines/baselines/common/math_util.py	/^def discount_with_boundaries(X, New, gamma):$/;"	f
+discount_with_dones	baselines/baselines/a2c/utils.py	/^def discount_with_dones(rewards, dones, gamma):$/;"	f
+display_var_info	baselines/baselines/common/tf_util.py	/^def display_var_info(vars):$/;"	f
+do_augmentation	data_augs.py	/^    def do_augmentation(self, images):$/;"	m	class:Flip
+do_augmentation	data_augs.py	/^    def do_augmentation(self, imgs):$/;"	m	class:ColorJitter
+do_augmentation	data_augs.py	/^    def do_augmentation(self, imgs):$/;"	m	class:Cutout
+do_augmentation	data_augs.py	/^    def do_augmentation(self, imgs):$/;"	m	class:CutoutColor
+do_augmentation	data_augs.py	/^    def do_augmentation(self, imgs):$/;"	m	class:Rotate
+do_augmentation	data_augs.py	/^    def do_augmentation(self, x):$/;"	m	class:Crop
+do_augmentation	data_augs.py	/^    def do_augmentation(self, x):$/;"	m	class:Grayscale
+do_augmentation	data_augs.py	/^    def do_augmentation(self, x):$/;"	m	class:RandomConv
+double_linear_con	baselines/baselines/a2c/utils.py	/^def double_linear_con(p):$/;"	f
+double_middle_drop	baselines/baselines/a2c/utils.py	/^def double_middle_drop(p):$/;"	f
+dump_tabular	baselines/baselines/logger.py	/^dump_tabular = dumpkvs$/;"	v
+dumpkvs	baselines/baselines/logger.py	/^    def dumpkvs(self):$/;"	m	class:Logger
+dumpkvs	baselines/baselines/logger.py	/^def dumpkvs():$/;"	f
+encode_observation	baselines/baselines/common/input.py	/^def encode_observation(ob_space, placeholder):$/;"	f
+entropy	baselines/baselines/common/distributions.py	/^    def entropy(self):$/;"	m	class:BernoulliPd
+entropy	baselines/baselines/common/distributions.py	/^    def entropy(self):$/;"	m	class:CategoricalPd
+entropy	baselines/baselines/common/distributions.py	/^    def entropy(self):$/;"	m	class:DiagGaussianPd
+entropy	baselines/baselines/common/distributions.py	/^    def entropy(self):$/;"	m	class:MultiCategoricalPd
+entropy	baselines/baselines/common/distributions.py	/^    def entropy(self):$/;"	m	class:Pd
+env	baselines/baselines/deepq/experiments/custom_cartpole.py	/^        env = gym.make("CartPole-v0")$/;"	v
+env_fn	baselines/baselines/common/tests/test_cartpole.py	/^    def env_fn():$/;"	f	function:test_cartpole
+env_fn	baselines/baselines/common/tests/test_fetchreach.py	/^    def env_fn():$/;"	f	function:test_fetchreach
+env_fn	baselines/baselines/ppo2/test_microbatches.py	/^    def env_fn():$/;"	f	function:test_microbatches
+env_id	baselines/baselines/her/experiment/plot.py	/^    env_id = env_id.replace('Dense', '')$/;"	v
+env_id	baselines/baselines/her/experiment/plot.py	/^    env_id = params['env_name']$/;"	v
+env_name	baselines/baselines/her/her.py	/^    env_name = env.spec.id$/;"	v
+env_type	baselines/baselines/run.py	/^    env_type = env.entry_point.split(':')[0].split('.')[-1]$/;"	v
+episode_rewards	baselines/baselines/deepq/experiments/custom_cartpole.py	/^        episode_rewards = [0.0]$/;"	v
+epoch	baselines/baselines/her/experiment/plot.py	/^    epoch = np.array(results['epoch']) + 1$/;"	v
+error	baselines/baselines/logger.py	/^def error(*args):$/;"	f
+eval_env	baselines/baselines/her/her.py	/^    eval_env = eval_env or env$/;"	v
+eval_params	baselines/baselines/her/her.py	/^    eval_params = {$/;"	v
+evaluate	test.py	/^def evaluate(args, actor_critic, device, num_processes=1, aug_id=None):$/;"	f
+evaluate_actions	ucb_rl2_meta/model.py	/^    def evaluate_actions(self, inputs, rnn_hxs, masks, action):$/;"	m	class:Policy
+evaluate_env	baselines/baselines/gail/gail-eval.py	/^def evaluate_env(env_name, seed, policy_hidden_size, stochastic, reuse, prefix):$/;"	f
+evaluator	baselines/baselines/her/her.py	/^    evaluator = RolloutWorker(eval_env, policy, dims, logger, **eval_params)$/;"	v
+explained_variance	baselines/baselines/common/math_util.py	/^def explained_variance(ypred,y):$/;"	f
+explained_variance_2d	baselines/baselines/common/math_util.py	/^def explained_variance_2d(ypred, y):$/;"	f
+exploration	baselines/baselines/deepq/experiments/custom_cartpole.py	/^        exploration = LinearSchedule(schedule_timesteps=10000, initial_p=1.0, final_p=0.02)$/;"	v
+extras	baselines/setup.py	/^extras = {$/;"	v
+extras_require	baselines/setup.py	/^      extras_require=extras,$/;"	v
+f	baselines/baselines/bench/monitor.py	/^    f = None$/;"	v	class:Monitor
+f	baselines/baselines/ppo2/ppo2.py	/^    def f(_):$/;"	f	function:constfn
+factorReshape	baselines/baselines/acktr/kfac_utils.py	/^def factorReshape(Q, e, grad, facIndx=0, ftype='act'):$/;"	f
+fc	baselines/baselines/a2c/utils.py	/^def fc(x, scope, nh, *, init_scale=1.0, init_bias=0.0):$/;"	f
+feed	baselines/baselines/a2c/utils.py	/^    def feed(self, rewards, masks):$/;"	m	class:EpisodeStats
+feed_forward_generator	ucb_rl2_meta/storage.py	/^    def feed_forward_generator(self,$/;"	m	class:BiggerRolloutStorage
+feed_forward_generator	ucb_rl2_meta/storage.py	/^    def feed_forward_generator(self,$/;"	m	class:RolloutStorage
+figsize	baselines/baselines/common/plot_util.py	/^    figsize = figsize or (6 * ncols, 6 * nrows)$/;"	v
+find_prefixsum_idx	baselines/baselines/common/segment_tree.py	/^    def find_prefixsum_idx(self, prefixsum):$/;"	m	class:SumSegmentTree
+find_task_for_env_id_in_any_benchmark	baselines/baselines/bench/benchmarks.py	/^def find_task_for_env_id_in_any_benchmark(env_id):$/;"	f
+find_trainable_variables	baselines/baselines/a2c/utils.py	/^def find_trainable_variables(key):$/;"	f
+fisher_vector_product	baselines/baselines/gail/trpo_mpi.py	/^        def fisher_vector_product(p):$/;"	f	function:learn.allmean
+fisher_vector_product	baselines/baselines/trpo_mpi/trpo_mpi.py	/^        def fisher_vector_product(p):$/;"	f	function:learn.allmean
+flatgrad	baselines/baselines/common/tf_util.py	/^def flatgrad(loss, var_list, clip_norm=None):$/;"	f
+flatparam	baselines/baselines/common/distributions.py	/^    def flatparam(self):$/;"	m	class:BernoulliPd
+flatparam	baselines/baselines/common/distributions.py	/^    def flatparam(self):$/;"	m	class:CategoricalPd
+flatparam	baselines/baselines/common/distributions.py	/^    def flatparam(self):$/;"	m	class:DiagGaussianPd
+flatparam	baselines/baselines/common/distributions.py	/^    def flatparam(self):$/;"	m	class:MultiCategoricalPd
+flatparam	baselines/baselines/common/distributions.py	/^    def flatparam(self):$/;"	m	class:Pd
+flatten_arrays	baselines/baselines/common/math_util.py	/^def flatten_arrays(arrs):$/;"	f
+flatten_grads	baselines/baselines/her/util.py	/^def flatten_grads(var_list, grads):$/;"	f
+flatten_lists	baselines/baselines/gail/trpo_mpi.py	/^def flatten_lists(listoflists):$/;"	f
+flatten_lists	baselines/baselines/ppo1/pposgd_simple.py	/^def flatten_lists(listoflists):$/;"	f
+flatten_lists	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def flatten_lists(listoflists):$/;"	f
+flattenallbut0	baselines/baselines/common/tf_util.py	/^def flattenallbut0(x):$/;"	f
+fmt_item	baselines/baselines/common/console_util.py	/^def fmt_item(x, l):$/;"	f
+fmt_row	baselines/baselines/common/console_util.py	/^def fmt_row(width, row, header=False):$/;"	f
+forward	data_augs.py	/^    def forward(self, inputs):$/;"	m	class:ColorJitter
+forward	ucb_rl2_meta/distributions.py	/^    def forward(self, x):$/;"	m	class:Categorical
+forward	ucb_rl2_meta/model.py	/^    def forward(self, input):$/;"	m	class:Conv2d_tf
+forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs):$/;"	m	class:RewardModel
+forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs):$/;"	m	class:TransitionModel
+forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs, rnn_hxs, masks):$/;"	m	class:MLPBase
+forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs, rnn_hxs, masks):$/;"	m	class:Policy
+forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs, rnn_hxs, masks):$/;"	m	class:ResNetBase
+forward	ucb_rl2_meta/model.py	/^    def forward(self, obs):$/;"	m	class:AugCNN
+forward	ucb_rl2_meta/model.py	/^    def forward(self, x):$/;"	m	class:BasicBlock
+forward	ucb_rl2_meta/model.py	/^    def forward(self, x):$/;"	m	class:Flatten
+frame	baselines/baselines/common/atari_wrappers.py	/^    def frame(self, i):$/;"	m	class:LazyFrames
+fromflat	baselines/baselines/common/distributions.py	/^    def fromflat(cls, flat):$/;"	m	class:BernoulliPd
+fromflat	baselines/baselines/common/distributions.py	/^    def fromflat(cls, flat):$/;"	m	class:CategoricalPd
+fromflat	baselines/baselines/common/distributions.py	/^    def fromflat(cls, flat):$/;"	m	class:DiagGaussianPd
+fromflat	baselines/baselines/common/distributions.py	/^    def fromflat(cls, flat):$/;"	m	class:MultiCategoricalPd
+full	baselines/baselines/her/replay_buffer.py	/^    def full(self):$/;"	m	class:ReplayBuffer
+func_wrapper	baselines/baselines/logger.py	/^        def func_wrapper(*args, **kwargs):$/;"	f	function:profile.decorator_with_name
+function	baselines/baselines/common/tf_util.py	/^def function(inputs, outputs, updates=None, givens=None):$/;"	f
+g2c	baselines/baselines/common/plot_util.py	/^        g2c = defaultdict(int)$/;"	v
+g2l	baselines/baselines/common/plot_util.py	/^        g2l = {}$/;"	v
+gamma	baselines/baselines/common/tests/test_cartpole.py	/^    gamma=1.0,$/;"	v
+gamma	baselines/baselines/common/tests/test_identity.py	/^    gamma=0.9,$/;"	v
+generate_rollouts	baselines/baselines/her/rollout.py	/^    def generate_rollouts(self):$/;"	m	class:RolloutWorker
+get	baselines/baselines/acer/buffer.py	/^    def get(self):$/;"	m	class:Buffer
+get	baselines/baselines/deepq/utils.py	/^    def get(self):$/;"	m	class:ObservationInput
+get	baselines/baselines/deepq/utils.py	/^    def get(self):$/;"	m	class:PlaceholderTfInput
+get	baselines/baselines/deepq/utils.py	/^    def get(self):$/;"	m	class:TfInput
+getFactors	baselines/baselines/acktr/kfac.py	/^    def getFactors(self, g, varlist):$/;"	m	class:KfacOptimizer
+getKfacGradOp	baselines/baselines/acktr/kfac.py	/^                    def getKfacGradOp():$/;"	f	function:KfacOptimizer.apply_gradients_kfac.dequeue_op.no_op_wrapper
+getKfacPrecondUpdates	baselines/baselines/acktr/kfac.py	/^    def getKfacPrecondUpdates(self, gradlist, varlist):$/;"	m	class:KfacOptimizer
+getStats	baselines/baselines/acktr/kfac.py	/^    def getStats(self, factors, varlist):$/;"	m	class:KfacOptimizer
+getStatsEigen	baselines/baselines/acktr/kfac.py	/^    def getStatsEigen(self, stats=None):$/;"	m	class:KfacOptimizer
+get_actions	baselines/baselines/her/ddpg.py	/^    def get_actions(self, o, ag, g, noise_eps=0., random_eps=0., use_target_net=False,$/;"	m	class:DDPG
+get_alg_module	baselines/baselines/run.py	/^def get_alg_module(alg, submodule=None):$/;"	f
+get_available_gpus	baselines/baselines/common/tf_util.py	/^def get_available_gpus(session_config=None):$/;"	f
+get_batch	baselines/baselines/ddpg/memory.py	/^    def get_batch(self, idxs):$/;"	m	class:RingBuffer
+get_benchmark	baselines/baselines/bench/benchmarks.py	/^def get_benchmark(benchmark_name):$/;"	f
+get_by_index	baselines/baselines/a2c/utils.py	/^def get_by_index(x, idx):$/;"	f
+get_checkpoint_dir	baselines/baselines/gail/gail-eval.py	/^    def get_checkpoint_dir(checkpoint_list, limit, prefix):$/;"	f	function:evaluate_env
+get_current	baselines/baselines/logger.py	/^def get_current():$/;"	f
+get_current_buffer_size	baselines/baselines/her/ddpg.py	/^    def get_current_buffer_size(self):$/;"	m	class:DDPG
+get_current_episode_size	baselines/baselines/her/replay_buffer.py	/^    def get_current_episode_size(self):$/;"	m	class:ReplayBuffer
+get_current_size	baselines/baselines/her/replay_buffer.py	/^    def get_current_size(self):$/;"	m	class:ReplayBuffer
+get_default_network	baselines/baselines/run.py	/^def get_default_network(env_type):$/;"	f
+get_dir	baselines/baselines/logger.py	/^    def get_dir(self):$/;"	m	class:Logger
+get_dir	baselines/baselines/logger.py	/^def get_dir():$/;"	f
+get_env_type	baselines/baselines/run.py	/^def get_env_type(args):$/;"	f
+get_episode_lengths	baselines/baselines/bench/monitor.py	/^    def get_episode_lengths(self):$/;"	m	class:Monitor
+get_episode_rewards	baselines/baselines/bench/monitor.py	/^    def get_episode_rewards(self):$/;"	m	class:Monitor
+get_episode_times	baselines/baselines/bench/monitor.py	/^    def get_episode_times(self):$/;"	m	class:Monitor
+get_git_commit	baselines/baselines/common/console_util.py	/^def get_git_commit(cwd=None):$/;"	f
+get_git_commit_message	baselines/baselines/common/console_util.py	/^def get_git_commit_message(cwd=None):$/;"	f
+get_images	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def get_images(self):$/;"	m	class:DummyVecEnv
+get_images	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def get_images(self, mode='human'):$/;"	m	class:ShmemVecEnv
+get_images	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def get_images(self):$/;"	m	class:SubprocVecEnv
+get_images	baselines/baselines/common/vec_env/vec_env.py	/^    def get_images(self):$/;"	m	class:VecEnv
+get_images	baselines/baselines/common/vec_env/vec_env.py	/^    def get_images(self):$/;"	m	class:VecEnvWrapper
+get_initial_state	baselines/baselines/gail/mlp_policy.py	/^    def get_initial_state(self):$/;"	m	class:MlpPolicy
+get_initial_state	baselines/baselines/ppo1/cnn_policy.py	/^    def get_initial_state(self):$/;"	m	class:CnnPolicy
+get_initial_state	baselines/baselines/ppo1/mlp_policy.py	/^    def get_initial_state(self):$/;"	m	class:MlpPolicy
+get_layer_num_str	baselines/baselines/common/models.py	/^    def get_layer_num_str():$/;"	f	function:build_impala_cnn
+get_learn_function	baselines/baselines/run.py	/^def get_learn_function(alg):$/;"	f
+get_learn_function_defaults	baselines/baselines/run.py	/^def get_learn_function_defaults(alg, env_type):$/;"	f
+get_local_rank_size	baselines/baselines/common/mpi_util.py	/^def get_local_rank_size(comm):$/;"	f
+get_monitor_files	baselines/baselines/bench/monitor.py	/^def get_monitor_files(dir):$/;"	f
+get_network_builder	baselines/baselines/common/models.py	/^def get_network_builder(name):$/;"	f
+get_next_batch	baselines/baselines/gail/dataset/mujoco_dset.py	/^    def get_next_batch(self, batch_size):$/;"	m	class:Dset
+get_next_batch	baselines/baselines/gail/dataset/mujoco_dset.py	/^    def get_next_batch(self, batch_size, split=None):$/;"	m	class:Mujoco_Dset
+get_perturbed_actor_updates	baselines/baselines/ddpg/ddpg_learner.py	/^def get_perturbed_actor_updates(actor, perturbed_actor, param_noise_stddev):$/;"	f
+get_pi_trainable_variables	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def get_pi_trainable_variables(scope):$/;"	f
+get_placeholder	baselines/baselines/common/tf_util.py	/^def get_placeholder(name, dtype, shape):$/;"	f
+get_placeholder_cached	baselines/baselines/common/tf_util.py	/^def get_placeholder_cached(name):$/;"	f
+get_rank_without_mpi_import	baselines/baselines/logger.py	/^def get_rank_without_mpi_import():$/;"	f
+get_reward	baselines/baselines/gail/adversary.py	/^    def get_reward(self, obs, acs):$/;"	m	class:TransitionClassifier
+get_session	baselines/baselines/common/tf_util.py	/^def get_session(config=None):$/;"	f
+get_shape	baselines/baselines/common/distributions.py	/^    def get_shape(self):$/;"	m	class:Pd
+get_stats	baselines/baselines/ddpg/ddpg_learner.py	/^    def get_stats(self):$/;"	m	class:DDPG
+get_stats	baselines/baselines/ddpg/noise.py	/^    def get_stats(self):$/;"	m	class:AdaptiveParamNoiseSpec
+get_target_updates	baselines/baselines/ddpg/ddpg_learner.py	/^def get_target_updates(vars, target_vars, tau):$/;"	f
+get_task	baselines/baselines/bench/benchmarks.py	/^def get_task(benchmark, env_id):$/;"	f
+get_task_name	baselines/baselines/gail/behavior_clone.py	/^def get_task_name(args):$/;"	f
+get_task_name	baselines/baselines/gail/run_mujoco.py	/^def get_task_name(args):$/;"	f
+get_total_steps	baselines/baselines/bench/monitor.py	/^    def get_total_steps(self):$/;"	m	class:Monitor
+get_trainable_variables	baselines/baselines/gail/adversary.py	/^    def get_trainable_variables(self):$/;"	m	class:TransitionClassifier
+get_trainable_variables	baselines/baselines/gail/mlp_policy.py	/^    def get_trainable_variables(self):$/;"	m	class:MlpPolicy
+get_trainable_variables	baselines/baselines/ppo1/cnn_policy.py	/^    def get_trainable_variables(self):$/;"	m	class:CnnPolicy
+get_trainable_variables	baselines/baselines/ppo1/mlp_policy.py	/^    def get_trainable_variables(self):$/;"	m	class:MlpPolicy
+get_trainable_variables	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def get_trainable_variables(scope):$/;"	f
+get_transitions_stored	baselines/baselines/her/replay_buffer.py	/^    def get_transitions_stored(self):$/;"	m	class:ReplayBuffer
+get_value	ucb_rl2_meta/model.py	/^    def get_value(self, inputs, rnn_hxs, masks):$/;"	m	class:Policy
+get_variables	baselines/baselines/gail/mlp_policy.py	/^    def get_variables(self):$/;"	m	class:MlpPolicy
+get_variables	baselines/baselines/ppo1/cnn_policy.py	/^    def get_variables(self):$/;"	m	class:CnnPolicy
+get_variables	baselines/baselines/ppo1/mlp_policy.py	/^    def get_variables(self):$/;"	m	class:MlpPolicy
+get_variables	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def get_variables(scope):$/;"	f
+get_vf_trainable_variables	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def get_vf_trainable_variables(scope):$/;"	f
+get_viewer	baselines/baselines/common/vec_env/vec_env.py	/^    def get_viewer(self):$/;"	m	class:VecEnv
+get_wrapper_by_name	baselines/baselines/common/misc_util.py	/^def get_wrapper_by_name(env, classname):$/;"	f
+getkvs	baselines/baselines/logger.py	/^def getkvs():$/;"	f
+gmatmul	baselines/baselines/acktr/kfac_utils.py	/^def gmatmul(a, b, transpose_a=False, transpose_b=False, reduce_dim=None):$/;"	f
+goToGoal	baselines/baselines/her/experiment/data_generation/fetch_data_generation.py	/^def goToGoal(env, lastObs):$/;"	f
+gpu_count	baselines/baselines/common/mpi_util.py	/^def gpu_count():$/;"	f
+gradOp	baselines/baselines/acktr/kfac.py	/^                    def gradOp():$/;"	f	function:KfacOptimizer.apply_gradients_kfac.dequeue_op.no_op_wrapper
+gradient_add	baselines/baselines/a2c/utils.py	/^def gradient_add(g1, g2, param):$/;"	f
+gray	baselines/baselines/common/console_util.py	/^    gray=30,$/;"	v
+green	baselines/baselines/common/console_util.py	/^    green=32,$/;"	v
+gresults	baselines/baselines/common/plot_util.py	/^        gresults = defaultdict(list)$/;"	v
+group	baselines/baselines/common/plot_util.py	/^            group = group_fn(result)$/;"	v
+groups	baselines/baselines/common/plot_util.py	/^    groups = list(set(group_fn(result) for result in allresults))$/;"	v
+has_atleast	baselines/baselines/acer/buffer.py	/^    def has_atleast(self, frames):$/;"	m	class:Buffer
+help	ucb_rl2_meta/arguments.py	/^    help='RMSprop optimizer apha')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='RMSprop optimizer epsilon for RL^2')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='RMSprop optimizer epsilon')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='augmentation type')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='batch size for the meta-learner.')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='clip value used for the meta-gradients')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='coefficient on the augmented loss')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='directory to save agent logs')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='disables CUDA training')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='discount factor for rewards')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='distribution of envs for procgen')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='entropy term coefficient for RL^2')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='entropy term coefficient')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='environment to train on')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='exploration coefficient for UCB')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='fraction of the PPO buffer used for test by the meta-learner.')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='gae lambda parameter')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='hidden size in RL^2 policy for selecting an augmentation')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='how many training CPU processes to use')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='increase image size by')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='learning rate for RL^2')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='learning rate')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='length of sliding window for UCB (i.e. number of UCB actions)')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='log interval, one log per n updates')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='max norm of gradients)')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='name for the run - prefix to log files')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='number of Procgen levels to use for training')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='number of batches for ppo')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='number of environment steps to train')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='number of forward steps in A2C')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='number of ppo epochs')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='number of test steps in one meta-update')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='number of training steps in one meta-update')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='ppo clip parameter')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='random seed')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='save interval, one save per n update')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='start level id for sampling Procgen levels')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='state embedding dimension')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='use RL^2 for selecting an augmentation')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='use UCB to select an augmentation')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='use meta learning for finding the best augmentation')$/;"	v
+help	ucb_rl2_meta/arguments.py	/^    help='value loss coefficient (default: 0.5)')$/;"	v
+helper	baselines/baselines/common/misc_util.py	/^    def helper(cnt, name):$/;"	f	function:pretty_eta
+hsv2rgb	data_augs.py	/^def hsv2rgb(hsv):$/;"	f
+huber_loss	baselines/baselines/common/tf_util.py	/^def huber_loss(x, delta=1.0):$/;"	f
+idx_col	baselines/baselines/common/plot_util.py	/^        idx_col = isplit % ncols$/;"	v
+idx_row	baselines/baselines/common/plot_util.py	/^        idx_row = isplit \/\/ ncols$/;"	v
+impala_cnn	baselines/baselines/common/models.py	/^def impala_cnn(**conv_kwargs):$/;"	f
+impala_cnn_lstm	baselines/baselines/common/models.py	/^def impala_cnn_lstm():$/;"	f
+import_function	baselines/baselines/her/util.py	/^def import_function(spec):$/;"	f
+in_session	baselines/baselines/common/tf_util.py	/^def in_session(f):$/;"	f
+info	baselines/baselines/logger.py	/^def info(*args):$/;"	f
+infos	baselines/baselines/her/experiment/data_generation/fetch_data_generation.py	/^infos = []$/;"	v
+init	ucb_rl2_meta/utils.py	/^def init(module, weight_init, bias_init, gain=1):$/;"	f
+init_	ucb_rl2_meta/model.py	/^init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.$/;"	v
+init_demo_buffer	baselines/baselines/her/ddpg.py	/^    def init_demo_buffer(self, demoDataFile, update_stats=True): #function that initializes the demo buffer$/;"	m	class:DDPG
+init_pointer	baselines/baselines/gail/dataset/mujoco_dset.py	/^    def init_pointer(self):$/;"	m	class:Dset
+init_relu_	ucb_rl2_meta/model.py	/^init_relu_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.$/;"	v
+init_tanh_	ucb_rl2_meta/model.py	/^init_tanh_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.$/;"	v
+initialize	baselines/baselines/common/tf_util.py	/^def initialize():$/;"	f
+initialize	baselines/baselines/ddpg/ddpg_learner.py	/^    def initialize(self, sess):$/;"	m	class:DDPG
+insert	ucb_rl2_meta/storage.py	/^    def insert(self, obs, recurrent_hidden_states, actions, action_log_probs,$/;"	m	class:BiggerRolloutStorage
+insert	ucb_rl2_meta/storage.py	/^    def insert(self, obs, recurrent_hidden_states, actions, action_log_probs,$/;"	m	class:RolloutStorage
+install_mpi_excepthook	baselines/baselines/her/util.py	/^def install_mpi_excepthook():$/;"	f
+install_requires	baselines/setup.py	/^      install_requires=[$/;"	v
+inter_op_parallelism_threads	baselines/baselines/common/tests/util.py	/^    inter_op_parallelism_threads=1$/;"	v
+intprod	baselines/baselines/common/tf_util.py	/^def intprod(x):$/;"	f
+intra_op_parallelism_threads	baselines/baselines/common/tests/util.py	/^    intra_op_parallelism_threads=1,$/;"	v
+is_recurrent	ucb_rl2_meta/model.py	/^    def is_recurrent(self):$/;"	m	class:NNBase
+is_recurrent	ucb_rl2_meta/model.py	/^    def is_recurrent(self):$/;"	m	class:Policy
+is_solved	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            is_solved = t > 100 and np.mean(episode_rewards[-101:-1]) >= 200$/;"	v
+iterate_once	baselines/baselines/common/dataset.py	/^    def iterate_once(self, batch_size):$/;"	m	class:Dataset
+iterbatches	baselines/baselines/common/dataset.py	/^def iterbatches(arrays, *, num_batches=None, batch_size=None, shuffle=True, include_final_partial_batch=True):$/;"	f
+kl	baselines/baselines/common/distributions.py	/^    def kl(self, other):$/;"	m	class:BernoulliPd
+kl	baselines/baselines/common/distributions.py	/^    def kl(self, other):$/;"	m	class:CategoricalPd
+kl	baselines/baselines/common/distributions.py	/^    def kl(self, other):$/;"	m	class:DiagGaussianPd
+kl	baselines/baselines/common/distributions.py	/^    def kl(self, other):$/;"	m	class:MultiCategoricalPd
+kl	baselines/baselines/common/distributions.py	/^    def kl(self, other):$/;"	m	class:Pd
+kl_div	baselines/baselines/acktr/utils.py	/^def kl_div(action_dist1, action_dist2, action_size):$/;"	f
+largest_divisor	baselines/baselines/common/plot_util.py	/^                largest_divisor = i$/;"	v
+largest_divisor	baselines/baselines/common/plot_util.py	/^        largest_divisor = 1$/;"	v
+launch_tensorboard_in_background	baselines/baselines/common/tf_util.py	/^def launch_tensorboard_in_background(log_dir):$/;"	f
+learn	baselines/baselines/a2c/a2c.py	/^def learn($/;"	f
+learn	baselines/baselines/acer/acer.py	/^def learn(network, env, seed=None, nsteps=20, total_timesteps=int(80e6), q_coef=0.5, ent_coef=0.01,$/;"	f
+learn	baselines/baselines/acktr/acktr.py	/^def learn(network, env, seed, total_timesteps=int(40e6), gamma=0.99, log_interval=100, nprocs=32, nsteps=20,$/;"	f
+learn	baselines/baselines/ddpg/ddpg.py	/^def learn(network, env,$/;"	f
+learn	baselines/baselines/deepq/deepq.py	/^def learn(env,$/;"	f
+learn	baselines/baselines/gail/behavior_clone.py	/^def learn(env, policy_func, dataset, optim_batch_size=128, max_iters=1e4,$/;"	f
+learn	baselines/baselines/gail/trpo_mpi.py	/^def learn(env, policy_func, reward_giver, expert_dataset, rank,$/;"	f
+learn	baselines/baselines/her/her.py	/^def learn(*, network, env, total_timesteps,$/;"	f
+learn	baselines/baselines/ppo1/pposgd_simple.py	/^def learn(env, policy_fn, *,$/;"	f
+learn	baselines/baselines/ppo2/ppo2.py	/^def learn(*, network, env, total_timesteps, eval_env = None, seed=None, nsteps=2048, ent_coef=0.0, lr=3e-4,$/;"	f
+learn	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def learn(*,$/;"	f
+learn_args	baselines/baselines/common/tests/test_mnist.py	/^learn_args = {$/;"	v
+learn_kwargs	baselines/baselines/common/tests/test_cartpole.py	/^learn_kwargs = {$/;"	v
+learn_kwargs	baselines/baselines/common/tests/test_fetchreach.py	/^learn_kwargs = {$/;"	v
+learn_kwargs	baselines/baselines/common/tests/test_fixed_sequence.py	/^learn_kwargs = {$/;"	v
+learn_kwargs	baselines/baselines/common/tests/test_identity.py	/^learn_kwargs = {$/;"	v
+learn_kwargs	baselines/baselines/common/tests/test_serialization.py	/^learn_kwargs = {$/;"	v
+linear	baselines/baselines/a2c/utils.py	/^def linear(p):$/;"	f
+linear_interpolation	baselines/baselines/common/schedules.py	/^def linear_interpolation(l, r, alpha):$/;"	f
+list_benchmarks	baselines/baselines/bench/benchmarks.py	/^def list_benchmarks():$/;"	f
+lnlstm	baselines/baselines/a2c/utils.py	/^def lnlstm(xs, ms, s, scope, nh, init_scale=1.0):$/;"	f
+load	baselines/baselines/common/policies.py	/^    def load(self, load_path):$/;"	m	class:PolicyWithValue
+load_act	baselines/baselines/deepq/deepq.py	/^    def load_act(path):$/;"	m	class:ActWrapper
+load_act	baselines/baselines/deepq/deepq.py	/^def load_act(path):$/;"	f
+load_dataset	baselines/baselines/gail/gail-eval.py	/^def load_dataset(expert_path):$/;"	f
+load_results	baselines/baselines/bench/monitor.py	/^def load_results(dir):$/;"	f
+load_results	baselines/baselines/common/plot_util.py	/^def load_results(root_dir_or_dirs, enable_progress=True, enable_monitor=True, verbose=False):$/;"	f
+load_results	baselines/baselines/her/experiment/plot.py	/^def load_results(file):$/;"	f
+load_state	baselines/baselines/common/tf_util.py	/^def load_state(fname, sess=None):$/;"	f
+load_variables	baselines/baselines/common/tf_util.py	/^def load_variables(load_path, variables=None, sess=None):$/;"	f
+loc	baselines/baselines/common/plot_util.py	/^                loc=2 if legend_outside else None,$/;"	v
+log	baselines/baselines/logger.py	/^    def log(self, *args, level=INFO):$/;"	m	class:Logger
+log	baselines/baselines/logger.py	/^def log(*args, level=INFO):$/;"	f
+log_info	baselines/baselines/gail/dataset/mujoco_dset.py	/^    def log_info(self):$/;"	m	class:Mujoco_Dset
+log_params	baselines/baselines/her/experiment/config.py	/^def log_params(params, logger=logger):$/;"	f
+log_probs	ucb_rl2_meta/distributions.py	/^    def log_probs(self, actions):$/;"	m	class:FixedCategorical
+logit_bernoulli_entropy	baselines/baselines/gail/adversary.py	/^def logit_bernoulli_entropy(logits):$/;"	f
+logkv	baselines/baselines/logger.py	/^    def logkv(self, key, val):$/;"	m	class:Logger
+logkv	baselines/baselines/logger.py	/^def logkv(key, val):$/;"	f
+logkv_mean	baselines/baselines/logger.py	/^    def logkv_mean(self, key, val):$/;"	m	class:Logger
+logkv_mean	baselines/baselines/logger.py	/^def logkv_mean(key, val):$/;"	f
+logkvs	baselines/baselines/logger.py	/^def logkvs(d):$/;"	f
+logp	baselines/baselines/common/distributions.py	/^    def logp(self, x):$/;"	m	class:Pd
+logs	baselines/baselines/her/ddpg.py	/^    def logs(self, prefix=''):$/;"	m	class:DDPG
+logs	baselines/baselines/her/rollout.py	/^    def logs(self, prefix='worker'):$/;"	m	class:RolloutWorker
+logsigmoid	baselines/baselines/gail/adversary.py	/^def logsigmoid(a):$/;"	f
+lrelu	baselines/baselines/common/tf_util.py	/^def lrelu(x, leak=0.2):$/;"	f
+lstm	baselines/baselines/a2c/utils.py	/^def lstm(xs, ms, s, scope, nh, init_scale=1.0):$/;"	f
+lstm	baselines/baselines/common/models.py	/^def lstm(nlstm=128, layer_norm=False):$/;"	f
+magenta	baselines/baselines/common/console_util.py	/^    magenta=35,$/;"	v
+main	baselines/baselines/deepq/experiments/enjoy_cartpole.py	/^def main():$/;"	f
+main	baselines/baselines/deepq/experiments/enjoy_mountaincar.py	/^def main():$/;"	f
+main	baselines/baselines/deepq/experiments/enjoy_pong.py	/^def main():$/;"	f
+main	baselines/baselines/deepq/experiments/train_cartpole.py	/^def main():$/;"	f
+main	baselines/baselines/deepq/experiments/train_mountaincar.py	/^def main():$/;"	f
+main	baselines/baselines/deepq/experiments/train_pong.py	/^def main():$/;"	f
+main	baselines/baselines/gail/behavior_clone.py	/^def main(args):$/;"	f
+main	baselines/baselines/gail/gail-eval.py	/^def main(args):$/;"	f
+main	baselines/baselines/gail/run_mujoco.py	/^def main(args):$/;"	f
+main	baselines/baselines/her/experiment/data_generation/fetch_data_generation.py	/^def main():$/;"	f
+main	baselines/baselines/her/experiment/play.py	/^def main(policy_file, seed, n_test_rollouts, render):$/;"	f
+main	baselines/baselines/her/her.py	/^def main(**kwargs):$/;"	f
+main	baselines/baselines/ppo1/run_atari.py	/^def main():$/;"	f
+main	baselines/baselines/ppo1/run_humanoid.py	/^def main():$/;"	f
+main	baselines/baselines/ppo1/run_mujoco.py	/^def main():$/;"	f
+main	baselines/baselines/ppo1/run_robotics.py	/^def main():$/;"	f
+main	baselines/baselines/results_plotter.py	/^def main():$/;"	f
+main	baselines/baselines/run.py	/^def main(args):$/;"	f
+make_atari	baselines/baselines/common/atari_wrappers.py	/^def make_atari(env_id, max_episode_steps=None):$/;"	f
+make_env	baselines/baselines/common/cmd_util.py	/^def make_env(env_id, env_type, mpi_rank=0, subrank=0, seed=None, reward_scale=1.0, gamestate=None, flatten_dict_observations=True, wrapper_kwargs=None, env_kwargs=None, logger_dir=None, initializer=None):$/;"	f
+make_env	baselines/baselines/common/tests/test_env_after_learn.py	/^    def make_env():$/;"	f	function:test_env_after_learn
+make_env	baselines/baselines/common/tests/test_serialization.py	/^    def make_env():$/;"	f	function:test_serialization
+make_env	baselines/baselines/her/experiment/config.py	/^    def make_env(subrank=None):$/;"	f	function:prepare_params
+make_feed_dict	baselines/baselines/deepq/utils.py	/^    def make_feed_dict(self, data):$/;"	m	class:PlaceholderTfInput
+make_feed_dict	baselines/baselines/deepq/utils.py	/^    def make_feed_dict(self, data):$/;"	m	class:TfInput
+make_fn	baselines/baselines/common/vec_env/test_vec_env.py	/^    def make_fn(seed):$/;"	f	function:test_sync_sampling
+make_fn	baselines/baselines/common/vec_env/test_vec_env.py	/^    def make_fn(seed):$/;"	f	function:test_sync_sampling_sanity
+make_fn	baselines/baselines/common/vec_env/test_vec_env.py	/^    def make_fn(seed):$/;"	f	function:test_vec_env
+make_fn	baselines/baselines/common/vec_env/test_video_recorder.py	/^    def make_fn():$/;"	f	function:test_video_recorder
+make_mujoco_env	baselines/baselines/common/cmd_util.py	/^def make_mujoco_env(env_id, seed, reward_scale=1.0):$/;"	f
+make_obs_ph	baselines/baselines/deepq/deepq.py	/^    def make_obs_ph(name):$/;"	f	function:learn
+make_obs_ph	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            make_obs_ph=lambda name: ObservationInput(env.observation_space, name=name),$/;"	v
+make_output_format	baselines/baselines/logger.py	/^def make_output_format(format, ev_dir, log_suffix=''):$/;"	f
+make_path	baselines/baselines/a2c/utils.py	/^def make_path(f):$/;"	f
+make_pdtype	baselines/baselines/common/distributions.py	/^def make_pdtype(ac_space):$/;"	f
+make_retro	baselines/baselines/common/retro_wrappers.py	/^def make_retro(*, game, state=None, max_episode_steps=4500, **kwargs):$/;"	f
+make_robotics_env	baselines/baselines/common/cmd_util.py	/^def make_robotics_env(env_id, seed, rank=0):$/;"	f
+make_sample_her_transitions	baselines/baselines/her/her_sampler.py	/^def make_sample_her_transitions(replay_strategy, replay_k, reward_fun):$/;"	f
+make_session	baselines/baselines/common/tf_util.py	/^def make_session(config=None, num_cpu=None, make_default=False, graph=None):$/;"	f
+make_thunk	baselines/baselines/common/cmd_util.py	/^    def make_thunk(rank, initializer=None):$/;"	f	function:make_vec_env
+make_vec_env	baselines/baselines/common/cmd_util.py	/^def make_vec_env(env_id, env_type, num_env, seed,$/;"	f
+mapping	baselines/baselines/common/models.py	/^mapping = {}$/;"	v
+mark_slow	baselines/baselines/common/tests/__init__.py	/^mark_slow = pytest.mark.skipif(not os.getenv('RUNSLOW'), reason='slow')/;"	v
+mean	baselines/baselines/common/distributions.py	/^    def mean(self):$/;"	m	class:BernoulliPd
+mean	baselines/baselines/common/distributions.py	/^    def mean(self):$/;"	m	class:CategoricalPd
+mean_length	baselines/baselines/a2c/utils.py	/^    def mean_length(self):$/;"	m	class:EpisodeStats
+mean_reward	baselines/baselines/a2c/utils.py	/^    def mean_reward(self):$/;"	m	class:EpisodeStats
+meta_feed_forward_generator	ucb_rl2_meta/storage.py	/^    def meta_feed_forward_generator(self,$/;"	m	class:BiggerRolloutStorage
+meta_feed_forward_generator	ucb_rl2_meta/storage.py	/^    def meta_feed_forward_generator(self,$/;"	m	class:RolloutStorage
+meta_train_iter	ucb_rl2_meta/algo/meta_drac.py	/^    def meta_train_iter(self, rollouts):$/;"	m	class:MetaDrAC
+metadata	baselines/baselines/common/vec_env/vec_env.py	/^    metadata = {$/;"	v	class:VecEnv
+middle_drop	baselines/baselines/a2c/utils.py	/^def middle_drop(p):$/;"	f
+min	baselines/baselines/common/segment_tree.py	/^    def min(self, start=0, end=None):$/;"	m	class:MinSegmentTree
+minimize	baselines/baselines/acktr/kfac.py	/^    def minimize(self, loss, loss_sampled, var_list=None):$/;"	m	class:KfacOptimizer
+minxlen	baselines/baselines/common/plot_util.py	/^                minxlen = min(map(len, origxs))$/;"	v
+mlp	baselines/baselines/common/models.py	/^def mlp(num_layers=2, num_hidden=64, activation=tf.tanh, layer_norm=False):$/;"	f
+mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	class:BernoulliPd
+mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	class:CategoricalPd
+mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	class:DiagGaussianPd
+mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	class:MultiCategoricalPd
+mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	class:Pd
+mode	ucb_rl2_meta/distributions.py	/^    def mode(self):$/;"	m	class:FixedCategorical
+model	baselines/baselines/deepq/experiments/custom_cartpole.py	/^def model(inpt, num_actions, scope, reuse=False):$/;"	f
+mpi_average	baselines/baselines/her/her.py	/^def mpi_average(value):$/;"	f
+mpi_fork	baselines/baselines/common/mpi_fork.py	/^def mpi_fork(n, bind_to_core=False):$/;"	f
+mpi_fork	baselines/baselines/her/util.py	/^def mpi_fork(n, extra_mpi_args=[]):$/;"	f
+mpi_mean	baselines/baselines/common/mpi_moments.py	/^def mpi_mean(x, axis=0, comm=None, keepdims=False):$/;"	f
+mpi_moments	baselines/baselines/common/mpi_moments.py	/^def mpi_moments(x, axis=0, comm=None, keepdims=False):$/;"	f
+mpi_weighted_mean	baselines/baselines/common/mpi_util.py	/^def mpi_weighted_mean(comm, local_name2valcount):$/;"	f
+mujoco	baselines/baselines/acktr/defaults.py	/^def mujoco():$/;"	f
+mujoco	baselines/baselines/ppo2/defaults.py	/^def mujoco():$/;"	f
+mujoco	baselines/baselines/trpo_mpi/defaults.py	/^def mujoco():$/;"	f
+mujoco_arg_parser	baselines/baselines/common/cmd_util.py	/^def mujoco_arg_parser():$/;"	f
+mujoco_py	baselines/baselines/common/tests/test_doc_examples.py	/^    mujoco_py = None$/;"	v
+n_cycles	baselines/baselines/her/her.py	/^    n_cycles = params['n_cycles']$/;"	v
+n_epochs	baselines/baselines/her/her.py	/^    n_epochs = total_timesteps \/\/ n_cycles \/\/ rollout_worker.T \/\/ rollout_worker.rollout_batch_size$/;"	v
+nature_cnn	baselines/baselines/common/models.py	/^def nature_cnn(unscaled_images, **conv_kwargs):$/;"	f
+nb_entries	baselines/baselines/ddpg/memory.py	/^    def nb_entries(self):$/;"	m	class:Memory
+ncc	baselines/baselines/common/math_util.py	/^def ncc(ypred, y):$/;"	f
+ncols	baselines/baselines/common/plot_util.py	/^        ncols = 1$/;"	v
+ncols	baselines/baselines/common/plot_util.py	/^        ncols = largest_divisor$/;"	v
+ncols	baselines/baselines/common/plot_util.py	/^        ncols = len(sk2r)$/;"	v
+neglogp	baselines/baselines/common/distributions.py	/^    def neglogp(self, x):$/;"	m	class:BernoulliPd
+neglogp	baselines/baselines/common/distributions.py	/^    def neglogp(self, x):$/;"	m	class:CategoricalPd
+neglogp	baselines/baselines/common/distributions.py	/^    def neglogp(self, x):$/;"	m	class:DiagGaussianPd
+neglogp	baselines/baselines/common/distributions.py	/^    def neglogp(self, x):$/;"	m	class:MultiCategoricalPd
+neglogp	baselines/baselines/common/distributions.py	/^    def neglogp(self, x):$/;"	m	class:Pd
+network	baselines/baselines/common/tests/test_cartpole.py	/^    network='mlp',$/;"	v
+network	baselines/baselines/common/tests/test_fetchreach.py	/^    network='mlp',$/;"	v
+network	baselines/baselines/common/tests/test_identity.py	/^    network='mlp',$/;"	v
+network_fn	baselines/baselines/common/models.py	/^    def network_fn(X):$/;"	f	function:cnn
+network_fn	baselines/baselines/common/models.py	/^    def network_fn(X):$/;"	f	function:cnn_small
+network_fn	baselines/baselines/common/models.py	/^    def network_fn(X):$/;"	f	function:conv_only
+network_fn	baselines/baselines/common/models.py	/^    def network_fn(X):$/;"	f	function:impala_cnn
+network_fn	baselines/baselines/common/models.py	/^    def network_fn(X):$/;"	f	function:mlp
+network_fn	baselines/baselines/common/models.py	/^    def network_fn(X, nenv=1):$/;"	f	function:cnn_lstm
+network_fn	baselines/baselines/common/models.py	/^    def network_fn(X, nenv=1):$/;"	f	function:lstm
+network_kwargs	baselines/baselines/common/tests/test_serialization.py	/^network_kwargs = {$/;"	v
+new_hook	baselines/baselines/her/util.py	/^    def new_hook(a, b, c):$/;"	f	function:install_mpi_excepthook
+newfunc	baselines/baselines/common/tf_util.py	/^    def newfunc(*args, **kwargs):$/;"	f	function:in_session
+next_batch	baselines/baselines/common/dataset.py	/^    def next_batch(self, batch_size):$/;"	m	class:Dataset
+nn	baselines/baselines/her/util.py	/^def nn(input, layers_sizes, reuse=None, flatten=False, name=""):$/;"	f
+no_op_wrapper	baselines/baselines/acktr/kfac.py	/^                def no_op_wrapper():$/;"	f	function:KfacOptimizer.apply_gradients_kfac.dequeue_op
+normalize	baselines/baselines/ddpg/ddpg_learner.py	/^def normalize(x, stats):$/;"	f
+normalize	baselines/baselines/her/normalizer.py	/^    def normalize(self, v, clip_range=None):$/;"	m	class:Normalizer
+normalize	baselines/baselines/her/normalizer.py	/^    def normalize(self, x, clip_range=None):$/;"	m	class:IdentityNormalizer
+normc_initializer	baselines/baselines/common/tf_util.py	/^def normc_initializer(std=1.0, axis=0):$/;"	f
+nrows	baselines/baselines/common/plot_util.py	/^        nrows = 1$/;"	v
+nrows	baselines/baselines/common/plot_util.py	/^        nrows = N \/\/ ncols$/;"	v
+nrows	baselines/baselines/common/plot_util.py	/^        nrows = len(sk2r)$/;"	v
+num_actions	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            num_actions=env.action_space.n,$/;"	v
+num_cpu	baselines/baselines/her/her.py	/^        num_cpu = MPI.COMM_WORLD.Get_size()$/;"	v
+numel	baselines/baselines/common/tf_util.py	/^def numel(x):$/;"	f
+obs	baselines/baselines/deepq/experiments/custom_cartpole.py	/^                obs = env.reset()$/;"	v
+obs	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            obs = new_obs$/;"	v
+obs	baselines/baselines/deepq/experiments/custom_cartpole.py	/^        obs = env.reset()$/;"	v
+obs_space_info	baselines/baselines/common/vec_env/util.py	/^def obs_space_info(obs_space):$/;"	f
+obs_to_dict	baselines/baselines/common/vec_env/util.py	/^def obs_to_dict(obs):$/;"	f
+observation	baselines/baselines/common/atari_wrappers.py	/^    def observation(self, obs):$/;"	m	class:WarpFrame
+observation	baselines/baselines/common/atari_wrappers.py	/^    def observation(self, observation):$/;"	m	class:ScaledFloatFrame
+observation	baselines/baselines/common/retro_wrappers.py	/^    def observation(self, frame):$/;"	m	class:Downsample
+observation	baselines/baselines/common/retro_wrappers.py	/^    def observation(self, frame):$/;"	m	class:Rgb2gray
+observation	ucb_rl2_meta/envs.py	/^    def observation(self, ob):$/;"	m	class:TransposeImageProcgen
+observation_input	baselines/baselines/common/input.py	/^def observation_input(ob_space, batch_size=None, name='Ob'):$/;"	f
+observation_placeholder	baselines/baselines/common/input.py	/^def observation_placeholder(ob_space, batch_size=None, name='Ob'):$/;"	f
+observations	baselines/baselines/her/experiment/data_generation/fetch_data_generation.py	/^observations = []$/;"	v
+one_sided_ema	baselines/baselines/common/plot_util.py	/^def one_sided_ema(xolds, yolds, low=None, high=None, n=512, decay_steps=1., low_counts_threshold=1e-8):$/;"	f
+optimOp	baselines/baselines/acktr/kfac.py	/^                    def optimOp():$/;"	f	function:KfacOptimizer.apply_gradients_kfac.dequeue_op.no_op_wrapper
+optimizer	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            optimizer=tf.train.AdamOptimizer(learning_rate=5e-4),$/;"	v
+origxs	baselines/baselines/common/plot_util.py	/^                origxs = [xy[0] for xy in xys]$/;"	v
+ortho_init	baselines/baselines/a2c/utils.py	/^def ortho_init(scale=1.0):$/;"	f
+out	baselines/baselines/acer/policies.py	/^        def out(ob, *args, **kwargs):$/;"	f	function:AcerCnnPolicy.__init__
+outer_thunk	baselines/baselines/common/tests/test_with_mpi.py	/^    def outer_thunk(fn):$/;"	f	function:with_mpi
+output_size	ucb_rl2_meta/model.py	/^    def output_size(self):$/;"	m	class:NNBase
+output_vars	baselines/baselines/ddpg/models.py	/^    def output_vars(self):$/;"	m	class:Critic
+override_params	baselines/baselines/her/her.py	/^    override_params = override_params or {}$/;"	v
+packages	baselines/setup.py	/^      packages=[package for package in find_packages()$/;"	v
+pad	baselines/baselines/her/experiment/plot.py	/^def pad(xs, value=np.nan):$/;"	f
+param_placeholder	baselines/baselines/common/distributions.py	/^    def param_placeholder(self, prepend_shape, name=None):$/;"	m	class:PdType
+param_shape	baselines/baselines/common/distributions.py	/^    def param_shape(self):$/;"	m	class:BernoulliPdType
+param_shape	baselines/baselines/common/distributions.py	/^    def param_shape(self):$/;"	m	class:CategoricalPdType
+param_shape	baselines/baselines/common/distributions.py	/^    def param_shape(self):$/;"	m	class:DiagGaussianPdType
+param_shape	baselines/baselines/common/distributions.py	/^    def param_shape(self):$/;"	m	class:MultiCategoricalPdType
+param_shape	baselines/baselines/common/distributions.py	/^    def param_shape(self):$/;"	m	class:PdType
+params	baselines/baselines/her/experiment/plot.py	/^        params = json.load(f)$/;"	v
+params	baselines/baselines/her/her.py	/^    params = config.DEFAULT_PARAMS$/;"	v
+params	baselines/baselines/her/her.py	/^    params = config.prepare_params(params)$/;"	v
+parse	baselines/baselines/run.py	/^    def parse(v):$/;"	f	function:parse_cmdline_kwargs
+parse_cmdline_kwargs	baselines/baselines/run.py	/^def parse_cmdline_kwargs(args):$/;"	f
+parse_unknown_args	baselines/baselines/common/cmd_util.py	/^def parse_unknown_args(args):$/;"	f
+parser	baselines/baselines/gail/dataset/mujoco_dset.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	baselines/baselines/her/experiment/plot.py	/^parser = argparse.ArgumentParser()$/;"	v
+parser	ucb_rl2_meta/arguments.py	/^parser = argparse.ArgumentParser(description='RL')$/;"	v
+paths	baselines/baselines/her/experiment/plot.py	/^paths = [os.path.abspath(os.path.join(path, '..')) for path in glob2.glob(os.path.join(args.dir, '**', 'progress.csv'))]$/;"	v
+pdclass	baselines/baselines/common/distributions.py	/^    def pdclass(self):$/;"	m	class:BernoulliPdType
+pdclass	baselines/baselines/common/distributions.py	/^    def pdclass(self):$/;"	m	class:CategoricalPdType
+pdclass	baselines/baselines/common/distributions.py	/^    def pdclass(self):$/;"	m	class:DiagGaussianPdType
+pdclass	baselines/baselines/common/distributions.py	/^    def pdclass(self):$/;"	m	class:MultiCategoricalPdType
+pdclass	baselines/baselines/common/distributions.py	/^    def pdclass(self):$/;"	m	class:PdType
+pdfromflat	baselines/baselines/common/distributions.py	/^    def pdfromflat(self, flat):$/;"	m	class:MultiCategoricalPdType
+pdfromflat	baselines/baselines/common/distributions.py	/^    def pdfromflat(self, flat):$/;"	m	class:PdType
+pdfromlatent	baselines/baselines/common/distributions.py	/^    def pdfromlatent(self, latent, init_scale=1.0, init_bias=0.0):$/;"	m	class:MultiCategoricalPdType
+pdfromlatent	baselines/baselines/common/distributions.py	/^    def pdfromlatent(self, latent_vector, init_scale, init_bias):$/;"	m	class:PdType
+pdfromlatent	baselines/baselines/common/distributions.py	/^    def pdfromlatent(self, latent_vector, init_scale=1.0, init_bias=0.0):$/;"	m	class:BernoulliPdType
+pdfromlatent	baselines/baselines/common/distributions.py	/^    def pdfromlatent(self, latent_vector, init_scale=1.0, init_bias=0.0):$/;"	m	class:CategoricalPdType
+pdfromlatent	baselines/baselines/common/distributions.py	/^    def pdfromlatent(self, latent_vector, init_scale=1.0, init_bias=0.0):$/;"	m	class:DiagGaussianPdType
+perturb_vars	baselines/baselines/deepq/build_graph.py	/^        def perturb_vars(original_scope, perturbed_scope):$/;"	f	function:build_act_with_param_noise
+perturbable_vars	baselines/baselines/ddpg/models.py	/^    def perturbable_vars(self):$/;"	m	class:Model
+pickle_load	baselines/baselines/common/misc_util.py	/^def pickle_load(path, compression=False):$/;"	f
+plot	baselines/baselines/gail/dataset/mujoco_dset.py	/^    def plot(self):$/;"	m	class:Mujoco_Dset
+plot	baselines/baselines/gail/gail-eval.py	/^def plot(env_name, bc_log, gail_log, stochastic):$/;"	f
+plot_curves	baselines/baselines/results_plotter.py	/^def plot_curves(xy_list, xaxis, yaxis, title):$/;"	f
+plot_results	baselines/baselines/common/plot_util.py	/^def plot_results($/;"	f
+plot_results	baselines/baselines/results_plotter.py	/^def plot_results(dirs, num_timesteps=10e6, xaxis=X_TIMESTEPS, yaxis=Y_REWARD, title='', split_fn=split_by_task):$/;"	f
+policy	baselines/baselines/her/her.py	/^    policy = config.configure_ddpg(dims=dims, params=params, clip_return=clip_return)$/;"	v
+policy_fn	baselines/baselines/common/policies.py	/^    def policy_fn(nbatch=None, nsteps=None, sess=None, observ_placeholder=None):$/;"	f	function:build_policy
+policy_fn	baselines/baselines/gail/behavior_clone.py	/^    def policy_fn(name, ob_space, ac_space, reuse=False):$/;"	f	function:main
+policy_fn	baselines/baselines/gail/gail-eval.py	/^    def policy_fn(name, ob_space, ac_space, reuse=False):$/;"	f	function:evaluate_env
+policy_fn	baselines/baselines/gail/run_mujoco.py	/^    def policy_fn(name, ob_space, ac_space, reuse=False):$/;"	f	function:main
+policy_fn	baselines/baselines/ppo1/run_atari.py	/^    def policy_fn(name, ob_space, ac_space): #pylint: disable=W0613$/;"	f	function:train
+policy_fn	baselines/baselines/ppo1/run_humanoid.py	/^    def policy_fn(name, ob_space, ac_space):$/;"	f	function:train
+policy_fn	baselines/baselines/ppo1/run_mujoco.py	/^    def policy_fn(name, ob_space, ac_space):$/;"	f	function:train
+policy_fn	baselines/baselines/ppo1/run_robotics.py	/^    def policy_fn(name, ob_space, ac_space):$/;"	f	function:train
+predict_next_state_reward	ucb_rl2_meta/model.py	/^    def predict_next_state_reward(self, inputs, rnn_hxs, masks):$/;"	m	class:ModelBasedPolicy
+prepare_params	baselines/baselines/her/experiment/config.py	/^def prepare_params(kwargs):$/;"	f
+pretty_eta	baselines/baselines/common/misc_util.py	/^def pretty_eta(seconds_left):$/;"	f
+print_cmd	baselines/baselines/common/console_util.py	/^def print_cmd(cmd, dry=False):$/;"	f
+print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:ColorJitter
+print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:Crop
+print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:Cutout
+print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:CutoutColor
+print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:Flip
+print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:Grayscale
+print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:RandomConv
+print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:Rotate
+process	baselines/baselines/common/vec_env/vec_env.py	/^    def process(self, obs):$/;"	m	class:VecEnvObservationWrapper
+process	baselines/baselines/common/vec_env/vec_remove_dict_obs.py	/^    def process(self, obs):$/;"	m	class:VecExtractDictObs
+profile	baselines/baselines/logger.py	/^def profile(n):$/;"	f
+profile_kv	baselines/baselines/logger.py	/^def profile_kv(scopename):$/;"	f
+profile_tf_runningmeanstd	baselines/baselines/common/running_mean_std.py	/^def profile_tf_runningmeanstd():$/;"	f
+put	baselines/baselines/acer/buffer.py	/^    def put(self, enc_obs, actions, rewards, mus, dones, masks):$/;"	m	class:Buffer
+pybullet_envs	baselines/baselines/run.py	/^    pybullet_envs = None$/;"	v
+q_explained_variance	baselines/baselines/a2c/utils.py	/^def q_explained_variance(qpred, q):$/;"	f
+q_func	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            q_func=model,$/;"	v
+q_func_builder	baselines/baselines/deepq/models.py	/^    def q_func_builder(input_placeholder, num_actions, scope, reuse=False):$/;"	f	function:build_q_func
+q_retrace	baselines/baselines/acer/acer.py	/^def q_retrace(R, D, q_i, v, rho_i, nenvs, nsteps, gamma):$/;"	f
+rank	baselines/baselines/her/her.py	/^        rank = MPI.COMM_WORLD.Get_rank()$/;"	v
+rank_seed	baselines/baselines/her/her.py	/^    rank_seed = seed + 1000000 * rank if seed is not None else None$/;"	v
+read_csv	baselines/baselines/logger.py	/^def read_csv(fname):$/;"	f
+read_json	baselines/baselines/logger.py	/^def read_json(fname):$/;"	f
+read_tb	baselines/baselines/logger.py	/^def read_tb(path):$/;"	f
+reason	baselines/baselines/common/tests/test_doc_examples.py	/^    reason='error loading mujoco - either mujoco \/ mujoco key not present, or LD_LIBRARY_PATH is not pointing to mujoco library'$/;"	v
+recompute_stats	baselines/baselines/her/normalizer.py	/^    def recompute_stats(self):$/;"	m	class:IdentityNormalizer
+recompute_stats	baselines/baselines/her/normalizer.py	/^    def recompute_stats(self):$/;"	m	class:Normalizer
+record_tabular	baselines/baselines/logger.py	/^record_tabular = logkv$/;"	v
+recurrent	baselines/baselines/gail/mlp_policy.py	/^    recurrent = False$/;"	v	class:MlpPolicy
+recurrent	baselines/baselines/ppo1/cnn_policy.py	/^    recurrent = False$/;"	v	class:CnnPolicy
+recurrent	baselines/baselines/ppo1/mlp_policy.py	/^    recurrent = False$/;"	v	class:MlpPolicy
+recurrent_generator	ucb_rl2_meta/storage.py	/^    def recurrent_generator(self, advantages, num_mini_batch):$/;"	m	class:BiggerRolloutStorage
+recurrent_generator	ucb_rl2_meta/storage.py	/^    def recurrent_generator(self, advantages, num_mini_batch):$/;"	m	class:RolloutStorage
+recurrent_hidden_state_size	ucb_rl2_meta/model.py	/^    def recurrent_hidden_state_size(self):$/;"	m	class:NNBase
+recurrent_hidden_state_size	ucb_rl2_meta/model.py	/^    def recurrent_hidden_state_size(self):$/;"	m	class:Policy
+red	baselines/baselines/common/console_util.py	/^    red=31,$/;"	v
+reduce	baselines/baselines/common/segment_tree.py	/^    def reduce(self, start=0, end=None):$/;"	m	class:SegmentTree
+reduce_std	baselines/baselines/ddpg/ddpg_learner.py	/^def reduce_std(x, axis=None, keepdims=False):$/;"	f
+reduce_var	baselines/baselines/ddpg/ddpg_learner.py	/^def reduce_var(x, axis=None, keepdims=False):$/;"	f
+register	baselines/baselines/common/models.py	/^def register(name):$/;"	f
+register_benchmark	baselines/baselines/bench/benchmarks.py	/^def register_benchmark(benchmark):$/;"	f
+regression_analysis	baselines/baselines/common/plot_util.py	/^def regression_analysis(df):$/;"	f
+relatively_safe_pickle_dump	baselines/baselines/common/misc_util.py	/^def relatively_safe_pickle_dump(obj, path, compression=False):$/;"	f
+removeNone	baselines/baselines/acktr/kfac.py	/^            def removeNone(tensor_list):$/;"	f	function:KfacOptimizer.computeStatsEigen
+remove_version_re	baselines/baselines/bench/benchmarks.py	/^remove_version_re = re.compile(r'-v\\d+$')$/;"	v
+render	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def render(self, mode='human'):$/;"	m	class:DummyVecEnv
+render	baselines/baselines/common/vec_env/test_vec_env.py	/^    def render(self, mode=None):$/;"	m	class:SimpleEnv
+render	baselines/baselines/common/vec_env/vec_env.py	/^    def render(self, mode='human'):$/;"	m	class:VecEnv
+render	baselines/baselines/common/vec_env/vec_env.py	/^    def render(self, mode='human'):$/;"	m	class:VecEnvWrapper
+replay_buffer	baselines/baselines/deepq/experiments/custom_cartpole.py	/^        replay_buffer = ReplayBuffer(50000)$/;"	v
+replay_strategy	baselines/baselines/her/experiment/plot.py	/^    replay_strategy = params['replay_strategy']$/;"	v
+resample	baselines/baselines/common/plot_util.py	/^        resample = resample or default_samples$/;"	v
+reset	baselines/baselines/bench/monitor.py	/^    def reset(self, **kwargs):$/;"	m	class:Monitor
+reset	baselines/baselines/common/atari_wrappers.py	/^    def reset(self):$/;"	m	class:FrameStack
+reset	baselines/baselines/common/atari_wrappers.py	/^    def reset(self, **kwargs):$/;"	m	class:EpisodicLifeEnv
+reset	baselines/baselines/common/atari_wrappers.py	/^    def reset(self, **kwargs):$/;"	m	class:FireResetEnv
+reset	baselines/baselines/common/atari_wrappers.py	/^    def reset(self, **kwargs):$/;"	m	class:MaxAndSkipEnv
+reset	baselines/baselines/common/atari_wrappers.py	/^    def reset(self, **kwargs):$/;"	m	class:NoopResetEnv
+reset	baselines/baselines/common/retro_wrappers.py	/^    def reset(self):$/;"	m	class:AppendTimeout
+reset	baselines/baselines/common/retro_wrappers.py	/^    def reset(self):$/;"	m	class:MovieRecord
+reset	baselines/baselines/common/retro_wrappers.py	/^    def reset(self):$/;"	m	class:PartialFrameStack
+reset	baselines/baselines/common/retro_wrappers.py	/^    def reset(self):$/;"	m	class:StartDoingRandomActionsWrapper
+reset	baselines/baselines/common/retro_wrappers.py	/^    def reset(self, **kwargs): # pylint: disable=E0202$/;"	m	class:AllowBacktracking
+reset	baselines/baselines/common/retro_wrappers.py	/^    def reset(self, **kwargs):$/;"	m	class:StochasticFrameSkip
+reset	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^    def reset(self):$/;"	m	class:FixedSequenceEnv
+reset	baselines/baselines/common/tests/envs/identity_env.py	/^    def reset(self):$/;"	m	class:IdentityEnv
+reset	baselines/baselines/common/tests/envs/mnist_env.py	/^    def reset(self):$/;"	m	class:MnistEnv
+reset	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def reset(self):$/;"	m	class:DummyVecEnv
+reset	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def reset(self):$/;"	m	class:ShmemVecEnv
+reset	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def reset(self):$/;"	m	class:SubprocVecEnv
+reset	baselines/baselines/common/vec_env/test_vec_env.py	/^    def reset(self):$/;"	m	class:SimpleEnv
+reset	baselines/baselines/common/vec_env/vec_env.py	/^    def reset(self):$/;"	m	class:VecEnv
+reset	baselines/baselines/common/vec_env/vec_env.py	/^    def reset(self):$/;"	m	class:VecEnvObservationWrapper
+reset	baselines/baselines/common/vec_env/vec_env.py	/^    def reset(self):$/;"	m	class:VecEnvWrapper
+reset	baselines/baselines/common/vec_env/vec_frame_stack.py	/^    def reset(self):$/;"	m	class:VecFrameStack
+reset	baselines/baselines/common/vec_env/vec_monitor.py	/^    def reset(self):$/;"	m	class:VecMonitor
+reset	baselines/baselines/common/vec_env/vec_normalize.py	/^    def reset(self):$/;"	m	class:VecNormalize
+reset	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def reset(self):$/;"	m	class:VecVideoRecorder
+reset	baselines/baselines/common/wrappers.py	/^    def reset(self, **kwargs):$/;"	m	class:ClipActionsWrapper
+reset	baselines/baselines/common/wrappers.py	/^    def reset(self, **kwargs):$/;"	m	class:TimeLimit
+reset	baselines/baselines/ddpg/ddpg_learner.py	/^    def reset(self):$/;"	m	class:DDPG
+reset	baselines/baselines/ddpg/noise.py	/^    def reset(self):$/;"	m	class:ActionNoise
+reset	baselines/baselines/ddpg/noise.py	/^    def reset(self):$/;"	m	class:OrnsteinUhlenbeckActionNoise
+reset	baselines/baselines/logger.py	/^def reset():$/;"	f
+reset	ucb_rl2_meta/envs.py	/^    def reset(self):$/;"	m	class:VecPyTorchProcgen
+reset_all_rollouts	baselines/baselines/her/rollout.py	/^    def reset_all_rollouts(self):$/;"	m	class:RolloutWorker
+reset_state	baselines/baselines/bench/monitor.py	/^    def reset_state(self):$/;"	m	class:Monitor
+reshape_for_broadcasting	baselines/baselines/her/util.py	/^def reshape_for_broadcasting(source, target):$/;"	f
+residual_block	baselines/baselines/common/models.py	/^    def residual_block(inputs):$/;"	f	function:build_impala_cnn
+results	baselines/baselines/her/experiment/plot.py	/^    results = load_results(os.path.join(curr_path, 'progress.csv'))$/;"	v
+retro	baselines/baselines/deepq/defaults.py	/^def retro():$/;"	f
+retro	baselines/baselines/ppo2/defaults.py	/^def retro():$/;"	f
+reward	baselines/baselines/common/atari_wrappers.py	/^    def reward(self, reward):$/;"	m	class:ClipRewardEnv
+reward	baselines/baselines/common/retro_wrappers.py	/^    def reward(self, reward):$/;"	m	class:RewardScaler
+reward	baselines/baselines/ppo1/run_humanoid.py	/^    def reward(self, r):$/;"	m	class:RewScale
+reward_fun	baselines/baselines/her/experiment/config.py	/^    def reward_fun(ag_2, g, info):  # vectorized$/;"	f	function:configure_her
+reward_per_episode_test	baselines/baselines/common/tests/util.py	/^def reward_per_episode_test(env_fn, learn_fn, min_avg_reward, n_trials=N_EPISODES):$/;"	f
+rgb2hsv	data_augs.py	/^def rgb2hsv(rgb, eps=1e-8):$/;"	f
+rnn_list	baselines/baselines/common/tests/test_fixed_sequence.py	/^rnn_list = ['lstm']$/;"	v
+roboschool	baselines/baselines/run.py	/^    roboschool = None$/;"	v
+robotics_arg_parser	baselines/baselines/common/cmd_util.py	/^def robotics_arg_parser():$/;"	f
+rolling_window	baselines/baselines/results_plotter.py	/^def rolling_window(a, window):$/;"	f
+rollout	baselines/baselines/common/tests/util.py	/^def rollout(env, model, n_trials):$/;"	f
+rollout_params	baselines/baselines/her/her.py	/^    rollout_params = {$/;"	v
+rollout_worker	baselines/baselines/her/her.py	/^    rollout_worker = RolloutWorker(env, policy, dims, logger, monitor=True, **rollout_params)$/;"	v
+run	baselines/baselines/a2c/runner.py	/^    def run(self):$/;"	m	class:Runner
+run	baselines/baselines/acer/runner.py	/^    def run(self):$/;"	m	class:Runner
+run	baselines/baselines/common/runners.py	/^    def run(self):$/;"	m	class:AbstractEnvRunner
+run	baselines/baselines/ppo2/runner.py	/^    def run(self):$/;"	m	class:Runner
+runner	baselines/baselines/gail/run_mujoco.py	/^def runner(env, policy_func, load_model_path, timesteps_per_batch, number_trajs,$/;"	f
+safemean	baselines/baselines/ppo2/ppo2.py	/^def safemean(xs):$/;"	f
+sample	baselines/baselines/a2c/utils.py	/^def sample(logits):$/;"	f
+sample	baselines/baselines/common/distributions.py	/^    def sample(self):$/;"	m	class:BernoulliPd
+sample	baselines/baselines/common/distributions.py	/^    def sample(self):$/;"	m	class:CategoricalPd
+sample	baselines/baselines/common/distributions.py	/^    def sample(self):$/;"	m	class:DiagGaussianPd
+sample	baselines/baselines/common/distributions.py	/^    def sample(self):$/;"	m	class:MultiCategoricalPd
+sample	baselines/baselines/common/distributions.py	/^    def sample(self):$/;"	m	class:Pd
+sample	baselines/baselines/ddpg/memory.py	/^    def sample(self, batch_size):$/;"	m	class:Memory
+sample	baselines/baselines/deepq/replay_buffer.py	/^    def sample(self, batch_size):$/;"	m	class:ReplayBuffer
+sample	baselines/baselines/deepq/replay_buffer.py	/^    def sample(self, batch_size, beta):$/;"	m	class:PrioritizedReplayBuffer
+sample	baselines/baselines/her/replay_buffer.py	/^    def sample(self, batch_size):$/;"	m	class:ReplayBuffer
+sample	ucb_rl2_meta/distributions.py	/^    def sample(self):$/;"	m	class:FixedCategorical
+sample_batch	baselines/baselines/her/ddpg.py	/^    def sample_batch(self):$/;"	m	class:DDPG
+sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:BernoulliPdType
+sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:CategoricalPdType
+sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:DiagGaussianPdType
+sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:MultiCategoricalPdType
+sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:PdType
+sample_placeholder	baselines/baselines/common/distributions.py	/^    def sample_placeholder(self, prepend_shape, name=None):$/;"	m	class:PdType
+sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:BernoulliPdType
+sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:CategoricalPdType
+sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:DiagGaussianPdType
+sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:MultiCategoricalPdType
+sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:PdType
+save	baselines/baselines/common/policies.py	/^    def save(self, save_path):$/;"	m	class:PolicyWithValue
+save	baselines/baselines/deepq/deepq.py	/^    def save(self, path):$/;"	m	class:ActWrapper
+save	baselines/baselines/her/ddpg.py	/^    def save(self, save_path):$/;"	m	class:DDPG
+save_act	baselines/baselines/deepq/deepq.py	/^    def save_act(self, path=None):$/;"	m	class:ActWrapper
+save_policy	baselines/baselines/her/rollout.py	/^    def save_policy(self, path):$/;"	m	class:RolloutWorker
+save_state	baselines/baselines/common/tf_util.py	/^def save_state(fname, sess=None):$/;"	f
+save_variables	baselines/baselines/common/tf_util.py	/^def save_variables(save_path, variables=None, sess=None):$/;"	f
+schedules	baselines/baselines/a2c/utils.py	/^schedules = {$/;"	v
+scope_name	baselines/baselines/deepq/build_graph.py	/^def scope_name():$/;"	f
+scope_vars	baselines/baselines/deepq/build_graph.py	/^def scope_vars(scope, trainable_only=False):$/;"	f
+scoped_configure	baselines/baselines/logger.py	/^def scoped_configure(dir=None, format_strs=None, comm=None):$/;"	f
+searchFactors	baselines/baselines/acktr/kfac.py	/^        def searchFactors(gradient, graph):$/;"	f	function:KfacOptimizer.getFactors
+seed	baselines/baselines/common/retro_wrappers.py	/^    def seed(self, s):$/;"	m	class:StochasticFrameSkip
+seed	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^    def seed(self, seed=None):$/;"	m	class:FixedSequenceEnv
+seed	baselines/baselines/common/tests/envs/identity_env.py	/^    def seed(self, seed=None):$/;"	m	class:IdentityEnv
+seed	baselines/baselines/common/tests/envs/mnist_env.py	/^    def seed(self, seed=None):$/;"	m	class:MnistEnv
+seed	baselines/baselines/common/tests/test_cartpole.py	/^    seed=0,$/;"	v
+seed	baselines/baselines/common/tests/test_fetchreach.py	/^    seed=0,$/;"	v
+seed	baselines/baselines/common/tests/test_fixed_sequence.py	/^    seed=0,$/;"	v
+seed	baselines/baselines/common/tests/test_identity.py	/^    seed=0,$/;"	v
+seeded_env_fn	baselines/baselines/common/tests/util.py	/^    def seeded_env_fn():$/;"	f	function:simple_test
+select_ucb_aug	ucb_rl2_meta/algo/ucb_drac.py	/^    def select_ucb_aug(self):$/;"	m	class:UCBDrAC
+seq_to_batch	baselines/baselines/a2c/utils.py	/^def seq_to_batch(h, flat = False):$/;"	f
+set_comm	baselines/baselines/logger.py	/^    def set_comm(self, comm):$/;"	m	class:Logger
+set_comm	baselines/baselines/logger.py	/^def set_comm(comm):$/;"	f
+set_global_seeds	baselines/baselines/common/misc_util.py	/^def set_global_seeds(i):$/;"	f
+set_level	baselines/baselines/logger.py	/^    def set_level(self, level):$/;"	m	class:Logger
+set_level	baselines/baselines/logger.py	/^def set_level(level):$/;"	f
+setup_actor_optimizer	baselines/baselines/ddpg/ddpg_learner.py	/^    def setup_actor_optimizer(self):$/;"	m	class:DDPG
+setup_critic_optimizer	baselines/baselines/ddpg/ddpg_learner.py	/^    def setup_critic_optimizer(self):$/;"	m	class:DDPG
+setup_mpi_gpus	baselines/baselines/common/mpi_util.py	/^def setup_mpi_gpus():$/;"	f
+setup_param_noise	baselines/baselines/ddpg/ddpg_learner.py	/^    def setup_param_noise(self, normalized_obs0):$/;"	m	class:DDPG
+setup_popart	baselines/baselines/ddpg/ddpg_learner.py	/^    def setup_popart(self):$/;"	m	class:DDPG
+setup_stats	baselines/baselines/ddpg/ddpg_learner.py	/^    def setup_stats(self):$/;"	m	class:DDPG
+setup_target_network_updates	baselines/baselines/ddpg/ddpg_learner.py	/^    def setup_target_network_updates(self):$/;"	m	class:DDPG
+sf01	baselines/baselines/ppo2/runner.py	/^def sf01(arr):$/;"	f
+shape	baselines/baselines/common/distributions.py	/^    def shape(self):$/;"	m	class:Pd
+shape_el	baselines/baselines/common/distributions.py	/^def shape_el(v, i):$/;"	f
+share_file	baselines/baselines/common/mpi_util.py	/^def share_file(comm, path):$/;"	f
+shuffle	baselines/baselines/common/dataset.py	/^    def shuffle(self):$/;"	m	class:Dataset
+simple_goal_subtract	baselines/baselines/her/experiment/config.py	/^def simple_goal_subtract(a, b):$/;"	f
+simple_test	baselines/baselines/common/tests/util.py	/^def simple_test(env_fn, learn_fn, min_reward_fraction, n_trials=N_TRIALS):$/;"	f
+single_threaded_session	baselines/baselines/common/tf_util.py	/^def single_threaded_session():$/;"	f
+sk2r	baselines/baselines/common/plot_util.py	/^    sk2r = defaultdict(list) # splitkey2results$/;"	v
+smoketest	baselines/baselines/common/tests/util.py	/^def smoketest(argstr, **kwargs):$/;"	f
+smooth	baselines/baselines/common/plot_util.py	/^def smooth(y, radius, mode='two_sided', valid_only=False):$/;"	f
+smooth_reward_curve	baselines/baselines/her/experiment/plot.py	/^def smooth_reward_curve(x, y):$/;"	f
+some_random_steps	baselines/baselines/common/retro_wrappers.py	/^    def some_random_steps(self):$/;"	m	class:StartDoingRandomActionsWrapper
+split_by_task	baselines/baselines/results_plotter.py	/^def split_by_task(taskpath):$/;"	f
+splitkey	baselines/baselines/common/plot_util.py	/^        splitkey = split_fn(result)$/;"	v
+sresults	baselines/baselines/common/plot_util.py	/^        sresults = sk2r[sk]$/;"	v
+stage_batch	baselines/baselines/her/ddpg.py	/^    def stage_batch(self, batch=None):$/;"	m	class:DDPG
+start_video_recorder	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def start_video_recorder(self):$/;"	m	class:VecVideoRecorder
+stats	baselines/baselines/gail/statistics.py	/^class stats():$/;"	c
+step	baselines/baselines/acer/policies.py	/^        def step(ob, *args, **kwargs):$/;"	f	function:AcerCnnPolicy.__init__
+step	baselines/baselines/acer/policies.py	/^        def step(ob, state, mask, *args, **kwargs):$/;"	f	function:AcerLstmPolicy.__init__
+step	baselines/baselines/bench/monitor.py	/^    def step(self, action):$/;"	m	class:Monitor
+step	baselines/baselines/common/atari_wrappers.py	/^    def step(self, ac):$/;"	m	class:FireResetEnv
+step	baselines/baselines/common/atari_wrappers.py	/^    def step(self, ac):$/;"	m	class:NoopResetEnv
+step	baselines/baselines/common/atari_wrappers.py	/^    def step(self, action):$/;"	m	class:EpisodicLifeEnv
+step	baselines/baselines/common/atari_wrappers.py	/^    def step(self, action):$/;"	m	class:FrameStack
+step	baselines/baselines/common/atari_wrappers.py	/^    def step(self, action):$/;"	m	class:MaxAndSkipEnv
+step	baselines/baselines/common/policies.py	/^    def step(self, observation, **extra_feed):$/;"	m	class:PolicyWithValue
+step	baselines/baselines/common/retro_wrappers.py	/^    def step(self, a):$/;"	m	class:StartDoingRandomActionsWrapper
+step	baselines/baselines/common/retro_wrappers.py	/^    def step(self, ac):$/;"	m	class:AppendTimeout
+step	baselines/baselines/common/retro_wrappers.py	/^    def step(self, ac):$/;"	m	class:PartialFrameStack
+step	baselines/baselines/common/retro_wrappers.py	/^    def step(self, ac):$/;"	m	class:StochasticFrameSkip
+step	baselines/baselines/common/retro_wrappers.py	/^    def step(self, action): # pylint: disable=E0202$/;"	m	class:AllowBacktracking
+step	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^    def step(self, actions):$/;"	m	class:FixedSequenceEnv
+step	baselines/baselines/common/tests/envs/identity_env.py	/^    def step(self, actions):$/;"	m	class:IdentityEnv
+step	baselines/baselines/common/tests/envs/mnist_env.py	/^    def step(self, actions):$/;"	m	class:MnistEnv
+step	baselines/baselines/common/vec_env/test_vec_env.py	/^    def step(self, action):$/;"	m	class:SimpleEnv
+step	baselines/baselines/common/vec_env/vec_env.py	/^    def step(self, actions):$/;"	m	class:VecEnv
+step	baselines/baselines/common/wrappers.py	/^    def step(self, ac):$/;"	m	class:TimeLimit
+step	baselines/baselines/common/wrappers.py	/^    def step(self, action):$/;"	m	class:ClipActionsWrapper
+step	baselines/baselines/ddpg/ddpg_learner.py	/^    def step(self, obs, apply_noise=True, compute_Q=True):$/;"	m	class:DDPG
+step	baselines/baselines/deepq/deepq.py	/^    def step(self, observation, **kwargs):$/;"	m	class:ActWrapper
+step	baselines/baselines/her/ddpg.py	/^    def step(self, obs):$/;"	m	class:DDPG
+step_async	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def step_async(self, actions):$/;"	m	class:DummyVecEnv
+step_async	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def step_async(self, actions):$/;"	m	class:ShmemVecEnv
+step_async	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def step_async(self, actions):$/;"	m	class:SubprocVecEnv
+step_async	baselines/baselines/common/vec_env/vec_env.py	/^    def step_async(self, actions):$/;"	m	class:VecEnv
+step_async	baselines/baselines/common/vec_env/vec_env.py	/^    def step_async(self, actions):$/;"	m	class:VecEnvWrapper
+step_async	ucb_rl2_meta/envs.py	/^    def step_async(self, actions):$/;"	m	class:VecPyTorchProcgen
+step_env	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def step_env(env, action):$/;"	f	function:worker
+step_wait	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def step_wait(self):$/;"	m	class:DummyVecEnv
+step_wait	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def step_wait(self):$/;"	m	class:ShmemVecEnv
+step_wait	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def step_wait(self):$/;"	m	class:SubprocVecEnv
+step_wait	baselines/baselines/common/vec_env/vec_env.py	/^    def step_wait(self):$/;"	m	class:VecEnv
+step_wait	baselines/baselines/common/vec_env/vec_env.py	/^    def step_wait(self):$/;"	m	class:VecEnvObservationWrapper
+step_wait	baselines/baselines/common/vec_env/vec_env.py	/^    def step_wait(self):$/;"	m	class:VecEnvWrapper
+step_wait	baselines/baselines/common/vec_env/vec_frame_stack.py	/^    def step_wait(self):$/;"	m	class:VecFrameStack
+step_wait	baselines/baselines/common/vec_env/vec_monitor.py	/^    def step_wait(self):$/;"	m	class:VecMonitor
+step_wait	baselines/baselines/common/vec_env/vec_normalize.py	/^    def step_wait(self):$/;"	m	class:VecNormalize
+step_wait	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def step_wait(self):$/;"	m	class:VecVideoRecorder
+step_wait	ucb_rl2_meta/envs.py	/^    def step_wait(self):$/;"	m	class:VecPyTorchProcgen
+store_args	baselines/baselines/her/util.py	/^def store_args(method):$/;"	f
+store_episode	baselines/baselines/her/ddpg.py	/^    def store_episode(self, episode_batch, update_stats=True):$/;"	m	class:DDPG
+store_episode	baselines/baselines/her/replay_buffer.py	/^    def store_episode(self, episode_batch):$/;"	m	class:ReplayBuffer
+store_transition	baselines/baselines/ddpg/ddpg_learner.py	/^    def store_transition(self, obs0, action, reward, obs1, terminal1):$/;"	m	class:DDPG
+strip	baselines/baselines/acer/acer.py	/^def strip(var, nenvs, nsteps, flat = False):$/;"	f
+subset	baselines/baselines/common/dataset.py	/^    def subset(self, num_elements, deterministic=True):$/;"	m	class:Dataset
+success_rate	baselines/baselines/her/experiment/plot.py	/^    success_rate = np.array(results['test\/success_rate'])$/;"	v
+sum	baselines/baselines/common/segment_tree.py	/^    def sum(self, start=0, end=None):$/;"	m	class:SumSegmentTree
+summary_val	baselines/baselines/logger.py	/^        def summary_val(k, v):$/;"	f	function:TensorBoardOutputFormat.writekvs
+switch	baselines/baselines/common/tf_util.py	/^def switch(condition, then_expression, else_expression):$/;"	f
+symmetric_ema	baselines/baselines/common/plot_util.py	/^def symmetric_ema(xolds, yolds, low=None, high=None, n=512, decay_steps=1., low_counts_threshold=1e-8):$/;"	f
+sync	baselines/baselines/common/mpi_adam.py	/^    def sync(self):$/;"	m	class:MpiAdam
+sync_from_root	baselines/baselines/common/mpi_util.py	/^def sync_from_root(sess, variables, comm=None):$/;"	f
+synchronize	baselines/baselines/her/normalizer.py	/^    def synchronize(self):$/;"	m	class:IdentityNormalizer
+synchronize	baselines/baselines/her/normalizer.py	/^    def synchronize(self, local_sum, local_sumsq, local_count, root=None):$/;"	m	class:Normalizer
+take	baselines/baselines/acer/buffer.py	/^    def take(self, x, idx, envx):$/;"	m	class:Buffer
+test	baselines/baselines/gail/dataset/mujoco_dset.py	/^def test(expert_path, traj_limitation, plot):$/;"	f
+test_MpiAdam	baselines/baselines/common/mpi_adam.py	/^def test_MpiAdam():$/;"	f
+test_cartpole	baselines/baselines/common/tests/test_cartpole.py	/^def test_cartpole(alg):$/;"	f
+test_coexistence	baselines/baselines/common/tests/test_serialization.py	/^def test_coexistence(learn_fn, network_fn):$/;"	f
+test_constant_schedule	baselines/baselines/common/tests/test_schedules.py	/^def test_constant_schedule():$/;"	f
+test_continuous_identity	baselines/baselines/common/tests/test_identity.py	/^def test_continuous_identity(alg):$/;"	f
+test_discount_with_boundaries	baselines/baselines/common/math_util.py	/^def test_discount_with_boundaries():$/;"	f
+test_discrete_delay1	baselines/baselines/common/tests/envs/identity_env_test.py	/^def test_discrete_delay1():$/;"	f
+test_discrete_identity	baselines/baselines/common/tests/test_identity.py	/^def test_discrete_identity(alg):$/;"	f
+test_discrete_nodelay	baselines/baselines/common/tests/envs/identity_env_test.py	/^def test_discrete_nodelay():$/;"	f
+test_dist	baselines/baselines/common/mpi_running_mean_std.py	/^def test_dist():$/;"	f
+test_env_after_learn	baselines/baselines/common/tests/test_env_after_learn.py	/^def test_env_after_learn(algo):$/;"	f
+test_fetchreach	baselines/baselines/common/tests/test_fetchreach.py	/^def test_fetchreach(alg):$/;"	f
+test_fixed_sequence	baselines/baselines/common/tests/test_fixed_sequence.py	/^def test_fixed_sequence(alg, rnn):$/;"	f
+test_function	baselines/baselines/common/tests/test_tf_util.py	/^def test_function():$/;"	f
+test_lstm_example	baselines/baselines/common/tests/test_doc_examples.py	/^def test_lstm_example():$/;"	f
+test_max_interval_tree	baselines/baselines/common/tests/test_segment_tree.py	/^def test_max_interval_tree():$/;"	f
+test_microbatches	baselines/baselines/ppo2/test_microbatches.py	/^def test_microbatches():$/;"	f
+test_mnist	baselines/baselines/common/tests/test_mnist.py	/^def test_mnist(alg):$/;"	f
+test_mode	baselines/baselines/common/tests/envs/mnist_env.py	/^    def test_mode(self):$/;"	m	class:MnistEnv
+test_monitor	baselines/baselines/bench/test_monitor.py	/^def test_monitor():$/;"	f
+test_mpi_weighted_mean	baselines/baselines/common/test_mpi_util.py	/^def test_mpi_weighted_mean():$/;"	f
+test_mpi_with_subprocvecenv	baselines/baselines/common/vec_env/test_vec_env.py	/^def test_mpi_with_subprocvecenv():$/;"	f
+test_multidiscrete_identity	baselines/baselines/common/tests/test_identity.py	/^def test_multidiscrete_identity(alg):$/;"	f
+test_multikwargs	baselines/baselines/common/tests/test_tf_util.py	/^def test_multikwargs():$/;"	f
+test_noise_adaptive	baselines/baselines/ddpg/test_smoke.py	/^def test_noise_adaptive():$/;"	f
+test_noise_normal	baselines/baselines/ddpg/test_smoke.py	/^def test_noise_normal():$/;"	f
+test_noise_ou	baselines/baselines/ddpg/test_smoke.py	/^def test_noise_ou():$/;"	f
+test_nonfreeze	baselines/baselines/common/mpi_adam_optimizer.py	/^def test_nonfreeze():$/;"	f
+test_piecewise_schedule	baselines/baselines/common/tests/test_schedules.py	/^def test_piecewise_schedule():$/;"	f
+test_plot_util	baselines/baselines/common/tests/test_plot_util.py	/^def test_plot_util():$/;"	f
+test_popart	baselines/baselines/ddpg/test_smoke.py	/^def test_popart():$/;"	f
+test_prefixsum_idx	baselines/baselines/common/tests/test_segment_tree.py	/^def test_prefixsum_idx():$/;"	f
+test_prefixsum_idx2	baselines/baselines/common/tests/test_segment_tree.py	/^def test_prefixsum_idx2():$/;"	f
+test_probtypes	baselines/baselines/common/distributions.py	/^def test_probtypes():$/;"	f
+test_runningmeanstd	baselines/baselines/common/mpi_moments.py	/^def test_runningmeanstd():$/;"	f
+test_runningmeanstd	baselines/baselines/common/mpi_running_mean_std.py	/^def test_runningmeanstd():$/;"	f
+test_runningmeanstd	baselines/baselines/common/running_mean_std.py	/^def test_runningmeanstd():$/;"	f
+test_serialization	baselines/baselines/common/tests/test_serialization.py	/^def test_serialization(learn_fn, network_fn):$/;"	f
+test_smooth	baselines/baselines/common/plot_util.py	/^def test_smooth():$/;"	f
+test_stack_obs	baselines/baselines/acer/buffer.py	/^def test_stack_obs():$/;"	f
+test_sync_sampling	baselines/baselines/common/vec_env/test_vec_env.py	/^def test_sync_sampling(dtype, num_envs_in_series):$/;"	f
+test_sync_sampling_sanity	baselines/baselines/common/vec_env/test_vec_env.py	/^def test_sync_sampling_sanity(dtype, num_envs_in_series):$/;"	f
+test_tf_runningmeanstd	baselines/baselines/common/running_mean_std.py	/^def test_tf_runningmeanstd():$/;"	f
+test_tree_set	baselines/baselines/common/tests/test_segment_tree.py	/^def test_tree_set():$/;"	f
+test_tree_set_overlap	baselines/baselines/common/tests/test_segment_tree.py	/^def test_tree_set_overlap():$/;"	f
+test_vec_env	baselines/baselines/common/vec_env/test_vec_env.py	/^def test_vec_env(klass, dtype):  # pylint: disable=R0914$/;"	f
+test_video_recorder	baselines/baselines/common/vec_env/test_video_recorder.py	/^def test_video_recorder(klass, num_envs, video_length, video_interval):$/;"	f
+tf_pkg	baselines/setup.py	/^        tf_pkg = pkg_resources.get_distribution(tf_pkg_name)$/;"	v
+tf_pkg	baselines/setup.py	/^tf_pkg = None$/;"	v
+thunk	baselines/baselines/common/tests/test_with_mpi.py	/^        def thunk(*args, **kwargs):$/;"	f	function:with_mpi.outer_thunk
+tile_images	baselines/baselines/common/tile_images.py	/^def tile_images(img_nhwc):$/;"	f
+timed	baselines/baselines/common/console_util.py	/^def timed(msg):$/;"	f
+timed	baselines/baselines/gail/trpo_mpi.py	/^    def timed(msg):$/;"	f	function:learn
+timed	baselines/baselines/trpo_mpi/trpo_mpi.py	/^    def timed(msg):$/;"	f	function:learn
+to	ucb_rl2_meta/storage.py	/^    def to(self, device):$/;"	m	class:BiggerRolloutStorage
+to	ucb_rl2_meta/storage.py	/^    def to(self, device):$/;"	m	class:RolloutStorage
+total_timesteps	baselines/baselines/common/tests/test_cartpole.py	/^    total_timesteps=30000,$/;"	v
+total_timesteps	baselines/baselines/common/tests/test_fixed_sequence.py	/^    total_timesteps=50000,$/;"	v
+total_timesteps	baselines/baselines/common/tests/test_identity.py	/^    total_timesteps=30000,$/;"	v
+train	baselines/baselines/a2c/a2c.py	/^        def train(obs, states, rewards, masks, actions, values):$/;"	f	function:Model.__init__
+train	baselines/baselines/acer/acer.py	/^        def train(obs, actions, rewards, dones, mus, states, masks, steps):$/;"	f	function:Model.__init__
+train	baselines/baselines/acktr/acktr.py	/^        def train(obs, states, rewards, masks, actions, values):$/;"	f	function:Model.__init__
+train	baselines/baselines/ddpg/ddpg_learner.py	/^    def train(self):$/;"	m	class:DDPG
+train	baselines/baselines/gail/run_mujoco.py	/^def train(env, seed, policy_fn, reward_giver, dataset, algo,$/;"	f
+train	baselines/baselines/her/ddpg.py	/^    def train(self, stage=True):$/;"	m	class:DDPG
+train	baselines/baselines/her/her.py	/^def train(*, policy, rollout_worker, evaluator,$/;"	f
+train	baselines/baselines/ppo1/run_atari.py	/^def train(env_id, num_timesteps, seed):$/;"	f
+train	baselines/baselines/ppo1/run_humanoid.py	/^def train(num_timesteps, seed, model_path=None):$/;"	f
+train	baselines/baselines/ppo1/run_mujoco.py	/^def train(env_id, num_timesteps, seed):$/;"	f
+train	baselines/baselines/ppo1/run_robotics.py	/^def train(env_id, num_timesteps, seed):$/;"	f
+train	baselines/baselines/ppo2/microbatched_model.py	/^    def train(self, lr, cliprange, obs, returns, masks, actions, values, neglogpacs, states=None):$/;"	m	class:MicrobatchedModel
+train	baselines/baselines/ppo2/model.py	/^    def train(self, lr, cliprange, obs, returns, masks, actions, values, neglogpacs, states=None):$/;"	m	class:Model
+train	baselines/baselines/run.py	/^def train(args, extra_args):$/;"	f
+train	train.py	/^def train(args):$/;"	f
+train_iter	ucb_rl2_meta/algo/meta_drac.py	/^    def train_iter(self, rollouts):$/;"	m	class:MetaDrAC
+train_mode	baselines/baselines/common/tests/envs/mnist_env.py	/^    def train_mode(self):$/;"	m	class:MnistEnv
+trainable_vars	baselines/baselines/ddpg/models.py	/^    def trainable_vars(self):$/;"	m	class:Model
+traj_1_generator	baselines/baselines/gail/run_mujoco.py	/^def traj_1_generator(pi, env, horizon, stochastic):$/;"	f
+traj_segment_generator	baselines/baselines/gail/trpo_mpi.py	/^def traj_segment_generator(pi, env, reward_giver, horizon, stochastic):$/;"	f
+traj_segment_generator	baselines/baselines/ppo1/pposgd_simple.py	/^def traj_segment_generator(pi, env, horizon, stochastic):$/;"	f
+traj_segment_generator	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def traj_segment_generator(pi, env, horizon, stochastic):$/;"	f
+transform	data_augs.py	/^    def transform(self, inputs):$/;"	m	class:ColorJitter
+transitions_in_episode_batch	baselines/baselines/her/util.py	/^def transitions_in_episode_batch(episode_batch):$/;"	f
+ts2xy	baselines/baselines/results_plotter.py	/^def ts2xy(ts, xaxis, yaxis):$/;"	f
+type	ucb_rl2_meta/arguments.py	/^    type=float, $/;"	v
+type	ucb_rl2_meta/arguments.py	/^    type=float,$/;"	v
+type	ucb_rl2_meta/arguments.py	/^    type=int, $/;"	v
+type	ucb_rl2_meta/arguments.py	/^    type=int,$/;"	v
+type	ucb_rl2_meta/arguments.py	/^    type=str,$/;"	v
+unflatten_vector	baselines/baselines/common/math_util.py	/^def unflatten_vector(vec, shapes):$/;"	f
+unwrapped	baselines/baselines/common/vec_env/vec_env.py	/^    def unwrapped(self):$/;"	m	class:VecEnv
+update	baselines/baselines/bench/monitor.py	/^    def update(self, ob, rew, done, info):$/;"	m	class:Monitor
+update	baselines/baselines/common/misc_util.py	/^    def update(self, new_val):$/;"	m	class:RunningAvg
+update	baselines/baselines/common/mpi_adam.py	/^    def update(self, localg, stepsize):$/;"	m	class:MpiAdam
+update	baselines/baselines/common/mpi_running_mean_std.py	/^    def update(self, x):$/;"	m	class:RunningMeanStd
+update	baselines/baselines/common/running_mean_std.py	/^    def update(self, x):$/;"	m	class:RunningMeanStd
+update	baselines/baselines/common/running_mean_std.py	/^    def update(self, x):$/;"	m	class:TfRunningMeanStd
+update	baselines/baselines/her/normalizer.py	/^    def update(self, v):$/;"	m	class:Normalizer
+update	baselines/baselines/her/normalizer.py	/^    def update(self, x):$/;"	m	class:IdentityNormalizer
+update	ucb_rl2_meta/algo/conv_drac.py	/^    def update(self, rollouts):$/;"	m	class:ConvDrAC
+update	ucb_rl2_meta/algo/drac.py	/^    def update(self, rollouts):$/;"	m	class:DrAC
+update	ucb_rl2_meta/algo/meta_drac.py	/^    def update(self, rollouts):$/;"	m	class:MetaDrAC
+update	ucb_rl2_meta/algo/rl2_drac.py	/^    def update(self, rollouts):$/;"	m	class:RL2DrAC
+update	ucb_rl2_meta/algo/ucb_drac.py	/^    def update(self, rollouts):$/;"	m	class:UCBDrAC
+updateAccumStats	baselines/baselines/acktr/kfac.py	/^        def updateAccumStats():$/;"	f	function:KfacOptimizer.apply_stats
+updateOptimOp	baselines/baselines/acktr/kfac.py	/^                        def updateOptimOp():$/;"	f	function:KfacOptimizer.apply_gradients_kfac.dequeue_op.no_op_wrapper.optimOp
+updateRunningAvgStats	baselines/baselines/acktr/kfac.py	/^        def updateRunningAvgStats(statsUpdates, fac_iter=1):$/;"	f	function:KfacOptimizer.apply_stats
+update_from_moments	baselines/baselines/common/running_mean_std.py	/^    def update_from_moments(self, batch_mean, batch_var, batch_count):$/;"	m	class:RunningMeanStd
+update_mean_var_count_from_moments	baselines/baselines/common/running_mean_std.py	/^def update_mean_var_count_from_moments(mean, var, count, batch_mean, batch_var, batch_count):$/;"	f
+update_priorities	baselines/baselines/deepq/replay_buffer.py	/^    def update_priorities(self, idxes, priorities):$/;"	m	class:PrioritizedReplayBuffer
+update_scale	baselines/baselines/deepq/build_graph.py	/^        def update_scale():$/;"	f	function:build_act_with_param_noise
+update_target_net	baselines/baselines/ddpg/ddpg_learner.py	/^    def update_target_net(self):$/;"	m	class:DDPG
+update_target_net	baselines/baselines/her/ddpg.py	/^    def update_target_net(self):$/;"	m	class:DDPG
+update_ucb_values	ucb_rl2_meta/algo/ucb_drac.py	/^    def update_ucb_values(self, rollouts):$/;"	m	class:UCBDrAC
+url	baselines/setup.py	/^      url='https:\/\/github.com\/openai\/baselines',$/;"	v
+validate_probtype	baselines/baselines/common/distributions.py	/^def validate_probtype(probtype, pdparam):$/;"	f
+value	baselines/baselines/a2c/utils.py	/^    def value(self):$/;"	m	class:Scheduler
+value	baselines/baselines/common/policies.py	/^    def value(self, ob, *args, **kwargs):$/;"	m	class:PolicyWithValue
+value	baselines/baselines/common/schedules.py	/^    def value(self, t):$/;"	m	class:ConstantSchedule
+value	baselines/baselines/common/schedules.py	/^    def value(self, t):$/;"	m	class:LinearSchedule
+value	baselines/baselines/common/schedules.py	/^    def value(self, t):$/;"	m	class:PiecewiseSchedule
+value	baselines/baselines/common/schedules.py	/^    def value(self, t):$/;"	m	class:Schedule
+value_steps	baselines/baselines/a2c/utils.py	/^    def value_steps(self, steps):$/;"	m	class:Scheduler
+var_shape	baselines/baselines/common/tf_util.py	/^def var_shape(x):$/;"	f
+vars	baselines/baselines/ddpg/models.py	/^    def vars(self):$/;"	m	class:Model
+version	baselines/setup.py	/^      version='0.1.6')$/;"	v
+viewer	baselines/baselines/common/vec_env/vec_env.py	/^    viewer = None$/;"	v	class:VecEnv
+warmKFACstart	baselines/baselines/acktr/kfac.py	/^        def warmKFACstart():$/;"	f	function:KfacOptimizer.apply_gradients
+warn	baselines/baselines/logger.py	/^def warn(*args):$/;"	f
+white	baselines/baselines/common/console_util.py	/^    white=37,$/;"	v
+window_func	baselines/baselines/results_plotter.py	/^def window_func(x, y, window, func):$/;"	f
+with_mpi	baselines/baselines/common/tests/test_with_mpi.py	/^def with_mpi(nproc=2, timeout=30, skip_if_no_mpi=True):$/;"	f
+worker	baselines/baselines/common/vec_env/subproc_vec_env.py	/^def worker(remote, parent_remote, env_fn_wrappers):$/;"	f
+wrap_atari_dqn	baselines/baselines/deepq/__init__.py	/^def wrap_atari_dqn(env):$/;"	f
+wrap_deepmind	baselines/baselines/common/atari_wrappers.py	/^def wrap_deepmind(env, episode_life=True, clip_rewards=True, frame_stack=False, scale=False):$/;"	f
+wrap_deepmind_retro	baselines/baselines/common/retro_wrappers.py	/^def wrap_deepmind_retro(env, scale=True, frame_stack=4):$/;"	f
+wrapper	baselines/baselines/her/util.py	/^    def wrapper(*positional_args, **keyword_args):$/;"	f	function:store_args
+write_row	baselines/baselines/bench/monitor.py	/^    def write_row(self, epinfo):$/;"	m	class:ResultsWriter
+writekvs	baselines/baselines/logger.py	/^    def writekvs(self, kvs):$/;"	m	class:CSVOutputFormat
+writekvs	baselines/baselines/logger.py	/^    def writekvs(self, kvs):$/;"	m	class:HumanOutputFormat
+writekvs	baselines/baselines/logger.py	/^    def writekvs(self, kvs):$/;"	m	class:JSONOutputFormat
+writekvs	baselines/baselines/logger.py	/^    def writekvs(self, kvs):$/;"	m	class:KVWriter
+writekvs	baselines/baselines/logger.py	/^    def writekvs(self, kvs):$/;"	m	class:TensorBoardOutputFormat
+writeseq	baselines/baselines/logger.py	/^    def writeseq(self, seq):$/;"	m	class:HumanOutputFormat
+writeseq	baselines/baselines/logger.py	/^    def writeseq(self, seq):$/;"	m	class:SeqWriter
+x	baselines/baselines/her/experiment/plot.py	/^    x = epoch$/;"	v
+xys	baselines/baselines/common/plot_util.py	/^                xys = gresults[group]$/;"	v
+y	baselines/baselines/her/experiment/plot.py	/^    y = success_rate$/;"	v
+yellow	baselines/baselines/common/console_util.py	/^    yellow=33,$/;"	v
+ymean	baselines/baselines/common/plot_util.py	/^                ymean = np.mean(ys, axis=0)$/;"	v
+ystd	baselines/baselines/common/plot_util.py	/^                ystd = np.std(ys, axis=0)$/;"	v
+ystderr	baselines/baselines/common/plot_util.py	/^                ystderr = ystd \/ np.sqrt(len(ys))$/;"	v
+zipsame	baselines/baselines/common/misc_util.py	/^def zipsame(*seqs):$/;"	f

@@ -9,7 +9,7 @@ import torch
 
 from ucb_rl2_meta import algo, utils
 from ucb_rl2_meta.model import Policy, AugCNN, ModelBasedPolicy
-from ucb_rl2_meta.storage import RolloutStorage
+from ucb_rl2_meta.storage import RolloutStorage, BiggerRolloutStorage
 from test import evaluate
 
 from baselines import logger
@@ -65,7 +65,7 @@ def train(args):
         base_kwargs={'recurrent': False, 'hidden_size': args.hidden_size})        
     actor_critic.to(device)
 
-    rollouts = RolloutStorage(args.num_steps, args.num_processes,
+    rollouts = BiggerRolloutStorage(args.num_steps, args.num_processes,
                                 envs.observation_space.shape, envs.action_space,
                                 actor_critic.recurrent_hidden_state_size,
                                 aug_type=args.aug_type, split_ratio=args.split_ratio)
@@ -198,6 +198,7 @@ def train(args):
 
     obs = envs.reset()
     rollouts.obs[0].copy_(obs)
+    rollouts.next_obs[0].copy_(obs) # TODO: is this right?
     rollouts.to(device)
 
     episode_rewards = deque(maxlen=10)
