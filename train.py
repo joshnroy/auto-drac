@@ -2,12 +2,13 @@ import copy
 import os
 import time
 from collections import deque
+from tqdm import trange
 
 import numpy as np
 import torch
 
 from ucb_rl2_meta import algo, utils
-from ucb_rl2_meta.model import Policy, AugCNN
+from ucb_rl2_meta.model import Policy, AugCNN, ModelBasedPolicy
 from ucb_rl2_meta.storage import RolloutStorage
 from test import evaluate
 
@@ -174,6 +175,12 @@ def train(args):
         aug_id = data_augs.Identity
         aug_func = aug_to_func[args.aug_type](batch_size=batch_size)
 
+        actor_critic = ModelBasedPolicy(
+            obs_shape,
+            envs.action_space.n,
+            base_kwargs={'recurrent': False, 'hidden_size': args.hidden_size})        
+        actor_critic.to(device)
+
         agent = algo.ConvDrAC(
             actor_critic,
             args.clip_param,
@@ -197,7 +204,7 @@ def train(args):
     num_updates = int(
         args.num_env_steps) // args.num_steps // args.num_processes
 
-    for j in range(num_updates):
+    for j in trange(num_updates):
         actor_critic.train()
         for step in range(args.num_steps):
             # Sample actions
@@ -234,7 +241,10 @@ def train(args):
 
         if args.use_ucb and j > 0:
             agent.update_ucb_values(rollouts)
-        value_loss, action_loss, dist_entropy = agent.update(rollouts)    
+        if isinstance(agent, algo.ConvDrAC):
+            value_loss, action_loss, dist_entropy, transition_model_loss, reward_model_loss = agent.update(rollouts)   
+        else:
+            value_loss, action_loss, dist_entropy = agent.update(rollouts)    
         rollouts.after_update()
 
         # save for every interval-th episode or for the last epoch
@@ -253,6 +263,9 @@ def train(args):
             logger.logkv("losses/dist_entropy", dist_entropy)
             logger.logkv("losses/value_loss", value_loss)
             logger.logkv("losses/action_loss", action_loss)
+            if isinstance(agent, algo.ConvDrAC):
+                logger.logkv("losses/transition_model_loss", transition_model_loss)
+                logger.logkv("losses/reward_model_loss", reward_model_loss)
 
             logger.logkv("train/mean_episode_reward", np.mean(episode_rewards))
             logger.logkv("train/median_episode_reward", np.median(episode_rewards))

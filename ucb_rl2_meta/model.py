@@ -142,6 +142,68 @@ class Policy(nn.Module):
 
         return value, action_log_probs, dist_entropy, rnn_hxs
 
+class ModelBasedPolicy(Policy):
+    def __init__(self, obs_shape, num_actions, base_kwargs=None):
+        super(ModelBasedPolicy, self).__init__(obs_shape, num_actions, base_kwargs=base_kwargs)
+
+        self.state_shape = (int(np.sqrt(self.base.output_size)), int(np.sqrt(self.base.output_size)))
+        self.transition_model = TransitionModel(self.state_shape, num_actions)
+        self.reward_model = RewardModel(self.state_shape, num_actions)
+
+    def predict_next_state_reward(self, inputs, rnn_hxs, masks):
+        _, actor_features, _ = self.base(inputs, rnn_hxs, masks)
+        actor_features = torch.reshape(actor_features, (-1, 1) + self.state_shape)
+        predicted_next_state = self.transition_model(actor_features)
+        predicted_reward = self.reward_model(actor_features)
+
+        return predicted_next_state, predicted_reward
+
+class TransitionModel(nn.Module):
+    def __init__(self, state_shape, num_actions, kernel_size=3):
+        super(TransitionModel, self).__init__()
+        
+        self.state_shape = state_shape
+        self.num_actions = num_actions
+
+        conv_padding = int(np.floor(kernel_size / 2.))
+
+        layers = []
+        layers.append(Conv2d_tf(1, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        # layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        # layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(16, self.num_actions, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+
+        self.model = nn.Sequential(*layers)
+
+    def forward(self, inputs):
+        return self.model(inputs)
+
+
+class RewardModel(nn.Module):
+    def __init__(self, state_shape, num_actions, kernel_size=1):
+        super(RewardModel, self).__init__()
+        
+        self.state_shape = state_shape
+        self.num_actions = num_actions
+
+        conv_padding = int(np.floor(kernel_size / 2.))
+
+        layers = []
+        layers.append(Conv2d_tf(1, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        # layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        # layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(16, self.num_actions, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+
+        self.model = nn.Sequential(*layers)
+
+    def forward(self, inputs):
+        x = self.model(inputs)
+        return torch.sum(x, (2, 3))
+
 
 class NNBase(nn.Module):
     """
