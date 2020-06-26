@@ -141,6 +141,8 @@ Pd	baselines/baselines/common/distributions.py	/^class Pd(object):$/;"	c
 PdType	baselines/baselines/common/distributions.py	/^class PdType(object):$/;"	c
 PiecewiseSchedule	baselines/baselines/common/schedules.py	/^class PiecewiseSchedule(object):$/;"	c
 PlaceholderTfInput	baselines/baselines/deepq/utils.py	/^class PlaceholderTfInput(TfInput):$/;"	c
+PlanningPolicy	ucb_rl2_meta/model.py	/^class PlanningPolicy(Policy):$/;"	c
+PlanningResNetBase	ucb_rl2_meta/model.py	/^class PlanningResNetBase(NNBase):$/;"	c
 Policy	ucb_rl2_meta/model.py	/^class Policy(nn.Module):$/;"	c
 PolicyWithValue	baselines/baselines/common/policies.py	/^class PolicyWithValue(object):$/;"	c
 PrioritizedReplayBuffer	baselines/baselines/deepq/replay_buffer.py	/^class PrioritizedReplayBuffer(ReplayBuffer):$/;"	c
@@ -371,8 +373,10 @@ __init__	ucb_rl2_meta/model.py	/^    def __init__(self):$/;"	m	class:AugCNN
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:Conv2d_tf
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, n_channels, stride=1):$/;"	m	class:BasicBlock
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, num_inputs, recurrent=False, hidden_size=256, channels=[16,32,32]):$/;"	m	class:ResNetBase
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, num_inputs, recurrent=False, hidden_size=256, channels=[16,32,32], num_planning_steps=10):$/;"	m	class:PlanningResNetBase
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, num_inputs, recurrent=False, hidden_size=64):$/;"	m	class:MLPBase
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:ModelBasedPolicy
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:PlanningPolicy
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:Policy
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, recurrent, recurrent_input_size, hidden_size):$/;"	m	class:NNBase
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, num_actions, kernel_size=1):$/;"	m	class:RewardModel
@@ -436,6 +440,7 @@ _init	baselines/baselines/ppo1/mlp_policy.py	/^    def _init(self, ob_space, ac_
 _init_target_net	baselines/baselines/her/ddpg.py	/^    def _init_target_net(self):$/;"	m	class:DDPG
 _initializer	baselines/baselines/common/tf_util.py	/^    def _initializer(shape, dtype=None, partition_info=None):  # pylint: disable=W0613$/;"	f	function:normc_initializer
 _ln	baselines/baselines/a2c/utils.py	/^def _ln(x, g, b, e=1e-5, axes=[1]):$/;"	f
+_make_layer	ucb_rl2_meta/model.py	/^    def _make_layer(self, in_channels, out_channels, stride=1):$/;"	m	class:PlanningResNetBase
 _make_layer	ucb_rl2_meta/model.py	/^    def _make_layer(self, in_channels, out_channels, stride=1):$/;"	m	class:ResNetBase
 _matching_fc	baselines/baselines/common/distributions.py	/^def _matching_fc(tensor, name, size, init_scale, init_bias):$/;"	f
 _mpi_average	baselines/baselines/her/normalizer.py	/^    def _mpi_average(self, x):$/;"	m	class:Normalizer
@@ -774,6 +779,7 @@ forward	ucb_rl2_meta/model.py	/^    def forward(self, input):$/;"	m	class:Conv2d
 forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs):$/;"	m	class:RewardModel
 forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs):$/;"	m	class:TransitionModel
 forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs, rnn_hxs, masks):$/;"	m	class:MLPBase
+forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs, rnn_hxs, masks):$/;"	m	class:PlanningResNetBase
 forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs, rnn_hxs, masks):$/;"	m	class:Policy
 forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs, rnn_hxs, masks):$/;"	m	class:ResNetBase
 forward	ucb_rl2_meta/model.py	/^    def forward(self, obs):$/;"	m	class:AugCNN
@@ -1073,6 +1079,7 @@ mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	cla
 mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	class:Pd
 mode	ucb_rl2_meta/distributions.py	/^    def mode(self):$/;"	m	class:FixedCategorical
 model	baselines/baselines/deepq/experiments/custom_cartpole.py	/^def model(inpt, num_actions, scope, reuse=False):$/;"	f
+modelbased	train.py	/^modelbased = False$/;"	v
 mpi_average	baselines/baselines/her/her.py	/^def mpi_average(value):$/;"	f
 mpi_fork	baselines/baselines/common/mpi_fork.py	/^def mpi_fork(n, bind_to_core=False):$/;"	f
 mpi_fork	baselines/baselines/her/util.py	/^def mpi_fork(n, extra_mpi_args=[]):$/;"	f

@@ -142,6 +142,11 @@ class Policy(nn.Module):
 
         return value, action_log_probs, dist_entropy, rnn_hxs
 
+class PlanningPolicy(Policy):
+    def __init__(self, obs_shape, num_actions, base_kwargs=None):
+        super(PlanningPolicy, self).__init__(obs_shape, num_actions, base_kwargs=base_kwargs)
+        self.base = PlanningResNetBase(obs_shape[0], **base_kwargs)
+
 class ModelBasedPolicy(Policy):
     def __init__(self, obs_shape, num_actions, base_kwargs=None):
         super(ModelBasedPolicy, self).__init__(obs_shape, num_actions, base_kwargs=base_kwargs)
@@ -401,6 +406,65 @@ class ResNetBase(NNBase):
 
         if self.is_recurrent:
             x, rnn_hxs = self._forward_gru(x, rnn_hxs, masks)
+
+        return self.critic_linear(x), x, rnn_hxs
+
+class PlanningResNetBase(NNBase):
+    """
+    PlanningResidual Network 
+    """
+    def __init__(self, num_inputs, recurrent=False, hidden_size=256, channels=[16,32,32], num_planning_steps=10):
+        super(PlanningResNetBase, self).__init__(recurrent, num_inputs, hidden_size)
+
+        self.num_planning_steps = num_planning_steps
+
+        self.layer1 = self._make_layer(num_inputs, channels[0])
+        self.layer2 = self._make_layer(channels[0], channels[1])
+        self.layer3 = self._make_layer(channels[1], channels[2])
+
+        self.flatten = Flatten()
+        self.relu = nn.ReLU()
+
+        self.fc = init_relu_(nn.Linear(2048, hidden_size))
+
+        self.model = []
+        for _ in range(3):
+            self.model.append(nn.Linear(hidden_size, hidden_size))
+            self.model.append(nn.ReLU())
+        self.model = nn.Sequential(*self.model)
+
+        self.critic_linear = init_(nn.Linear(hidden_size, 1))
+
+        apply_init_(self.modules())
+
+        self.train()
+
+    def _make_layer(self, in_channels, out_channels, stride=1):
+        layers = []
+
+        layers.append(Conv2d_tf(in_channels, out_channels, kernel_size=3, stride=1))
+        layers.append(nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
+
+        layers.append(BasicBlock(out_channels))
+        layers.append(BasicBlock(out_channels))
+
+        return nn.Sequential(*layers)
+
+    def forward(self, inputs, rnn_hxs, masks):
+        x = inputs
+
+        x = self.layer1(x)
+        x = self.layer2(x)
+        x = self.layer3(x)
+
+        x = self.relu(self.flatten(x))
+        x = self.relu(self.fc(x))
+
+        if self.is_recurrent:
+            x, rnn_hxs = self._forward_gru(x, rnn_hxs, masks)
+
+        for _ in range(self.num_planning_steps):
+            x = self.model(x)
 
         return self.critic_linear(x), x, rnn_hxs
 
