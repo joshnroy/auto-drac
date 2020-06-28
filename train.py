@@ -2,13 +2,14 @@ import copy
 import os
 import time
 from collections import deque
+from tqdm import trange
 
 import numpy as np
 import torch
 
 from ucb_rl2_meta import algo, utils
-from ucb_rl2_meta.model import Policy, AugCNN
-from ucb_rl2_meta.storage import RolloutStorage
+from ucb_rl2_meta.model import Policy, AugCNN, ModelBasedPolicy, PlanningPolicy
+from ucb_rl2_meta.storage import RolloutStorage, BiggerRolloutStorage
 from test import evaluate
 
 from baselines import logger
@@ -33,6 +34,8 @@ aug_to_func = {
         'cutout-color': data_augs.CutoutColor,
         'color-jitter': data_augs.ColorJitter,
 }
+
+modelbased = False
 
 def train(args):
     args.cuda = not args.no_cuda and torch.cuda.is_available()
@@ -64,10 +67,16 @@ def train(args):
         base_kwargs={'recurrent': False, 'hidden_size': args.hidden_size})        
     actor_critic.to(device)
 
-    rollouts = RolloutStorage(args.num_steps, args.num_processes,
-                                envs.observation_space.shape, envs.action_space,
-                                actor_critic.recurrent_hidden_state_size,
-                                aug_type=args.aug_type, split_ratio=args.split_ratio)
+    if modelbased:
+        rollouts = BiggerRolloutStorage(args.num_steps, args.num_processes,
+                                    envs.observation_space.shape, envs.action_space,
+                                    actor_critic.recurrent_hidden_state_size,
+                                    aug_type=args.aug_type, split_ratio=args.split_ratio)
+    else:
+        rollouts = RolloutStorage(args.num_steps, args.num_processes,
+                                    envs.observation_space.shape, envs.action_space,
+                                    actor_critic.recurrent_hidden_state_size,
+                                    aug_type=args.aug_type, split_ratio=args.split_ratio)
         
     batch_size = int(args.num_processes * args.num_steps / args.num_mini_batch)
 
@@ -152,7 +161,7 @@ def train(args):
                 num_actions=envs.action_space.n, 
                 device=device)
 
-    else:
+    elif False: # Regular Drac
         aug_id = data_augs.Identity
         aug_func = aug_to_func[args.aug_type](batch_size=batch_size)
 
@@ -170,16 +179,66 @@ def train(args):
             aug_func=aug_func,
             aug_coef=args.aug_coef,
             env_name=args.env_name)
+    elif True: # Model Free Planning Drac
+        aug_id = data_augs.Identity
+        aug_func = aug_to_func[args.aug_type](batch_size=batch_size)
+
+        actor_critic = PlanningPolicy(
+            obs_shape,
+            envs.action_space.n,
+            base_kwargs={'recurrent': False, 'hidden_size': args.hidden_size})        
+        actor_critic.to(device)
+
+        agent = algo.DrAC(
+            actor_critic,
+            args.clip_param,
+            args.ppo_epoch,
+            args.num_mini_batch,
+            args.value_loss_coef,
+            args.entropy_coef,
+            lr=args.lr,
+            eps=args.eps,
+            max_grad_norm=args.max_grad_norm,
+            aug_id=aug_id,
+            aug_func=aug_func,
+            aug_coef=args.aug_coef,
+            env_name=args.env_name)
+    else: # Model based Drac
+        aug_id = data_augs.Identity
+        aug_func = aug_to_func[args.aug_type](batch_size=batch_size)
+
+        actor_critic = ModelBasedPolicy(
+            obs_shape,
+            envs.action_space.n,
+            base_kwargs={'recurrent': False, 'hidden_size': args.hidden_size})        
+        actor_critic.to(device)
+
+        agent = algo.ConvDrAC(
+            actor_critic,
+            args.clip_param,
+            args.ppo_epoch,
+            args.num_mini_batch,
+            args.value_loss_coef,
+            args.entropy_coef,
+            lr=args.lr,
+            eps=args.eps,
+            max_grad_norm=args.max_grad_norm,
+            aug_id=aug_id,
+            aug_func=aug_func,
+            aug_coef=args.aug_coef,
+            env_name=args.env_name)
 
     obs = envs.reset()
     rollouts.obs[0].copy_(obs)
+    if modelbased:
+        rollouts.next_obs[0].copy_(obs) # TODO: is this right?
     rollouts.to(device)
 
     episode_rewards = deque(maxlen=10)
     num_updates = int(
         args.num_env_steps) // args.num_steps // args.num_processes
 
-    for j in range(num_updates):
+    for j in trange(num_updates):
         actor_critic.train()
         for step in range(args.num_steps):
             # Sample actions
@@ -216,7 +275,10 @@ def train(args):
 
         if args.use_ucb and j > 0:
             agent.update_ucb_values(rollouts)
-        value_loss, action_loss, dist_entropy = agent.update(rollouts)    
+        if isinstance(agent, algo.ConvDrAC):
+            value_loss, action_loss, dist_entropy, transition_model_loss, reward_model_loss = agent.update(rollouts)   
+        else:
+            value_loss, action_loss, dist_entropy = agent.update(rollouts)    
         rollouts.after_update()
 
         # save for every interval-th episode or for the last epoch
@@ -235,6 +297,9 @@ def train(args):
             logger.logkv("losses/dist_entropy", dist_entropy)
             logger.logkv("losses/value_loss", value_loss)
             logger.logkv("losses/action_loss", action_loss)
+            if isinstance(agent, algo.ConvDrAC):
+                logger.logkv("losses/transition_model_loss", transition_model_loss)
+                logger.logkv("losses/reward_model_loss", reward_model_loss)
 
             logger.logkv("train/mean_episode_reward", np.mean(episode_rewards))
             logger.logkv("train/median_episode_reward", np.median(episode_rewards))
