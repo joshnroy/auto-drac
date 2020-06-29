@@ -3,6 +3,7 @@ import os
 import time
 from collections import deque
 from tqdm import trange
+import sys
 
 import numpy as np
 import torch
@@ -35,7 +36,7 @@ aug_to_func = {
         'color-jitter': data_augs.ColorJitter,
 }
 
-modelbased = False
+modelbased = True
 
 def train(args):
     args.cuda = not args.no_cuda and torch.cuda.is_available()
@@ -179,7 +180,7 @@ def train(args):
             aug_func=aug_func,
             aug_coef=args.aug_coef,
             env_name=args.env_name)
-    elif True: # Model Free Planning Drac
+    elif False: # Model Free Planning Drac
         aug_id = data_augs.Identity
         aug_func = aug_to_func[args.aug_type](batch_size=batch_size)
 
