@@ -541,8 +541,12 @@ author	baselines/setup.py	/^      author='OpenAI',$/;"	v
 author_email	baselines/setup.py	/^      author_email='gym@openai.com',$/;"	v
 avg_norm	baselines/baselines/a2c/utils.py	/^def avg_norm(t):$/;"	f
 ax	baselines/baselines/common/plot_util.py	/^        ax = axarr[idx_row][idx_col]$/;"	v
+ax	plot_results.py	/^    ax = axes[i_env \/\/ num_wide, i_env % num_wide]$/;"	v
 batch_to_seq	baselines/baselines/a2c/utils.py	/^def batch_to_seq(h, nbatch, nsteps, flat=False):$/;"	f
 bbox_to_anchor	baselines/baselines/common/plot_util.py	/^                bbox_to_anchor=(1,1) if legend_outside else None)$/;"	v
+big_df	plot_results.py	/^            big_df = big_df.append(df, ignore_index=True)$/;"	v
+big_df	plot_results.py	/^        big_df = big_df.append(df, ignore_index=True)$/;"	v
+big_df	plot_results.py	/^    big_df = pd.DataFrame()$/;"	v
 blue	baselines/baselines/common/console_util.py	/^    blue=34,$/;"	v
 boolean_flag	baselines/baselines/common/misc_util.py	/^def boolean_flag(parser, name, default=False, help=None):$/;"	f
 build_act	baselines/baselines/deepq/build_graph.py	/^def build_act(make_obs_ph, q_func, num_actions, scope="deepq", reuse=None):$/;"	f
@@ -697,6 +701,12 @@ dequeue_op	baselines/baselines/acktr/kfac.py	/^            def dequeue_op():$/;"
 dequeue_stats_op	baselines/baselines/acktr/kfac.py	/^            def dequeue_stats_op():$/;"	f	function:KfacOptimizer.apply_stats.updateRunningAvgStats
 description	baselines/setup.py	/^      description='OpenAI baselines: high quality implementations of reinforcement learning algorithms',$/;"	v
 detectMinVal	baselines/baselines/acktr/kfac_utils.py	/^def detectMinVal(input_mat, var, threshold=1e-6, name='', debug=False):$/;"	f
+df	plot_results.py	/^            df = df[["train\/mean_episode_reward", "test\/mean_episode_reward", "train\/total_num_steps"]]$/;"	v
+df	plot_results.py	/^            df = pd.melt(df, id_vars=['Timestep'], var_name="Type", value_name="Reward")$/;"	v
+df	plot_results.py	/^            df = pd.read_csv(file_name)$/;"	v
+df	plot_results.py	/^        df = df[["train\/mean_episode_reward", "test\/mean_episode_reward", "train\/total_num_steps"]]$/;"	v
+df	plot_results.py	/^        df = pd.melt(df, id_vars=['Timestep'], var_name="Type", value_name="Reward")$/;"	v
+df	plot_results.py	/^        df = pd.read_csv(file_name)$/;"	v
 dict_gather	baselines/baselines/common/mpi_util.py	/^def dict_gather(comm, d, op='mean', assert_all_have_data=True):$/;"	f
 dict_to_obs	baselines/baselines/common/vec_env/util.py	/^def dict_to_obs(obs_dict):$/;"	f
 dims	baselines/baselines/her/her.py	/^    dims = config.configure_dims(params)$/;"	v
@@ -731,6 +741,7 @@ env_fn	baselines/baselines/ppo2/test_microbatches.py	/^    def env_fn():$/;"	f	f
 env_id	baselines/baselines/her/experiment/plot.py	/^    env_id = env_id.replace('Dense', '')$/;"	v
 env_id	baselines/baselines/her/experiment/plot.py	/^    env_id = params['env_name']$/;"	v
 env_name	baselines/baselines/her/her.py	/^    env_name = env.spec.id$/;"	v
+env_names	plot_results.py	/^env_names = ["bigfish", "bossfight", "caveflyer", "chaser", "climber", "coinrun", "dodgeball", $/;"	v
 env_type	baselines/baselines/run.py	/^    env_type = env.entry_point.split(':')[0].split('.')[-1]$/;"	v
 episode_rewards	baselines/baselines/deepq/experiments/custom_cartpole.py	/^        episode_rewards = [0.0]$/;"	v
 epoch	baselines/baselines/her/experiment/plot.py	/^    epoch = np.array(results['epoch']) + 1$/;"	v
@@ -754,6 +765,8 @@ feed	baselines/baselines/a2c/utils.py	/^    def feed(self, rewards, masks):$/;"	
 feed_forward_generator	ucb_rl2_meta/storage.py	/^    def feed_forward_generator(self,$/;"	m	class:BiggerRolloutStorage
 feed_forward_generator	ucb_rl2_meta/storage.py	/^    def feed_forward_generator(self,$/;"	m	class:RolloutStorage
 figsize	baselines/baselines/common/plot_util.py	/^    figsize = figsize or (6 * ncols, 6 * nrows)$/;"	v
+file_naming_scheme	plot_results.py	/^    file_naming_scheme="modelbased_logs\/" + env_name + "\/" + env_name + "-*-16\/progress-drac-" + env_name + "-reproduce-s1.csv"$/;"	v
+file_naming_scheme	plot_results.py	/^    file_naming_scheme="original_ppo_logs\/" + env_name + "\/" + env_name + "-*\/progress-drac-" + env_name + "-reproduce-s1.csv"$/;"	v
 find_prefixsum_idx	baselines/baselines/common/segment_tree.py	/^    def find_prefixsum_idx(self, prefixsum):$/;"	m	class:SumSegmentTree
 find_task_for_env_id_in_any_benchmark	baselines/baselines/bench/benchmarks.py	/^def find_task_for_env_id_in_any_benchmark(env_id):$/;"	f
 find_trainable_variables	baselines/baselines/a2c/utils.py	/^def find_trainable_variables(key):$/;"	f
@@ -1034,7 +1047,6 @@ main	baselines/baselines/ppo1/run_mujoco.py	/^def main():$/;"	f
 main	baselines/baselines/ppo1/run_robotics.py	/^def main():$/;"	f
 main	baselines/baselines/results_plotter.py	/^def main():$/;"	f
 main	baselines/baselines/run.py	/^def main(args):$/;"	f
-main_sweep_comparision	plot_grid.py	/^def main_sweep_comparision(original_procgen=False, vc=True, hard=False):$/;"	f
 make_atari	baselines/baselines/common/atari_wrappers.py	/^def make_atari(env_id, max_episode_steps=None):$/;"	f
 make_env	baselines/baselines/common/cmd_util.py	/^def make_env(env_id, env_type, mpi_rank=0, subrank=0, seed=None, reward_scale=1.0, gamestate=None, flatten_dict_observations=True, wrapper_kwargs=None, env_kwargs=None, logger_dir=None, initializer=None):$/;"	f
 make_env	baselines/baselines/common/tests/test_env_after_learn.py	/^    def make_env():$/;"	f	function:test_env_after_learn
@@ -1130,6 +1142,7 @@ nrows	baselines/baselines/common/plot_util.py	/^        nrows = N \/\/ ncols$/;"
 nrows	baselines/baselines/common/plot_util.py	/^        nrows = len(sk2r)$/;"	v
 num_actions	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            num_actions=env.action_space.n,$/;"	v
 num_cpu	baselines/baselines/her/her.py	/^        num_cpu = MPI.COMM_WORLD.Get_size()$/;"	v
+num_wide	plot_results.py	/^num_wide = int(np.sqrt(len(env_names)))$/;"	v
 numel	baselines/baselines/common/tf_util.py	/^def numel(x):$/;"	f
 obs	baselines/baselines/deepq/experiments/custom_cartpole.py	/^                obs = env.reset()$/;"	v
 obs	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            obs = new_obs$/;"	v
@@ -1192,7 +1205,6 @@ plot	baselines/baselines/gail/gail-eval.py	/^def plot(env_name, bc_log, gail_log
 plot_curves	baselines/baselines/results_plotter.py	/^def plot_curves(xy_list, xaxis, yaxis, title):$/;"	f
 plot_results	baselines/baselines/common/plot_util.py	/^def plot_results($/;"	f
 plot_results	baselines/baselines/results_plotter.py	/^def plot_results(dirs, num_timesteps=10e6, xaxis=X_TIMESTEPS, yaxis=Y_REWARD, title='', split_fn=split_by_task):$/;"	f
-plot_rewards	plot_grid.py	/^def plot_rewards(inputs, AVG_LEN, ax, colors=None):$/;"	f
 policy	baselines/baselines/her/her.py	/^    policy = config.configure_ddpg(dims=dims, params=params, clip_return=clip_return)$/;"	v
 policy_fn	baselines/baselines/common/policies.py	/^    def policy_fn(nbatch=None, nsteps=None, sess=None, observ_placeholder=None):$/;"	f	function:build_policy
 policy_fn	baselines/baselines/gail/behavior_clone.py	/^    def policy_fn(name, ob_space, ac_space, reuse=False):$/;"	f	function:main
