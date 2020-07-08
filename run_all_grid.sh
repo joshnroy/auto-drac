@@ -10,18 +10,18 @@
 #$ -l gpus=1
 #
 # Runs 80 jobs
-#$ -t 41-80
+#$ -t 1-160
 #
 # Runs at most 20 jobs at once
-#$ -tc 10
-#
-# Targets host
-#$ -q 'gpus.q@gpu190*.cs.brown.edu'
+#$ -tc 20
 
 envs=(bigfish bossfight caveflyer chaser climber coinrun dodgeball fruitbot heist jumper leaper maze miner ninja plunder starpilot)
+num_mini_batches=(16 32)
 
 ID=$(($SGE_TASK_ID - 1))
-env_name=${envs[$(($ID % 16))]}
-trial=$(($ID / 16))
+num_mini_batch=${num_mini_batches[$(($ID / 80))]}
+ID_INNER=$(($ID % 80))
+env_name=${envs[$(($ID_INNER % 16))]}
+trial=$(($ID_INNER / 16))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir conv_logs2/${env_name}/${env_name}-${trial} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir modelbased_logs/${env_name}/${env_name}-${trial}-${num_mini_batch} --aug_coef 0. --num_mini_batch ${num_mini_batch}
