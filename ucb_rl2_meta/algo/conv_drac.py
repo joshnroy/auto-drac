@@ -67,17 +67,16 @@ class ConvDrAC():
                 obs_batch, recurrent_hidden_states_batch, actions_batch, \
                 value_preds_batch, return_batch, masks_batch, old_action_log_probs_batch, \
                         adv_targ, next_obs_batch = sample
+
+                with torch.no_grad():
+                    _, next_obs_features, _ = self.actor_critic.base(next_obs_batch, recurrent_hidden_states_batch, masks_batch)
+                    next_obs_features = torch.reshape(next_obs_features, (-1, 1) + self.actor_critic.state_shape)
                 
                 values, action_log_probs, dist_entropy, _ = self.actor_critic.evaluate_actions(
                     obs_batch, recurrent_hidden_states_batch, masks_batch,
                     actions_batch)
 
-                predicted_next_states, predicted_rewards = self.actor_critic.predict_next_state_reward(obs_batch, recurrent_hidden_states_batch, masks_batch)
-                predicted_next_states = torch.stack([predicted_state[action] for predicted_state, action in zip(predicted_next_states, actions_batch)])
-                predicted_rewards = torch.stack([predicted_reward[action] for predicted_reward, action in zip(predicted_rewards, actions_batch)])
-
-                next_obs_features = self.actor_critic.base(next_obs_batch, recurrent_hidden_states_batch, masks_batch)[1]
-                next_obs_features = torch.reshape(next_obs_features, (-1, 1) + self.actor_critic.state_shape)
+                predicted_next_states, predicted_rewards = self.actor_critic.predict_next_state_reward(obs_batch, recurrent_hidden_states_batch, masks_batch, actions_batch)
 
                 next_state_loss = torch.mean((next_obs_features - predicted_next_states)**2.)
                 reward_loss = torch.mean((return_batch - predicted_rewards)**2.)

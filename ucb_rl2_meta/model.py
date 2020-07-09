@@ -2,6 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import sys
 
 from ucb_rl2_meta.distributions import Categorical
 from ucb_rl2_meta.utils import init
@@ -155,11 +156,16 @@ class ModelBasedPolicy(Policy):
         self.transition_model = TransitionModel(self.state_shape, num_actions)
         self.reward_model = RewardModel(self.state_shape, num_actions)
 
-    def predict_next_state_reward(self, inputs, rnn_hxs, masks):
+    def predict_next_state_reward(self, inputs, rnn_hxs, masks, actions):
         _, actor_features, _ = self.base(inputs, rnn_hxs, masks)
         actor_features = torch.reshape(actor_features, (-1, 1) + self.state_shape)
-        predicted_next_state = self.transition_model(actor_features)
-        predicted_reward = self.reward_model(actor_features)
+
+        broadcasted_actions_shape = list(actor_features.shape)
+        actions = actions.float().unsqueeze(-1).unsqueeze(-1).expand(broadcasted_actions_shape)
+        model_inputs = torch.cat([actor_features, actions], dim=1)
+
+        predicted_next_state = self.transition_model(model_inputs)
+        predicted_reward = self.reward_model(model_inputs)
 
         return predicted_next_state, predicted_reward
 
@@ -173,11 +179,11 @@ class TransitionModel(nn.Module):
         conv_padding = int(np.floor(kernel_size / 2.))
 
         layers = []
-        layers.append(Conv2d_tf(1, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(Conv2d_tf(2, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
         # layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         # layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(16, self.num_actions, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(Conv2d_tf(16, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
 
         self.model = nn.Sequential(*layers)
@@ -196,11 +202,11 @@ class RewardModel(nn.Module):
         conv_padding = int(np.floor(kernel_size / 2.))
 
         layers = []
-        layers.append(Conv2d_tf(1, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(Conv2d_tf(2, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
         # layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         # layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(16, self.num_actions, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(Conv2d_tf(16, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
 
         self.model = nn.Sequential(*layers)
