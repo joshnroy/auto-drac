@@ -40,7 +40,7 @@ class ConvDrAC():
         self.aug_id = aug_id
         self.aug_func = aug_func
         self.aug_coef = aug_coef
-        self.model_coef = 1.
+        self.model_coef = 0.1
 
         self.env_name = env_name
 
