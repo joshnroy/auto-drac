@@ -181,8 +181,8 @@ class TransitionModel(nn.Module):
         layers = []
         layers.append(Conv2d_tf(2, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
-        # layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        # layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
         layers.append(Conv2d_tf(16, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
 
@@ -204,8 +204,8 @@ class RewardModel(nn.Module):
         layers = []
         layers.append(Conv2d_tf(2, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
-        # layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        # layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
         layers.append(Conv2d_tf(16, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
 
