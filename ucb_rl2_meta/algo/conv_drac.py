@@ -35,7 +35,11 @@ class ConvDrAC():
 
         self.max_grad_norm = max_grad_norm
 
-        self.optimizer = optim.Adam(actor_critic.parameters(), lr=lr, eps=eps)
+        self.actor_critic_parameters = list(actor_critic.base.parameters()) + list(actor_critic.dist.parameters())
+        self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters())
+
+        self.optimizer = optim.Adam(self.actor_critic_parameters, lr=lr, eps=eps)
+        self.optimizer_model = optim.Adam(self.model_parameters, lr=lr, eps=eps)
         
         self.aug_id = aug_id
         self.aug_func = aug_func
@@ -114,6 +118,7 @@ class ConvDrAC():
 
                 # Update actor-critic using both PPO and Augmented Loss. Also update model using model loss
                 self.optimizer.zero_grad()
+                self.optimizer_model.zero_grad()
                 aug_loss = value_loss_aug + action_loss_aug
                 (value_loss * self.value_loss_coef + action_loss -
                     dist_entropy * self.entropy_coef + 
@@ -121,6 +126,7 @@ class ConvDrAC():
                 nn.utils.clip_grad_norm_(self.actor_critic.parameters(),
                                         self.max_grad_norm)
                 self.optimizer.step()  
+                self.optimizer_model.step()  
                                 
                 value_loss_epoch += value_loss.item()
                 action_loss_epoch += action_loss.item()

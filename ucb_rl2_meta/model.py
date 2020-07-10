@@ -156,9 +156,12 @@ class ModelBasedPolicy(Policy):
         self.transition_model = TransitionModel(self.state_shape, num_actions)
         self.reward_model = RewardModel(self.state_shape, num_actions)
 
+        self.tanh = nn.Tanh()
+
     def predict_next_state_reward(self, inputs, rnn_hxs, masks, actions):
         _, actor_features, _ = self.base(inputs, rnn_hxs, masks)
         actor_features = torch.reshape(actor_features, (-1, 1) + self.state_shape)
+        actor_features = self.tanh(actor_features)
 
         broadcasted_actions_shape = list(actor_features.shape)
         actions = actions.float().unsqueeze(-1).unsqueeze(-1).expand(broadcasted_actions_shape)
@@ -177,14 +180,15 @@ class TransitionModel(nn.Module):
         self.num_actions = num_actions
 
         conv_padding = int(np.floor(kernel_size / 2.))
+        conv_padding_1 = int(np.floor(1 / 2.))
 
         layers = []
         layers.append(Conv2d_tf(2, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(Conv2d_tf(16, 16, kernel_size=1, stride=1, padding=(conv_padding_1,conv_padding_1)))
         layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(16, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        # layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(16, 1, kernel_size=1, stride=1, padding=(conv_padding_1,conv_padding_1)))
+        layers.append(nn.Tanh())
 
         self.model = nn.Sequential(*layers)
 
@@ -207,7 +211,6 @@ class RewardModel(nn.Module):
         layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
         layers.append(Conv2d_tf(16, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        # layers.append(nn.ReLU(inplace=True))
 
         self.model = nn.Sequential(*layers)
 
