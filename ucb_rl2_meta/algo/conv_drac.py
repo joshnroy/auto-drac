@@ -36,7 +36,7 @@ class ConvDrAC():
         self.max_grad_norm = max_grad_norm
 
         self.actor_critic_parameters = list(actor_critic.base.parameters()) + list(actor_critic.dist.parameters())
-        self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters())
+        self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.base.layer1.parameters()) + list(actor_critic.base.layer2.parameters()) + list(actor_critic.base.layer3.parameters()) + list(actor_critic.base.fc.parameters())
 
         self.optimizer = optim.Adam(self.actor_critic_parameters, lr=lr, eps=eps)
         self.optimizer_model = optim.Adam(self.model_parameters, lr=lr, eps=eps)
@@ -123,7 +123,7 @@ class ConvDrAC():
                 (value_loss * self.value_loss_coef + action_loss -
                     dist_entropy * self.entropy_coef + 
                     aug_loss * self.aug_coef + model_loss * self.model_coef).backward()
-                nn.utils.clip_grad_norm_(self.actor_critic.parameters(),
+                nn.utils.clip_grad_norm_(self.actor_critic_parameters,
                                         self.max_grad_norm)
                 self.optimizer.step()  
                 self.optimizer_model.step()  
