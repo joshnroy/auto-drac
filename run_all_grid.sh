@@ -25,4 +25,4 @@ ID_INNER=$ID
 env_name=${envs[$(($ID_INNER % 16))]}
 trial=$(($ID_INNER / 16))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir new_modelbased_logs/${env_name}/${env_name}-${trial}-${num_mini_batch} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir fixed2_modelbased_logs/${env_name}/${env_name}-${trial} --aug_coef 0.

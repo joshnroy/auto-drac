@@ -35,10 +35,12 @@ class ConvDrAC():
 
         self.max_grad_norm = max_grad_norm
 
-        self.actor_critic_parameters = list(actor_critic.base.parameters()) + list(actor_critic.dist.parameters())
-        self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.base.layer1.parameters()) + list(actor_critic.base.layer2.parameters()) + list(actor_critic.base.layer3.parameters()) + list(actor_critic.base.fc.parameters())
+        self.critic_parameters = list(actor_critic.base.parameters()) # Encoder + Critic
+        self.actor_parameters = list(actor_critic.dist.parameters()) # Only the actor
+        self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.base.layer1.parameters()) + list(actor_critic.base.layer2.parameters()) + list(actor_critic.base.layer3.parameters()) + list(actor_critic.base.fc.parameters()) # Encoder + Transition Model + Reward Model
 
-        self.optimizer = optim.Adam(self.actor_critic_parameters, lr=lr, eps=eps)
+        self.optimizer_critic = optim.Adam(self.critic_parameters, lr=lr, eps=eps)
+        self.optimizer_actor = optim.Adam(self.actor_parameters, lr=lr, eps=eps)
         self.optimizer_model = optim.Adam(self.model_parameters, lr=lr, eps=eps)
         
         self.aug_id = aug_id
@@ -82,8 +84,12 @@ class ConvDrAC():
 
                 predicted_next_states, predicted_rewards = self.actor_critic.predict_next_state_reward(obs_batch, recurrent_hidden_states_batch, masks_batch, actions_batch)
 
-                next_state_loss = torch.mean((next_obs_features - predicted_next_states)**2.)
-                reward_loss = torch.mean((return_batch - predicted_rewards)**2.)
+                # next_state_loss = torch.mean((next_obs_features - predicted_next_states)**2.)
+                next_state_loss = F.mse_loss(predicted_next_states, next_obs_features)
+
+                # reward_loss = torch.mean((return_batch - predicted_rewards)**2.)
+                reward_loss = F.mse_loss(predicted_rewards, return_batch)
+
                 model_loss = next_state_loss + reward_loss
 
                 ratio = torch.exp(action_log_probs -
@@ -117,16 +123,29 @@ class ConvDrAC():
                     value_loss_aug = 0.
 
                 # Update actor-critic using both PPO and Augmented Loss. Also update model using model loss
-                self.optimizer.zero_grad()
-                self.optimizer_model.zero_grad()
                 aug_loss = value_loss_aug + action_loss_aug
-                (value_loss * self.value_loss_coef + action_loss -
-                    dist_entropy * self.entropy_coef + 
-                    aug_loss * self.aug_coef + model_loss * self.model_coef).backward()
-                nn.utils.clip_grad_norm_(self.actor_critic_parameters,
+
+                # (value_loss * self.value_loss_coef + action_loss -
+                #     dist_entropy * self.entropy_coef + 
+                #     aug_loss * self.aug_coef + model_loss * self.model_coef).backward()
+                # nn.utils.clip_grad_norm_(self.actor_critic_parameters,
+                #                         self.max_grad_norm)
+                
+                self.optimizer_critic.zero_grad()
+                (value_loss * self.value_loss_coef).backward()
+                nn.utils.clip_grad_norm_(self.critic_parameters,
                                         self.max_grad_norm)
-                self.optimizer.step()  
+                self.optimizer_critic.step()  
+
+                self.optimizer_model.zero_grad()
+                (model_loss * self.model_coef).backward()
                 self.optimizer_model.step()  
+
+                self.optimizer_actor.zero_grad()
+                (action_loss - dist_entropy + self.entropy_coef).backward()
+                nn.utils.clip_grad_norm_(self.actor_parameters,
+                                        self.max_grad_norm)
+                self.optimizer_actor.step()  
                                 
                 value_loss_epoch += value_loss.item()
                 action_loss_epoch += action_loss.item()
