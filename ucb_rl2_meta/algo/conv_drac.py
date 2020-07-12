@@ -82,7 +82,7 @@ class ConvDrAC():
                 predicted_next_states, predicted_rewards = self.actor_critic.predict_next_state_reward(obs_batch, recurrent_hidden_states_batch, masks_batch, actions_batch)
 
                 next_state_loss = F.mse_loss(predicted_next_states, next_obs_features)
-                reward_loss = F.mse_loss(predicted_rewards, predicted_rewards)
+                reward_loss = F.mse_loss(predicted_rewards, return_batch)
                 model_loss = next_state_loss + reward_loss
 
                 self.optimizer_model.zero_grad()
