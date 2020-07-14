@@ -97,28 +97,37 @@ class Policy(nn.Module):
             base_kwargs = {}
         
         if len(obs_shape) == 3:
-            base = ResNetBase
+            encoder = ResNetBase
         elif len(obs_shape) == 1:
-            base = MLPBase
+            encoder = MLPBase
 
-        self.base = base(obs_shape[0], **base_kwargs)
-        self.dist = Categorical(self.base.output_size, num_actions)
+        self.encoder = encoder(obs_shape[0], **base_kwargs)
+        self.actor = Categorical(self.encoder.output_size, num_actions)
+
+        self.critic = []
+        self.critic.append(init_relu_(nn.Linear(self.encoder.output_size, self.encoder.output_size)))
+        self.critic.append(nn.ReLU(inplace=True))
+        self.critic.append(init_relu_(nn.Linear(self.encoder.output_size, self.encoder.output_size)))
+        self.critic.append(nn.ReLU(inplace=True))
+        self.critic.append(init_(nn.Linear(self.encoder.output_size, 1)))
+        self.critic = nn.Sequential(*self.critic)
         
     @property
     def is_recurrent(self):
-        return self.base.is_recurrent
+        return self.encoder.is_recurrent
 
     @property
     def recurrent_hidden_state_size(self):
         """Size of rnn_hx."""
-        return self.base.recurrent_hidden_state_size
+        return self.encoder.recurrent_hidden_state_size
 
     def forward(self, inputs, rnn_hxs, masks):
         raise NotImplementedError
 
     def act(self, inputs, rnn_hxs, masks, deterministic=False):
-        value, actor_features, rnn_hxs = self.base(inputs, rnn_hxs, masks)
-        dist = self.dist(actor_features)
+        actor_features, rnn_hxs = self.encoder(inputs, rnn_hxs, masks)
+        value = self.critic(actor_features)
+        dist = self.actor(actor_features)
 
         if deterministic:
             action = dist.mode()
@@ -131,12 +140,14 @@ class Policy(nn.Module):
         return value, action, action_log_probs, rnn_hxs
 
     def get_value(self, inputs, rnn_hxs, masks):
-        value, _, _ = self.base(inputs, rnn_hxs, masks)
+        actor_features, _ = self.encoder(inputs, rnn_hxs, masks)
+        value = self.critic(actor_features)
         return value
 
     def evaluate_actions(self, inputs, rnn_hxs, masks, action):
-        value, actor_features, rnn_hxs = self.base(inputs, rnn_hxs, masks)
-        dist = self.dist(actor_features)
+        actor_features, rnn_hxs = self.encoder(inputs, rnn_hxs, masks)
+        value = self.critic(actor_features)
+        dist = self.actor(actor_features)
 
         action_log_probs = dist.log_probs(action)
         dist_entropy = dist.entropy().mean()
@@ -146,20 +157,20 @@ class Policy(nn.Module):
 class PlanningPolicy(Policy):
     def __init__(self, obs_shape, num_actions, base_kwargs=None):
         super(PlanningPolicy, self).__init__(obs_shape, num_actions, base_kwargs=base_kwargs)
-        self.base = PlanningResNetBase(obs_shape[0], **base_kwargs)
+        self.encoder = PlanningResNetBase(obs_shape[0], **base_kwargs)
 
 class ModelBasedPolicy(Policy):
     def __init__(self, obs_shape, num_actions, base_kwargs=None):
         super(ModelBasedPolicy, self).__init__(obs_shape, num_actions, base_kwargs=base_kwargs)
 
-        self.state_shape = (int(np.sqrt(self.base.output_size)), int(np.sqrt(self.base.output_size)))
+        self.state_shape = (int(np.sqrt(self.encoder.output_size)), int(np.sqrt(self.encoder.output_size)))
         self.transition_model = TransitionModel(self.state_shape, num_actions)
         self.reward_model = RewardModel(self.state_shape, num_actions)
 
         self.tanh = nn.Tanh()
 
     def predict_next_state_reward(self, inputs, rnn_hxs, masks, actions):
-        _, actor_features, _ = self.base(inputs, rnn_hxs, masks)
+        actor_features, _ = self.encoder(inputs, rnn_hxs, masks)
         actor_features = torch.reshape(actor_features, (-1, 1) + self.state_shape)
         actor_features = self.tanh(actor_features)
 
@@ -384,16 +395,7 @@ class ResNetBase(NNBase):
 
         self.flatten = Flatten()
         self.relu = nn.ReLU()
-
         self.fc = init_relu_(nn.Linear(2048, hidden_size))
-        self.critic_linear = []
-        self.critic_linear.append(init_(nn.Linear(hidden_size, hidden_size)))
-        self.critic_linear.append(nn.ReLU(inplace=True))
-        self.critic_linear.append(init_(nn.Linear(hidden_size, hidden_size)))
-        self.critic_linear.append(nn.ReLU(inplace=True))
-        self.critic_linear.append(init_(nn.Linear(hidden_size, 1)))
-
-        self.critic_linear = nn.Sequential(*self.critic_linear)
 
         apply_init_(self.modules())
 
@@ -423,7 +425,7 @@ class ResNetBase(NNBase):
         if self.is_recurrent:
             x, rnn_hxs = self._forward_gru(x, rnn_hxs, masks)
 
-        return self.critic_linear(x), x, rnn_hxs
+        return x, rnn_hxs
 
 class PlanningResNetBase(NNBase):
     """

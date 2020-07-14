@@ -35,12 +35,10 @@ class ConvDrAC():
 
         self.max_grad_norm = max_grad_norm
 
-        self.actor_critic_parameters = list(actor_critic.base.parameters()) + list(actor_critic.dist.parameters())
-        # self.actor_parameters = list(actor_critic.dist.parameters())
-        self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.base.layer1.parameters()) + list(actor_critic.base.layer2.parameters()) + list(actor_critic.base.layer3.parameters()) + list(actor_critic.base.fc.parameters())
+        self.actor_critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.actor.parameters())
+        self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.encoder.parameters())
 
         self.optimizer_critic = optim.Adam(self.actor_critic_parameters, lr=lr, eps=eps)
-        # self.optimizer_actor = optim.Adam(self.actor_parameters, lr=lr, eps=eps)
         self.optimizer_model = optim.Adam(self.model_parameters, lr=lr, eps=eps)
         
         self.aug_id = aug_id
@@ -76,7 +74,7 @@ class ConvDrAC():
 
 # MODEL OPTIMIZATION
                 with torch.no_grad():
-                    _, next_obs_features, _ = self.actor_critic.base(next_obs_batch, recurrent_hidden_states_batch, masks_batch)
+                    next_obs_features, _ = self.actor_critic.encoder(next_obs_batch, recurrent_hidden_states_batch, masks_batch)
                     next_obs_features = torch.reshape(next_obs_features, (-1, 1) + self.actor_critic.state_shape)
                 
                 predicted_next_states, predicted_rewards = self.actor_critic.predict_next_state_reward(obs_batch, recurrent_hidden_states_batch, masks_batch, actions_batch)
