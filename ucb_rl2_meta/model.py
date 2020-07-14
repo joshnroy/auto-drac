@@ -386,7 +386,14 @@ class ResNetBase(NNBase):
         self.relu = nn.ReLU()
 
         self.fc = init_relu_(nn.Linear(2048, hidden_size))
-        self.critic_linear = init_(nn.Linear(hidden_size, 1))
+        self.critic_linear = []
+        self.critic_linear.append(init_(nn.Linear(hidden_size, hidden_size)))
+        self.critic_linear.append(nn.ReLU(inplace=True))
+        self.critic_linear.append(init_(nn.Linear(hidden_size, hidden_size)))
+        self.critic_linear.append(nn.ReLU(inplace=True))
+        self.critic_linear.append(init_(nn.Linear(hidden_size, 1)))
+
+        self.critic_linear = nn.Sequential(*self.critic_linear)
 
         apply_init_(self.modules())
 

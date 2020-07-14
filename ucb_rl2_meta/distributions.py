@@ -38,7 +38,14 @@ class Categorical(nn.Module):
             lambda x: nn.init.constant_(x, 0),
             gain=0.01)
 
-        self.linear = init_(nn.Linear(num_inputs, num_outputs))
+        self.linear = []
+        self.linear.append(init_(nn.Linear(num_inputs, num_inputs)))
+        self.linear.append(nn.ReLU(inplace=True))
+        self.linear.append(init_(nn.Linear(num_inputs, num_inputs)))
+        self.linear.append(nn.ReLU(inplace=True))
+        self.linear.append(init_(nn.Linear(num_inputs, num_outputs)))
+
+        self.linear = nn.Sequential(*self.linear)
 
     def forward(self, x):
         x = self.linear(x)
