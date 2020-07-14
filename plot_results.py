@@ -15,7 +15,7 @@ matplotlib.use("Agg")
 
 sns.set_style("darkgrid")
 
-name = "separate_optimizers2_modelbased_logs/"
+name = "one_optimizer_modelbased_logs/"
 
 env_names = ["bigfish", "bossfight", "caveflyer", "chaser", "climber", "coinrun", "dodgeball", 
              "fruitbot", "heist", "jumper", "leaper", "maze", "miner", "ninja", "plunder", "starpilot"]
@@ -64,7 +64,7 @@ for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
             df = pd.read_csv(file_name)
             df = df[["losses/transition_model_loss", "losses/reward_model_loss", "train/total_num_steps"]]
             df.columns = ["Transition Model", "Reward Model", "Timestep"]
-            df.loc[:, df.columns != "Timestep"] = np.sqrt(df.loc[:, df.columns != "Timestep"]).clip(0, 4.).rolling(window=1).mean()
+            df.loc[:, df.columns != "Timestep"] = np.sqrt(df.loc[:, df.columns != "Timestep"]).clip(0, 10.).rolling(window=1).mean()
             df = pd.melt(df, id_vars=['Timestep'], var_name="Type", value_name="Value")
             big_df = big_df.append(df, ignore_index=True)
         except Exception as e:
