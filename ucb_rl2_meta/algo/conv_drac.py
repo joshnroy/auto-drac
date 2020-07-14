@@ -35,12 +35,12 @@ class ConvDrAC():
 
         self.max_grad_norm = max_grad_norm
 
-        self.critic_parameters = list(actor_critic.base.parameters())
-        self.actor_parameters = list(actor_critic.dist.parameters())
+        self.actor_critic_parameters = list(actor_critic.base.parameters()) + list(actor_critic.dist.parameters())
+        # self.actor_parameters = list(actor_critic.dist.parameters())
         self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.base.layer1.parameters()) + list(actor_critic.base.layer2.parameters()) + list(actor_critic.base.layer3.parameters()) + list(actor_critic.base.fc.parameters())
 
-        self.optimizer_critic = optim.Adam(self.critic_parameters, lr=lr, eps=eps)
-        self.optimizer_actor = optim.Adam(self.actor_parameters, lr=lr, eps=eps)
+        self.optimizer_critic = optim.Adam(self.actor_critic_parameters, lr=lr, eps=eps)
+        # self.optimizer_actor = optim.Adam(self.actor_parameters, lr=lr, eps=eps)
         self.optimizer_model = optim.Adam(self.model_parameters, lr=lr, eps=eps)
         
         self.aug_id = aug_id
@@ -104,11 +104,11 @@ class ConvDrAC():
                                     1.0 + self.clip_param) * adv_targ
                 action_loss = -torch.min(surr1, surr2).mean()
 
-                self.optimizer_actor.zero_grad()
-                (action_loss - dist_entropy * self.entropy_coef).backward(retain_graph=True)
-                nn.utils.clip_grad_norm_(self.actor_parameters,
-                                        self.max_grad_norm)
-                self.optimizer_actor.step()
+                # self.optimizer_actor.zero_grad()
+                # (action_loss - dist_entropy * self.entropy_coef).backward(retain_graph=True)
+                # nn.utils.clip_grad_norm_(self.actor_parameters,
+                #                         self.max_grad_norm)
+                # self.optimizer_actor.step()
 
                 value_pred_clipped = value_preds_batch + \
                     (values - value_preds_batch).clamp(-self.clip_param, self.clip_param)
@@ -119,8 +119,8 @@ class ConvDrAC():
                                                 value_losses_clipped).mean()
 
                 self.optimizer_critic.zero_grad()
-                (value_loss * self.value_loss_coef).backward()
-                nn.utils.clip_grad_norm_(self.critic_parameters,
+                (value_loss * self.value_loss_coef + action_loss - dist_entropy * self.entropy_coef).backward()
+                nn.utils.clip_grad_norm_(self.actor_critic_parameters,
                                         self.max_grad_norm)
                 self.optimizer_critic.step()
 
