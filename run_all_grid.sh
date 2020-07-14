@@ -10,7 +10,7 @@
 #$ -l gpus=1
 #
 # Runs 80 jobs
-#$ -t 1-80
+#$ -t 1-48
 #
 # Runs at most 20 jobs at once
 #$ -tc 20
@@ -25,4 +25,4 @@ ID_INNER=$ID
 env_name=${envs[$(($ID_INNER % 16))]}
 trial=$(($ID_INNER / 16))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir separate_optimizers2_modelbased_logs/${env_name}/${env_name}-${trial}-${num_mini_batch} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir sanity_ppo_logs/${env_name}/${env_name}-${trial}-${num_mini_batch} --aug_coef 0.
