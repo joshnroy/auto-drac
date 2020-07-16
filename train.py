@@ -25,6 +25,9 @@ from ucb_rl2_meta.envs import VecPyTorchProcgen, TransposeImageProcgen
 from ucb_rl2_meta.arguments import parser
 import data_augs
 
+# if int(os.environ['SGE_TASK_ID']) not in [20, 21, 22, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]:
+#     sys.exit()
+
 aug_to_func = {    
         'crop': data_augs.Crop,
         'random-conv': data_augs.RandomConv,

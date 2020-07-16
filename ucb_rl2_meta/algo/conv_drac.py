@@ -35,7 +35,7 @@ class ConvDrAC():
 
         self.max_grad_norm = max_grad_norm
 
-        self.actor_critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.actor.parameters())
+        self.actor_critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.actor.parameters()) + list(actor_critic.critic.parameters())
         self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.encoder.parameters())
 
         self.optimizer_critic = optim.Adam(self.actor_critic_parameters, lr=lr, eps=eps)

@@ -19,10 +19,10 @@ envs=(bigfish bossfight caveflyer chaser climber coinrun dodgeball fruitbot heis
 num_mini_batches=(16 32)
 
 ID=$(($SGE_TASK_ID - 1))
-# num_mini_batch=${num_mini_batches[$(($ID / 80))]}
-# ID_INNER=$(($ID % 80))
 ID_INNER=$ID
 env_name=${envs[$(($ID_INNER % 16))]}
 trial=$(($ID_INNER / 16))
+# env_name=${envs[9]}
+# trial=$(($ID_INNER))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir sanity_ppo_logs/${env_name}/${env_name}-${trial}-${num_mini_batch} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir ppo_bigvanilla_logs/${env_name}/${env_name}-${trial}-${num_mini_batch} --aug_coef 0.
