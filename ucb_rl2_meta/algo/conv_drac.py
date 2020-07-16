@@ -35,10 +35,13 @@ class ConvDrAC():
 
         self.max_grad_norm = max_grad_norm
 
-        self.actor_critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.actor.parameters()) + list(actor_critic.critic.parameters())
+        # self.actor_critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.actor.parameters()) + list(actor_critic.critic.parameters())
+        self.actor_parameters = list(actor_critic.actor.parameters())
+        self.critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.critic.parameters())
         self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.encoder.parameters())
 
-        self.optimizer_critic = optim.Adam(self.actor_critic_parameters, lr=lr, eps=eps)
+        self.optimizer_actor = optim.Adam(self.actor_parameters, lr=lr, eps=eps)
+        self.optimizer_critic = optim.Adam(self.critic_parameters, lr=lr, eps=eps)
         self.optimizer_model = optim.Adam(self.model_parameters, lr=lr, eps=eps)
         
         self.aug_id = aug_id
@@ -91,22 +94,8 @@ class ConvDrAC():
 
 # ACTION AND VALUE OPTIMIZATION
 
-                values, action_log_probs, dist_entropy, _ = self.actor_critic.evaluate_actions(
-                    obs_batch, recurrent_hidden_states_batch, masks_batch,
-                    actions_batch)
-                                
-                ratio = torch.exp(action_log_probs -
-                                  old_action_log_probs_batch)
-                surr1 = ratio * adv_targ
-                surr2 = torch.clamp(ratio, 1.0 - self.clip_param,
-                                    1.0 + self.clip_param) * adv_targ
-                action_loss = -torch.min(surr1, surr2).mean()
 
-                # self.optimizer_actor.zero_grad()
-                # (action_loss - dist_entropy * self.entropy_coef).backward(retain_graph=True)
-                # nn.utils.clip_grad_norm_(self.actor_parameters,
-                #                         self.max_grad_norm)
-                # self.optimizer_actor.step()
+                values = self.actor_critic.get_value(obs_batch, recurrent_hidden_states_batch, masks_batch)
 
                 value_pred_clipped = value_preds_batch + \
                     (values - value_preds_batch).clamp(-self.clip_param, self.clip_param)
@@ -117,10 +106,27 @@ class ConvDrAC():
                                                 value_losses_clipped).mean()
 
                 self.optimizer_critic.zero_grad()
-                (value_loss * self.value_loss_coef + action_loss - dist_entropy * self.entropy_coef).backward()
-                nn.utils.clip_grad_norm_(self.actor_critic_parameters,
+                (value_loss * self.value_loss_coef).backward()
+                nn.utils.clip_grad_norm_(self.critic_parameters,
                                         self.max_grad_norm)
                 self.optimizer_critic.step()
+
+                action_log_probs, dist_entropy, _ = self.actor_critic.evaluate_actions(
+                    obs_batch, recurrent_hidden_states_batch, masks_batch,
+                    actions_batch, compute_value=False, detach_encoder=False)
+                                
+                ratio = torch.exp(action_log_probs -
+                                  old_action_log_probs_batch)
+                surr1 = ratio * adv_targ
+                surr2 = torch.clamp(ratio, 1.0 - self.clip_param,
+                                    1.0 + self.clip_param) * adv_targ
+                action_loss = -torch.min(surr1, surr2).mean()
+
+                self.optimizer_actor.zero_grad()
+                (action_loss - dist_entropy * self.entropy_coef).backward()
+                nn.utils.clip_grad_norm_(self.actor_parameters,
+                                        self.max_grad_norm)
+                self.optimizer_actor.step()
 
 # -------------------
 

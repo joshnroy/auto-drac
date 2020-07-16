@@ -13,7 +13,7 @@
 #$ -t 1-48
 #
 # Runs at most 20 jobs at once
-#$ -tc 20
+#$ -tc 24
 
 envs=(bigfish bossfight caveflyer chaser climber coinrun dodgeball fruitbot heist jumper leaper maze miner ninja plunder starpilot)
 num_mini_batches=(16 32)
@@ -25,4 +25,4 @@ trial=$(($ID_INNER / 16))
 # env_name=${envs[9]}
 # trial=$(($ID_INNER))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir ppo_bigvanilla_logs/${env_name}/${env_name}-${trial}-${num_mini_batch} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir ppo_bigvanilla_two_optimizers_logs/${env_name}/${env_name}-${trial} --aug_coef 0.

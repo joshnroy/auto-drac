@@ -139,20 +139,28 @@ class Policy(nn.Module):
 
         return value, action, action_log_probs, rnn_hxs
 
-    def get_value(self, inputs, rnn_hxs, masks):
+    def get_value(self, inputs, rnn_hxs, masks, detach_encoder=False):
         actor_features, _ = self.encoder(inputs, rnn_hxs, masks)
+        if detach_encoder:
+            actor_features.detach()
         value = self.critic(actor_features)
         return value
 
-    def evaluate_actions(self, inputs, rnn_hxs, masks, action):
+    def evaluate_actions(self, inputs, rnn_hxs, masks, action, compute_value=True, detach_encoder=False):
         actor_features, rnn_hxs = self.encoder(inputs, rnn_hxs, masks)
-        value = self.critic(actor_features)
+        if detach_encoder:
+            actor_features.detach()
+        if compute_value:
+            value = self.critic(actor_features)
         dist = self.actor(actor_features)
 
         action_log_probs = dist.log_probs(action)
         dist_entropy = dist.entropy().mean()
 
-        return value, action_log_probs, dist_entropy, rnn_hxs
+        if compute_value:
+            return value, action_log_probs, dist_entropy, rnn_hxs
+        else:
+            return action_log_probs, dist_entropy, rnn_hxs
 
 class PlanningPolicy(Policy):
     def __init__(self, obs_shape, num_actions, base_kwargs=None):
