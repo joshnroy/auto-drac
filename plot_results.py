@@ -13,7 +13,7 @@ matplotlib.use("Agg")
 
 sns.set_style("darkgrid")
 
-name = "ppo_bigvanilla_logs/"
+name = "ppo_bigvanilla_two_optimizers_logs/"
 
 env_names = ["bigfish", "bossfight", "caveflyer", "chaser", "climber", "coinrun", "dodgeball", 
              "fruitbot", "heist", "jumper", "leaper", "maze", "miner", "ninja", "plunder", "starpilot"]
