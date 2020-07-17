@@ -35,19 +35,26 @@ class ConvDrAC():
 
         self.max_grad_norm = max_grad_norm
 
-        # self.actor_critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.actor.parameters()) + list(actor_critic.critic.parameters())
-        self.actor_parameters = list(actor_critic.actor.parameters()) + list(actor_critic.encoder.parameters())
-        self.critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.critic.parameters())
+        self.SAME_ACTOR_CRITIC = True
+
+        if self.SAME_ACTOR_CRITIC:
+            self.actor_critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.actor.parameters()) + list(actor_critic.critic.parameters())
+        else:
+            self.actor_parameters = list(actor_critic.actor.parameters()) # + list(actor_critic.encoder.parameters())
+            self.critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.critic.parameters())
         self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.encoder.parameters())
 
-        self.optimizer_actor = optim.Adam(self.actor_parameters, lr=lr, eps=eps)
-        self.optimizer_critic = optim.Adam(self.critic_parameters, lr=lr, eps=eps)
+        if self.SAME_ACTOR_CRITIC:
+            self.optimizer_actor_critic = optim.Adam(self.actor_critic_parameters, lr=lr, eps=eps)
+        else:
+            self.optimizer_actor = optim.Adam(self.actor_parameters, lr=lr, eps=eps)
+            self.optimizer_critic = optim.Adam(self.critic_parameters, lr=lr, eps=eps)
         self.optimizer_model = optim.Adam(self.model_parameters, lr=lr, eps=eps)
         
         self.aug_id = aug_id
         self.aug_func = aug_func
         self.aug_coef = aug_coef
-        self.model_coef = 0.
+        self.model_coef = 1.
 
         self.env_name = env_name
 
@@ -105,11 +112,12 @@ class ConvDrAC():
                 value_loss = 0.5 * torch.max(value_losses,
                                                 value_losses_clipped).mean()
 
-                self.optimizer_critic.zero_grad()
-                (value_loss * self.value_loss_coef).backward()
-                nn.utils.clip_grad_norm_(self.critic_parameters,
-                                        self.max_grad_norm)
-                self.optimizer_critic.step()
+                if not self.SAME_ACTOR_CRITIC:
+                    self.optimizer_critic.zero_grad()
+                    (value_loss * self.value_loss_coef).backward()
+                    nn.utils.clip_grad_norm_(self.critic_parameters,
+                                            self.max_grad_norm)
+                    self.optimizer_critic.step()
 
                 action_log_probs, dist_entropy, _ = self.actor_critic.evaluate_actions(
                     obs_batch, recurrent_hidden_states_batch, masks_batch,
@@ -122,11 +130,18 @@ class ConvDrAC():
                                     1.0 + self.clip_param) * adv_targ
                 action_loss = -torch.min(surr1, surr2).mean()
 
-                self.optimizer_actor.zero_grad()
-                (action_loss - dist_entropy * self.entropy_coef).backward()
-                nn.utils.clip_grad_norm_(self.actor_parameters,
-                                        self.max_grad_norm)
-                self.optimizer_actor.step()
+                if not self.SAME_ACTOR_CRITIC:
+                    self.optimizer_actor.zero_grad()
+                    (action_loss - dist_entropy * self.entropy_coef).backward()
+                    nn.utils.clip_grad_norm_(self.actor_parameters,
+                                            self.max_grad_norm)
+                    self.optimizer_actor.step()
+                else:
+                    self.optimizer_actor_critic.zero_grad()
+                    (value_loss * self.value_loss_coef + action_loss - dist_entropy * self.entropy_coef).backward()
+                    nn.utils.clip_grad_norm_(self.actor_critic_parameters,
+                                            self.max_grad_norm)
+                    self.optimizer_actor_critic.step()
 
 # -------------------
 
