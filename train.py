@@ -25,8 +25,8 @@ from ucb_rl2_meta.envs import VecPyTorchProcgen, TransposeImageProcgen
 from ucb_rl2_meta.arguments import parser
 import data_augs
 
-if int(os.environ['SGE_TASK_ID']) in [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 21, 22, 23, 24, 25, 26, 48]:
-    sys.exit()
+# if int(os.environ['SGE_TASK_ID']) in [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 21, 22, 23, 24, 25, 26, 48]:
+#     sys.exit()
 
 aug_to_func = {    
         'crop': data_augs.Crop,
