@@ -175,12 +175,12 @@ class ModelBasedPolicy(Policy):
         self.transition_model = TransitionModel(self.state_shape, num_actions)
         self.reward_model = RewardModel(self.state_shape, num_actions)
 
-        self.tanh = nn.Tanh()
+        # self.tanh = nn.Tanh()
 
     def predict_next_state_reward(self, inputs, rnn_hxs, masks, actions):
         actor_features, _ = self.encoder(inputs, rnn_hxs, masks)
         actor_features = torch.reshape(actor_features, (-1, 1) + self.state_shape)
-        actor_features = self.tanh(actor_features)
+        # actor_features = self.tanh(actor_features)
 
         broadcasted_actions_shape = list(actor_features.shape)
         actions = actions.float().unsqueeze(-1).unsqueeze(-1).expand(broadcasted_actions_shape)
@@ -403,7 +403,8 @@ class ResNetBase(NNBase):
 
         self.flatten = Flatten()
         self.relu = nn.ReLU()
-        self.fc = init_relu_(nn.Linear(2048, hidden_size))
+        self.tanh = nn.Tanh()
+        self.fc = init_tanh_(nn.Linear(2048, hidden_size))
 
         apply_init_(self.modules())
 
@@ -428,10 +429,13 @@ class ResNetBase(NNBase):
         x = self.layer3(x)
 
         x = self.relu(self.flatten(x))
-        x = self.relu(self.fc(x))
+        # x = self.relu(self.fc(x))
+        x = self.fc(x)
 
         if self.is_recurrent:
             x, rnn_hxs = self._forward_gru(x, rnn_hxs, masks)
+
+        x = self.tanh(x)
 
         return x, rnn_hxs
 

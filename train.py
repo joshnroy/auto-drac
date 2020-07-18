@@ -25,8 +25,6 @@ from ucb_rl2_meta.envs import VecPyTorchProcgen, TransposeImageProcgen
 from ucb_rl2_meta.arguments import parser
 import data_augs
 
-# if int(os.environ['SGE_TASK_ID']) in [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 21, 22, 23, 24, 25, 26, 48]:
-
 aug_to_func = {    
         'crop': data_augs.Crop,
         'random-conv': data_augs.RandomConv,
@@ -279,7 +277,7 @@ def train(args):
         if args.use_ucb and j > 0:
             agent.update_ucb_values(rollouts)
         if isinstance(agent, algo.ConvDrAC):
-            value_loss, action_loss, dist_entropy, transition_model_loss, reward_model_loss = agent.update(rollouts)   
+            value_loss, action_loss, dist_entropy, transition_model_loss, reward_model_loss, next_obs_variance = agent.update(rollouts)   
         else:
             value_loss, action_loss, dist_entropy = agent.update(rollouts)    
         rollouts.after_update()
@@ -303,6 +301,7 @@ def train(args):
             if isinstance(agent, algo.ConvDrAC):
                 logger.logkv("losses/transition_model_loss", transition_model_loss)
                 logger.logkv("losses/reward_model_loss", reward_model_loss)
+                logger.logkv("debug/next_obs_variance", next_obs_variance)
 
             logger.logkv("train/mean_episode_reward", np.mean(episode_rewards))
             logger.logkv("train/median_episode_reward", np.median(episode_rewards))
