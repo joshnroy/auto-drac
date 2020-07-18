@@ -68,6 +68,7 @@ class ConvDrAC():
         dist_entropy_epoch = 0
         transition_model_loss_epoch = 0
         reward_model_loss_epoch = 0
+        next_obs_variance_epoch = 0
 
         for e in range(self.ppo_epoch):
             if self.actor_critic.is_recurrent:
@@ -86,6 +87,10 @@ class ConvDrAC():
                 with torch.no_grad():
                     next_obs_features, _ = self.actor_critic.encoder(next_obs_batch, recurrent_hidden_states_batch, masks_batch)
                     next_obs_features = torch.reshape(next_obs_features, (-1, 1) + self.actor_critic.state_shape)
+                    # next_obs_features = self.actor_critic.tanh(next_obs_features)
+                    next_obs_variance = torch.var(next_obs_features, 0)
+                    next_obs_variance = torch.mean(next_obs_variance)
+                    next_obs_variance_epoch += next_obs_variance.item()
                 
                 predicted_next_states, predicted_rewards = self.actor_critic.predict_next_state_reward(obs_batch, recurrent_hidden_states_batch, masks_batch, actions_batch)
 
@@ -186,5 +191,6 @@ class ConvDrAC():
         dist_entropy_epoch /= num_updates
         transition_model_loss_epoch /= num_updates
         reward_model_loss_epoch /= num_updates
+        next_obs_variance_epoch /= num_updates
 
-        return value_loss_epoch, action_loss_epoch, dist_entropy_epoch, transition_model_loss_epoch, reward_model_loss_epoch
+        return value_loss_epoch, action_loss_epoch, dist_entropy_epoch, transition_model_loss_epoch, reward_model_loss_epoch, next_obs_variance_epoch

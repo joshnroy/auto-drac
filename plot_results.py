@@ -15,6 +15,8 @@ sns.set_style("darkgrid")
 
 name = "ppo_bigvanilla_two_optimizers_noactor_logs/"
 
+SMOOTHING_WINDOW = 10
+
 env_names = ["bigfish", "bossfight", "caveflyer", "chaser", "climber", "coinrun", "dodgeball", 
              "fruitbot", "heist", "jumper", "leaper", "maze", "miner", "ninja", "plunder", "starpilot"]
 num_wide = int(np.sqrt(len(env_names)))
@@ -30,7 +32,7 @@ for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
             df = pd.read_csv(file_name)
             df = df[["train/mean_episode_reward", "test/mean_episode_reward", "train/total_num_steps"]]
             df.columns = ["PPO Train", "PPO Test", "Timestep"]
-            df.loc[:, df.columns != "Timestep"] = df.loc[:, df.columns != "Timestep"].rolling(window=20).mean()
+            df.loc[:, df.columns != "Timestep"] = df.loc[:, df.columns != "Timestep"].rolling(window=SMOOTHING_WINDOW).mean()
             df = pd.melt(df, id_vars=['Timestep'], var_name="Type", value_name="Reward")
             big_df = big_df.append(df, ignore_index=True)
         except Exception as e:
@@ -40,7 +42,7 @@ for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
             df = pd.read_csv(file_name)
             df = df[["train/mean_episode_reward", "test/mean_episode_reward", "train/total_num_steps"]]
             df.columns = ["Our Train", "Our Test", "Timestep"]
-            df.loc[:, df.columns != "Timestep"] = df.loc[:, df.columns != "Timestep"].rolling(window=20).mean()
+            df.loc[:, df.columns != "Timestep"] = df.loc[:, df.columns != "Timestep"].rolling(window=SMOOTHING_WINDOW).mean()
             df = pd.melt(df, id_vars=['Timestep'], var_name="Type", value_name="Reward")
             big_df = big_df.append(df, ignore_index=True)
         except Exception as e:
