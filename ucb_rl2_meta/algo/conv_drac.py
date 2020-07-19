@@ -100,6 +100,8 @@ class ConvDrAC():
 
                 self.optimizer_model.zero_grad()
                 (model_loss * self.model_coef).backward()
+                nn.utils.clip_grad_norm_(self.model_parameters,
+                                        self.max_grad_norm)
                 self.optimizer_model.step()  
 
 # -------------------

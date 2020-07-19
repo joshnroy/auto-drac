@@ -198,15 +198,20 @@ class TransitionModel(nn.Module):
         self.state_shape = state_shape
         self.num_actions = num_actions
 
+        inner_kernel_size = 1
+        hidden_size = 64
+
         conv_padding = int(np.floor(kernel_size / 2.))
-        conv_padding_1 = int(np.floor(1 / 2.))
+        inner_conv_padding = int(np.floor(inner_kernel_size / 2.))
 
         layers = []
-        layers.append(Conv2d_tf(2, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(16, 16, kernel_size=1, stride=1, padding=(conv_padding_1,conv_padding_1)))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
         layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(16, 1, kernel_size=1, stride=1, padding=(conv_padding_1,conv_padding_1)))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, 1, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
         layers.append(nn.Tanh())
 
         self.model = nn.Sequential(*layers)
@@ -222,14 +227,16 @@ class RewardModel(nn.Module):
         self.state_shape = state_shape
         self.num_actions = num_actions
 
+        hidden_size = 64
+
         conv_padding = int(np.floor(kernel_size / 2.))
 
         layers = []
-        layers.append(Conv2d_tf(2, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(16, 16, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(16, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(Conv2d_tf(hidden_size, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
 
         self.model = nn.Sequential(*layers)
 

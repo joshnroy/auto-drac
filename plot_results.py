@@ -13,7 +13,7 @@ matplotlib.use("Agg")
 
 sns.set_style("darkgrid")
 
-name = "ppo_bigvanilla_two_optimizers_noactor_logs/"
+name = "debug/"
 
 SMOOTHING_WINDOW = 10
 
