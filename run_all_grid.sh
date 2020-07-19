@@ -25,4 +25,4 @@ trial=$(($ID_INNER / 16))
 # env_name=${envs[9]}
 # trial=$(($ID_INNER))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir ppo_bigvanilla_two_optimizers_noactor_logs/${env_name}/${env_name}-${trial} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir modelbased_modelgradclip_logs/${env_name}/${env_name}-${trial} --aug_coef 0.

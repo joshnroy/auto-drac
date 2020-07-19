@@ -13,7 +13,7 @@ matplotlib.use("Agg")
 
 sns.set_style("darkgrid")
 
-name = "debug/"
+name = "modelbased_modelgradclip_logs/"
 
 SMOOTHING_WINDOW = 10
 
