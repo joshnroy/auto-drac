@@ -192,20 +192,24 @@ class ModelBasedPolicy(Policy):
         return predicted_next_state, predicted_reward
 
 class TransitionModel(nn.Module):
-    def __init__(self, state_shape, num_actions, kernel_size=3):
+    def __init__(self, state_shape, num_actions, kernel_size=5):
         super(TransitionModel, self).__init__()
         
         self.state_shape = state_shape
         self.num_actions = num_actions
 
         inner_kernel_size = 1
-        hidden_size = 64
+        hidden_size = 128
 
         conv_padding = int(np.floor(kernel_size / 2.))
         inner_conv_padding = int(np.floor(inner_kernel_size / 2.))
 
         layers = []
         layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
         layers.append(nn.ReLU(inplace=True))
         layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
         layers.append(nn.ReLU(inplace=True))
@@ -227,12 +231,18 @@ class RewardModel(nn.Module):
         self.state_shape = state_shape
         self.num_actions = num_actions
 
-        hidden_size = 64
+        hidden_size = 128
 
         conv_padding = int(np.floor(kernel_size / 2.))
 
         layers = []
         layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
         layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         layers.append(nn.ReLU(inplace=True))
@@ -412,6 +422,7 @@ class ResNetBase(NNBase):
         self.relu = nn.ReLU()
         self.tanh = nn.Tanh()
         self.fc = init_tanh_(nn.Linear(2048, hidden_size))
+        # self.fc = init_(nn.Linear(2048, hidden_size))
 
         apply_init_(self.modules())
 
@@ -436,8 +447,8 @@ class ResNetBase(NNBase):
         x = self.layer3(x)
 
         x = self.relu(self.flatten(x))
-        # x = self.relu(self.fc(x))
-        x = self.fc(x)
+        x = self.relu(self.fc(x))
+        # x = self.fc(x)
 
         if self.is_recurrent:
             x, rnn_hxs = self._forward_gru(x, rnn_hxs, masks)

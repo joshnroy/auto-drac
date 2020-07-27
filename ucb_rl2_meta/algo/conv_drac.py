@@ -96,7 +96,7 @@ class ConvDrAC():
 
                 next_state_loss = F.mse_loss(predicted_next_states, next_obs_features)
                 reward_loss = F.mse_loss(predicted_rewards, return_batch)
-                model_loss = next_state_loss + reward_loss
+                model_loss = next_state_loss + 1. * reward_loss
 
                 self.optimizer_model.zero_grad()
                 (model_loss * self.model_coef).backward()
@@ -145,7 +145,7 @@ class ConvDrAC():
                     self.optimizer_actor.step()
                 else:
                     self.optimizer_actor_critic.zero_grad()
-                    (value_loss * self.value_loss_coef + action_loss - dist_entropy * self.entropy_coef).backward()
+                    (0. * (value_loss * self.value_loss_coef + action_loss - dist_entropy * self.entropy_coef)).backward()
                     nn.utils.clip_grad_norm_(self.actor_critic_parameters,
                                             self.max_grad_norm)
                     self.optimizer_actor_critic.step()
