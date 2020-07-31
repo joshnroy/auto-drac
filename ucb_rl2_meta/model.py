@@ -195,41 +195,33 @@ class ModelBasedPolicy(Policy):
 
         return predicted_reward
 
-    def reconstruct_next_observation(self, next_state):
-        next_observation = self.reconstruction_model(next_states)
+    def reconstruct_observation(self, states):
+        observation = self.reconstruction_model(states)
 
-        return next_observation
+        return observation
 
 class ReconstructionModel(nn.Module):
     def __init__(self, state_shape, observation_shape, kernel_size=5):
-        super(TransitionModel, self).__init__()
+        super(ReconstructionModel, self).__init__()
         
         self.state_shape = state_shape
-        self.observation_shape
-
-        conv_padding = int(np.floor(kernel_size / 2.))
-        inner_conv_padding = int(np.floor(inner_kernel_size / 2.))
+        self.observation_shape = observation_shape
+        hidden_size = 64
 
         layers = []
-        layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ConvTranspose2d(1, out_channels=64, kernel_size=5, stride=1))
         layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+        layers.append(nn.ConvTranspose2d(64, out_channels=32, kernel_size=9, stride=1))
         layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, 1, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
-        layers.append(nn.Tanh())
+        layers.append(nn.ConvTranspose2d(32, 3, kernel_size=11, stride=2))
+        layers.append(nn.Sigmoid())
 
         self.model = nn.Sequential(*layers)
 
     def forward(self, inputs):
-        print("JOSH YOU NEED TO IMPLEMENT THIS")
-        sys.exit()
-        return self.model(inputs)
+        output = self.model(inputs)
+        output = output[:, :, :64, :64]
+        return output
 
 class TransitionModel(nn.Module):
     def __init__(self, state_shape, num_actions, kernel_size=5):

@@ -146,9 +146,10 @@ PlanningResNetBase	ucb_rl2_meta/model.py	/^class PlanningResNetBase(NNBase):$/;"
 Policy	ucb_rl2_meta/model.py	/^class Policy(nn.Module):$/;"	c
 PolicyWithValue	baselines/baselines/common/policies.py	/^class PolicyWithValue(object):$/;"	c
 PrioritizedReplayBuffer	baselines/baselines/deepq/replay_buffer.py	/^class PrioritizedReplayBuffer(ReplayBuffer):$/;"	c
-REWARD_CLIP	plot_results.py	/^REWARD_CLIP = 10.$/;"	v
+REWARD_CLIP	plot_results.py	/^REWARD_CLIP = 1.$/;"	v
 RL2DrAC	ucb_rl2_meta/algo/rl2_drac.py	/^class RL2DrAC():$/;"	c
 RandomConv	data_augs.py	/^class RandomConv(object):$/;"	c
+ReconstructionModel	ucb_rl2_meta/model.py	/^class ReconstructionModel(nn.Module):$/;"	c
 ReplayBuffer	baselines/baselines/deepq/replay_buffer.py	/^class ReplayBuffer(object):$/;"	c
 ReplayBuffer	baselines/baselines/her/replay_buffer.py	/^class ReplayBuffer:$/;"	c
 ResNetBase	ucb_rl2_meta/model.py	/^class ResNetBase(NNBase):$/;"	c
@@ -169,6 +170,7 @@ RunningAvg	baselines/baselines/common/misc_util.py	/^class RunningAvg(object):$/
 RunningMeanStd	baselines/baselines/common/mpi_running_mean_std.py	/^class RunningMeanStd(object):$/;"	c
 RunningMeanStd	baselines/baselines/common/running_mean_std.py	/^class RunningMeanStd(object):$/;"	c
 SCRIPT_DIR	baselines/baselines/bench/benchmarks.py	/^SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))$/;"	v
+SMOOTHING_WINDOW	plot_results.py	/^SMOOTHING_WINDOW = 20$/;"	v
 ScaledFloatFrame	baselines/baselines/common/atari_wrappers.py	/^class ScaledFloatFrame(gym.ObservationWrapper):$/;"	c
 Schedule	baselines/baselines/common/schedules.py	/^class Schedule(object):$/;"	c
 Scheduler	baselines/baselines/a2c/utils.py	/^class Scheduler(object):$/;"	c
@@ -182,6 +184,7 @@ StartDoingRandomActionsWrapper	baselines/baselines/common/retro_wrappers.py	/^cl
 StochasticFrameSkip	baselines/baselines/common/retro_wrappers.py	/^class StochasticFrameSkip(gym.Wrapper):$/;"	c
 SubprocVecEnv	baselines/baselines/common/vec_env/subproc_vec_env.py	/^class SubprocVecEnv(VecEnv):$/;"	c
 SumSegmentTree	baselines/baselines/common/segment_tree.py	/^class SumSegmentTree(SegmentTree):$/;"	c
+TRANSITION_CLIP	plot_results.py	/^TRANSITION_CLIP = 4.$/;"	v
 TensorBoardOutputFormat	baselines/baselines/logger.py	/^class TensorBoardOutputFormat(KVWriter):$/;"	c
 TfInput	baselines/baselines/deepq/utils.py	/^class TfInput(object):$/;"	c
 TfRunningMeanStd	baselines/baselines/common/running_mean_std.py	/^class TfRunningMeanStd(object):$/;"	c
@@ -381,7 +384,8 @@ __init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, 
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:Policy
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, recurrent, recurrent_input_size, hidden_size):$/;"	m	class:NNBase
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, num_actions, kernel_size=1):$/;"	m	class:RewardModel
-__init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, num_actions, kernel_size=3):$/;"	m	class:TransitionModel
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, num_actions, kernel_size=5):$/;"	m	class:TransitionModel
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, observation_shape, kernel_size=5):$/;"	m	class:ReconstructionModel
 __init__	ucb_rl2_meta/storage.py	/^    def __init__(self, num_steps, num_processes, obs_shape, action_space,$/;"	m	class:BiggerRolloutStorage
 __init__	ucb_rl2_meta/storage.py	/^    def __init__(self, num_steps, num_processes, obs_shape, action_space,$/;"	m	class:RolloutStorage
 __len__	baselines/baselines/common/atari_wrappers.py	/^    def __len__(self):$/;"	m	class:LazyFrames	file:
@@ -545,6 +549,7 @@ ax	baselines/baselines/common/plot_util.py	/^        ax = axarr[idx_row][idx_col
 ax	plot_results.py	/^    ax = axes[i_env \/\/ num_wide, i_env % num_wide]$/;"	v
 batch_to_seq	baselines/baselines/a2c/utils.py	/^def batch_to_seq(h, nbatch, nsteps, flat=False):$/;"	f
 bbox_to_anchor	baselines/baselines/common/plot_util.py	/^                bbox_to_anchor=(1,1) if legend_outside else None)$/;"	v
+big_df	plot_results.py	/^                big_df = big_df.append(df, ignore_index=True)$/;"	v
 big_df	plot_results.py	/^            big_df = big_df.append(df, ignore_index=True)$/;"	v
 big_df	plot_results.py	/^    big_df = pd.DataFrame()$/;"	v
 blue	baselines/baselines/common/console_util.py	/^    blue=34,$/;"	v
@@ -701,7 +706,14 @@ dequeue_op	baselines/baselines/acktr/kfac.py	/^            def dequeue_op():$/;"
 dequeue_stats_op	baselines/baselines/acktr/kfac.py	/^            def dequeue_stats_op():$/;"	f	function:KfacOptimizer.apply_stats.updateRunningAvgStats
 description	baselines/setup.py	/^      description='OpenAI baselines: high quality implementations of reinforcement learning algorithms',$/;"	v
 detectMinVal	baselines/baselines/acktr/kfac_utils.py	/^def detectMinVal(input_mat, var, threshold=1e-6, name='', debug=False):$/;"	f
-df	plot_results.py	/^            df = df[["losses\/transition_model_loss", "losses\/reward_model_loss", "train\/total_num_steps"]]$/;"	v
+df	plot_results.py	/^                df = df[["debug\/next_obs_variance", "train\/total_num_steps"]]$/;"	v
+df	plot_results.py	/^                df = df[["losses\/reward_model_loss", "train\/total_num_steps"]]$/;"	v
+df	plot_results.py	/^                df = df[["losses\/transition_model_loss", "train\/total_num_steps"]]$/;"	v
+df	plot_results.py	/^                df = df[["train\/mean_episode_reward", "test\/mean_episode_reward", "train\/total_num_steps"]]$/;"	v
+df	plot_results.py	/^                df = pd.melt(df, id_vars=['Timestep'], var_name="Type", value_name="Reward")$/;"	v
+df	plot_results.py	/^                df = pd.melt(df, id_vars=['Timestep'], var_name="Type", value_name="Value")$/;"	v
+df	plot_results.py	/^                df = pd.read_csv(file_name)$/;"	v
+df	plot_results.py	/^            df = df[["debug\/next_obs_variance", "train\/total_num_steps"]]$/;"	v
 df	plot_results.py	/^            df = df[["train\/mean_episode_reward", "test\/mean_episode_reward", "train\/total_num_steps"]]$/;"	v
 df	plot_results.py	/^            df = pd.melt(df, id_vars=['Timestep'], var_name="Type", value_name="Reward")$/;"	v
 df	plot_results.py	/^            df = pd.melt(df, id_vars=['Timestep'], var_name="Type", value_name="Value")$/;"	v
@@ -787,6 +799,7 @@ fmt_row	baselines/baselines/common/console_util.py	/^def fmt_row(width, row, hea
 forward	data_augs.py	/^    def forward(self, inputs):$/;"	m	class:ColorJitter
 forward	ucb_rl2_meta/distributions.py	/^    def forward(self, x):$/;"	m	class:Categorical
 forward	ucb_rl2_meta/model.py	/^    def forward(self, input):$/;"	m	class:Conv2d_tf
+forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs):$/;"	m	class:ReconstructionModel
 forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs):$/;"	m	class:RewardModel
 forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs):$/;"	m	class:TransitionModel
 forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs, rnn_hxs, masks):$/;"	m	class:MLPBase
@@ -836,6 +849,7 @@ get_env_type	baselines/baselines/run.py	/^def get_env_type(args):$/;"	f
 get_episode_lengths	baselines/baselines/bench/monitor.py	/^    def get_episode_lengths(self):$/;"	m	class:Monitor
 get_episode_rewards	baselines/baselines/bench/monitor.py	/^    def get_episode_rewards(self):$/;"	m	class:Monitor
 get_episode_times	baselines/baselines/bench/monitor.py	/^    def get_episode_times(self):$/;"	m	class:Monitor
+get_features	ucb_rl2_meta/model.py	/^    def get_features(self, inputs, rnn_hxs, masks, actions):$/;"	m	class:ModelBasedPolicy
 get_git_commit	baselines/baselines/common/console_util.py	/^def get_git_commit(cwd=None):$/;"	f
 get_git_commit_message	baselines/baselines/common/console_util.py	/^def get_git_commit_message(cwd=None):$/;"	f
 get_images	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def get_images(self):$/;"	m	class:DummyVecEnv
@@ -1104,7 +1118,7 @@ mujoco_arg_parser	baselines/baselines/common/cmd_util.py	/^def mujoco_arg_parser
 mujoco_py	baselines/baselines/common/tests/test_doc_examples.py	/^    mujoco_py = None$/;"	v
 n_cycles	baselines/baselines/her/her.py	/^    n_cycles = params['n_cycles']$/;"	v
 n_epochs	baselines/baselines/her/her.py	/^    n_epochs = total_timesteps \/\/ n_cycles \/\/ rollout_worker.T \/\/ rollout_worker.rollout_batch_size$/;"	v
-name	plot_results.py	/^name = "ppo_bigvanilla_two_optimizers_logs\/"$/;"	v
+name	plot_results.py	/^name = "modelbased_notanh_logs\/"$/;"	v
 nature_cnn	baselines/baselines/common/models.py	/^def nature_cnn(unscaled_images, **conv_kwargs):$/;"	f
 nb_entries	baselines/baselines/ddpg/memory.py	/^    def nb_entries(self):$/;"	m	class:Memory
 ncc	baselines/baselines/common/math_util.py	/^def ncc(ypred, y):$/;"	f
@@ -1159,7 +1173,7 @@ observations	baselines/baselines/her/experiment/data_generation/fetch_data_gener
 one_sided_ema	baselines/baselines/common/plot_util.py	/^def one_sided_ema(xolds, yolds, low=None, high=None, n=512, decay_steps=1., low_counts_threshold=1e-8):$/;"	f
 optimOp	baselines/baselines/acktr/kfac.py	/^                    def optimOp():$/;"	f	function:KfacOptimizer.apply_gradients_kfac.dequeue_op.no_op_wrapper
 optimizer	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            optimizer=tf.train.AdamOptimizer(learning_rate=5e-4),$/;"	v
-original_file_naming_scheme	plot_results.py	/^    original_file_naming_scheme="ppo_bigvanilla_logs\/" + env_name + "\/" + env_name + "-*\/progress-drac-" + env_name + "-reproduce-s1.csv"$/;"	v
+original_file_naming_scheme	plot_results.py	/^    original_file_naming_scheme="ppo_bigvanilla_var_logs\/" + env_name + "\/" + env_name + "-*\/progress-drac-" + env_name + "-reproduce-s1.csv"$/;"	v
 origxs	baselines/baselines/common/plot_util.py	/^                origxs = [xy[0] for xy in xys]$/;"	v
 ortho_init	baselines/baselines/a2c/utils.py	/^def ortho_init(scale=1.0):$/;"	f
 out	baselines/baselines/acer/policies.py	/^        def out(ob, *args, **kwargs):$/;"	f	function:AcerCnnPolicy.__init__
@@ -1214,7 +1228,8 @@ policy_fn	baselines/baselines/ppo1/run_atari.py	/^    def policy_fn(name, ob_spa
 policy_fn	baselines/baselines/ppo1/run_humanoid.py	/^    def policy_fn(name, ob_space, ac_space):$/;"	f	function:train
 policy_fn	baselines/baselines/ppo1/run_mujoco.py	/^    def policy_fn(name, ob_space, ac_space):$/;"	f	function:train
 policy_fn	baselines/baselines/ppo1/run_robotics.py	/^    def policy_fn(name, ob_space, ac_space):$/;"	f	function:train
-predict_next_state_reward	ucb_rl2_meta/model.py	/^    def predict_next_state_reward(self, inputs, rnn_hxs, masks, actions):$/;"	m	class:ModelBasedPolicy
+predict_next_state	ucb_rl2_meta/model.py	/^    def predict_next_state(self, model_inputs):$/;"	m	class:ModelBasedPolicy
+predict_reward	ucb_rl2_meta/model.py	/^    def predict_reward(self, model_inputs):$/;"	m	class:ModelBasedPolicy
 prepare_params	baselines/baselines/her/experiment/config.py	/^def prepare_params(kwargs):$/;"	f
 pretty_eta	baselines/baselines/common/misc_util.py	/^def pretty_eta(seconds_left):$/;"	f
 print_cmd	baselines/baselines/common/console_util.py	/^def print_cmd(cmd, dry=False):$/;"	f
@@ -1245,6 +1260,7 @@ read_tb	baselines/baselines/logger.py	/^def read_tb(path):$/;"	f
 reason	baselines/baselines/common/tests/test_doc_examples.py	/^    reason='error loading mujoco - either mujoco \/ mujoco key not present, or LD_LIBRARY_PATH is not pointing to mujoco library'$/;"	v
 recompute_stats	baselines/baselines/her/normalizer.py	/^    def recompute_stats(self):$/;"	m	class:IdentityNormalizer
 recompute_stats	baselines/baselines/her/normalizer.py	/^    def recompute_stats(self):$/;"	m	class:Normalizer
+reconstruct_observation	ucb_rl2_meta/model.py	/^    def reconstruct_observation(self, next_state):$/;"	m	class:ModelBasedPolicy
 record_tabular	baselines/baselines/logger.py	/^record_tabular = logkv$/;"	v
 recurrent	baselines/baselines/gail/mlp_policy.py	/^    recurrent = False$/;"	v	class:MlpPolicy
 recurrent	baselines/baselines/ppo1/cnn_policy.py	/^    recurrent = False$/;"	v	class:CnnPolicy

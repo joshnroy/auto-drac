@@ -277,7 +277,7 @@ def train(args):
         if args.use_ucb and j > 0:
             agent.update_ucb_values(rollouts)
         if isinstance(agent, algo.ConvDrAC):
-            value_loss, action_loss, dist_entropy, transition_model_loss, reward_model_loss, next_obs_variance = agent.update(rollouts)   
+            value_loss, action_loss, dist_entropy, transition_model_loss, reward_model_loss, reconstruction_loss, next_obs_reconstruction_loss, feature_variance = agent.update(rollouts)   
         else:
             value_loss, action_loss, dist_entropy = agent.update(rollouts)    
         rollouts.after_update()
@@ -301,7 +301,9 @@ def train(args):
             if isinstance(agent, algo.ConvDrAC):
                 logger.logkv("losses/transition_model_loss", transition_model_loss)
                 logger.logkv("losses/reward_model_loss", reward_model_loss)
-                logger.logkv("debug/next_obs_variance", next_obs_variance)
+                logger.logkv("losses/reconstruction_loss", reconstruction_loss)
+                logger.logkv("losses/next_obs_reconstruction_loss", next_obs_reconstruction_loss)
+                logger.logkv("debug/feature_variance", feature_variance)
 
             logger.logkv("train/mean_episode_reward", np.mean(episode_rewards))
             logger.logkv("train/median_episode_reward", np.median(episode_rewards))

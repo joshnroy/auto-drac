@@ -42,7 +42,7 @@ class ConvDrAC():
         else:
             self.actor_parameters = list(actor_critic.actor.parameters()) # + list(actor_critic.encoder.parameters())
             self.critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.critic.parameters())
-        self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.encoder.parameters())
+        self.model_parameters = list(actor_critic.transition_model.parameters()) + list(actor_critic.reward_model.parameters()) + list(actor_critic.encoder.parameters()) + list(actor_critic.reconstruction_model.parameters())
 
         if self.SAME_ACTOR_CRITIC:
             self.optimizer_actor_critic = optim.Adam(self.actor_critic_parameters, lr=lr, eps=eps)
@@ -68,7 +68,9 @@ class ConvDrAC():
         dist_entropy_epoch = 0
         transition_model_loss_epoch = 0
         reward_model_loss_epoch = 0
-        next_obs_variance_epoch = 0
+        reconstruction_loss_epoch = 0
+        next_obs_reconstruction_loss_epoch = 0
+        feature_variance_epoch = 0
 
         for e in range(self.ppo_epoch):
             if self.actor_critic.is_recurrent:
@@ -89,11 +91,14 @@ class ConvDrAC():
                 features_and_actions, features = self.actor_critic.get_features(obs_batch, recurrent_hidden_states_batch, masks_batch, actions_batch)
                 features_var = torch.var(features, 0)
                 features_var = torch.mean(features_var)
-                next_obs_variance_epoch += features_var.item()
+                feature_variance_epoch += features_var.item()
 
                 use_reward_loss = True
                 use_next_state_loss = False
-                use_next_observation_loss = True
+                use_next_observation_loss = False
+                use_reconstruction_loss = True
+                clip_grad = False
+
 
                 if use_next_state_loss or use_next_observation_loss:
                     predicted_next_states = self.actor_critic.predict_next_state(features_and_actions)
@@ -105,20 +110,34 @@ class ConvDrAC():
                     next_state_loss = F.l1_loss(predicted_next_states, next_obs_features)
                     model_loss += 1. * next_state_loss
 
+                    transition_model_loss_epoch += next_state_loss.item()
+
                 if use_reward_loss:
                     predicted_rewards = self.actor_critic.predict_reward(features_and_actions)
                     reward_loss = F.l1_loss(predicted_rewards, return_batch)
                     model_loss += 1. * reward_loss
 
+                    reward_model_loss_epoch += reward_loss.item()
+
                 if use_next_observation_loss:
-                    predicted_next_obs = self.actor_critic.reconstruct_next_observation(predicted_next_states)
-                    reconstruction_loss = F.l1_loss(predicted_next_obs, next_obs_batch)
+                    predicted_next_obs = self.actor_critic.reconstruct_observation(predicted_next_states)
+                    next_obs_reconstruction_loss = F.l1_loss(predicted_next_obs, next_obs_batch)
+                    model_loss += 1. * next_obs_reconstruction_loss
+
+                    next_obs_reconstruction_loss_epoch += next_obs_reconstruction_loss.item()
+
+                if use_reconstruction_loss:
+                    reconstructions = self.actor_critic.reconstruct_observation(features)
+                    reconstruction_loss = F.l1_loss(reconstructions, obs_batch)
                     model_loss += 1. * reconstruction_loss
+
+                    reconstruction_loss_epoch += reconstruction_loss.item()
 
                 self.optimizer_model.zero_grad()
                 (model_loss * self.model_coef).backward()
-                nn.utils.clip_grad_norm_(self.model_parameters,
-                                        self.max_grad_norm)
+                if clip_grad:
+                    nn.utils.clip_grad_norm_(self.model_parameters,
+                                            self.max_grad_norm)
                 self.optimizer_model.step()  
 
 # -------------------
@@ -197,8 +216,6 @@ class ConvDrAC():
                 value_loss_epoch += value_loss.item()
                 action_loss_epoch += action_loss.item()
                 dist_entropy_epoch += dist_entropy.item()
-                transition_model_loss_epoch += next_state_loss.item()
-                reward_model_loss_epoch += reward_loss.item()
 
                 # if self.aug_func:
                 #     self.aug_func.change_randomization_params_all()
@@ -210,6 +227,8 @@ class ConvDrAC():
         dist_entropy_epoch /= num_updates
         transition_model_loss_epoch /= num_updates
         reward_model_loss_epoch /= num_updates
-        next_obs_variance_epoch /= num_updates
+        reconstruction_loss_epoch /= num_updates
+        next_obs_reconstruction_loss_epoch /= num_updates
+        feature_variance_epoch /= num_updates
 
-        return value_loss_epoch, action_loss_epoch, dist_entropy_epoch, transition_model_loss_epoch, reward_model_loss_epoch, next_obs_variance_epoch
+        return value_loss_epoch, action_loss_epoch, dist_entropy_epoch, transition_model_loss_epoch, reward_model_loss_epoch, reconstruction_loss_epoch, next_obs_reconstruction_loss_epoch, feature_variance_epoch
