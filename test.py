@@ -1,5 +1,7 @@
 import numpy as np
 import torch
+import sys
+import torch.nn.functional as F
 
 from ucb_rl2_meta import utils
 
@@ -25,6 +27,7 @@ def evaluate(args, actor_critic, device, num_processes=1, aug_id=None):
     eval_envs = VecPyTorchProcgen(venv, device)
 
     eval_episode_rewards = []
+    eval_reconstruction_errors = []
 
     obs = eval_envs.reset()
     eval_recurrent_hidden_states = torch.zeros(
@@ -41,6 +44,11 @@ def evaluate(args, actor_critic, device, num_processes=1, aug_id=None):
                 eval_masks,
                 deterministic=False)
 
+            features, _ = actor_critic.encoder(obs, eval_recurrent_hidden_states, eval_masks)
+            features = torch.reshape(features, (-1, 1) + actor_critic.state_shape)
+            reconstructions = actor_critic.reconstruct_observation(features)
+            reconstruction_loss = F.l1_loss(reconstructions, obs)
+            eval_reconstruction_errors.append(reconstruction_loss.item())
         obs, _, done, infos = eval_envs.step(action)
          
         eval_masks = torch.tensor(
@@ -58,4 +66,4 @@ def evaluate(args, actor_critic, device, num_processes=1, aug_id=None):
         .format(len(eval_episode_rewards), \
         np.mean(eval_episode_rewards), np.median(eval_episode_rewards)))
 
-    return eval_episode_rewards
+    return eval_episode_rewards, eval_reconstruction_errors
