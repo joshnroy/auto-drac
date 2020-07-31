@@ -40,11 +40,10 @@ for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
     # for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth64_rewardcoef" + str(x) + "_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [2, 5, 10, 100]]:
     # for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth" + str(x) + "_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [32, 64, 128]]:
     # for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth" + str(x) + "_rewardcoef1_layers6_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [32, 64, 128]]:
-    for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth128_rewardcoef" + str(x) + "_layers6_noppoloss_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [1, 5, 10, 100]]:
+    for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth128_rewardcoef" + str(x) + "_layers6_noppoloss_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [1, 2, 5, 10, 100, 1000]]:
         for file_name in glob(file_naming_scheme):
             try:
                 df = pd.read_csv(file_name)
-                print(file_name, len(df))
                 df = df[["train/mean_episode_reward", "test/mean_episode_reward", "train/total_num_steps"]]
                 df.columns = [str(num) + " Train", str(num) + " Test", "Timestep"]
                 df.loc[:, df.columns != "Timestep"] = df.loc[:, df.columns != "Timestep"].rolling(window=SMOOTHING_WINDOW).mean()
@@ -77,7 +76,7 @@ for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
                 big_df = big_df.append(df, ignore_index=True)
             except Exception as e:
                 print(file_name, e)
-    for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth128_rewardcoef" + str(x) + "_layers6_noppoloss_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [1, 5, 10, 100]]:
+    for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth128_rewardcoef" + str(x) + "_layers6_noppoloss_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [1, 2, 5, 10, 100, 1000]]:
         for file_name in glob(file_naming_scheme):
             try:
                 df = pd.read_csv(file_name)
@@ -114,7 +113,7 @@ for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
                 big_df = big_df.append(df, ignore_index=True)
             except Exception as e:
                 print(file_name, e)
-    for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth128_rewardcoef" + str(x) + "_layers6_noppoloss_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [1, 5, 10, 100]]:
+    for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth128_rewardcoef" + str(x) + "_layers6_noppoloss_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [1, 2, 5, 10, 100, 1000]]:
         for file_name in glob(file_naming_scheme):
             try:
                 df = pd.read_csv(file_name)
@@ -148,7 +147,7 @@ for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
             big_df = big_df.append(df, ignore_index=True)
         except Exception as e:
             print(file_name, e)
-    for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth128_rewardcoef" + str(x) + "_layers6_noppoloss_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [1, 5, 10, 100]]:
+    for file_naming_scheme, num in [("modelbased_transitionkernel5_modelwidth128_rewardcoef" + str(x) + "_layers6_noppoloss_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv", x) for x in [1, 2, 5, 10, 100, 1000]]:
         for file_name in glob(file_naming_scheme):
             try:
                 df = pd.read_csv(file_name)

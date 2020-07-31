@@ -38,10 +38,13 @@ class Categorical(nn.Module):
             lambda x: nn.init.constant_(x, 0),
             gain=0.01)
 
+        init_relu_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.
+                                constant_(x, 0), nn.init.calculate_gain('relu'))
+
         self.linear = []
-        self.linear.append(init_(nn.Linear(num_inputs, num_inputs)))
+        self.linear.append(init_relu_(nn.Linear(num_inputs, num_inputs)))
         self.linear.append(nn.ReLU(inplace=True))
-        self.linear.append(init_(nn.Linear(num_inputs, num_inputs)))
+        self.linear.append(init_relu_(nn.Linear(num_inputs, num_inputs)))
         self.linear.append(nn.ReLU(inplace=True))
         self.linear.append(init_(nn.Linear(num_inputs, num_outputs)))
 

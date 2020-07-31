@@ -174,22 +174,62 @@ class ModelBasedPolicy(Policy):
         self.state_shape = (int(np.sqrt(self.encoder.output_size)), int(np.sqrt(self.encoder.output_size)))
         self.transition_model = TransitionModel(self.state_shape, num_actions)
         self.reward_model = RewardModel(self.state_shape, num_actions)
+        self.reconstruction_model = ReconstructionModel(self.state_shape, obs_shape)
 
-        # self.tanh = nn.Tanh()
-
-    def predict_next_state_reward(self, inputs, rnn_hxs, masks, actions):
+    def get_features(self, inputs, rnn_hxs, masks, actions):
         actor_features, _ = self.encoder(inputs, rnn_hxs, masks)
         actor_features = torch.reshape(actor_features, (-1, 1) + self.state_shape)
-        # actor_features = self.tanh(actor_features)
-
         broadcasted_actions_shape = list(actor_features.shape)
         actions = actions.float().unsqueeze(-1).unsqueeze(-1).expand(broadcasted_actions_shape)
         model_inputs = torch.cat([actor_features, actions], dim=1)
 
+        return model_inputs, actor_features
+
+    def predict_next_state(self, model_inputs):
         predicted_next_state = self.transition_model(model_inputs)
+
+        return predicted_next_state
+
+    def predict_reward(self, model_inputs):
         predicted_reward = self.reward_model(model_inputs)
 
-        return predicted_next_state, predicted_reward
+        return predicted_reward
+
+    def reconstruct_next_observation(self, next_state):
+        next_observation = self.reconstruction_model(next_states)
+
+        return next_observation
+
+class ReconstructionModel(nn.Module):
+    def __init__(self, state_shape, observation_shape, kernel_size=5):
+        super(TransitionModel, self).__init__()
+        
+        self.state_shape = state_shape
+        self.observation_shape
+
+        conv_padding = int(np.floor(kernel_size / 2.))
+        inner_conv_padding = int(np.floor(inner_kernel_size / 2.))
+
+        layers = []
+        layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+        layers.append(nn.ReLU(inplace=True))
+        layers.append(Conv2d_tf(hidden_size, 1, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+        layers.append(nn.Tanh())
+
+        self.model = nn.Sequential(*layers)
+
+    def forward(self, inputs):
+        print("JOSH YOU NEED TO IMPLEMENT THIS")
+        sys.exit()
+        return self.model(inputs)
 
 class TransitionModel(nn.Module):
     def __init__(self, state_shape, num_actions, kernel_size=5):
@@ -236,23 +276,38 @@ class RewardModel(nn.Module):
         conv_padding = int(np.floor(kernel_size / 2.))
 
         layers = []
-        layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+
+        self.conv_model = False
+        if self.conv_model:
+            layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        else:
+            flattened_shape = self.state_shape[0] * self.state_shape[1] * 2
+            intermediate_shape = 128
+            layers.append(nn.Flatten())
+            layers.append(init_relu_(nn.Linear(flattened_shape, intermediate_shape)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(init_relu_(nn.Linear(intermediate_shape, intermediate_shape)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(init_(nn.Linear(intermediate_shape, 1)))
 
         self.model = nn.Sequential(*layers)
 
     def forward(self, inputs):
         x = self.model(inputs)
-        return torch.sum(x, (2, 3))
+        if self.conv_model:
+            return torch.sum(x, (2, 3))
+        else:
+            return x
 
 
 class NNBase(nn.Module):

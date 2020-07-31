@@ -25,4 +25,4 @@ ID_INNER=$ID
 env_name=${envs[9]}
 trial=$(($ID_INNER))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir modelbased_transitionkernel5_modelwidth128_rewardcoef1_layers6_noppoloss_logs/${env_name}/${env_name}-${trial} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir reward_fn_experiments/modelbased_transitionkernel5_modelwidth128_rewardcoef1_denserewardmodel_ppocoef0_transitioncoef0_l1loss_logs/${env_name}/${env_name}-${trial} --aug_coef 0.

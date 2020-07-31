@@ -84,19 +84,36 @@ class ConvDrAC():
                         adv_targ, next_obs_batch = sample
 
 # MODEL OPTIMIZATION
-                with torch.no_grad():
-                    next_obs_features, _ = self.actor_critic.encoder(next_obs_batch, recurrent_hidden_states_batch, masks_batch)
-                    next_obs_features = torch.reshape(next_obs_features, (-1, 1) + self.actor_critic.state_shape)
-                    # next_obs_features = self.actor_critic.tanh(next_obs_features)
-                    next_obs_variance = torch.var(next_obs_features, 0)
-                    next_obs_variance = torch.mean(next_obs_variance)
-                    next_obs_variance_epoch += next_obs_variance.item()
                 
-                predicted_next_states, predicted_rewards = self.actor_critic.predict_next_state_reward(obs_batch, recurrent_hidden_states_batch, masks_batch, actions_batch)
+                model_loss = 0.
+                features_and_actions, features = self.actor_critic.get_features(obs_batch, recurrent_hidden_states_batch, masks_batch, actions_batch)
+                features_var = torch.var(features, 0)
+                features_var = torch.mean(features_var)
+                next_obs_variance_epoch += features_var.item()
 
-                next_state_loss = F.mse_loss(predicted_next_states, next_obs_features)
-                reward_loss = F.mse_loss(predicted_rewards, return_batch)
-                model_loss = next_state_loss + 1. * reward_loss
+                use_reward_loss = True
+                use_next_state_loss = False
+                use_next_observation_loss = True
+
+                if use_next_state_loss or use_next_observation_loss:
+                    predicted_next_states = self.actor_critic.predict_next_state(features_and_actions)
+
+                if use_next_state_loss:
+                    with torch.no_grad():
+                        next_obs_features, _ = self.actor_critic.encoder(next_obs_batch, recurrent_hidden_states_batch, masks_batch)
+                        next_obs_features = torch.reshape(next_obs_features, (-1, 1) + self.actor_critic.state_shape)
+                    next_state_loss = F.l1_loss(predicted_next_states, next_obs_features)
+                    model_loss += 1. * next_state_loss
+
+                if use_reward_loss:
+                    predicted_rewards = self.actor_critic.predict_reward(features_and_actions)
+                    reward_loss = F.l1_loss(predicted_rewards, return_batch)
+                    model_loss += 1. * reward_loss
+
+                if use_next_observation_loss:
+                    predicted_next_obs = self.actor_critic.reconstruct_next_observation(predicted_next_states)
+                    reconstruction_loss = F.l1_loss(predicted_next_obs, next_obs_batch)
+                    model_loss += 1. * reconstruction_loss
 
                 self.optimizer_model.zero_grad()
                 (model_loss * self.model_coef).backward()
