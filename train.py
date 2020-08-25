@@ -4,6 +4,7 @@ import time
 from collections import deque
 from tqdm import trange
 import sys
+import cv2
 
 import numpy as np
 import torch
@@ -229,6 +230,8 @@ def train(args):
             aug_coef=args.aug_coef,
             env_name=args.env_name)
 
+    if args.lr == 0:
+        num_samples = 0
     obs = envs.reset()
     rollouts.obs[0].copy_(obs)
     if modelbased:
@@ -251,6 +254,16 @@ def train(args):
 
             # Obser reward and next obs
             obs, reward, done, infos = envs.step(action)
+            if args.lr == 0 and False:
+                obs_record = np.transpose(obs.cpu().detach().numpy(), (0, 2, 3, 1)) * 255
+                for ob in obs_record:
+                    print(num_samples)
+                    cv2.imwrite("reconstruction_debugging/training_samples/training" + str(num_samples).zfill(8) + ".png", ob)
+                    num_samples += 1
+                if num_samples > 10_000_000:
+                    print("Done collecting training samples")
+                    sys.exit()
+
             
             for info in infos:
                 if 'episode' in info.keys():

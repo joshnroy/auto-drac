@@ -89,14 +89,13 @@ class ConvDrAC():
                 
                 model_loss = 0.
                 features_and_actions, features = self.actor_critic.get_features(obs_batch, recurrent_hidden_states_batch, masks_batch, actions_batch)
-                features_var = torch.var(features, 0)
-                features_var = torch.mean(features_var)
+                features_var = torch.mean(torch.var(features, 0))
                 feature_variance_epoch += features_var.item()
 
-                use_reward_loss = False
+                use_reward_loss = True
                 use_next_state_loss = True
                 use_next_observation_loss = False
-                use_reconstruction_loss = True
+                use_reconstruction_loss = False
                 clip_grad = True
 
 
