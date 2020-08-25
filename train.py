@@ -309,11 +309,12 @@ def train(args):
             logger.logkv("train/median_episode_reward", np.median(episode_rewards))
 
             ### Eval on the Full Distribution of Levels ###
-            eval_episode_rewards, eval_reconstruction_error = evaluate(args, actor_critic, device, aug_id=aug_id)
+            eval_episode_rewards, eval_reconstruction_error, eval_reward_model_error = evaluate(args, actor_critic, device, aug_id=aug_id)
 
             logger.logkv("test/mean_episode_reward", np.mean(eval_episode_rewards))
             logger.logkv("test/median_episode_reward", np.median(eval_episode_rewards))
             logger.logkv("test/reconstruction_error", np.mean(eval_reconstruction_error))
+            logger.logkv("test/reward_model_error", np.mean(eval_reward_model_error))
 
             logger.dumpkvs()
 

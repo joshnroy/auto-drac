@@ -6,3 +6,5 @@
 .ipynb_checkpoints/
 **/__pycache__/
 run_all_grid.sh.*
+ucb_rl2_meta/stylegan2-pytorch/
+baselines/

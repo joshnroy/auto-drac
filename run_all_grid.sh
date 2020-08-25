@@ -9,20 +9,20 @@
 # Uses 1 GPU
 #$ -l gpus=1
 #
-# Runs 80 jobs
-#$ -t 1-3
+# Runs 48 jobs
+#$ -t 15-15
 #
 # Runs at most 20 jobs at once
-#$ -tc 24
+#$ -tc 20
 
 envs=(bigfish bossfight caveflyer chaser climber coinrun dodgeball fruitbot heist jumper leaper maze miner ninja plunder starpilot)
 # num_mini_batches=(16 32)
 
 ID=$(($SGE_TASK_ID - 1))
 ID_INNER=$ID
-# env_name=${envs[$(($ID_INNER % 16))]}
-# trial=$(($ID_INNER / 16))
-env_name=${envs[9]}
-trial=$(($ID_INNER))
+env_name=${envs[$(($ID_INNER % 16))]}
+trial=$(($ID_INNER / 16))
+# env_name=${envs[9]}
+# trial=$(($ID_INNER))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir reward_fn_experiments/modelbased_transitionkernel5_modelwidth128_rewardcoef1_denserewardmodel_ppocoef0_transitioncoef0_l1loss_logs/${env_name}/${env_name}-${trial} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir reconstruction/reconstruction_nextstate_ppo_modelclip_logs3/${env_name}/${env_name}-${trial} --aug_coef 0.

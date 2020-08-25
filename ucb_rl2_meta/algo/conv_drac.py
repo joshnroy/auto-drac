@@ -38,7 +38,7 @@ class ConvDrAC():
         self.SAME_ACTOR_CRITIC = True
 
         if self.SAME_ACTOR_CRITIC:
-            self.actor_critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.actor.parameters()) + list(actor_critic.critic.parameters())
+            self.actor_critic_parameters = list(actor_critic.actor.parameters()) + list(actor_critic.critic.parameters()) + list(actor_critic.encoder.parameters())
         else:
             self.actor_parameters = list(actor_critic.actor.parameters()) # + list(actor_critic.encoder.parameters())
             self.critic_parameters = list(actor_critic.encoder.parameters()) + list(actor_critic.critic.parameters())
@@ -93,11 +93,11 @@ class ConvDrAC():
                 features_var = torch.mean(features_var)
                 feature_variance_epoch += features_var.item()
 
-                use_reward_loss = True
-                use_next_state_loss = False
+                use_reward_loss = False
+                use_next_state_loss = True
                 use_next_observation_loss = False
                 use_reconstruction_loss = True
-                clip_grad = False
+                clip_grad = True
 
 
                 if use_next_state_loss or use_next_observation_loss:
@@ -145,7 +145,7 @@ class ConvDrAC():
 # ACTION AND VALUE OPTIMIZATION
 
 
-                values = self.actor_critic.get_value(obs_batch, recurrent_hidden_states_batch, masks_batch)
+                values = self.actor_critic.get_value(obs_batch, recurrent_hidden_states_batch, masks_batch, detach_encoder=False)
 
                 value_pred_clipped = value_preds_batch + \
                     (values - value_preds_batch).clamp(-self.clip_param, self.clip_param)
@@ -181,7 +181,7 @@ class ConvDrAC():
                     self.optimizer_actor.step()
                 else:
                     self.optimizer_actor_critic.zero_grad()
-                    (0. * (value_loss * self.value_loss_coef + action_loss - dist_entropy * self.entropy_coef)).backward()
+                    (1. * (value_loss * self.value_loss_coef + action_loss - dist_entropy * self.entropy_coef)).backward()
                     nn.utils.clip_grad_norm_(self.actor_critic_parameters,
                                             self.max_grad_norm)
                     self.optimizer_actor_critic.step()

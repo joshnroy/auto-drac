@@ -101,15 +101,18 @@ class Policy(nn.Module):
         elif len(obs_shape) == 1:
             encoder = MLPBase
 
+        encoder_output_size = 256
+
         self.encoder = encoder(obs_shape[0], **base_kwargs)
-        self.actor = Categorical(self.encoder.output_size, num_actions)
+        self.flatten = nn.Flatten()
+        self.actor = Categorical(encoder_output_size, num_actions)
 
         self.critic = []
-        self.critic.append(init_relu_(nn.Linear(self.encoder.output_size, self.encoder.output_size)))
+        self.critic.append(init_relu_(nn.Linear(encoder_output_size, encoder_output_size)))
         self.critic.append(nn.ReLU(inplace=True))
-        self.critic.append(init_relu_(nn.Linear(self.encoder.output_size, self.encoder.output_size)))
+        self.critic.append(init_relu_(nn.Linear(encoder_output_size, encoder_output_size)))
         self.critic.append(nn.ReLU(inplace=True))
-        self.critic.append(init_(nn.Linear(self.encoder.output_size, 1)))
+        self.critic.append(init_(nn.Linear(encoder_output_size, 1)))
         self.critic = nn.Sequential(*self.critic)
         
     @property
@@ -126,6 +129,7 @@ class Policy(nn.Module):
 
     def act(self, inputs, rnn_hxs, masks, deterministic=False):
         actor_features, rnn_hxs = self.encoder(inputs, rnn_hxs, masks)
+        actor_features = self.flatten(actor_features)
         value = self.critic(actor_features)
         dist = self.actor(actor_features)
 
@@ -141,6 +145,7 @@ class Policy(nn.Module):
 
     def get_value(self, inputs, rnn_hxs, masks, detach_encoder=False):
         actor_features, _ = self.encoder(inputs, rnn_hxs, masks)
+        actor_features = self.flatten(actor_features)
         if detach_encoder:
             actor_features.detach()
         value = self.critic(actor_features)
@@ -148,6 +153,7 @@ class Policy(nn.Module):
 
     def evaluate_actions(self, inputs, rnn_hxs, masks, action, compute_value=True, detach_encoder=False):
         actor_features, rnn_hxs = self.encoder(inputs, rnn_hxs, masks)
+        actor_features = self.flatten(actor_features)
         if detach_encoder:
             actor_features.detach()
         if compute_value:
@@ -180,7 +186,9 @@ class ModelBasedPolicy(Policy):
         actor_features, _ = self.encoder(inputs, rnn_hxs, masks)
         actor_features = torch.reshape(actor_features, (-1, 1) + self.state_shape)
         broadcasted_actions_shape = list(actor_features.shape)
+        broadcasted_actions_shape[1] = 1
         actions = actions.float().unsqueeze(-1).unsqueeze(-1).expand(broadcasted_actions_shape)
+        actions = actions.float().expand(broadcasted_actions_shape)
         model_inputs = torch.cat([actor_features, actions], dim=1)
 
         return model_inputs, actor_features
@@ -206,19 +214,30 @@ class ReconstructionModel(nn.Module):
         
         self.state_shape = state_shape
         self.observation_shape = observation_shape
-        hidden_size = 64
 
-        layers = []
-        layers.append(nn.ConvTranspose2d(1, out_channels=64, kernel_size=5, stride=1))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(nn.ConvTranspose2d(64, out_channels=32, kernel_size=9, stride=1))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(nn.ConvTranspose2d(32, 3, kernel_size=11, stride=2))
-        layers.append(nn.Sigmoid())
 
-        self.model = nn.Sequential(*layers)
+
+        if True:
+            hidden_size = 64
+
+            layers = []
+            layers.append(nn.ConvTranspose2d(1, out_channels=64, kernel_size=5, stride=1))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(nn.ConvTranspose2d(64, out_channels=32, kernel_size=5, stride=2))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(nn.ConvTranspose2d(32, 3, kernel_size=13, stride=2))
+            layers.append(nn.Sigmoid())
+
+            self.model = nn.Sequential(*layers)
+        else:
+            pass
+            # from ucb_rl2_meta.stylegan_model import Generator
+            # self.model = Generator(size=8, style_dim=self.state_shape[0] * self.state_shape[1], n_mlp=0, channel_multiplier=1)
+
+            # self.flatten = nn.Flatten()
 
     def forward(self, inputs):
+        # output = self.model([self.flatten(inputs)])
         output = self.model(inputs)
         output = output[:, :, :64, :64]
         return output
@@ -237,23 +256,36 @@ class TransitionModel(nn.Module):
         inner_conv_padding = int(np.floor(inner_kernel_size / 2.))
 
         layers = []
-        layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
-        layers.append(nn.ReLU(inplace=True))
-        layers.append(Conv2d_tf(hidden_size, 1, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
-        layers.append(nn.Tanh())
+        if True:
+            layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, 1, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+        elif True:
+            layers.append(Conv2d_tf(2, 32, kernel_size=inner_kernel_size, stride=1, padding=(inner_conv_padding,inner_conv_padding)))
+            layers.append(nn.Tanh())
+        else:
+            layers.append(nn.Flatten())
+            layers.append(init_relu_(nn.Linear(self.state_shape[0] * self.state_shape[1] * 2, hidden_size)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(init_relu_(nn.Linear(hidden_size, hidden_size)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(init_tanh_(nn.Linear(hidden_size, self.state_shape[0] * self.state_shape[1])))
+            layers.append(nn.Tanh())
 
         self.model = nn.Sequential(*layers)
 
     def forward(self, inputs):
-        return self.model(inputs)
+        output = self.model(inputs)
+        # output = torch.reshape(output, (-1, 1) + self.state_shape)
+        return output
 
 
 class RewardModel(nn.Module):
@@ -269,8 +301,8 @@ class RewardModel(nn.Module):
 
         layers = []
 
-        self.conv_model = False
-        if self.conv_model:
+        self.conv_model = True
+        if self.conv_model and True:
             layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
             layers.append(nn.ReLU(inplace=True))
             layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
@@ -282,6 +314,12 @@ class RewardModel(nn.Module):
             layers.append(Conv2d_tf(hidden_size, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
             layers.append(nn.ReLU(inplace=True))
             layers.append(Conv2d_tf(hidden_size, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        elif self.conv_model and False:
+            layers.append(Conv2d_tf(2, hidden_size, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+            layers.append(nn.ReLU(inplace=True))
+            layers.append(Conv2d_tf(hidden_size, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
+        elif self.conv_model and True:
+            layers.append(Conv2d_tf(2, 1, kernel_size=kernel_size, stride=1, padding=(conv_padding,conv_padding)))
         else:
             flattened_shape = self.state_shape[0] * self.state_shape[1] * 2
             intermediate_shape = 128
@@ -494,8 +532,8 @@ class ResNetBase(NNBase):
         x = self.layer3(x)
 
         x = self.relu(self.flatten(x))
-        x = self.relu(self.fc(x))
-        # x = self.fc(x)
+        # x = self.relu(self.fc(x))
+        x = self.fc(x)
 
         if self.is_recurrent:
             x, rnn_hxs = self._forward_gru(x, rnn_hxs, masks)
