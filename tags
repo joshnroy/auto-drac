@@ -26,6 +26,12 @@ Blur	ucb_rl2_meta/stylegan_model.py	/^class Blur(nn.Module):$/;"	c
 BoxIdentityEnv	baselines/baselines/common/tests/envs/identity_env.py	/^class BoxIdentityEnv(IdentityEnv):$/;"	c
 Buffer	baselines/baselines/acer/buffer.py	/^class Buffer(object):$/;"	c
 CACHED_ENVS	baselines/baselines/her/experiment/config.py	/^CACHED_ENVS = {}$/;"	v
+CHECK_CONTIGUOUS	ucb_rl2_meta/op/fused_bias_act.cpp	8;"	d	file:
+CHECK_CONTIGUOUS	ucb_rl2_meta/op/upfirdn2d.cpp	9;"	d	file:
+CHECK_CUDA	ucb_rl2_meta/op/fused_bias_act.cpp	7;"	d	file:
+CHECK_CUDA	ucb_rl2_meta/op/upfirdn2d.cpp	8;"	d	file:
+CHECK_INPUT	ucb_rl2_meta/op/fused_bias_act.cpp	9;"	d	file:
+CHECK_INPUT	ucb_rl2_meta/op/upfirdn2d.cpp	10;"	d	file:
 COLORS	baselines/baselines/common/plot_util.py	/^COLORS = ['blue', 'green', 'red', 'cyan', 'magenta', 'yellow', 'black', 'purple', 'pink',$/;"	v
 COLORS	baselines/baselines/results_plotter.py	/^COLORS = ['blue', 'green', 'red', 'cyan', 'magenta', 'yellow', 'black', 'purple', 'pink',$/;"	v
 CONFIG	baselines/baselines/gail/gail-eval.py	/^CONFIG = {$/;"	v
@@ -79,6 +85,9 @@ FixedSequenceEnv	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^c
 Flatten	ucb_rl2_meta/model.py	/^class Flatten(nn.Module):$/;"	c
 Flip	data_augs.py	/^class Flip(object):$/;"	c
 FrameStack	baselines/baselines/common/atari_wrappers.py	/^class FrameStack(gym.Wrapper):$/;"	c
+FusedLeakyReLU	ucb_rl2_meta/op/fused_act.py	/^class FusedLeakyReLU(nn.Module):$/;"	c
+FusedLeakyReLUFunction	ucb_rl2_meta/op/fused_act.py	/^class FusedLeakyReLUFunction(Function):$/;"	c
+FusedLeakyReLUFunctionBackward	ucb_rl2_meta/op/fused_act.py	/^class FusedLeakyReLUFunctionBackward(Function):$/;"	c
 Generator	ucb_rl2_meta/stylegan_model.py	/^class Generator(nn.Module):$/;"	c
 GetFlat	baselines/baselines/common/tf_util.py	/^class GetFlat(object):$/;"	c
 Grayscale	data_augs.py	/^class Grayscale(object):$/;"	c
@@ -146,6 +155,8 @@ NotSteppingError	baselines/baselines/common/vec_env/vec_env.py	/^class NotSteppi
 ObservationInput	baselines/baselines/deepq/utils.py	/^class ObservationInput(PlaceholderTfInput):$/;"	c
 OrnsteinUhlenbeckActionNoise	baselines/baselines/ddpg/noise.py	/^class OrnsteinUhlenbeckActionNoise(ActionNoise):$/;"	c
 POSSIBLE_X_AXES	baselines/baselines/results_plotter.py	/^POSSIBLE_X_AXES = [X_TIMESTEPS, X_EPISODES, X_WALLTIME]$/;"	v
+PYBIND11_MODULE	ucb_rl2_meta/op/fused_bias_act.cpp	/^PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {$/;"	f
+PYBIND11_MODULE	ucb_rl2_meta/op/upfirdn2d.cpp	/^PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {$/;"	f
 PartialFrameStack	baselines/baselines/common/retro_wrappers.py	/^class PartialFrameStack(gym.Wrapper):$/;"	c
 Pd	baselines/baselines/common/distributions.py	/^class Pd(object):$/;"	c
 PdType	baselines/baselines/common/distributions.py	/^class PdType(object):$/;"	c
@@ -157,7 +168,7 @@ PlanningResNetBase	ucb_rl2_meta/model.py	/^class PlanningResNetBase(NNBase):$/;"
 Policy	ucb_rl2_meta/model.py	/^class Policy(nn.Module):$/;"	c
 PolicyWithValue	baselines/baselines/common/policies.py	/^class PolicyWithValue(object):$/;"	c
 PrioritizedReplayBuffer	baselines/baselines/deepq/replay_buffer.py	/^class PrioritizedReplayBuffer(ReplayBuffer):$/;"	c
-REWARD_CLIP	plot_results.py	/^REWARD_CLIP = 1.$/;"	v
+REWARD_CLIP	plot_results.py	/^REWARD_CLIP = 10.$/;"	v
 REWARD_CLIP	single_plot_results.py	/^REWARD_CLIP = 5.$/;"	v
 RL2DrAC	ucb_rl2_meta/algo/rl2_drac.py	/^class RL2DrAC():$/;"	c
 RandomConv	data_augs.py	/^class RandomConv(object):$/;"	c
@@ -212,6 +223,8 @@ TransitionModel	ucb_rl2_meta/model.py	/^class TransitionModel(nn.Module):$/;"	c
 TransposeImageProcgen	ucb_rl2_meta/envs.py	/^class TransposeImageProcgen(TransposeObs):$/;"	c
 TransposeObs	ucb_rl2_meta/envs.py	/^class TransposeObs(gym.ObservationWrapper):$/;"	c
 UCBDrAC	ucb_rl2_meta/algo/ucb_drac.py	/^class UCBDrAC():$/;"	c
+UpFirDn2d	ucb_rl2_meta/op/upfirdn2d.py	/^class UpFirDn2d(Function):$/;"	c
+UpFirDn2dBackward	ucb_rl2_meta/op/upfirdn2d.py	/^class UpFirDn2dBackward(Function):$/;"	c
 Upsample	ucb_rl2_meta/stylegan_model.py	/^class Upsample(nn.Module):$/;"	c
 VecEnv	baselines/baselines/common/vec_env/vec_env.py	/^class VecEnv(ABC):$/;"	c
 VecEnvObservationWrapper	baselines/baselines/common/vec_env/vec_env.py	/^class VecEnvObservationWrapper(VecEnvWrapper):$/;"	c
@@ -405,6 +418,7 @@ __init__	ucb_rl2_meta/model.py	/^    def __init__(self, recurrent, recurrent_inp
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, num_actions, kernel_size=1):$/;"	m	class:RewardModel
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, num_actions, kernel_size=5):$/;"	m	class:TransitionModel
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, observation_shape, kernel_size=5):$/;"	m	class:ReconstructionModel
+__init__	ucb_rl2_meta/op/fused_act.py	/^    def __init__(self, channel, negative_slope=0.2, scale=2 ** 0.5):$/;"	m	class:FusedLeakyReLU
 __init__	ucb_rl2_meta/storage.py	/^    def __init__(self, num_steps, num_processes, obs_shape, action_space,$/;"	m	class:BiggerRolloutStorage
 __init__	ucb_rl2_meta/storage.py	/^    def __init__(self, num_steps, num_processes, obs_shape, action_space,$/;"	m	class:RolloutStorage
 __init__	ucb_rl2_meta/stylegan_model.py	/^    def __init__($/;"	m	class:ConvLayer
@@ -586,6 +600,10 @@ avg_norm	baselines/baselines/a2c/utils.py	/^def avg_norm(t):$/;"	f
 ax	baselines/baselines/common/plot_util.py	/^        ax = axarr[idx_row][idx_col]$/;"	v
 ax	plot_results.py	/^    ax = axes[i_env \/\/ num_wide, i_env % num_wide]$/;"	v
 ax	single_plot_results.py	/^    ax = axes[i_env \/\/ num_wide, i_env % num_wide]$/;"	v
+backward	ucb_rl2_meta/op/fused_act.py	/^    def backward(ctx, grad_output):$/;"	m	class:FusedLeakyReLUFunction
+backward	ucb_rl2_meta/op/fused_act.py	/^    def backward(ctx, gradgrad_input, gradgrad_bias):$/;"	m	class:FusedLeakyReLUFunctionBackward
+backward	ucb_rl2_meta/op/upfirdn2d.py	/^    def backward(ctx, grad_output):$/;"	m	class:UpFirDn2d
+backward	ucb_rl2_meta/op/upfirdn2d.py	/^    def backward(ctx, gradgrad_input):$/;"	m	class:UpFirDn2dBackward
 batch_to_seq	baselines/baselines/a2c/utils.py	/^def batch_to_seq(h, nbatch, nsteps, flat=False):$/;"	f
 bbox_to_anchor	baselines/baselines/common/plot_util.py	/^                bbox_to_anchor=(1,1) if legend_outside else None)$/;"	v
 big_df	plot_results.py	/^                big_df = big_df.append(df, ignore_index=True)$/;"	v
@@ -749,6 +767,7 @@ dequeue_stats_op	baselines/baselines/acktr/kfac.py	/^            def dequeue_sta
 description	baselines/setup.py	/^      description='OpenAI baselines: high quality implementations of reinforcement learning algorithms',$/;"	v
 detectMinVal	baselines/baselines/acktr/kfac_utils.py	/^def detectMinVal(input_mat, var, threshold=1e-6, name='', debug=False):$/;"	f
 df	plot_results.py	/^                df = df[["debug\/next_obs_variance", "train\/total_num_steps"]]$/;"	v
+df	plot_results.py	/^                df = df[["losses\/reward_model_loss", "test\/reward_model_error", "train\/total_num_steps"]]$/;"	v
 df	plot_results.py	/^                df = df[["losses\/reward_model_loss", "train\/total_num_steps"]]$/;"	v
 df	plot_results.py	/^                df = df[["losses\/transition_model_loss", "train\/total_num_steps"]]$/;"	v
 df	plot_results.py	/^                df = df[["train\/mean_episode_reward", "test\/mean_episode_reward", "train\/total_num_steps"]]$/;"	v
@@ -866,6 +885,11 @@ forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs, rnn_hxs, masks):$/
 forward	ucb_rl2_meta/model.py	/^    def forward(self, obs):$/;"	m	class:AugCNN
 forward	ucb_rl2_meta/model.py	/^    def forward(self, x):$/;"	m	class:BasicBlock
 forward	ucb_rl2_meta/model.py	/^    def forward(self, x):$/;"	m	class:Flatten
+forward	ucb_rl2_meta/op/fused_act.py	/^    def forward(ctx, grad_output, out, negative_slope, scale):$/;"	m	class:FusedLeakyReLUFunctionBackward
+forward	ucb_rl2_meta/op/fused_act.py	/^    def forward(ctx, input, bias, negative_slope, scale):$/;"	m	class:FusedLeakyReLUFunction
+forward	ucb_rl2_meta/op/fused_act.py	/^    def forward(self, input):$/;"	m	class:FusedLeakyReLU
+forward	ucb_rl2_meta/op/upfirdn2d.py	/^    def forward($/;"	m	class:UpFirDn2dBackward
+forward	ucb_rl2_meta/op/upfirdn2d.py	/^    def forward(ctx, input, kernel, up, down, pad):$/;"	m	class:UpFirDn2d
 forward	ucb_rl2_meta/stylegan_model.py	/^    def forward($/;"	m	class:Generator
 forward	ucb_rl2_meta/stylegan_model.py	/^    def forward(self, image, noise=None):$/;"	m	class:NoiseInjection
 forward	ucb_rl2_meta/stylegan_model.py	/^    def forward(self, input):$/;"	m	class:Blur
@@ -889,6 +913,9 @@ fromflat	baselines/baselines/common/distributions.py	/^    def fromflat(cls, fla
 full	baselines/baselines/her/replay_buffer.py	/^    def full(self):$/;"	m	class:ReplayBuffer
 func_wrapper	baselines/baselines/logger.py	/^        def func_wrapper(*args, **kwargs):$/;"	f	function:profile.decorator_with_name
 function	baselines/baselines/common/tf_util.py	/^def function(inputs, outputs, updates=None, givens=None):$/;"	f
+fused	ucb_rl2_meta/op/fused_act.py	/^fused = load($/;"	v
+fused_bias_act	ucb_rl2_meta/op/fused_bias_act.cpp	/^torch::Tensor fused_bias_act(const torch::Tensor& input, const torch::Tensor& bias, const torch::Tensor& refer,$/;"	f
+fused_leaky_relu	ucb_rl2_meta/op/fused_act.py	/^def fused_leaky_relu(input, bias, negative_slope=0.2, scale=2 ** 0.5):$/;"	f
 g2c	baselines/baselines/common/plot_util.py	/^        g2c = defaultdict(int)$/;"	v
 g2l	baselines/baselines/common/plot_util.py	/^        g2l = {}$/;"	v
 gamma	baselines/baselines/common/tests/test_cartpole.py	/^    gamma=1.0,$/;"	v
@@ -1181,6 +1208,8 @@ mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	cla
 mode	ucb_rl2_meta/distributions.py	/^    def mode(self):$/;"	m	class:FixedCategorical
 model	baselines/baselines/deepq/experiments/custom_cartpole.py	/^def model(inpt, num_actions, scope, reuse=False):$/;"	f
 modelbased	train.py	/^modelbased = True$/;"	v
+module_path	ucb_rl2_meta/op/fused_act.py	/^module_path = os.path.dirname(__file__)$/;"	v
+module_path	ucb_rl2_meta/op/upfirdn2d.py	/^module_path = os.path.dirname(__file__)$/;"	v
 mpi_average	baselines/baselines/her/her.py	/^def mpi_average(value):$/;"	f
 mpi_fork	baselines/baselines/common/mpi_fork.py	/^def mpi_fork(n, bind_to_core=False):$/;"	f
 mpi_fork	baselines/baselines/her/util.py	/^def mpi_fork(n, extra_mpi_args=[]):$/;"	f
@@ -1495,6 +1524,8 @@ smoketest	baselines/baselines/common/tests/util.py	/^def smoketest(argstr, **kwa
 smooth	baselines/baselines/common/plot_util.py	/^def smooth(y, radius, mode='two_sided', valid_only=False):$/;"	f
 smooth_reward_curve	baselines/baselines/her/experiment/plot.py	/^def smooth_reward_curve(x, y):$/;"	f
 some_random_steps	baselines/baselines/common/retro_wrappers.py	/^    def some_random_steps(self):$/;"	m	class:StartDoingRandomActionsWrapper
+sources	ucb_rl2_meta/op/fused_act.py	/^    sources=[$/;"	v
+sources	ucb_rl2_meta/op/upfirdn2d.py	/^    sources=[$/;"	v
 split_by_task	baselines/baselines/results_plotter.py	/^def split_by_task(taskpath):$/;"	f
 splitkey	baselines/baselines/common/plot_util.py	/^        splitkey = split_fn(result)$/;"	v
 sresults	baselines/baselines/common/plot_util.py	/^        sresults = sk2r[sk]$/;"	v
@@ -1609,6 +1640,8 @@ test_vec_env	baselines/baselines/common/vec_env/test_vec_env.py	/^def test_vec_e
 test_video_recorder	baselines/baselines/common/vec_env/test_video_recorder.py	/^def test_video_recorder(klass, num_envs, video_length, video_interval):$/;"	f
 tf_pkg	baselines/setup.py	/^        tf_pkg = pkg_resources.get_distribution(tf_pkg_name)$/;"	v
 tf_pkg	baselines/setup.py	/^tf_pkg = None$/;"	v
+things	plot_results.py	/^    things = [("reconstruction\/reconstruction_nextstate_ppo_modelclip_logs2\/" + env_name + "\/", "Reconstruction"), ("reconstruction\/nextstate_reward_ppo_modelclip_logs2\/" + env_name + "\/", "Reward")]$/;"	v
+things	plot_results.py	/^    things = [("reconstruction\/reconstruction_nextstate_ppo_modelclip_logs3\/" + env_name + "\/", "Reconstruction"), ("reconstruction\/nextstate_reward_ppo_modelclip_logs2\/" + env_name + "\/", "Reward")]$/;"	v
 thunk	baselines/baselines/common/tests/test_with_mpi.py	/^        def thunk(*args, **kwargs):$/;"	f	function:with_mpi.outer_thunk
 tile_images	baselines/baselines/common/tile_images.py	/^def tile_images(img_nhwc):$/;"	f
 timed	baselines/baselines/common/console_util.py	/^def timed(msg):$/;"	f
@@ -1674,6 +1707,10 @@ update_scale	baselines/baselines/deepq/build_graph.py	/^        def update_scale
 update_target_net	baselines/baselines/ddpg/ddpg_learner.py	/^    def update_target_net(self):$/;"	m	class:DDPG
 update_target_net	baselines/baselines/her/ddpg.py	/^    def update_target_net(self):$/;"	m	class:DDPG
 update_ucb_values	ucb_rl2_meta/algo/ucb_drac.py	/^    def update_ucb_values(self, rollouts):$/;"	m	class:UCBDrAC
+upfirdn2d	ucb_rl2_meta/op/upfirdn2d.cpp	/^torch::Tensor upfirdn2d(const torch::Tensor& input, const torch::Tensor& kernel,$/;"	f
+upfirdn2d	ucb_rl2_meta/op/upfirdn2d.py	/^def upfirdn2d(input, kernel, up=1, down=1, pad=(0, 0)):$/;"	f
+upfirdn2d_native	ucb_rl2_meta/op/upfirdn2d.py	/^def upfirdn2d_native($/;"	f
+upfirdn2d_op	ucb_rl2_meta/op/upfirdn2d.py	/^upfirdn2d_op = load($/;"	v
 url	baselines/setup.py	/^      url='https:\/\/github.com\/openai\/baselines',$/;"	v
 validate_probtype	baselines/baselines/common/distributions.py	/^def validate_probtype(probtype, pdparam):$/;"	f
 value	baselines/baselines/a2c/utils.py	/^    def value(self):$/;"	m	class:Scheduler

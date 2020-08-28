@@ -8,3 +8,5 @@
 run_all_grid.sh.*
 ucb_rl2_meta/stylegan2-pytorch/
 baselines/
+reconstruction_debugging/frozen_models/
+reconstruction_debugging/training_samples/
