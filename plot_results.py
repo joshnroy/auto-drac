@@ -24,7 +24,7 @@ num_wide = int(np.sqrt(len(env_names)))
 fig, axes = plt.subplots(nrows=num_wide, ncols=num_wide, figsize=(20, 20))
 for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
     file_naming_scheme=name + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv"
-    original_file_naming_scheme="ppo_bigvanilla_var_logs/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv"
+    original_file_naming_scheme="reconstruction/ppo_modelclip/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv"
     big_df = pd.DataFrame()
     ax = axes[i_env // num_wide, i_env % num_wide]
 
@@ -63,6 +63,7 @@ TRANSITION_CLIP = 4.
 fig, axes = plt.subplots(nrows=num_wide, ncols=num_wide, figsize=(20, 20))
 for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
     file_naming_scheme=name + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv"
+    original_file_naming_scheme="reconstruction/ppo_modelclip/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv"
     big_df = pd.DataFrame()
     ax = axes[i_env // num_wide, i_env % num_wide]
     things = [("reconstruction/reconstruction_nextstate_ppo_modelclip_logs2/" + env_name + "/", "Reconstruction"), ("reconstruction/nextstate_reward_ppo_modelclip_logs2/" + env_name + "/", "Reward")]
@@ -101,6 +102,7 @@ REWARD_CLIP = 10.
 fig, axes = plt.subplots(nrows=num_wide, ncols=num_wide, figsize=(20, 20))
 for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
     file_naming_scheme=name + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv"
+    original_file_naming_scheme="reconstruction/ppo_modelclip/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv"
     big_df = pd.DataFrame()
     ax = axes[i_env // num_wide, i_env % num_wide]
     things = [("reconstruction/reconstruction_nextstate_ppo_modelclip_logs2/" + env_name + "/", "Reconstruction"), ("reconstruction/nextstate_reward_ppo_modelclip_logs2/" + env_name + "/", "Reward")]
@@ -137,6 +139,7 @@ plt.close()
 fig, axes = plt.subplots(nrows=num_wide, ncols=num_wide, figsize=(20, 20))
 for i_env, env_name in tqdm(enumerate(env_names), total=len(env_names)):
     file_naming_scheme=name + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv"
+    original_file_naming_scheme="reconstruction/ppo_modelclip/" + env_name + "/" + env_name + "-*/progress-drac-" + env_name + "-reproduce-s1.csv"
     big_df = pd.DataFrame()
     ax = axes[i_env // num_wide, i_env % num_wide]
     things = [("reconstruction/reconstruction_nextstate_ppo_modelclip_logs2/" + env_name + "/", "Reconstruction"), ("reconstruction/nextstate_reward_ppo_modelclip_logs2/" + env_name + "/", "Reward")]

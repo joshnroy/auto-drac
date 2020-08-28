@@ -94,9 +94,9 @@ class ConvDrAC():
                 feature_variance_epoch += features_var.item()
 
                 use_reward_loss = False
-                use_next_state_loss = True
+                use_next_state_loss = False
                 use_next_observation_loss = False
-                use_reconstruction_loss = True
+                use_reconstruction_loss = False
                 clip_grad = True
 
 
@@ -133,12 +133,13 @@ class ConvDrAC():
 
                     reconstruction_loss_epoch += reconstruction_loss.item()
 
-                self.optimizer_model.zero_grad()
-                (model_loss * self.model_coef).backward()
-                if clip_grad:
-                    nn.utils.clip_grad_norm_(self.model_parameters,
-                                            self.max_grad_norm)
-                self.optimizer_model.step()  
+                if model_loss != 0.:
+                    self.optimizer_model.zero_grad()
+                    (model_loss * self.model_coef).backward()
+                    if clip_grad:
+                        nn.utils.clip_grad_norm_(self.model_parameters,
+                                                self.max_grad_norm)
+                    self.optimizer_model.step()  
 
 # -------------------
 

@@ -39,6 +39,8 @@ aug_to_func = {
 modelbased = True
 
 def train(args):
+    if int(os.environ['SGE_TASK_ID']) not in [46, 47, 48]:
+        sys.exit()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
 
     torch.manual_seed(args.seed)

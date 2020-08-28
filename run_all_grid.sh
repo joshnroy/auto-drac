@@ -10,7 +10,7 @@
 #$ -l gpus=1
 #
 # Runs 48 jobs
-#$ -t 15-15
+#$ -t 46-48
 #
 # Runs at most 20 jobs at once
 #$ -tc 20
@@ -25,4 +25,4 @@ trial=$(($ID_INNER / 16))
 # env_name=${envs[9]}
 # trial=$(($ID_INNER))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir reconstruction/reconstruction_nextstate_ppo_modelclip_logs3/${env_name}/${env_name}-${trial} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir reconstruction/ppo_modelclip/${env_name}/${env_name}-${trial} --aug_coef 0.
