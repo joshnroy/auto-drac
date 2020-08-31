@@ -40,8 +40,6 @@ aug_to_func = {
 modelbased = True
 
 def train(args):
-    if int(os.environ['SGE_TASK_ID']) not in [46, 47, 48]:
-        sys.exit()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
 
     torch.manual_seed(args.seed)
@@ -233,7 +231,7 @@ def train(args):
             env_name=args.env_name)
 
     if args.lr == 0:
-        num_samples = 0
+        samples = []
     obs = envs.reset()
     rollouts.obs[0].copy_(obs)
     if modelbased:
@@ -256,14 +254,15 @@ def train(args):
 
             # Obser reward and next obs
             obs, reward, done, infos = envs.step(action)
-            if args.lr == 0 and False:
-                obs_record = np.transpose(obs.cpu().detach().numpy(), (0, 2, 3, 1)) * 255
-                for ob in obs_record:
-                    print(num_samples)
-                    cv2.imwrite("reconstruction_debugging/training_samples/training" + str(num_samples).zfill(8) + ".png", ob)
-                    num_samples += 1
-                if num_samples > 10_000_000:
+            print(round(len(samples) / 1_000_000., 2))
+            if args.lr == 0 and True:
+                obs_record = (np.transpose(obs.cpu().detach().numpy(), (0, 2, 3, 1)) * 255).astype(np.uint8)
+                obs_features = actor_critic.encoder(obs, recurrent_hidden_states, rollouts.masks[step])[0].cpu().detach().numpy()
+                for ob, ob_latent in zip(obs_record, obs_features):
+                    samples.append((ob_latent, ob))
+                if len(samples) > 1_000_000:
                     print("Done collecting training samples")
+                    np.savez_compressed("reconstruction_debugging/training_samples/training_samples", data=samples)
                     sys.exit()
 
             
