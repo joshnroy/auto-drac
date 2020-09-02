@@ -254,7 +254,8 @@ def train(args):
 
             # Obser reward and next obs
             obs, reward, done, infos = envs.step(action)
-            print(round(len(samples) / 1_000_000., 2))
+            if args.lr == 0:
+                print(round(len(samples) / 1_000_000., 2))
             if args.lr == 0 and True:
                 obs_record = (np.transpose(obs.cpu().detach().numpy(), (0, 2, 3, 1)) * 255).astype(np.uint8)
                 obs_features = actor_critic.encoder(obs, recurrent_hidden_states, rollouts.masks[step])[0].cpu().detach().numpy()
@@ -331,6 +332,8 @@ def train(args):
             logger.logkv("test/reward_model_error", np.mean(eval_reward_model_error))
 
             logger.dumpkvs()
+        if j % args.save_interval == 0 and len(episode_rewards) > 1:
+            torch.save({"step_num": j, "model_state_dict": actor_critic.state_dict()}, args.log_dir + "/model" + str(j) + ".pth")
 
 
 if __name__ == "__main__":
