@@ -10,7 +10,7 @@ import numpy as np
 import torch
 
 from ucb_rl2_meta import algo, utils
-from ucb_rl2_meta.model import Policy, AugCNN, ModelBasedPolicy, PlanningPolicy
+from ucb_rl2_meta.model import Policy, AugCNN, ModelBasedPolicy, PlanningPolicy, AdversarialPolicy
 from ucb_rl2_meta.storage import RolloutStorage, BiggerRolloutStorage
 from test import evaluate
 
@@ -205,7 +205,7 @@ def train(args):
             aug_func=aug_func,
             aug_coef=args.aug_coef,
             env_name=args.env_name)
-    else: # Model based Drac
+    elif False: # Model based Drac
         aug_id = data_augs.Identity
         aug_func = aug_to_func[args.aug_type](batch_size=batch_size)
 
@@ -229,6 +229,31 @@ def train(args):
             aug_func=aug_func,
             aug_coef=args.aug_coef,
             env_name=args.env_name)
+    else: # Adversarial Drac
+        aug_id = data_augs.Identity
+        aug_func = aug_to_func[args.aug_type](batch_size=batch_size)
+
+        actor_critic = AdversarialPolicy(
+            obs_shape,
+            envs.action_space.n,
+            base_kwargs={'recurrent': False, 'hidden_size': args.hidden_size})        
+        actor_critic.to(device)
+
+        agent = algo.AdversarialDrAC(
+            actor_critic,
+            args.clip_param,
+            args.ppo_epoch,
+            args.num_mini_batch,
+            args.value_loss_coef,
+            args.entropy_coef,
+            lr=args.lr,
+            eps=args.eps,
+            max_grad_norm=args.max_grad_norm,
+            aug_id=aug_id,
+            aug_func=aug_func,
+            aug_coef=args.aug_coef,
+            env_name=args.env_name)
+
 
     if args.lr == 0:
         samples = []
@@ -326,10 +351,11 @@ def train(args):
             ### Eval on the Full Distribution of Levels ###
             eval_episode_rewards, eval_reconstruction_error, eval_reward_model_error = evaluate(args, actor_critic, device, aug_id=aug_id)
 
-            logger.logkv("test/mean_episode_reward", np.mean(eval_episode_rewards))
-            logger.logkv("test/median_episode_reward", np.median(eval_episode_rewards))
-            logger.logkv("test/reconstruction_error", np.mean(eval_reconstruction_error))
-            logger.logkv("test/reward_model_error", np.mean(eval_reward_model_error))
+            if isinstance(agent, algo.ConvDrAC):
+                logger.logkv("test/mean_episode_reward", np.mean(eval_episode_rewards))
+                logger.logkv("test/median_episode_reward", np.median(eval_episode_rewards))
+                logger.logkv("test/reconstruction_error", np.mean(eval_reconstruction_error))
+                logger.logkv("test/reward_model_error", np.mean(eval_reward_model_error))
 
             logger.dumpkvs()
         if j % args.save_interval == 0 and len(episode_rewards) > 1:
@@ -337,5 +363,7 @@ def train(args):
 
 
 if __name__ == "__main__":
+    if os.environ['SGE_TASK_ID'] not in [17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28] + list(range(30, 67)) + list(range(68, 81)):
+        sys.exit()
     args = parser.parse_args()
     train(args)

@@ -42,11 +42,11 @@ class Categorical(nn.Module):
                                 constant_(x, 0), nn.init.calculate_gain('relu'))
 
         self.linear = []
-        self.linear.append(init_relu_(nn.Linear(num_inputs, num_inputs)))
-        self.linear.append(nn.ReLU(inplace=True))
-        self.linear.append(init_relu_(nn.Linear(num_inputs, num_inputs)))
-        self.linear.append(nn.ReLU(inplace=True))
-        self.linear.append(init_(nn.Linear(num_inputs, num_outputs)))
+        self.linear.append(init_(nn.Linear(num_inputs, num_inputs)))
+        # self.linear.append(nn.ReLU(inplace=True))
+        # self.linear.append(init_relu_(nn.Linear(num_inputs, num_inputs)))
+        # self.linear.append(nn.ReLU(inplace=True))
+        # self.linear.append(init_(nn.Linear(num_inputs, num_outputs)))
 
         self.linear = nn.Sequential(*self.linear)
 

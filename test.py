@@ -46,20 +46,20 @@ def evaluate(args, actor_critic, device, num_processes=1, aug_id=None):
                 eval_masks,
                 deterministic=False)
 
-            features_and_actions, features = actor_critic.get_features(obs, eval_recurrent_hidden_states, eval_masks, action)
-            reconstructions = actor_critic.reconstruct_observation(features)
-            reconstruction_loss = F.l1_loss(reconstructions, obs)
-            eval_reconstruction_errors.append(reconstruction_loss.item())
+            # features_and_actions, features = actor_critic.get_features(obs, eval_recurrent_hidden_states, eval_masks, action)
+            # reconstructions = actor_critic.reconstruct_observation(features)
+            # reconstruction_loss = F.l1_loss(reconstructions, obs)
+            # eval_reconstruction_errors.append(reconstruction_loss.item())
 
         obs, rews, done, infos = eval_envs.step(action)
-        rews = rews.to(device)
-        with torch.no_grad():
-            if rews is not None:
-                predicted_rewards = actor_critic.predict_reward(features_and_actions)
-                reward_loss = F.l1_loss(predicted_rewards, rews)
-                eval_reward_model_errors.append(reward_loss.item())
-            else:
-                eval_reward_model_errors.append(0)
+        # rews = rews.to(device)
+        # with torch.no_grad():
+        #     if rews is not None:
+        #         predicted_rewards = actor_critic.predict_reward(features_and_actions)
+        #         reward_loss = F.l1_loss(predicted_rewards, rews)
+        #         eval_reward_model_errors.append(reward_loss.item())
+        #     else:
+        #         eval_reward_model_errors.append(0)
 
          
         eval_masks = torch.tensor(

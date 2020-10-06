@@ -108,10 +108,10 @@ class Policy(nn.Module):
         self.actor = Categorical(encoder_output_size, num_actions)
 
         self.critic = []
-        self.critic.append(init_relu_(nn.Linear(encoder_output_size, encoder_output_size)))
-        self.critic.append(nn.ReLU(inplace=True))
-        self.critic.append(init_relu_(nn.Linear(encoder_output_size, encoder_output_size)))
-        self.critic.append(nn.ReLU(inplace=True))
+        # self.critic.append(init_relu_(nn.Linear(encoder_output_size, encoder_output_size)))
+        # self.critic.append(nn.ReLU(inplace=True))
+        # self.critic.append(init_relu_(nn.Linear(encoder_output_size, encoder_output_size)))
+        # self.critic.append(nn.ReLU(inplace=True))
         self.critic.append(init_(nn.Linear(encoder_output_size, 1)))
         self.critic = nn.Sequential(*self.critic)
         
@@ -167,6 +167,18 @@ class Policy(nn.Module):
             return value, action_log_probs, dist_entropy, rnn_hxs
         else:
             return action_log_probs, dist_entropy, rnn_hxs
+
+class AdversarialPolicy(Policy):
+    def __init__(self, obs_shape, num_actions, base_kwargs=None):
+        super(AdversarialPolicy, self).__init__(obs_shape, num_actions, base_kwargs=base_kwargs)
+        self.adversary = []
+        encoder_output_size = 256
+        self.adversary.append(init_relu_(nn.Linear(encoder_output_size, encoder_output_size)))
+        self.adversary.append(nn.ReLU(inplace=True))
+        self.adversary.append(init_relu_(nn.Linear(encoder_output_size, encoder_output_size)))
+        self.adversary.append(nn.ReLU(inplace=True))
+        self.adversary.append(init_(nn.Linear(encoder_output_size, 1)))
+        self.adversary = nn.Sequential(*self.adversary)
 
 class PlanningPolicy(Policy):
     def __init__(self, obs_shape, num_actions, base_kwargs=None):

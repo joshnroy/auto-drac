@@ -14,14 +14,20 @@ ActionNoise	baselines/baselines/ddpg/noise.py	/^class ActionNoise(object):$/;"	c
 Actor	baselines/baselines/ddpg/models.py	/^class Actor(Model):$/;"	c
 ActorCritic	baselines/baselines/her/actor_critic.py	/^class ActorCritic:$/;"	c
 AdaptiveParamNoiseSpec	baselines/baselines/ddpg/noise.py	/^class AdaptiveParamNoiseSpec(object):$/;"	c
+AdversarialDrAC	ucb_rl2_meta/algo/adversarial_drac.py	/^class AdversarialDrAC():$/;"	c
+AdversarialPolicy	ucb_rl2_meta/model.py	/^class AdversarialPolicy(Policy):$/;"	c
 AllowBacktracking	baselines/baselines/common/retro_wrappers.py	/^class AllowBacktracking(gym.Wrapper):$/;"	c
 AlreadySteppingError	baselines/baselines/common/vec_env/vec_env.py	/^class AlreadySteppingError(Exception):$/;"	c
 AppendTimeout	baselines/baselines/common/retro_wrappers.py	/^class AppendTimeout(gym.Wrapper):$/;"	c
 AugCNN	ucb_rl2_meta/model.py	/^class AugCNN(nn.Module):$/;"	c
+BCERankingLoss	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^class BCERankingLoss(nn.Module):$/;"	c
+BLOCK_INDEX_BY_DIM	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    BLOCK_INDEX_BY_DIM = {$/;"	v	class:InceptionV3
+BaseModel	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^class BaseModel():$/;"	c
 BasicBlock	ucb_rl2_meta/model.py	/^class BasicBlock(nn.Module):$/;"	c
 BernoulliPd	baselines/baselines/common/distributions.py	/^class BernoulliPd(Pd):$/;"	c
 BernoulliPdType	baselines/baselines/common/distributions.py	/^class BernoulliPdType(PdType):$/;"	c
 BiggerRolloutStorage	ucb_rl2_meta/storage.py	/^class BiggerRolloutStorage(object):$/;"	c
+Blur	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class Blur(nn.Module):$/;"	c
 Blur	ucb_rl2_meta/stylegan_model.py	/^class Blur(nn.Module):$/;"	c
 BoxIdentityEnv	baselines/baselines/common/tests/envs/identity_env.py	/^class BoxIdentityEnv(IdentityEnv):$/;"	c
 Buffer	baselines/baselines/acer/buffer.py	/^class Buffer(object):$/;"	c
@@ -45,10 +51,12 @@ ClipRewardEnv	baselines/baselines/common/atari_wrappers.py	/^class ClipRewardEnv
 CloudpickleWrapper	baselines/baselines/common/vec_env/vec_env.py	/^class CloudpickleWrapper(object):$/;"	c
 CnnPolicy	baselines/baselines/ppo1/cnn_policy.py	/^class CnnPolicy(object):$/;"	c
 ColorJitter	data_augs.py	/^class ColorJitter(nn.Module):$/;"	c
+ConstantInput	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class ConstantInput(nn.Module):$/;"	c
 ConstantInput	ucb_rl2_meta/stylegan_model.py	/^class ConstantInput(nn.Module):$/;"	c
 ConstantSchedule	baselines/baselines/common/schedules.py	/^class ConstantSchedule(object):$/;"	c
 Conv2d_tf	ucb_rl2_meta/model.py	/^class Conv2d_tf(nn.Conv2d):$/;"	c
 ConvDrAC	ucb_rl2_meta/algo/conv_drac.py	/^class ConvDrAC():$/;"	c
+ConvLayer	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class ConvLayer(nn.Sequential):$/;"	c
 ConvLayer	ucb_rl2_meta/stylegan_model.py	/^class ConvLayer(nn.Sequential):$/;"	c
 Critic	baselines/baselines/ddpg/models.py	/^class Critic(Model):$/;"	c
 Crop	data_augs.py	/^class Crop(object):$/;"	c
@@ -58,15 +66,21 @@ DDPG	baselines/baselines/ddpg/ddpg_learner.py	/^class DDPG(object):$/;"	c
 DDPG	baselines/baselines/her/ddpg.py	/^class DDPG(object):$/;"	c
 DEBUG	baselines/baselines/logger.py	/^DEBUG = 10$/;"	v
 DEFAULT	baselines/baselines/logger.py	/^    DEFAULT = None  # A logger with no output files. (See right below class definition)$/;"	v	class:Logger
+DEFAULT_BLOCK_INDEX	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    DEFAULT_BLOCK_INDEX = 3$/;"	v	class:InceptionV3
 DEFAULT_ENV_PARAMS	baselines/baselines/her/experiment/config.py	/^DEFAULT_ENV_PARAMS = {$/;"	v
 DEFAULT_PARAMS	baselines/baselines/her/experiment/config.py	/^DEFAULT_PARAMS = {$/;"	v
 DISABLED	baselines/baselines/logger.py	/^DISABLED = 50$/;"	v
+DSSIM	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^class DSSIM(FakeNet):$/;"	c
 Dataset	baselines/baselines/common/dataset.py	/^class Dataset(object):$/;"	c
 DiagGaussianPd	baselines/baselines/common/distributions.py	/^class DiagGaussianPd(Pd):$/;"	c
 DiagGaussianPdType	baselines/baselines/common/distributions.py	/^class DiagGaussianPdType(PdType):$/;"	c
 DiscreteIdentityEnv	baselines/baselines/common/tests/envs/identity_env.py	/^class DiscreteIdentityEnv(IdentityEnv):$/;"	c
+Discriminator	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class Discriminator(nn.Module):$/;"	c
 Discriminator	ucb_rl2_meta/stylegan_model.py	/^class Discriminator(nn.Module):$/;"	c
+Dist2LogitLayer	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^class Dist2LogitLayer(nn.Module):$/;"	c
+DistModel	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^class DistModel(BaseModel):$/;"	c
 Downsample	baselines/baselines/common/retro_wrappers.py	/^class Downsample(gym.ObservationWrapper):$/;"	c
+Downsample	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class Downsample(nn.Module):$/;"	c
 Downsample	ucb_rl2_meta/stylegan_model.py	/^class Downsample(nn.Module):$/;"	c
 DrAC	ucb_rl2_meta/algo/drac.py	/^class DrAC():$/;"	c
 Dset	baselines/baselines/gail/dataset/mujoco_dset.py	/^class Dset(object):$/;"	c
@@ -76,9 +90,17 @@ ERROR	baselines/baselines/logger.py	/^ERROR = 40$/;"	v
 EXT	baselines/baselines/bench/monitor.py	/^    EXT = "monitor.csv"$/;"	v	class:Monitor
 EpisodeStats	baselines/baselines/a2c/utils.py	/^class EpisodeStats:$/;"	c
 EpisodicLifeEnv	baselines/baselines/common/atari_wrappers.py	/^class EpisodicLifeEnv(gym.Wrapper):$/;"	c
+EqualConv2d	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class EqualConv2d(nn.Module):$/;"	c
 EqualConv2d	ucb_rl2_meta/stylegan_model.py	/^class EqualConv2d(nn.Module):$/;"	c
+EqualLinear	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class EqualLinear(nn.Module):$/;"	c
 EqualLinear	ucb_rl2_meta/stylegan_model.py	/^class EqualLinear(nn.Module):$/;"	c
 EzPickle	baselines/baselines/common/misc_util.py	/^class EzPickle(object):$/;"	c
+FIDInceptionA	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^class FIDInceptionA(models.inception.InceptionA):$/;"	c
+FIDInceptionC	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^class FIDInceptionC(models.inception.InceptionC):$/;"	c
+FIDInceptionE_1	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^class FIDInceptionE_1(models.inception.InceptionE):$/;"	c
+FIDInceptionE_2	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^class FIDInceptionE_2(models.inception.InceptionE):$/;"	c
+FID_WEIGHTS_URL	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^FID_WEIGHTS_URL = 'https:\/\/github.com\/mseitzer\/pytorch-fid\/releases\/download\/fid_weights\/pt_inception-2015-12-05-6726825d.pth'$/;"	v
+FakeNet	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^class FakeNet(nn.Module):$/;"	c
 FireResetEnv	baselines/baselines/common/atari_wrappers.py	/^class FireResetEnv(gym.Wrapper):$/;"	c
 FixedCategorical	ucb_rl2_meta/distributions.py	/^class FixedCategorical(torch.distributions.Categorical):$/;"	c
 FixedSequenceEnv	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^class FixedSequenceEnv(Env):$/;"	c
@@ -88,19 +110,24 @@ FrameStack	baselines/baselines/common/atari_wrappers.py	/^class FrameStack(gym.W
 FusedLeakyReLU	ucb_rl2_meta/op/fused_act.py	/^class FusedLeakyReLU(nn.Module):$/;"	c
 FusedLeakyReLUFunction	ucb_rl2_meta/op/fused_act.py	/^class FusedLeakyReLUFunction(Function):$/;"	c
 FusedLeakyReLUFunctionBackward	ucb_rl2_meta/op/fused_act.py	/^class FusedLeakyReLUFunctionBackward(Function):$/;"	c
+Generator	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class Generator(nn.Module):$/;"	c
 Generator	ucb_rl2_meta/stylegan_model.py	/^class Generator(nn.Module):$/;"	c
 GetFlat	baselines/baselines/common/tf_util.py	/^class GetFlat(object):$/;"	c
 Grayscale	data_augs.py	/^class Grayscale(object):$/;"	c
+Gs_kwargs	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    Gs_kwargs = dnnlib.EasyDict()$/;"	v
 HumanOutputFormat	baselines/baselines/logger.py	/^class HumanOutputFormat(KVWriter, SeqWriter):$/;"	c
 INFO	baselines/baselines/logger.py	/^INFO = 20$/;"	v
 Identity	data_augs.py	/^def Identity(x):$/;"	f
 IdentityEnv	baselines/baselines/common/tests/envs/identity_env.py	/^class IdentityEnv(Env):$/;"	c
 IdentityNormalizer	baselines/baselines/her/normalizer.py	/^class IdentityNormalizer:$/;"	c
+Inception3Feature	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^class Inception3Feature(Inception3):$/;"	c
+InceptionV3	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^class InceptionV3(nn.Module):$/;"	c
 JSONOutputFormat	baselines/baselines/logger.py	/^class JSONOutputFormat(KVWriter):$/;"	c
 KFAC_DEBUG	baselines/baselines/acktr/kfac.py	/^KFAC_DEBUG = False$/;"	v
 KFAC_OPS	baselines/baselines/acktr/kfac.py	/^KFAC_OPS = ['MatMul', 'Conv2D', 'BiasAdd']$/;"	v
 KVWriter	baselines/baselines/logger.py	/^class KVWriter(object):$/;"	c
 KfacOptimizer	baselines/baselines/acktr/kfac.py	/^class KfacOptimizer():$/;"	c
+L2	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^class L2(FakeNet):$/;"	c
 LazyFrames	baselines/baselines/common/atari_wrappers.py	/^class LazyFrames(object):$/;"	c
 LinearSchedule	baselines/baselines/common/schedules.py	/^class LinearSchedule(object):$/;"	c
 LoadMonitorResultsError	baselines/baselines/bench/monitor.py	/^class LoadMonitorResultsError(Exception):$/;"	c
@@ -134,6 +161,7 @@ Model	baselines/baselines/acktr/acktr.py	/^class Model(object):$/;"	c
 Model	baselines/baselines/ddpg/models.py	/^class Model(object):$/;"	c
 Model	baselines/baselines/ppo2/model.py	/^class Model(object):$/;"	c
 ModelBasedPolicy	ucb_rl2_meta/model.py	/^class ModelBasedPolicy(Policy):$/;"	c
+ModulatedConv2d	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class ModulatedConv2d(nn.Module):$/;"	c
 ModulatedConv2d	ucb_rl2_meta/stylegan_model.py	/^class ModulatedConv2d(nn.Module):$/;"	c
 Monitor	baselines/baselines/bench/monitor.py	/^class Monitor(Wrapper):$/;"	c
 MovieRecord	baselines/baselines/common/retro_wrappers.py	/^class MovieRecord(gym.Wrapper):$/;"	c
@@ -143,10 +171,13 @@ Mujoco_Dset	baselines/baselines/gail/dataset/mujoco_dset.py	/^class Mujoco_Dset(
 MultiCategoricalPd	baselines/baselines/common/distributions.py	/^class MultiCategoricalPd(Pd):$/;"	c
 MultiCategoricalPdType	baselines/baselines/common/distributions.py	/^class MultiCategoricalPdType(PdType):$/;"	c
 MultiDiscreteIdentityEnv	baselines/baselines/common/tests/envs/identity_env.py	/^class MultiDiscreteIdentityEnv(IdentityEnv):$/;"	c
+MultiResolutionDataset	ucb_rl2_meta/stylegan2-pytorch/dataset.py	/^class MultiResolutionDataset(Dataset):$/;"	c
 N	baselines/baselines/common/plot_util.py	/^        N = len(sk2r)$/;"	v
 NNBase	ucb_rl2_meta/model.py	/^class NNBase(nn.Module):$/;"	c
 N_EPISODES	baselines/baselines/common/tests/util.py	/^N_EPISODES = 100$/;"	v
 N_TRIALS	baselines/baselines/common/tests/util.py	/^N_TRIALS = 10000$/;"	v
+NetLinLayer	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^class NetLinLayer(nn.Module):$/;"	c
+NoiseInjection	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class NoiseInjection(nn.Module):$/;"	c
 NoiseInjection	ucb_rl2_meta/stylegan_model.py	/^class NoiseInjection(nn.Module):$/;"	c
 NoopResetEnv	baselines/baselines/common/atari_wrappers.py	/^class NoopResetEnv(gym.Wrapper):$/;"	c
 NormalActionNoise	baselines/baselines/ddpg/noise.py	/^class NormalActionNoise(ActionNoise):$/;"	c
@@ -154,13 +185,16 @@ Normalizer	baselines/baselines/her/normalizer.py	/^class Normalizer:$/;"	c
 NotSteppingError	baselines/baselines/common/vec_env/vec_env.py	/^class NotSteppingError(Exception):$/;"	c
 ObservationInput	baselines/baselines/deepq/utils.py	/^class ObservationInput(PlaceholderTfInput):$/;"	c
 OrnsteinUhlenbeckActionNoise	baselines/baselines/ddpg/noise.py	/^class OrnsteinUhlenbeckActionNoise(ActionNoise):$/;"	c
+PNetLin	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^class PNetLin(nn.Module):$/;"	c
 POSSIBLE_X_AXES	baselines/baselines/results_plotter.py	/^POSSIBLE_X_AXES = [X_TIMESTEPS, X_EPISODES, X_WALLTIME]$/;"	v
 PYBIND11_MODULE	ucb_rl2_meta/op/fused_bias_act.cpp	/^PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {$/;"	f
 PYBIND11_MODULE	ucb_rl2_meta/op/upfirdn2d.cpp	/^PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {$/;"	f
 PartialFrameStack	baselines/baselines/common/retro_wrappers.py	/^class PartialFrameStack(gym.Wrapper):$/;"	c
 Pd	baselines/baselines/common/distributions.py	/^class Pd(object):$/;"	c
 PdType	baselines/baselines/common/distributions.py	/^class PdType(object):$/;"	c
+PerceptualLoss	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^class PerceptualLoss(torch.nn.Module):$/;"	c
 PiecewiseSchedule	baselines/baselines/common/schedules.py	/^class PiecewiseSchedule(object):$/;"	c
+PixelNorm	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class PixelNorm(nn.Module):$/;"	c
 PixelNorm	ucb_rl2_meta/stylegan_model.py	/^class PixelNorm(nn.Module):$/;"	c
 PlaceholderTfInput	baselines/baselines/deepq/utils.py	/^class PlaceholderTfInput(TfInput):$/;"	c
 PlanningPolicy	ucb_rl2_meta/model.py	/^class PlanningPolicy(Policy):$/;"	c
@@ -172,9 +206,11 @@ REWARD_CLIP	plot_results.py	/^REWARD_CLIP = 10.$/;"	v
 REWARD_CLIP	single_plot_results.py	/^REWARD_CLIP = 5.$/;"	v
 RL2DrAC	ucb_rl2_meta/algo/rl2_drac.py	/^class RL2DrAC():$/;"	c
 RandomConv	data_augs.py	/^class RandomConv(object):$/;"	c
+ReconstructionModel	reconstruction_debugging/reconstruction_test.py	/^class ReconstructionModel(nn.Module):$/;"	c
 ReconstructionModel	ucb_rl2_meta/model.py	/^class ReconstructionModel(nn.Module):$/;"	c
 ReplayBuffer	baselines/baselines/deepq/replay_buffer.py	/^class ReplayBuffer(object):$/;"	c
 ReplayBuffer	baselines/baselines/her/replay_buffer.py	/^class ReplayBuffer:$/;"	c
+ResBlock	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class ResBlock(nn.Module):$/;"	c
 ResBlock	ucb_rl2_meta/stylegan_model.py	/^class ResBlock(nn.Module):$/;"	c
 ResNetBase	ucb_rl2_meta/model.py	/^class ResNetBase(NNBase):$/;"	c
 Result	baselines/baselines/common/plot_util.py	/^Result = namedtuple('Result', 'monitor progress dirname metadata')$/;"	v
@@ -196,8 +232,11 @@ RunningMeanStd	baselines/baselines/common/running_mean_std.py	/^class RunningMea
 SCRIPT_DIR	baselines/baselines/bench/benchmarks.py	/^SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))$/;"	v
 SMOOTHING_WINDOW	plot_results.py	/^SMOOTHING_WINDOW = 20$/;"	v
 SMOOTHING_WINDOW	single_plot_results.py	/^SMOOTHING_WINDOW = 1$/;"	v
+SYM6	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^SYM6 = ($/;"	v
 ScaledFloatFrame	baselines/baselines/common/atari_wrappers.py	/^class ScaledFloatFrame(gym.ObservationWrapper):$/;"	c
+ScaledLeakyReLU	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class ScaledLeakyReLU(nn.Module):$/;"	c
 ScaledLeakyReLU	ucb_rl2_meta/stylegan_model.py	/^class ScaledLeakyReLU(nn.Module):$/;"	c
+ScalingLayer	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^class ScalingLayer(nn.Module):$/;"	c
 Schedule	baselines/baselines/common/schedules.py	/^class Schedule(object):$/;"	c
 Scheduler	baselines/baselines/a2c/utils.py	/^class Scheduler(object):$/;"	c
 SegmentTree	baselines/baselines/common/segment_tree.py	/^class SegmentTree(object):$/;"	c
@@ -208,6 +247,7 @@ SimpleEnv	baselines/baselines/common/vec_env/test_vec_env.py	/^class SimpleEnv(g
 SonicDiscretizer	baselines/baselines/common/retro_wrappers.py	/^class SonicDiscretizer(gym.ActionWrapper):$/;"	c
 StartDoingRandomActionsWrapper	baselines/baselines/common/retro_wrappers.py	/^class StartDoingRandomActionsWrapper(gym.Wrapper):$/;"	c
 StochasticFrameSkip	baselines/baselines/common/retro_wrappers.py	/^class StochasticFrameSkip(gym.Wrapper):$/;"	c
+StyledConv	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class StyledConv(nn.Module):$/;"	c
 StyledConv	ucb_rl2_meta/stylegan_model.py	/^class StyledConv(nn.Module):$/;"	c
 SubprocVecEnv	baselines/baselines/common/vec_env/subproc_vec_env.py	/^class SubprocVecEnv(VecEnv):$/;"	c
 SumSegmentTree	baselines/baselines/common/segment_tree.py	/^class SumSegmentTree(SegmentTree):$/;"	c
@@ -217,6 +257,7 @@ TensorBoardOutputFormat	baselines/baselines/logger.py	/^class TensorBoardOutputF
 TfInput	baselines/baselines/deepq/utils.py	/^class TfInput(object):$/;"	c
 TfRunningMeanStd	baselines/baselines/common/running_mean_std.py	/^class TfRunningMeanStd(object):$/;"	c
 TimeLimit	baselines/baselines/common/wrappers.py	/^class TimeLimit(gym.Wrapper):$/;"	c
+ToRGB	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class ToRGB(nn.Module):$/;"	c
 ToRGB	ucb_rl2_meta/stylegan_model.py	/^class ToRGB(nn.Module):$/;"	c
 TransitionClassifier	baselines/baselines/gail/adversary.py	/^class TransitionClassifier(object):$/;"	c
 TransitionModel	ucb_rl2_meta/model.py	/^class TransitionModel(nn.Module):$/;"	c
@@ -225,6 +266,7 @@ TransposeObs	ucb_rl2_meta/envs.py	/^class TransposeObs(gym.ObservationWrapper):$
 UCBDrAC	ucb_rl2_meta/algo/ucb_drac.py	/^class UCBDrAC():$/;"	c
 UpFirDn2d	ucb_rl2_meta/op/upfirdn2d.py	/^class UpFirDn2d(Function):$/;"	c
 UpFirDn2dBackward	ucb_rl2_meta/op/upfirdn2d.py	/^class UpFirDn2dBackward(Function):$/;"	c
+Upsample	ucb_rl2_meta/stylegan2-pytorch/model.py	/^class Upsample(nn.Module):$/;"	c
 Upsample	ucb_rl2_meta/stylegan_model.py	/^class Upsample(nn.Module):$/;"	c
 VecEnv	baselines/baselines/common/vec_env/vec_env.py	/^class VecEnv(ABC):$/;"	c
 VecEnvObservationWrapper	baselines/baselines/common/vec_env/vec_env.py	/^class VecEnvObservationWrapper(VecEnvWrapper):$/;"	c
@@ -235,6 +277,7 @@ VecMonitor	baselines/baselines/common/vec_env/vec_monitor.py	/^class VecMonitor(
 VecNormalize	baselines/baselines/common/vec_env/vec_normalize.py	/^class VecNormalize(VecEnvWrapper):$/;"	c
 VecPyTorchProcgen	ucb_rl2_meta/envs.py	/^class VecPyTorchProcgen(VecEnvWrapper):$/;"	c
 VecVideoRecorder	baselines/baselines/common/vec_env/vec_video_recorder.py	/^class VecVideoRecorder(VecEnvWrapper):$/;"	c
+W	ucb_rl2_meta/stylegan2-pytorch/closed_form_factorization.py	/^    W = torch.cat(weight_mat, 0)$/;"	v
 WARN	baselines/baselines/logger.py	/^WARN = 30$/;"	v
 WarpFrame	baselines/baselines/common/atari_wrappers.py	/^class WarpFrame(gym.ObservationWrapper):$/;"	c
 X_EPISODES	baselines/baselines/results_plotter.py	/^X_EPISODES = 'episodes'$/;"	v
@@ -267,6 +310,7 @@ __getitem__	baselines/baselines/common/atari_wrappers.py	/^    def __getitem__(s
 __getitem__	baselines/baselines/common/distributions.py	/^    def __getitem__(self, idx):$/;"	m	class:Pd	file:
 __getitem__	baselines/baselines/common/segment_tree.py	/^    def __getitem__(self, idx):$/;"	m	class:SegmentTree	file:
 __getitem__	baselines/baselines/ddpg/memory.py	/^    def __getitem__(self, idx):$/;"	m	class:RingBuffer	file:
+__getitem__	ucb_rl2_meta/stylegan2-pytorch/dataset.py	/^    def __getitem__(self, index):$/;"	m	class:MultiResolutionDataset	file:
 __getstate__	baselines/baselines/common/misc_util.py	/^    def __getstate__(self):$/;"	m	class:EzPickle	file:
 __getstate__	baselines/baselines/common/vec_env/vec_env.py	/^    def __getstate__(self):$/;"	m	class:CloudpickleWrapper	file:
 __getstate__	baselines/baselines/her/ddpg.py	/^    def __getstate__(self):$/;"	m	class:DDPG	file:
@@ -396,6 +440,8 @@ __init__	data_augs.py	/^    def __init__(self,  $/;"	m	class:Rotate
 __init__	data_augs.py	/^    def __init__(self, $/;"	m	class:ColorJitter
 __init__	data_augs.py	/^    def __init__(self, $/;"	m	class:Cutout
 __init__	data_augs.py	/^    def __init__(self, $/;"	m	class:CutoutColor
+__init__	reconstruction_debugging/reconstruction_test.py	/^    def __init__(self):$/;"	m	class:ReconstructionModel
+__init__	ucb_rl2_meta/algo/adversarial_drac.py	/^    def __init__(self,$/;"	m	class:AdversarialDrAC
 __init__	ucb_rl2_meta/algo/conv_drac.py	/^    def __init__(self,$/;"	m	class:ConvDrAC
 __init__	ucb_rl2_meta/algo/drac.py	/^    def __init__(self,$/;"	m	class:DrAC
 __init__	ucb_rl2_meta/algo/meta_drac.py	/^    def __init__(self,$/;"	m	class:MetaDrAC
@@ -411,6 +457,7 @@ __init__	ucb_rl2_meta/model.py	/^    def __init__(self, n_channels, stride=1):$/
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, num_inputs, recurrent=False, hidden_size=256, channels=[16,32,32]):$/;"	m	class:ResNetBase
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, num_inputs, recurrent=False, hidden_size=256, channels=[16,32,32], num_planning_steps=10):$/;"	m	class:PlanningResNetBase
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, num_inputs, recurrent=False, hidden_size=64):$/;"	m	class:MLPBase
+__init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:AdversarialPolicy
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:ModelBasedPolicy
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:PlanningPolicy
 __init__	ucb_rl2_meta/model.py	/^    def __init__(self, obs_shape, num_actions, base_kwargs=None):$/;"	m	class:Policy
@@ -421,6 +468,40 @@ __init__	ucb_rl2_meta/model.py	/^    def __init__(self, state_shape, observation
 __init__	ucb_rl2_meta/op/fused_act.py	/^    def __init__(self, channel, negative_slope=0.2, scale=2 ** 0.5):$/;"	m	class:FusedLeakyReLU
 __init__	ucb_rl2_meta/storage.py	/^    def __init__(self, num_steps, num_processes, obs_shape, action_space,$/;"	m	class:BiggerRolloutStorage
 __init__	ucb_rl2_meta/storage.py	/^    def __init__(self, num_steps, num_processes, obs_shape, action_space,$/;"	m	class:RolloutStorage
+__init__	ucb_rl2_meta/stylegan2-pytorch/dataset.py	/^    def __init__(self, path, transform, resolution=256):$/;"	m	class:MultiResolutionDataset
+__init__	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def __init__(self, in_channels):$/;"	m	class:FIDInceptionE_1
+__init__	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def __init__(self, in_channels):$/;"	m	class:FIDInceptionE_2
+__init__	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def __init__(self, in_channels, channels_7x7):$/;"	m	class:FIDInceptionC
+__init__	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def __init__(self, in_channels, pool_features):$/;"	m	class:FIDInceptionA
+__init__	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def __init__(self,$/;"	m	class:InceptionV3
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^    def __init__(self, model='net-lin', net='alex', colorspace='rgb', spatial=False, use_gpu=True, gpu_ids=[0]): # VGG using our perceptually-learned weights (LPIPS metric)$/;"	m	class:PerceptualLoss
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def __init__(self):$/;"	m	class:BaseModel
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def __init__(self):$/;"	m	class:ScalingLayer
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def __init__(self, chn_in, chn_out=1, use_dropout=False):$/;"	m	class:NetLinLayer
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def __init__(self, chn_mid=32):$/;"	m	class:BCERankingLoss
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def __init__(self, chn_mid=32, use_sigmoid=True):$/;"	m	class:Dist2LogitLayer
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def __init__(self, pnet_type='vgg', pnet_rand=False, pnet_tune=False, use_dropout=True, spatial=False, version='0.1', lpips=True):$/;"	m	class:PNetLin
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def __init__(self, use_gpu=True, colorspace='Lab'):$/;"	m	class:FakeNet
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^    def __init__(self, requires_grad=False, pretrained=True):$/;"	m	class:alexnet
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^    def __init__(self, requires_grad=False, pretrained=True):$/;"	m	class:squeezenet
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^    def __init__(self, requires_grad=False, pretrained=True):$/;"	m	class:vgg16
+__init__	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^    def __init__(self, requires_grad=False, pretrained=True, num=18):$/;"	m	class:resnet
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__($/;"	m	class:ConvLayer
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__($/;"	m	class:EqualConv2d
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__($/;"	m	class:EqualLinear
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__($/;"	m	class:Generator
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__($/;"	m	class:ModulatedConv2d
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__($/;"	m	class:StyledConv
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self):$/;"	m	class:NoiseInjection
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self):$/;"	m	class:PixelNorm
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self, channel, size=4):$/;"	m	class:ConstantInput
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self, in_channel, out_channel, blur_kernel=[1, 3, 3, 1]):$/;"	m	class:ResBlock
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self, in_channel, style_dim, upsample=True, blur_kernel=[1, 3, 3, 1]):$/;"	m	class:ToRGB
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self, kernel, factor=2):$/;"	m	class:Downsample
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self, kernel, factor=2):$/;"	m	class:Upsample
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self, kernel, pad, upsample_factor=1):$/;"	m	class:Blur
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self, negative_slope=0.2):$/;"	m	class:ScaledLeakyReLU
+__init__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __init__(self, size, channel_multiplier=2, blur_kernel=[1, 3, 3, 1]):$/;"	m	class:Discriminator
 __init__	ucb_rl2_meta/stylegan_model.py	/^    def __init__($/;"	m	class:ConvLayer
 __init__	ucb_rl2_meta/stylegan_model.py	/^    def __init__($/;"	m	class:EqualConv2d
 __init__	ucb_rl2_meta/stylegan_model.py	/^    def __init__($/;"	m	class:EqualLinear
@@ -440,9 +521,13 @@ __init__	ucb_rl2_meta/stylegan_model.py	/^    def __init__(self, size, channel_m
 __len__	baselines/baselines/common/atari_wrappers.py	/^    def __len__(self):$/;"	m	class:LazyFrames	file:
 __len__	baselines/baselines/ddpg/memory.py	/^    def __len__(self):$/;"	m	class:RingBuffer	file:
 __len__	baselines/baselines/deepq/replay_buffer.py	/^    def __len__(self):$/;"	m	class:ReplayBuffer	file:
+__len__	ucb_rl2_meta/stylegan2-pytorch/dataset.py	/^    def __len__(self):$/;"	m	class:MultiResolutionDataset	file:
 __repr__	baselines/baselines/ddpg/noise.py	/^    def __repr__(self):$/;"	m	class:AdaptiveParamNoiseSpec	file:
 __repr__	baselines/baselines/ddpg/noise.py	/^    def __repr__(self):$/;"	m	class:NormalActionNoise	file:
 __repr__	baselines/baselines/ddpg/noise.py	/^    def __repr__(self):$/;"	m	class:OrnsteinUhlenbeckActionNoise	file:
+__repr__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __repr__(self):$/;"	m	class:EqualConv2d	file:
+__repr__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __repr__(self):$/;"	m	class:EqualLinear	file:
+__repr__	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def __repr__(self):$/;"	m	class:ModulatedConv2d	file:
 __repr__	ucb_rl2_meta/stylegan_model.py	/^    def __repr__(self):$/;"	m	class:EqualConv2d	file:
 __repr__	ucb_rl2_meta/stylegan_model.py	/^    def __repr__(self):$/;"	m	class:EqualLinear	file:
 __repr__	ucb_rl2_meta/stylegan_model.py	/^    def __repr__(self):$/;"	m	class:ModulatedConv2d	file:
@@ -533,6 +618,7 @@ _vars	baselines/baselines/her/ddpg.py	/^    def _vars(self, scope):$/;"	m	class:
 _video_enabled	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def _video_enabled(self):$/;"	m	class:VecVideoRecorder
 _write_obs	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def _write_obs(maybe_dict_obs):$/;"	f	function:_subproc_worker
 absolute_scope_name	baselines/baselines/deepq/build_graph.py	/^def absolute_scope_name(relative_scope_name):$/;"	f
+accumulate	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def accumulate(model1, model2, decay=0.999):$/;"	f
 act	baselines/baselines/acer/policies.py	/^        def act(ob, *args, **kwargs):$/;"	f	function:AcerCnnPolicy.__init__
 act	baselines/baselines/deepq/build_graph.py	/^        def act(ob, reset=False, update_param_noise_threshold=False, update_param_noise_scale=False, stochastic=True, update_eps=-1):$/;"	f	function:build_act_with_param_noise
 act	baselines/baselines/deepq/build_graph.py	/^        def act(ob, stochastic=True, update_eps=-1):$/;"	f	function:build_act
@@ -557,14 +643,17 @@ adjust_contrast	data_augs.py	/^    def adjust_contrast(self, x):$/;"	m	class:Col
 adjust_hue	data_augs.py	/^    def adjust_hue(self, x):$/;"	m	class:ColorJitter
 adjust_saturate	data_augs.py	/^    def adjust_saturate(self, x):$/;"	m	class:ColorJitter
 adjust_shape	baselines/baselines/common/tf_util.py	/^def adjust_shape(placeholder, data):$/;"	f
+affine_grid	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def affine_grid(grid, mat):$/;"	f
 after_update	ucb_rl2_meta/storage.py	/^    def after_update(self):$/;"	m	class:BiggerRolloutStorage
 after_update	ucb_rl2_meta/storage.py	/^    def after_update(self):$/;"	m	class:RolloutStorage
+alexnet	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^class alexnet(torch.nn.Module):$/;"	c
 alg_list	baselines/baselines/common/tests/test_fixed_sequence.py	/^alg_list = learn_kwargs.keys()$/;"	v
 algos	baselines/baselines/common/tests/test_env_after_learn.py	/^algos = ['a2c', 'acer', 'acktr', 'deepq', 'ppo2', 'trpo_mpi']$/;"	v
 algos_cont	baselines/baselines/common/tests/test_identity.py	/^algos_cont = ['a2c', 'acktr', 'ddpg',  'ppo2', 'trpo_mpi']$/;"	v
 algos_disc	baselines/baselines/common/tests/test_identity.py	/^algos_disc = ['a2c', 'acktr', 'deepq', 'ppo2', 'trpo_mpi']$/;"	v
 algos_multidisc	baselines/baselines/common/tests/test_identity.py	/^algos_multidisc = ['a2c', 'acktr', 'ppo2', 'trpo_mpi']$/;"	v
 all_deps	baselines/setup.py	/^all_deps = []$/;"	v
+all_gather	ucb_rl2_meta/stylegan2-pytorch/distributed.py	/^def all_gather(data):$/;"	f
 allequal	baselines/baselines/common/plot_util.py	/^                def allequal(qs):$/;"	f
 allmean	baselines/baselines/gail/trpo_mpi.py	/^    def allmean(x):$/;"	f	function:learn
 allmean	baselines/baselines/trpo_mpi/trpo_mpi.py	/^    def allmean(x):$/;"	f	function:learn
@@ -572,6 +661,7 @@ allow_soft_placement	baselines/baselines/common/tests/util.py	/^    allow_soft_p
 append	baselines/baselines/ddpg/memory.py	/^    def append(self, obs0, action, reward, obs1, terminal1, training=True):$/;"	m	class:Memory
 append	baselines/baselines/ddpg/memory.py	/^    def append(self, v):$/;"	m	class:RingBuffer
 applyStatsEigen	baselines/baselines/acktr/kfac.py	/^    def applyStatsEigen(self, eigen_list):$/;"	m	class:KfacOptimizer
+apply_color	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def apply_color(img, mat):$/;"	f
 apply_gradients	baselines/baselines/acktr/kfac.py	/^    def apply_gradients(self, grads):$/;"	m	class:KfacOptimizer
 apply_gradients_kfac	baselines/baselines/acktr/kfac.py	/^    def apply_gradients_kfac(self, grads):$/;"	m	class:KfacOptimizer
 apply_init_	ucb_rl2_meta/model.py	/^def apply_init_(modules):$/;"	f
@@ -582,6 +672,14 @@ args	baselines/baselines/gail/gail-eval.py	/^    args = argsparser()$/;"	v
 args	baselines/baselines/gail/run_mujoco.py	/^    args = argsparser()$/;"	v
 args	baselines/baselines/her/experiment/plot.py	/^args = parser.parse_args()$/;"	v
 args	train.py	/^    args = parser.parse_args()$/;"	v
+args	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    args = parser.parse_args()$/;"	v
+args	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    args = parser.parse_args()$/;"	v
+args	ucb_rl2_meta/stylegan2-pytorch/closed_form_factorization.py	/^    args = parser.parse_args()$/;"	v
+args	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    args = parser.parse_args()$/;"	v
+args	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    args = parser.parse_args()$/;"	v
+args	ucb_rl2_meta/stylegan2-pytorch/generate.py	/^    args = parser.parse_args()$/;"	v
+args	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^    args = parser.parse_args()$/;"	v
+args	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    args = parser.parse_args()$/;"	v
 argsparser	baselines/baselines/gail/behavior_clone.py	/^def argsparser():$/;"	f
 argsparser	baselines/baselines/gail/gail-eval.py	/^def argsparser():$/;"	f
 argsparser	baselines/baselines/gail/run_mujoco.py	/^def argsparser():$/;"	f
@@ -594,6 +692,7 @@ atari	baselines/baselines/ppo2/defaults.py	/^def atari():$/;"	f
 atari	baselines/baselines/trpo_mpi/defaults.py	/^def atari():$/;"	f
 atari_arg_parser	baselines/baselines/common/cmd_util.py	/^def atari_arg_parser():$/;"	f
 aug_to_func	train.py	/^aug_to_func = {    $/;"	v
+augment	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def augment(img, p, transform_matrix=(None, None)):$/;"	f
 author	baselines/setup.py	/^      author='OpenAI',$/;"	v
 author_email	baselines/setup.py	/^      author_email='gym@openai.com',$/;"	v
 avg_norm	baselines/baselines/a2c/utils.py	/^def avg_norm(t):$/;"	f
@@ -604,8 +703,14 @@ backward	ucb_rl2_meta/op/fused_act.py	/^    def backward(ctx, grad_output):$/;"	
 backward	ucb_rl2_meta/op/fused_act.py	/^    def backward(ctx, gradgrad_input, gradgrad_bias):$/;"	m	class:FusedLeakyReLUFunctionBackward
 backward	ucb_rl2_meta/op/upfirdn2d.py	/^    def backward(ctx, grad_output):$/;"	m	class:UpFirDn2d
 backward	ucb_rl2_meta/op/upfirdn2d.py	/^    def backward(ctx, gradgrad_input):$/;"	m	class:UpFirDn2dBackward
+backward_train	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def backward_train(self):$/;"	m	class:DistModel
+batch_size	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    batch_size = {256: 16, 512: 9, 1024: 4}$/;"	v
+batch_size	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        batch_size=args.batch,$/;"	v
 batch_to_seq	baselines/baselines/a2c/utils.py	/^def batch_to_seq(h, nbatch, nsteps, flat=False):$/;"	f
 bbox_to_anchor	baselines/baselines/common/plot_util.py	/^                bbox_to_anchor=(1,1) if legend_outside else None)$/;"	v
+bernoulli_sample	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def bernoulli_sample(size, p):$/;"	f
+betas	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        betas=(0 ** d_reg_ratio, 0.99 ** d_reg_ratio),$/;"	v
+betas	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        betas=(0 ** g_reg_ratio, 0.99 ** g_reg_ratio),$/;"	v
 big_df	plot_results.py	/^                big_df = big_df.append(df, ignore_index=True)$/;"	v
 big_df	plot_results.py	/^            big_df = big_df.append(df, ignore_index=True)$/;"	v
 big_df	plot_results.py	/^    big_df = pd.DataFrame()$/;"	v
@@ -614,6 +719,7 @@ big_df	single_plot_results.py	/^            big_df = big_df.append(df, ignore_in
 big_df	single_plot_results.py	/^    big_df = pd.DataFrame()$/;"	v
 blue	baselines/baselines/common/console_util.py	/^    blue=34,$/;"	v
 boolean_flag	baselines/baselines/common/misc_util.py	/^def boolean_flag(parser, name, default=False, help=None):$/;"	f
+broadcast_buffers	ucb_rl2_meta/stylegan2-pytorch/train.py	/^            broadcast_buffers=False,$/;"	v
 build_act	baselines/baselines/deepq/build_graph.py	/^def build_act(make_obs_ph, q_func, num_actions, scope="deepq", reuse=None):$/;"	f
 build_act_with_param_noise	baselines/baselines/deepq/build_graph.py	/^def build_act_with_param_noise(make_obs_ph, q_func, num_actions, scope="deepq", reuse=None, param_noise_filter_func=None):$/;"	f
 build_env	baselines/baselines/run.py	/^def build_env(args):$/;"	f
@@ -624,11 +730,13 @@ build_policy	baselines/baselines/common/policies.py	/^def build_policy(env, poli
 build_q_func	baselines/baselines/deepq/models.py	/^def build_q_func(network, hiddens=[256], dueling=True, layer_norm=False, **network_kwargs):$/;"	f
 build_train	baselines/baselines/deepq/build_graph.py	/^def build_train(make_obs_ph, q_func, num_actions, optimizer, grad_norm_clipping=None, gamma=1.0,$/;"	f
 cached_make_env	baselines/baselines/her/experiment/config.py	/^def cached_make_env(make_env):$/;"	f
+calc_fid	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^def calc_fid(sample_mean, sample_cov, real_mean, real_cov, eps=1e-6):$/;"	f
 call	baselines/baselines/acer/acer.py	/^    def call(self, on_policy):$/;"	m	class:Acer
 callback	baselines/baselines/deepq/experiments/train_cartpole.py	/^def callback(lcl, _glb):$/;"	f
 can_sample	baselines/baselines/acer/buffer.py	/^    def can_sample(self):$/;"	m	class:Buffer
 cat_entropy	baselines/baselines/a2c/utils.py	/^def cat_entropy(logits):$/;"	f
 cat_entropy_softmax	baselines/baselines/a2c/utils.py	/^def cat_entropy_softmax(p0):$/;"	f
+category_sample	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def category_sample(size, categories):$/;"	f
 ccap	baselines/baselines/common/console_util.py	/^def ccap(cmd, dry=False, env=None, **kwargs):$/;"	f
 cg	baselines/baselines/common/cg.py	/^def cg(f_Ax, b, cg_iters=10, callback=None, verbose=False, residual_tol=1e-10):$/;"	f
 change_randomization_params	data_augs.py	/^    def change_randomization_params(self, index_):$/;"	m	class:ColorJitter
@@ -651,6 +759,14 @@ check_shape	baselines/baselines/a2c/utils.py	/^def check_shape(ts,shapes):$/;"	f
 check_synced	baselines/baselines/common/mpi_adam.py	/^    def check_synced(self):$/;"	m	class:MpiAdam
 check_synced	baselines/baselines/common/mpi_adam_optimizer.py	/^def check_synced(localval, comm=None):$/;"	f
 checkallclose	baselines/baselines/common/mpi_running_mean_std.py	/^    def checkallclose(x,y):$/;"	f	function:test_dist
+checkpoint	ucb_rl2_meta/stylegan2-pytorch/generate.py	/^    checkpoint = torch.load(args.ckpt)$/;"	v
+ckpt	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    ckpt = torch.load(args.ckpt)$/;"	v
+ckpt	ucb_rl2_meta/stylegan2-pytorch/closed_form_factorization.py	/^    ckpt = torch.load(args.ckpt)$/;"	v
+ckpt	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    ckpt = {"g_ema": state_dict, "latent_avg": latent_avg}$/;"	v
+ckpt	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    ckpt = torch.load(args.ckpt)$/;"	v
+ckpt	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        ckpt = torch.load(args.ckpt, map_location=lambda storage, loc: storage)$/;"	v
+ckpt_name	ucb_rl2_meta/stylegan2-pytorch/train.py	/^            ckpt_name = os.path.basename(args.ckpt)$/;"	v
+clamp_weights	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def clamp_weights(self):$/;"	m	class:DistModel
 cleanup_log_dir	ucb_rl2_meta/utils.py	/^def cleanup_log_dir(log_dir):$/;"	f
 clear_buffer	baselines/baselines/her/ddpg.py	/^    def clear_buffer(self):$/;"	m	class:DDPG
 clear_buffer	baselines/baselines/her/replay_buffer.py	/^    def clear_buffer(self):$/;"	m	class:ReplayBuffer
@@ -686,6 +802,7 @@ common_kwargs	baselines/baselines/common/tests/test_fixed_sequence.py	/^common_k
 common_kwargs	baselines/baselines/common/tests/test_identity.py	/^common_kwargs = dict($/;"	v
 common_kwargs	baselines/baselines/common/tests/test_mnist.py	/^common_kwargs = {$/;"	v
 computeStatsEigen	baselines/baselines/acktr/kfac.py	/^    def computeStatsEigen(self):$/;"	m	class:KfacOptimizer
+compute_accuracy	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def compute_accuracy(self,d0,d1,judge):$/;"	m	class:DistModel
 compute_and_apply_stats	baselines/baselines/acktr/kfac.py	/^    def compute_and_apply_stats(self, loss_sampled, var_list=None):$/;"	m	class:KfacOptimizer
 compute_gradients	baselines/baselines/acktr/kfac.py	/^    def compute_gradients(self, loss, var_list=None):$/;"	m	class:KfacOptimizer
 compute_gradients	baselines/baselines/common/mpi_adam_optimizer.py	/^    def compute_gradients(self, loss, var_list, **kwargs):$/;"	m	class:MpiAdamOptimizer
@@ -707,17 +824,30 @@ conv_layer	baselines/baselines/common/models.py	/^    def conv_layer(out, depth)
 conv_only	baselines/baselines/common/models.py	/^def conv_only(convs=[(32, 8, 4), (64, 4, 2), (64, 3, 1)], **conv_kwargs):$/;"	f
 conv_sequence	baselines/baselines/common/models.py	/^    def conv_sequence(inputs, depth):$/;"	f	function:build_impala_cnn
 conv_to_fc	baselines/baselines/a2c/utils.py	/^def conv_to_fc(x):$/;"	f
+convert_conv	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^def convert_conv(vars, source_name, target_name, bias=True, start=0):$/;"	f
+convert_dense	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^def convert_dense(vars, source_name, target_name):$/;"	f
 convert_episode_to_batch_major	baselines/baselines/her/util.py	/^def convert_episode_to_batch_major(episode):$/;"	f
+convert_modconv	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^def convert_modconv(vars, source_name, target_name, flip=False):$/;"	f
 convert_to_onehot	ucb_rl2_meta/algo/rl2_drac.py	/^    def convert_to_onehot(self, action_value):$/;"	m	class:RL2DrAC
+convert_torgb	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^def convert_torgb(vars, source_name, target_name):$/;"	f
 copyStats	baselines/baselines/acktr/kfac.py	/^            def copyStats(var_list):$/;"	f	function:KfacOptimizer.computeStatsEigen
 copy_obs_dict	baselines/baselines/common/vec_env/util.py	/^def copy_obs_dict(obs):$/;"	f
 count	baselines/baselines/common/atari_wrappers.py	/^    def count(self):$/;"	m	class:LazyFrames
+cov	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    cov = np.cov(features, rowvar=False)$/;"	v
 crimson	baselines/baselines/common/console_util.py	/^    crimson=38$/;"	v
 current_mean_Q	baselines/baselines/her/rollout.py	/^    def current_mean_Q(self):$/;"	m	class:RolloutWorker
 current_success_rate	baselines/baselines/her/rollout.py	/^    def current_success_rate(self):$/;"	m	class:RolloutWorker
 custom_getter	baselines/baselines/acer/acer.py	/^        def custom_getter(getter, *args, **kwargs):$/;"	f	function:Model.__init__
 cyan	baselines/baselines/common/console_util.py	/^    cyan=36,$/;"	v
+d_logistic_loss	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def d_logistic_loss(real_pred, fake_pred):$/;"	f
+d_optim	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    d_optim = optim.Adam($/;"	v
+d_r1_loss	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def d_r1_loss(real_pred, real_img):$/;"	f
+d_reg_ratio	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    d_reg_ratio = args.d_reg_every \/ (args.d_reg_every + 1)$/;"	v
+d_state	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^        d_state = disc.state_dict()$/;"	v
+d_state	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^        d_state = discriminator_fill_statedict(d_state, discriminator.vars, size)$/;"	v
 data	baselines/baselines/her/experiment/plot.py	/^data = {}$/;"	v
+data_sampler	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def data_sampler(dataset, shuffle, distributed):$/;"	f
+dataset	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    dataset = MultiResolutionDataset(args.path, transform, args.size)$/;"	v
 debug	baselines/baselines/logger.py	/^def debug(*args):$/;"	f
 decode	baselines/baselines/acer/buffer.py	/^    def decode(self, enc_obs, dones):$/;"	m	class:Buffer
 decorator_with_name	baselines/baselines/logger.py	/^    def decorator_with_name(func):$/;"	f	function:profile
@@ -741,7 +871,6 @@ default	ucb_rl2_meta/arguments.py	/^    default=1, $/;"	v
 default	ucb_rl2_meta/arguments.py	/^    default=10, $/;"	v
 default	ucb_rl2_meta/arguments.py	/^    default=10,$/;"	v
 default	ucb_rl2_meta/arguments.py	/^    default=100, $/;"	v
-default	ucb_rl2_meta/arguments.py	/^    default=100,$/;"	v
 default	ucb_rl2_meta/arguments.py	/^    default=12, $/;"	v
 default	ucb_rl2_meta/arguments.py	/^    default=1e-5,$/;"	v
 default	ucb_rl2_meta/arguments.py	/^    default=200,$/;"	v
@@ -765,7 +894,15 @@ dense	baselines/baselines/acktr/utils.py	/^def dense(x, size, name, weight_init=
 dequeue_op	baselines/baselines/acktr/kfac.py	/^            def dequeue_op():$/;"	f	function:KfacOptimizer.apply_gradients_kfac
 dequeue_stats_op	baselines/baselines/acktr/kfac.py	/^            def dequeue_stats_op():$/;"	f	function:KfacOptimizer.apply_stats.updateRunningAvgStats
 description	baselines/setup.py	/^      description='OpenAI baselines: high quality implementations of reinforcement learning algorithms',$/;"	v
+description	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^        description='Calculate Inception v3 features for datasets'$/;"	v
 detectMinVal	baselines/baselines/acktr/kfac_utils.py	/^def detectMinVal(input_mat, var, threshold=1e-6, name='', debug=False):$/;"	f
+device	reconstruction_debugging/reconstruction_test.py	/^device = "cuda:0" if torch.cuda.is_available() else "cpu"$/;"	v
+device	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')$/;"	v
+device	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    device = "cuda"$/;"	v
+device	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    device = 'cuda'$/;"	v
+device	ucb_rl2_meta/stylegan2-pytorch/generate.py	/^    device = 'cuda'$/;"	v
+device	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    device = "cuda"$/;"	v
+device_ids	ucb_rl2_meta/stylegan2-pytorch/train.py	/^            device_ids=[args.local_rank],$/;"	v
 df	plot_results.py	/^                df = df[["debug\/next_obs_variance", "train\/total_num_steps"]]$/;"	v
 df	plot_results.py	/^                df = df[["losses\/reward_model_loss", "test\/reward_model_error", "train\/total_num_steps"]]$/;"	v
 df	plot_results.py	/^                df = df[["losses\/reward_model_loss", "train\/total_num_steps"]]$/;"	v
@@ -796,9 +933,14 @@ dict_gather	baselines/baselines/common/mpi_util.py	/^def dict_gather(comm, d, op
 dict_to_obs	baselines/baselines/common/vec_env/util.py	/^def dict_to_obs(obs_dict):$/;"	f
 dims	baselines/baselines/her/her.py	/^    dims = config.configure_dims(params)$/;"	v
 dims_to_shapes	baselines/baselines/her/ddpg.py	/^def dims_to_shapes(input_dims):$/;"	f
+direction	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    direction = args.degree * eigvec[:, args.index].unsqueeze(0)$/;"	v
+disc	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^        disc = Discriminator(size, channel_multiplier=args.channel_multiplier)$/;"	v
 discount	baselines/baselines/common/math_util.py	/^def discount(x, gamma):$/;"	f
 discount_with_boundaries	baselines/baselines/common/math_util.py	/^def discount_with_boundaries(X, New, gamma):$/;"	f
 discount_with_dones	baselines/baselines/a2c/utils.py	/^def discount_with_dones(rewards, dones, gamma):$/;"	f
+discriminator	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        discriminator = nn.parallel.DistributedDataParallel($/;"	v
+discriminator	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    discriminator = Discriminator($/;"	v
+discriminator_fill_statedict	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^def discriminator_fill_statedict(statedict, vars, size):$/;"	f
 display_var_info	baselines/baselines/common/tf_util.py	/^def display_var_info(vars):$/;"	f
 do_augmentation	data_augs.py	/^    def do_augmentation(self, images):$/;"	m	class:Flip
 do_augmentation	data_augs.py	/^    def do_augmentation(self, imgs):$/;"	m	class:ColorJitter
@@ -810,9 +952,15 @@ do_augmentation	data_augs.py	/^    def do_augmentation(self, x):$/;"	m	class:Gra
 do_augmentation	data_augs.py	/^    def do_augmentation(self, x):$/;"	m	class:RandomConv
 double_linear_con	baselines/baselines/a2c/utils.py	/^def double_linear_con(p):$/;"	f
 double_middle_drop	baselines/baselines/a2c/utils.py	/^def double_middle_drop(p):$/;"	f
+drop_last	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        drop_last=True,$/;"	v
+dset	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    dset = MultiResolutionDataset(args.path, transform=transform, resolution=args.size)$/;"	v
+dssim	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def dssim(p0, p1, range=255.):$/;"	f
 dump_tabular	baselines/baselines/logger.py	/^dump_tabular = dumpkvs$/;"	v
 dumpkvs	baselines/baselines/logger.py	/^    def dumpkvs(self):$/;"	m	class:Logger
 dumpkvs	baselines/baselines/logger.py	/^def dumpkvs():$/;"	f
+eigvec	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    eigvec = torch.load(args.factor)["eigvec"].to(args.device)$/;"	v
+eigvec	ucb_rl2_meta/stylegan2-pytorch/closed_form_factorization.py	/^    eigvec = torch.svd(W).V.to("cpu")$/;"	v
+embeds	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^        embeds = pickle.load(f)$/;"	v
 encode_observation	baselines/baselines/common/input.py	/^def encode_observation(ob_space, placeholder):$/;"	f
 entropy	baselines/baselines/common/distributions.py	/^    def entropy(self):$/;"	m	class:BernoulliPd
 entropy	baselines/baselines/common/distributions.py	/^    def entropy(self):$/;"	m	class:CategoricalPd
@@ -841,18 +989,26 @@ evaluator	baselines/baselines/her/her.py	/^    evaluator = RolloutWorker(eval_en
 explained_variance	baselines/baselines/common/math_util.py	/^def explained_variance(ypred,y):$/;"	f
 explained_variance_2d	baselines/baselines/common/math_util.py	/^def explained_variance_2d(ypred, y):$/;"	f
 exploration	baselines/baselines/deepq/experiments/custom_cartpole.py	/^        exploration = LinearSchedule(schedule_timesteps=10000, initial_p=1.0, final_p=0.02)$/;"	v
+extract_feature_from_samples	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^def extract_feature_from_samples($/;"	f
+extract_features	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^def extract_features(loader, inception, device):$/;"	f
 extras	baselines/setup.py	/^extras = {$/;"	v
 extras_require	baselines/setup.py	/^      extras_require=extras,$/;"	v
 f	baselines/baselines/bench/monitor.py	/^    f = None$/;"	v	class:Monitor
 f	baselines/baselines/ppo2/ppo2.py	/^    def f(_):$/;"	f	function:constfn
 factorReshape	baselines/baselines/acktr/kfac_utils.py	/^def factorReshape(Q, e, grad, facIndx=0, ftype='act'):$/;"	f
 fc	baselines/baselines/a2c/utils.py	/^def fc(x, scope, nh, *, init_scale=1.0, init_bias=0.0):$/;"	f
+features	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    features = extract_features(loader, inception, device).numpy()$/;"	v
+features	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    features = features[: args.n_sample]$/;"	v
+features	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    features = extract_feature_from_samples($/;"	v
 feed	baselines/baselines/a2c/utils.py	/^    def feed(self, rewards, masks):$/;"	m	class:EpisodeStats
 feed_forward_generator	ucb_rl2_meta/storage.py	/^    def feed_forward_generator(self,$/;"	m	class:BiggerRolloutStorage
 feed_forward_generator	ucb_rl2_meta/storage.py	/^    def feed_forward_generator(self,$/;"	m	class:RolloutStorage
+fid	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    fid = calc_fid(sample_mean, sample_cov, real_mean, real_cov)$/;"	v
+fid_inception_v3	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^def fid_inception_v3():$/;"	f
 figsize	baselines/baselines/common/plot_util.py	/^    figsize = figsize or (6 * ncols, 6 * nrows)$/;"	v
 file_naming_scheme	plot_results.py	/^    file_naming_scheme=name + env_name + "\/" + env_name + "-*\/progress-drac-" + env_name + "-reproduce-s1.csv"$/;"	v
 file_naming_scheme	single_plot_results.py	/^    file_naming_scheme=name + env_name + "\/" + env_name + "-*\/progress-drac-" + env_name + "-reproduce-s1.csv"$/;"	v
+fill_statedict	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^def fill_statedict(state_dict, vars, size):$/;"	f
 find_prefixsum_idx	baselines/baselines/common/segment_tree.py	/^    def find_prefixsum_idx(self, prefixsum):$/;"	m	class:SumSegmentTree
 find_task_for_env_id_in_any_benchmark	baselines/baselines/bench/benchmarks.py	/^def find_task_for_env_id_in_any_benchmark(env_id):$/;"	f
 find_trainable_variables	baselines/baselines/a2c/utils.py	/^def find_trainable_variables(key):$/;"	f
@@ -873,6 +1029,7 @@ flattenallbut0	baselines/baselines/common/tf_util.py	/^def flattenallbut0(x):$/;
 fmt_item	baselines/baselines/common/console_util.py	/^def fmt_item(x, l):$/;"	f
 fmt_row	baselines/baselines/common/console_util.py	/^def fmt_row(width, row, header=False):$/;"	f
 forward	data_augs.py	/^    def forward(self, inputs):$/;"	m	class:ColorJitter
+forward	reconstruction_debugging/reconstruction_test.py	/^    def forward(self, inputs):$/;"	m	class:ReconstructionModel
 forward	ucb_rl2_meta/distributions.py	/^    def forward(self, x):$/;"	m	class:Categorical
 forward	ucb_rl2_meta/model.py	/^    def forward(self, input):$/;"	m	class:Conv2d_tf
 forward	ucb_rl2_meta/model.py	/^    def forward(self, inputs):$/;"	m	class:ReconstructionModel
@@ -890,6 +1047,40 @@ forward	ucb_rl2_meta/op/fused_act.py	/^    def forward(ctx, input, bias, negativ
 forward	ucb_rl2_meta/op/fused_act.py	/^    def forward(self, input):$/;"	m	class:FusedLeakyReLU
 forward	ucb_rl2_meta/op/upfirdn2d.py	/^    def forward($/;"	m	class:UpFirDn2dBackward
 forward	ucb_rl2_meta/op/upfirdn2d.py	/^    def forward(ctx, input, kernel, up, down, pad):$/;"	m	class:UpFirDn2d
+forward	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    def forward(self, x):$/;"	m	class:Inception3Feature
+forward	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def forward(self, inp):$/;"	m	class:InceptionV3
+forward	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def forward(self, x):$/;"	m	class:FIDInceptionA
+forward	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def forward(self, x):$/;"	m	class:FIDInceptionC
+forward	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def forward(self, x):$/;"	m	class:FIDInceptionE_1
+forward	ucb_rl2_meta/stylegan2-pytorch/inception.py	/^    def forward(self, x):$/;"	m	class:FIDInceptionE_2
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^    def forward(self, pred, target, normalize=False):$/;"	m	class:PerceptualLoss
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def forward(self):$/;"	m	class:BaseModel
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def forward(self, in0, in1, retPerLayer=False):$/;"	m	class:DistModel
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def forward(self, d0, d1, judge):$/;"	m	class:BCERankingLoss
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def forward(self, in0, in1, retPerLayer=False):$/;"	m	class:PNetLin
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def forward(self, in0, in1, retPerLayer=None):$/;"	m	class:DSSIM
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def forward(self, in0, in1, retPerLayer=None):$/;"	m	class:L2
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def forward(self, inp):$/;"	m	class:ScalingLayer
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^    def forward(self,d0,d1,eps=0.1):$/;"	m	class:Dist2LogitLayer
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^    def forward(self, X):$/;"	m	class:alexnet
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^    def forward(self, X):$/;"	m	class:resnet
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^    def forward(self, X):$/;"	m	class:squeezenet
+forward	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^    def forward(self, X):$/;"	m	class:vgg16
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward($/;"	m	class:Generator
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, image, noise=None):$/;"	m	class:NoiseInjection
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:Blur
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:ConstantInput
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:Discriminator
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:Downsample
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:EqualConv2d
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:EqualLinear
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:PixelNorm
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:ResBlock
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:ScaledLeakyReLU
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input):$/;"	m	class:Upsample
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input, style):$/;"	m	class:ModulatedConv2d
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input, style, noise=None):$/;"	m	class:StyledConv
+forward	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def forward(self, input, style, skip=None):$/;"	m	class:ToRGB
 forward	ucb_rl2_meta/stylegan_model.py	/^    def forward($/;"	m	class:Generator
 forward	ucb_rl2_meta/stylegan_model.py	/^    def forward(self, image, noise=None):$/;"	m	class:NoiseInjection
 forward	ucb_rl2_meta/stylegan_model.py	/^    def forward(self, input):$/;"	m	class:Blur
@@ -905,6 +1096,7 @@ forward	ucb_rl2_meta/stylegan_model.py	/^    def forward(self, input):$/;"	m	cla
 forward	ucb_rl2_meta/stylegan_model.py	/^    def forward(self, input, style):$/;"	m	class:ModulatedConv2d
 forward	ucb_rl2_meta/stylegan_model.py	/^    def forward(self, input, style, noise=None):$/;"	m	class:StyledConv
 forward	ucb_rl2_meta/stylegan_model.py	/^    def forward(self, input, style, skip=None):$/;"	m	class:ToRGB
+forward_train	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def forward_train(self): # run forward pass$/;"	m	class:DistModel
 frame	baselines/baselines/common/atari_wrappers.py	/^    def frame(self, i):$/;"	m	class:LazyFrames
 fromflat	baselines/baselines/common/distributions.py	/^    def fromflat(cls, flat):$/;"	m	class:BernoulliPd
 fromflat	baselines/baselines/common/distributions.py	/^    def fromflat(cls, flat):$/;"	m	class:CategoricalPd
@@ -916,11 +1108,29 @@ function	baselines/baselines/common/tf_util.py	/^def function(inputs, outputs, u
 fused	ucb_rl2_meta/op/fused_act.py	/^fused = load($/;"	v
 fused_bias_act	ucb_rl2_meta/op/fused_bias_act.cpp	/^torch::Tensor fused_bias_act(const torch::Tensor& input, const torch::Tensor& bias, const torch::Tensor& refer,$/;"	f
 fused_leaky_relu	ucb_rl2_meta/op/fused_act.py	/^def fused_leaky_relu(input, bias, negative_slope=0.2, scale=2 ** 0.5):$/;"	f
+g	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    g = Generator(args.size, 512, 8).to(args.device)$/;"	v
+g	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    g = Generator(size, 512, 8, channel_multiplier=args.channel_multiplier)$/;"	v
+g	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    g = g.to(device)$/;"	v
+g	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    g = Generator(args.size, 512, 8).to(device)$/;"	v
+g	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    g = nn.DataParallel(g)$/;"	v
 g2c	baselines/baselines/common/plot_util.py	/^        g2c = defaultdict(int)$/;"	v
 g2l	baselines/baselines/common/plot_util.py	/^        g2l = {}$/;"	v
+g_ema	ucb_rl2_meta/stylegan2-pytorch/generate.py	/^    g_ema = Generator($/;"	v
+g_ema	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    g_ema = Generator($/;"	v
+g_nonsaturating_loss	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def g_nonsaturating_loss(fake_pred):$/;"	f
+g_optim	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    g_optim = optim.Adam($/;"	v
+g_path_regularize	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def g_path_regularize(fake_img, latents, mean_path_length, decay=0.01):$/;"	f
+g_reg_ratio	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    g_reg_ratio = args.g_reg_every \/ (args.g_reg_every + 1)$/;"	v
+g_train	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^        g_train = Generator(size, 512, 8, channel_multiplier=args.channel_multiplier)$/;"	v
+g_train_state	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^        g_train_state = fill_statedict(g_train_state, generator.vars, size)$/;"	v
+g_train_state	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^        g_train_state = g_train.state_dict()$/;"	v
 gamma	baselines/baselines/common/tests/test_cartpole.py	/^    gamma=1.0,$/;"	v
 gamma	baselines/baselines/common/tests/test_identity.py	/^    gamma=0.9,$/;"	v
+gather_grad	ucb_rl2_meta/stylegan2-pytorch/distributed.py	/^def gather_grad(params):$/;"	f
+generate	ucb_rl2_meta/stylegan2-pytorch/generate.py	/^def generate(args, g_ema, device, mean_latent):$/;"	f
 generate_rollouts	baselines/baselines/her/rollout.py	/^    def generate_rollouts(self):$/;"	m	class:RolloutWorker
+generator	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        generator = nn.parallel.DistributedDataParallel($/;"	v
+generator	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    generator = Generator($/;"	v
 get	baselines/baselines/acer/buffer.py	/^    def get(self):$/;"	m	class:Buffer
 get	baselines/baselines/deepq/utils.py	/^    def get(self):$/;"	m	class:ObservationInput
 get	baselines/baselines/deepq/utils.py	/^    def get(self):$/;"	m	class:PlaceholderTfInput
@@ -940,7 +1150,11 @@ get_checkpoint_dir	baselines/baselines/gail/gail-eval.py	/^    def get_checkpoin
 get_current	baselines/baselines/logger.py	/^def get_current():$/;"	f
 get_current_buffer_size	baselines/baselines/her/ddpg.py	/^    def get_current_buffer_size(self):$/;"	m	class:DDPG
 get_current_episode_size	baselines/baselines/her/replay_buffer.py	/^    def get_current_episode_size(self):$/;"	m	class:ReplayBuffer
+get_current_errors	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def get_current_errors(self):$/;"	m	class:BaseModel
+get_current_errors	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def get_current_errors(self):$/;"	m	class:DistModel
 get_current_size	baselines/baselines/her/replay_buffer.py	/^    def get_current_size(self):$/;"	m	class:ReplayBuffer
+get_current_visuals	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def get_current_visuals(self):$/;"	m	class:BaseModel
+get_current_visuals	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def get_current_visuals(self):$/;"	m	class:DistModel
 get_default_network	baselines/baselines/run.py	/^def get_default_network(env_type):$/;"	f
 get_dir	baselines/baselines/logger.py	/^    def get_dir(self):$/;"	m	class:Logger
 get_dir	baselines/baselines/logger.py	/^def get_dir():$/;"	f
@@ -951,6 +1165,7 @@ get_episode_times	baselines/baselines/bench/monitor.py	/^    def get_episode_tim
 get_features	ucb_rl2_meta/model.py	/^    def get_features(self, inputs, rnn_hxs, masks, actions):$/;"	m	class:ModelBasedPolicy
 get_git_commit	baselines/baselines/common/console_util.py	/^def get_git_commit(cwd=None):$/;"	f
 get_git_commit_message	baselines/baselines/common/console_util.py	/^def get_git_commit_message(cwd=None):$/;"	f
+get_image_paths	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def get_image_paths(self):$/;"	m	class:BaseModel
 get_images	baselines/baselines/common/vec_env/dummy_vec_env.py	/^    def get_images(self):$/;"	m	class:DummyVecEnv
 get_images	baselines/baselines/common/vec_env/shmem_vec_env.py	/^    def get_images(self, mode='human'):$/;"	m	class:ShmemVecEnv
 get_images	baselines/baselines/common/vec_env/subproc_vec_env.py	/^    def get_images(self):$/;"	m	class:SubprocVecEnv
@@ -959,19 +1174,23 @@ get_images	baselines/baselines/common/vec_env/vec_env.py	/^    def get_images(se
 get_initial_state	baselines/baselines/gail/mlp_policy.py	/^    def get_initial_state(self):$/;"	m	class:MlpPolicy
 get_initial_state	baselines/baselines/ppo1/cnn_policy.py	/^    def get_initial_state(self):$/;"	m	class:CnnPolicy
 get_initial_state	baselines/baselines/ppo1/mlp_policy.py	/^    def get_initial_state(self):$/;"	m	class:MlpPolicy
+get_latent	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def get_latent(self, input):$/;"	m	class:Generator
 get_latent	ucb_rl2_meta/stylegan_model.py	/^    def get_latent(self, input):$/;"	m	class:Generator
 get_layer_num_str	baselines/baselines/common/models.py	/^    def get_layer_num_str():$/;"	f	function:build_impala_cnn
 get_learn_function	baselines/baselines/run.py	/^def get_learn_function(alg):$/;"	f
 get_learn_function_defaults	baselines/baselines/run.py	/^def get_learn_function_defaults(alg, env_type):$/;"	f
 get_local_rank_size	baselines/baselines/common/mpi_util.py	/^def get_local_rank_size(comm):$/;"	f
+get_lr	ucb_rl2_meta/stylegan2-pytorch/projector.py	/^def get_lr(t, initial_lr, rampdown=0.25, rampup=0.05):$/;"	f
 get_monitor_files	baselines/baselines/bench/monitor.py	/^def get_monitor_files(dir):$/;"	f
 get_network_builder	baselines/baselines/common/models.py	/^def get_network_builder(name):$/;"	f
 get_next_batch	baselines/baselines/gail/dataset/mujoco_dset.py	/^    def get_next_batch(self, batch_size):$/;"	m	class:Dset
 get_next_batch	baselines/baselines/gail/dataset/mujoco_dset.py	/^    def get_next_batch(self, batch_size, split=None):$/;"	m	class:Mujoco_Dset
+get_padding	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def get_padding(G, height, width):$/;"	f
 get_perturbed_actor_updates	baselines/baselines/ddpg/ddpg_learner.py	/^def get_perturbed_actor_updates(actor, perturbed_actor, param_noise_stddev):$/;"	f
 get_pi_trainable_variables	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def get_pi_trainable_variables(scope):$/;"	f
 get_placeholder	baselines/baselines/common/tf_util.py	/^def get_placeholder(name, dtype, shape):$/;"	f
 get_placeholder_cached	baselines/baselines/common/tf_util.py	/^def get_placeholder_cached(name):$/;"	f
+get_rank	ucb_rl2_meta/stylegan2-pytorch/distributed.py	/^def get_rank():$/;"	f
 get_rank_without_mpi_import	baselines/baselines/logger.py	/^def get_rank_without_mpi_import():$/;"	f
 get_reward	baselines/baselines/gail/adversary.py	/^    def get_reward(self, obs, acs):$/;"	m	class:TransitionClassifier
 get_session	baselines/baselines/common/tf_util.py	/^def get_session(config=None):$/;"	f
@@ -996,6 +1215,7 @@ get_variables	baselines/baselines/ppo1/mlp_policy.py	/^    def get_variables(sel
 get_variables	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def get_variables(scope):$/;"	f
 get_vf_trainable_variables	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def get_vf_trainable_variables(scope):$/;"	f
 get_viewer	baselines/baselines/common/vec_env/vec_env.py	/^    def get_viewer(self):$/;"	m	class:VecEnv
+get_world_size	ucb_rl2_meta/stylegan2-pytorch/distributed.py	/^def get_world_size():$/;"	f
 get_wrapper_by_name	baselines/baselines/common/misc_util.py	/^def get_wrapper_by_name(env, classname):$/;"	f
 getkvs	baselines/baselines/logger.py	/^def getkvs():$/;"	f
 gmatmul	baselines/baselines/acktr/kfac_utils.py	/^def gmatmul(a, b, transpose_a=False, transpose_b=False, reduce_dim=None):$/;"	f
@@ -1006,6 +1226,7 @@ gradient_add	baselines/baselines/a2c/utils.py	/^def gradient_add(g1, g2, param):
 gray	baselines/baselines/common/console_util.py	/^    gray=30,$/;"	v
 green	baselines/baselines/common/console_util.py	/^    green=32,$/;"	v
 gresults	baselines/baselines/common/plot_util.py	/^        gresults = defaultdict(list)$/;"	v
+grid	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    grid = utils.save_image($/;"	v
 group	baselines/baselines/common/plot_util.py	/^            group = group_fn(result)$/;"	v
 groups	baselines/baselines/common/plot_util.py	/^    groups = list(set(group_fn(result) for result in allresults))$/;"	v
 has_atleast	baselines/baselines/acer/buffer.py	/^    def has_atleast(self, frames):$/;"	m	class:Buffer
@@ -1056,10 +1277,19 @@ hsv2rgb	data_augs.py	/^def hsv2rgb(hsv):$/;"	f
 huber_loss	baselines/baselines/common/tf_util.py	/^def huber_loss(x, delta=1.0):$/;"	f
 idx_col	baselines/baselines/common/plot_util.py	/^        idx_col = isplit % ncols$/;"	v
 idx_row	baselines/baselines/common/plot_util.py	/^        idx_row = isplit \/\/ ncols$/;"	v
+im2tensor	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def im2tensor(image, imtype=np.uint8, cent=1., factor=255.\/2.):$/;"	f
+img_concat	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    img_concat = torch.cat((img_tf, img_pt, img_diff), dim=0)$/;"	v
+img_diff	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    img_diff = ((img_pt + 1) \/ 2).clamp(0.0, 1.0) - ((img_tf.to(device) + 1) \/ 2).clamp($/;"	v
+img_tf	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    img_tf = g_ema.run(z, None, **Gs_kwargs)$/;"	v
+img_tf	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    img_tf = torch.from_numpy(img_tf).to(device)$/;"	v
+imgset	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^    imgset = datasets.ImageFolder(args.path)$/;"	v
 impala_cnn	baselines/baselines/common/models.py	/^def impala_cnn(**conv_kwargs):$/;"	f
 impala_cnn_lstm	baselines/baselines/common/models.py	/^def impala_cnn_lstm():$/;"	f
 import_function	baselines/baselines/her/util.py	/^def import_function(spec):$/;"	f
 in_session	baselines/baselines/common/tf_util.py	/^def in_session(f):$/;"	f
+inception	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    inception = load_patched_inception_v3()$/;"	v
+inception	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    inception = nn.DataParallel(inception).eval().to(device)$/;"	v
+inception	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    inception = nn.DataParallel(load_patched_inception_v3()).to(device)$/;"	v
 info	baselines/baselines/logger.py	/^def info(*args):$/;"	f
 infos	baselines/baselines/her/experiment/data_generation/fetch_data_generation.py	/^infos = []$/;"	v
 init	ucb_rl2_meta/utils.py	/^def init(module, weight_init, bias_init, gain=1):$/;"	f
@@ -1070,6 +1300,9 @@ init_relu_	ucb_rl2_meta/model.py	/^init_relu_ = lambda m: init(m, nn.init.orthog
 init_tanh_	ucb_rl2_meta/model.py	/^init_tanh_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.$/;"	v
 initialize	baselines/baselines/common/tf_util.py	/^def initialize():$/;"	f
 initialize	baselines/baselines/ddpg/ddpg_learner.py	/^    def initialize(self, sess):$/;"	m	class:DDPG
+initialize	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def initialize(self, use_gpu=True, gpu_ids=[0]):$/;"	m	class:BaseModel
+initialize	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def initialize(self, model='net-lin', net='alex', colorspace='Lab', pnet_rand=False, pnet_tune=False, model_path=None,$/;"	m	class:DistModel
+input_is_latent	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^        input_is_latent=True,$/;"	v
 insert	ucb_rl2_meta/storage.py	/^    def insert(self, obs, recurrent_hidden_states, actions, action_log_probs,$/;"	m	class:BiggerRolloutStorage
 insert	ucb_rl2_meta/storage.py	/^    def insert(self, obs, recurrent_hidden_states, actions, action_log_probs,$/;"	m	class:RolloutStorage
 install_mpi_excepthook	baselines/baselines/her/util.py	/^def install_mpi_excepthook():$/;"	f
@@ -1088,8 +1321,13 @@ kl	baselines/baselines/common/distributions.py	/^    def kl(self, other):$/;"	m	
 kl	baselines/baselines/common/distributions.py	/^    def kl(self, other):$/;"	m	class:MultiCategoricalPd
 kl	baselines/baselines/common/distributions.py	/^    def kl(self, other):$/;"	m	class:Pd
 kl_div	baselines/baselines/acktr/utils.py	/^def kl_div(action_dist1, action_dist2, action_size):$/;"	f
+l2	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def l2(p0, p1, range=255.):$/;"	f
 largest_divisor	baselines/baselines/common/plot_util.py	/^                largest_divisor = i$/;"	v
 largest_divisor	baselines/baselines/common/plot_util.py	/^        largest_divisor = 1$/;"	v
+latent	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    latent = g.get_latent(latent)$/;"	v
+latent	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    latent = torch.randn(args.n_sample, 512, device=args.device)$/;"	v
+latent_avg	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    latent_avg = torch.from_numpy(g_ema.vars["dlatent_avg"].value().eval())$/;"	v
+latent_noise	ucb_rl2_meta/stylegan2-pytorch/projector.py	/^def latent_noise(latent, strength):$/;"	f
 launch_tensorboard_in_background	baselines/baselines/common/tf_util.py	/^def launch_tensorboard_in_background(log_dir):$/;"	f
 learn	baselines/baselines/a2c/a2c.py	/^def learn($/;"	f
 learn	baselines/baselines/acer/acer.py	/^def learn(network, env, seed=None, nsteps=20, total_timesteps=int(80e6), q_coef=0.5, ent_coef=0.01,$/;"	f
@@ -1108,6 +1346,7 @@ learn_kwargs	baselines/baselines/common/tests/test_fetchreach.py	/^learn_kwargs 
 learn_kwargs	baselines/baselines/common/tests/test_fixed_sequence.py	/^learn_kwargs = {$/;"	v
 learn_kwargs	baselines/baselines/common/tests/test_identity.py	/^learn_kwargs = {$/;"	v
 learn_kwargs	baselines/baselines/common/tests/test_serialization.py	/^learn_kwargs = {$/;"	v
+lerp	ucb_rl2_meta/stylegan2-pytorch/ppl.py	/^def lerp(a, b, t):$/;"	f
 linear	baselines/baselines/a2c/utils.py	/^def linear(p):$/;"	f
 linear_interpolation	baselines/baselines/common/schedules.py	/^def linear_interpolation(l, r, alpha):$/;"	f
 list_benchmarks	baselines/baselines/bench/benchmarks.py	/^def list_benchmarks():$/;"	f
@@ -1116,11 +1355,15 @@ load	baselines/baselines/common/policies.py	/^    def load(self, load_path):$/;"
 load_act	baselines/baselines/deepq/deepq.py	/^    def load_act(path):$/;"	m	class:ActWrapper
 load_act	baselines/baselines/deepq/deepq.py	/^def load_act(path):$/;"	f
 load_dataset	baselines/baselines/gail/gail-eval.py	/^def load_dataset(expert_path):$/;"	f
+load_network	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def load_network(self, network, network_label, epoch_label):$/;"	m	class:BaseModel
+load_patched_inception_v3	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^def load_patched_inception_v3():$/;"	f
 load_results	baselines/baselines/bench/monitor.py	/^def load_results(dir):$/;"	f
 load_results	baselines/baselines/common/plot_util.py	/^def load_results(root_dir_or_dirs, enable_progress=True, enable_monitor=True, verbose=False):$/;"	f
 load_results	baselines/baselines/her/experiment/plot.py	/^def load_results(file):$/;"	f
 load_state	baselines/baselines/common/tf_util.py	/^def load_state(fname, sess=None):$/;"	f
 load_variables	baselines/baselines/common/tf_util.py	/^def load_variables(load_path, variables=None, sess=None):$/;"	f
+loader	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    loader = DataLoader(dset, batch_size=args.batch, num_workers=4)$/;"	v
+loader	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    loader = data.DataLoader($/;"	v
 loc	baselines/baselines/common/plot_util.py	/^                loc=2 if legend_outside else None,$/;"	v
 log	baselines/baselines/logger.py	/^    def log(self, *args, level=INFO):$/;"	m	class:Logger
 log	baselines/baselines/logger.py	/^def log(*args, level=INFO):$/;"	f
@@ -1133,13 +1376,17 @@ logkv	baselines/baselines/logger.py	/^def logkv(key, val):$/;"	f
 logkv_mean	baselines/baselines/logger.py	/^    def logkv_mean(self, key, val):$/;"	m	class:Logger
 logkv_mean	baselines/baselines/logger.py	/^def logkv_mean(key, val):$/;"	f
 logkvs	baselines/baselines/logger.py	/^def logkvs(d):$/;"	f
+lognormal_sample	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def lognormal_sample(size, mean=0, std=1):$/;"	f
 logp	baselines/baselines/common/distributions.py	/^    def logp(self, x):$/;"	m	class:Pd
 logs	baselines/baselines/her/ddpg.py	/^    def logs(self, prefix=''):$/;"	m	class:DDPG
 logs	baselines/baselines/her/rollout.py	/^    def logs(self, prefix='worker'):$/;"	m	class:RolloutWorker
 logsigmoid	baselines/baselines/gail/adversary.py	/^def logsigmoid(a):$/;"	f
+lr	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        lr=args.lr * d_reg_ratio,$/;"	v
+lr	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        lr=args.lr * g_reg_ratio,$/;"	v
 lrelu	baselines/baselines/common/tf_util.py	/^def lrelu(x, leak=0.2):$/;"	f
 lstm	baselines/baselines/a2c/utils.py	/^def lstm(xs, ms, s, scope, nh, init_scale=1.0):$/;"	f
 lstm	baselines/baselines/common/models.py	/^def lstm(nlstm=128, layer_norm=False):$/;"	f
+luma_flip_mat	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def luma_flip_mat(axis, i):$/;"	f
 magenta	baselines/baselines/common/console_util.py	/^    magenta=35,$/;"	v
 main	baselines/baselines/deepq/experiments/enjoy_cartpole.py	/^def main():$/;"	f
 main	baselines/baselines/deepq/experiments/enjoy_mountaincar.py	/^def main():$/;"	f
@@ -1159,6 +1406,7 @@ main	baselines/baselines/ppo1/run_mujoco.py	/^def main():$/;"	f
 main	baselines/baselines/ppo1/run_robotics.py	/^def main():$/;"	f
 main	baselines/baselines/results_plotter.py	/^def main():$/;"	f
 main	baselines/baselines/run.py	/^def main(args):$/;"	f
+main	reconstruction_debugging/reconstruction_test.py	/^def main():$/;"	f
 make_atari	baselines/baselines/common/atari_wrappers.py	/^def make_atari(env_id, max_episode_steps=None):$/;"	f
 make_env	baselines/baselines/common/cmd_util.py	/^def make_env(env_id, env_type, mpi_rank=0, subrank=0, seed=None, reward_scale=1.0, gamestate=None, flatten_dict_observations=True, wrapper_kwargs=None, env_kwargs=None, logger_dir=None, initializer=None):$/;"	f
 make_env	baselines/baselines/common/tests/test_env_after_learn.py	/^    def make_env():$/;"	f	function:test_env_after_learn
@@ -1170,8 +1418,13 @@ make_fn	baselines/baselines/common/vec_env/test_vec_env.py	/^    def make_fn(see
 make_fn	baselines/baselines/common/vec_env/test_vec_env.py	/^    def make_fn(seed):$/;"	f	function:test_sync_sampling_sanity
 make_fn	baselines/baselines/common/vec_env/test_vec_env.py	/^    def make_fn(seed):$/;"	f	function:test_vec_env
 make_fn	baselines/baselines/common/vec_env/test_video_recorder.py	/^    def make_fn():$/;"	f	function:test_video_recorder
+make_grid	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def make_grid(shape, x0, x1, y0, y1, device):$/;"	f
+make_image	ucb_rl2_meta/stylegan2-pytorch/projector.py	/^def make_image(tensor):$/;"	f
+make_kernel	ucb_rl2_meta/stylegan2-pytorch/model.py	/^def make_kernel(k):$/;"	f
 make_kernel	ucb_rl2_meta/stylegan_model.py	/^def make_kernel(k):$/;"	f
 make_mujoco_env	baselines/baselines/common/cmd_util.py	/^def make_mujoco_env(env_id, seed, reward_scale=1.0):$/;"	f
+make_noise	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def make_noise(self):$/;"	m	class:Generator
+make_noise	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def make_noise(batch, latent_dim, n_noise, device):$/;"	f
 make_noise	ucb_rl2_meta/stylegan_model.py	/^    def make_noise(self):$/;"	m	class:Generator
 make_obs_ph	baselines/baselines/deepq/deepq.py	/^    def make_obs_ph(name):$/;"	f	function:learn
 make_obs_ph	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            make_obs_ph=lambda name: ObservationInput(env.observation_space, name=name),$/;"	v
@@ -1188,6 +1441,12 @@ mapping	baselines/baselines/common/models.py	/^mapping = {}$/;"	v
 mark_slow	baselines/baselines/common/tests/__init__.py	/^mark_slow = pytest.mark.skipif(not os.getenv('RUNSLOW'), reason='slow')/;"	v
 mean	baselines/baselines/common/distributions.py	/^    def mean(self):$/;"	m	class:BernoulliPd
 mean	baselines/baselines/common/distributions.py	/^    def mean(self):$/;"	m	class:CategoricalPd
+mean	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    mean = np.mean(features, 0)$/;"	v
+mean_latent	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^            mean_latent = g.mean_latent(args.truncation_mean)$/;"	v
+mean_latent	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^        mean_latent = None$/;"	v
+mean_latent	ucb_rl2_meta/stylegan2-pytorch/generate.py	/^            mean_latent = g_ema.mean_latent(args.truncation_mean)$/;"	v
+mean_latent	ucb_rl2_meta/stylegan2-pytorch/generate.py	/^        mean_latent = None$/;"	v
+mean_latent	ucb_rl2_meta/stylegan2-pytorch/model.py	/^    def mean_latent(self, n_latent):$/;"	m	class:Generator
 mean_latent	ucb_rl2_meta/stylegan_model.py	/^    def mean_latent(self, n_latent):$/;"	m	class:Generator
 mean_length	baselines/baselines/a2c/utils.py	/^    def mean_length(self):$/;"	m	class:EpisodeStats
 mean_reward	baselines/baselines/a2c/utils.py	/^    def mean_reward(self):$/;"	m	class:EpisodeStats
@@ -1199,6 +1458,7 @@ middle_drop	baselines/baselines/a2c/utils.py	/^def middle_drop(p):$/;"	f
 min	baselines/baselines/common/segment_tree.py	/^    def min(self, start=0, end=None):$/;"	m	class:MinSegmentTree
 minimize	baselines/baselines/acktr/kfac.py	/^    def minimize(self, loss, loss_sampled, var_list=None):$/;"	m	class:KfacOptimizer
 minxlen	baselines/baselines/common/plot_util.py	/^                minxlen = min(map(len, origxs))$/;"	v
+mixing_noise	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def mixing_noise(batch, latent_dim, prob, device):$/;"	f
 mlp	baselines/baselines/common/models.py	/^def mlp(num_layers=2, num_hidden=64, activation=tf.tanh, layer_norm=False):$/;"	f
 mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	class:BernoulliPd
 mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	class:CategoricalPd
@@ -1208,6 +1468,7 @@ mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	cla
 mode	ucb_rl2_meta/distributions.py	/^    def mode(self):$/;"	m	class:FixedCategorical
 model	baselines/baselines/deepq/experiments/custom_cartpole.py	/^def model(inpt, num_actions, scope, reuse=False):$/;"	f
 modelbased	train.py	/^modelbased = True$/;"	v
+modulate	ucb_rl2_meta/stylegan2-pytorch/closed_form_factorization.py	/^    modulate = {$/;"	v
 module_path	ucb_rl2_meta/op/fused_act.py	/^module_path = os.path.dirname(__file__)$/;"	v
 module_path	ucb_rl2_meta/op/upfirdn2d.py	/^module_path = os.path.dirname(__file__)$/;"	v
 mpi_average	baselines/baselines/her/her.py	/^def mpi_average(value):$/;"	f
@@ -1223,8 +1484,14 @@ mujoco_arg_parser	baselines/baselines/common/cmd_util.py	/^def mujoco_arg_parser
 mujoco_py	baselines/baselines/common/tests/test_doc_examples.py	/^    mujoco_py = None$/;"	v
 n_cycles	baselines/baselines/her/her.py	/^    n_cycles = params['n_cycles']$/;"	v
 n_epochs	baselines/baselines/her/her.py	/^    n_epochs = total_timesteps \/\/ n_cycles \/\/ rollout_worker.T \/\/ rollout_worker.rollout_batch_size$/;"	v
+n_gpu	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    n_gpu = int(os.environ["WORLD_SIZE"]) if "WORLD_SIZE" in os.environ else 1$/;"	v
+n_sample	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    n_sample = batch_size.get(size, 25)$/;"	v
 name	plot_results.py	/^name = "modelbased_notanh_logs\/"$/;"	v
 name	single_plot_results.py	/^name = "rewardmodeldebugging\/nextstate_reward_ppo_modelclip_pponoencoder_logs\/"$/;"	v
+name	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    name = os.path.splitext(os.path.basename(args.path))[0]$/;"	v
+name	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    name = os.path.splitext(os.path.basename(args.path))[0]$/;"	v
+name	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def name(self):$/;"	m	class:BaseModel
+name	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def name(self):$/;"	m	class:DistModel
 nature_cnn	baselines/baselines/common/models.py	/^def nature_cnn(unscaled_images, **conv_kwargs):$/;"	f
 nb_entries	baselines/baselines/ddpg/memory.py	/^    def nb_entries(self):$/;"	m	class:Memory
 ncc	baselines/baselines/common/math_util.py	/^def ncc(ypred, y):$/;"	f
@@ -1252,10 +1519,18 @@ newfunc	baselines/baselines/common/tf_util.py	/^    def newfunc(*args, **kwargs)
 next_batch	baselines/baselines/common/dataset.py	/^    def next_batch(self, batch_size):$/;"	m	class:Dataset
 nn	baselines/baselines/her/util.py	/^def nn(input, layers_sizes, reuse=None, flatten=False, name=""):$/;"	f
 no_op_wrapper	baselines/baselines/acktr/kfac.py	/^                def no_op_wrapper():$/;"	f	function:KfacOptimizer.apply_gradients_kfac.dequeue_op
+noise_normalize_	ucb_rl2_meta/stylegan2-pytorch/projector.py	/^def noise_normalize_(noises):$/;"	f
+noise_regularize	ucb_rl2_meta/stylegan2-pytorch/projector.py	/^def noise_regularize(noises):$/;"	f
+normal_sample	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def normal_sample(size, mean=0, std=1):$/;"	f
 normalize	baselines/baselines/ddpg/ddpg_learner.py	/^def normalize(x, stats):$/;"	f
 normalize	baselines/baselines/her/normalizer.py	/^    def normalize(self, v, clip_range=None):$/;"	m	class:Normalizer
 normalize	baselines/baselines/her/normalizer.py	/^    def normalize(self, x, clip_range=None):$/;"	m	class:IdentityNormalizer
+normalize	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^        normalize=True,$/;"	v
+normalize	ucb_rl2_meta/stylegan2-pytorch/ppl.py	/^def normalize(x):$/;"	f
+normalize_tensor	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def normalize_tensor(in_feat,eps=1e-10):$/;"	f
 normc_initializer	baselines/baselines/common/tf_util.py	/^def normc_initializer(std=1.0, axis=0):$/;"	f
+np2tensor	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def np2tensor(np_obj):$/;"	f
+nrow	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^        nrow=args.n_sample,$/;"	v
 nrows	baselines/baselines/common/plot_util.py	/^        nrows = 1$/;"	v
 nrows	baselines/baselines/common/plot_util.py	/^        nrows = N \/\/ ncols$/;"	v
 nrows	baselines/baselines/common/plot_util.py	/^        nrows = len(sk2r)$/;"	v
@@ -1279,13 +1554,16 @@ observation_placeholder	baselines/baselines/common/input.py	/^def observation_pl
 observations	baselines/baselines/her/experiment/data_generation/fetch_data_generation.py	/^observations = []$/;"	v
 one_sided_ema	baselines/baselines/common/plot_util.py	/^def one_sided_ema(xolds, yolds, low=None, high=None, n=512, decay_steps=1., low_counts_threshold=1e-8):$/;"	f
 optimOp	baselines/baselines/acktr/kfac.py	/^                    def optimOp():$/;"	f	function:KfacOptimizer.apply_gradients_kfac.dequeue_op.no_op_wrapper
+optimize_parameters	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def optimize_parameters(self):$/;"	m	class:BaseModel
+optimize_parameters	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def optimize_parameters(self):$/;"	m	class:DistModel
 optimizer	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            optimizer=tf.train.AdamOptimizer(learning_rate=5e-4),$/;"	v
-original_file_naming_scheme	plot_results.py	/^    original_file_naming_scheme="ppo_bigvanilla_var_logs\/" + env_name + "\/" + env_name + "-*\/progress-drac-" + env_name + "-reproduce-s1.csv"$/;"	v
+original_file_naming_scheme	plot_results.py	/^    original_file_naming_scheme="reconstruction\/ppo_modelclip\/" + env_name + "\/" + env_name + "-*\/progress-drac-" + env_name + "-reproduce-s1.csv"$/;"	v
 original_file_naming_scheme	single_plot_results.py	/^    original_file_naming_scheme="ppo_bigvanilla_var_logs\/" + env_name + "\/" + env_name + "-*\/progress-drac-" + env_name + "-reproduce-s1.csv"$/;"	v
 origxs	baselines/baselines/common/plot_util.py	/^                origxs = [xy[0] for xy in xys]$/;"	v
 ortho_init	baselines/baselines/a2c/utils.py	/^def ortho_init(scale=1.0):$/;"	f
 out	baselines/baselines/acer/policies.py	/^        def out(ob, *args, **kwargs):$/;"	f	function:AcerCnnPolicy.__init__
 outer_thunk	baselines/baselines/common/tests/test_with_mpi.py	/^    def outer_thunk(fn):$/;"	f	function:with_mpi
+output_device	ucb_rl2_meta/stylegan2-pytorch/train.py	/^            output_device=args.local_rank,$/;"	v
 output_size	ucb_rl2_meta/model.py	/^    def output_size(self):$/;"	m	class:NNBase
 output_vars	baselines/baselines/ddpg/models.py	/^    def output_vars(self):$/;"	m	class:Critic
 override_params	baselines/baselines/her/her.py	/^    override_params = override_params or {}$/;"	v
@@ -1306,6 +1584,14 @@ parse_unknown_args	baselines/baselines/common/cmd_util.py	/^def parse_unknown_ar
 parser	baselines/baselines/gail/dataset/mujoco_dset.py	/^    parser = argparse.ArgumentParser()$/;"	v
 parser	baselines/baselines/her/experiment/plot.py	/^parser = argparse.ArgumentParser()$/;"	v
 parser	ucb_rl2_meta/arguments.py	/^parser = argparse.ArgumentParser(description='RL')$/;"	v
+parser	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    parser = argparse.ArgumentParser($/;"	v
+parser	ucb_rl2_meta/stylegan2-pytorch/closed_form_factorization.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	ucb_rl2_meta/stylegan2-pytorch/generate.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    parser = argparse.ArgumentParser()$/;"	v
 paths	baselines/baselines/her/experiment/plot.py	/^paths = [os.path.abspath(os.path.join(path, '..')) for path in glob2.glob(os.path.join(args.dir, '**', 'progress.csv'))]$/;"	v
 pdclass	baselines/baselines/common/distributions.py	/^    def pdclass(self):$/;"	m	class:BernoulliPdType
 pdclass	baselines/baselines/common/distributions.py	/^    def pdclass(self):$/;"	m	class:CategoricalPdType
@@ -1338,9 +1624,11 @@ policy_fn	baselines/baselines/ppo1/run_mujoco.py	/^    def policy_fn(name, ob_sp
 policy_fn	baselines/baselines/ppo1/run_robotics.py	/^    def policy_fn(name, ob_space, ac_space):$/;"	f	function:train
 predict_next_state	ucb_rl2_meta/model.py	/^    def predict_next_state(self, model_inputs):$/;"	m	class:ModelBasedPolicy
 predict_reward	ucb_rl2_meta/model.py	/^    def predict_reward(self, model_inputs):$/;"	m	class:ModelBasedPolicy
+prepare	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^def prepare(env, dataset, n_worker, sizes=(128, 256, 512, 1024), resample=Image.LANCZOS):$/;"	f
 prepare_params	baselines/baselines/her/experiment/config.py	/^def prepare_params(kwargs):$/;"	f
 pretty_eta	baselines/baselines/common/misc_util.py	/^def pretty_eta(seconds_left):$/;"	f
 print_cmd	baselines/baselines/common/console_util.py	/^def print_cmd(cmd, dry=False):$/;"	f
+print_network	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^def print_network(net):$/;"	f
 print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:ColorJitter
 print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:Crop
 print_parms	data_augs.py	/^    def print_parms(self):$/;"	m	class:Cutout
@@ -1354,17 +1642,25 @@ process	baselines/baselines/common/vec_env/vec_remove_dict_obs.py	/^    def proc
 profile	baselines/baselines/logger.py	/^def profile(n):$/;"	f
 profile_kv	baselines/baselines/logger.py	/^def profile_kv(scopename):$/;"	f
 profile_tf_runningmeanstd	baselines/baselines/common/running_mean_std.py	/^def profile_tf_runningmeanstd():$/;"	f
+psnr	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def psnr(p0, p1, peak=255.):$/;"	f
 put	baselines/baselines/acer/buffer.py	/^    def put(self, enc_obs, actions, rewards, mus, dones, masks):$/;"	m	class:Buffer
 pybullet_envs	baselines/baselines/run.py	/^    pybullet_envs = None$/;"	v
 q_explained_variance	baselines/baselines/a2c/utils.py	/^def q_explained_variance(qpred, q):$/;"	f
 q_func	baselines/baselines/deepq/experiments/custom_cartpole.py	/^            q_func=model,$/;"	v
 q_func_builder	baselines/baselines/deepq/models.py	/^    def q_func_builder(input_placeholder, num_actions, scope, reuse=False):$/;"	f	function:build_q_func
 q_retrace	baselines/baselines/acer/acer.py	/^def q_retrace(R, D, q_i, v, rho_i, nenvs, nsteps, gamma):$/;"	f
+random_apply_affine	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def random_apply_affine(img, p, G=None, antialiasing_kernel=SYM6):$/;"	f
+random_apply_color	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def random_apply_color(img, p, C=None):$/;"	f
+random_mat_apply	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def random_mat_apply(p, transform, prev, eye):$/;"	f
+randomize_noise	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^            randomize_noise=False,$/;"	v
+range	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^        range=(-1, 1),$/;"	v
 rank	baselines/baselines/her/her.py	/^        rank = MPI.COMM_WORLD.Get_rank()$/;"	v
 rank_seed	baselines/baselines/her/her.py	/^    rank_seed = seed + 1000000 * rank if seed is not None else None$/;"	v
 read_csv	baselines/baselines/logger.py	/^def read_csv(fname):$/;"	f
 read_json	baselines/baselines/logger.py	/^def read_json(fname):$/;"	f
 read_tb	baselines/baselines/logger.py	/^def read_tb(path):$/;"	f
+real_cov	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^        real_cov = embeds['cov']$/;"	v
+real_mean	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^        real_mean = embeds['mean']$/;"	v
 reason	baselines/baselines/common/tests/test_doc_examples.py	/^    reason='error loading mujoco - either mujoco \/ mujoco key not present, or LD_LIBRARY_PATH is not pointing to mujoco library'$/;"	v
 recompute_stats	baselines/baselines/her/normalizer.py	/^    def recompute_stats(self):$/;"	m	class:IdentityNormalizer
 recompute_stats	baselines/baselines/her/normalizer.py	/^    def recompute_stats(self):$/;"	m	class:Normalizer
@@ -1379,7 +1675,9 @@ recurrent_hidden_state_size	ucb_rl2_meta/model.py	/^    def recurrent_hidden_sta
 recurrent_hidden_state_size	ucb_rl2_meta/model.py	/^    def recurrent_hidden_state_size(self):$/;"	m	class:Policy
 red	baselines/baselines/common/console_util.py	/^    red=31,$/;"	v
 reduce	baselines/baselines/common/segment_tree.py	/^    def reduce(self, start=0, end=None):$/;"	m	class:SegmentTree
+reduce_loss_dict	ucb_rl2_meta/stylegan2-pytorch/distributed.py	/^def reduce_loss_dict(loss_dict):$/;"	f
 reduce_std	baselines/baselines/ddpg/ddpg_learner.py	/^def reduce_std(x, axis=None, keepdims=False):$/;"	f
+reduce_sum	ucb_rl2_meta/stylegan2-pytorch/distributed.py	/^def reduce_sum(tensor):$/;"	f
 reduce_var	baselines/baselines/ddpg/ddpg_learner.py	/^def reduce_var(x, axis=None, keepdims=False):$/;"	f
 register	baselines/baselines/common/models.py	/^def register(name):$/;"	f
 register_benchmark	baselines/baselines/bench/benchmarks.py	/^def register_benchmark(benchmark):$/;"	f
@@ -1393,7 +1691,10 @@ render	baselines/baselines/common/vec_env/vec_env.py	/^    def render(self, mode
 render	baselines/baselines/common/vec_env/vec_env.py	/^    def render(self, mode='human'):$/;"	m	class:VecEnvWrapper
 replay_buffer	baselines/baselines/deepq/experiments/custom_cartpole.py	/^        replay_buffer = ReplayBuffer(50000)$/;"	v
 replay_strategy	baselines/baselines/her/experiment/plot.py	/^    replay_strategy = params['replay_strategy']$/;"	v
+requires_grad	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def requires_grad(model, flag=True):$/;"	f
 resample	baselines/baselines/common/plot_util.py	/^        resample = resample or default_samples$/;"	v
+resample	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^    resample = resample_map[args.resample]$/;"	v
+resample_map	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^    resample_map = {'lanczos': Image.LANCZOS, 'bilinear': Image.BILINEAR}$/;"	v
 reset	baselines/baselines/bench/monitor.py	/^    def reset(self, **kwargs):$/;"	m	class:Monitor
 reset	baselines/baselines/common/atari_wrappers.py	/^    def reset(self):$/;"	m	class:FrameStack
 reset	baselines/baselines/common/atari_wrappers.py	/^    def reset(self, **kwargs):$/;"	m	class:EpisodicLifeEnv
@@ -1431,6 +1732,10 @@ reset_all_rollouts	baselines/baselines/her/rollout.py	/^    def reset_all_rollou
 reset_state	baselines/baselines/bench/monitor.py	/^    def reset_state(self):$/;"	m	class:Monitor
 reshape_for_broadcasting	baselines/baselines/her/util.py	/^def reshape_for_broadcasting(source, target):$/;"	f
 residual_block	baselines/baselines/common/models.py	/^    def residual_block(inputs):$/;"	f	function:build_impala_cnn
+resize_and_convert	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^def resize_and_convert(img, size, resample, quality=100):$/;"	f
+resize_multiple	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^def resize_multiple(img, sizes=(128, 256, 512, 1024), resample=Image.LANCZOS, quality=100):$/;"	f
+resize_worker	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^def resize_worker(img_file, sizes, resample):$/;"	f
+resnet	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^class resnet(torch.nn.Module):$/;"	c
 results	baselines/baselines/her/experiment/plot.py	/^    results = load_results(os.path.join(curr_path, 'progress.csv'))$/;"	v
 retro	baselines/baselines/deepq/defaults.py	/^def retro():$/;"	f
 retro	baselines/baselines/ppo2/defaults.py	/^def retro():$/;"	f
@@ -1440,6 +1745,8 @@ reward	baselines/baselines/ppo1/run_humanoid.py	/^    def reward(self, r):$/;"	m
 reward_fun	baselines/baselines/her/experiment/config.py	/^    def reward_fun(ag_2, g, info):  # vectorized$/;"	f	function:configure_her
 reward_per_episode_test	baselines/baselines/common/tests/util.py	/^def reward_per_episode_test(env_fn, learn_fn, min_avg_reward, n_trials=N_EPISODES):$/;"	f
 rgb2hsv	data_augs.py	/^def rgb2hsv(rgb, eps=1e-8):$/;"	f
+rgb2lab	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def rgb2lab(in_img,mean_cent=False):$/;"	f
+rgb2lab	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def rgb2lab(input):$/;"	f
 rnn_list	baselines/baselines/common/tests/test_fixed_sequence.py	/^rnn_list = ['lstm']$/;"	v
 roboschool	baselines/baselines/run.py	/^    roboschool = None$/;"	v
 robotics_arg_parser	baselines/baselines/common/cmd_util.py	/^def robotics_arg_parser():$/;"	f
@@ -1447,6 +1754,8 @@ rolling_window	baselines/baselines/results_plotter.py	/^def rolling_window(a, wi
 rollout	baselines/baselines/common/tests/util.py	/^def rollout(env, model, n_trials):$/;"	f
 rollout_params	baselines/baselines/her/her.py	/^    rollout_params = {$/;"	v
 rollout_worker	baselines/baselines/her/her.py	/^    rollout_worker = RolloutWorker(env, policy, dims, logger, monitor=True, **rollout_params)$/;"	v
+rotate3d_mat	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def rotate3d_mat(axis, theta):$/;"	f
+rotate_mat	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def rotate_mat(theta):$/;"	f
 run	baselines/baselines/a2c/runner.py	/^    def run(self):$/;"	m	class:Runner
 run	baselines/baselines/acer/runner.py	/^    def run(self):$/;"	m	class:Runner
 run	baselines/baselines/common/runners.py	/^    def run(self):$/;"	m	class:AbstractEnvRunner
@@ -1464,29 +1773,44 @@ sample	baselines/baselines/deepq/replay_buffer.py	/^    def sample(self, batch_s
 sample	baselines/baselines/deepq/replay_buffer.py	/^    def sample(self, batch_size, beta):$/;"	m	class:PrioritizedReplayBuffer
 sample	baselines/baselines/her/replay_buffer.py	/^    def sample(self, batch_size):$/;"	m	class:ReplayBuffer
 sample	ucb_rl2_meta/distributions.py	/^    def sample(self):$/;"	m	class:FixedCategorical
+sample_affine	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def sample_affine(p, size, height, width):$/;"	f
 sample_batch	baselines/baselines/her/ddpg.py	/^    def sample_batch(self):$/;"	m	class:DDPG
+sample_color	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def sample_color(p, size):$/;"	f
+sample_cov	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    sample_cov = np.cov(features, rowvar=False)$/;"	v
+sample_data	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def sample_data(loader):$/;"	f
 sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:BernoulliPdType
 sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:CategoricalPdType
 sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:DiagGaussianPdType
 sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:MultiCategoricalPdType
 sample_dtype	baselines/baselines/common/distributions.py	/^    def sample_dtype(self):$/;"	m	class:PdType
+sample_mean	ucb_rl2_meta/stylegan2-pytorch/fid.py	/^    sample_mean = np.mean(features, 0)$/;"	v
 sample_placeholder	baselines/baselines/common/distributions.py	/^    def sample_placeholder(self, prepend_shape, name=None):$/;"	m	class:PdType
 sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:BernoulliPdType
 sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:CategoricalPdType
 sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:DiagGaussianPdType
 sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:MultiCategoricalPdType
 sample_shape	baselines/baselines/common/distributions.py	/^    def sample_shape(self):$/;"	m	class:PdType
+sampler	ucb_rl2_meta/stylegan2-pytorch/train.py	/^        sampler=data_sampler(dataset, shuffle=True, distributed=args.distributed),$/;"	v
+saturation_mat	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def saturation_mat(axis, i):$/;"	f
 save	baselines/baselines/common/policies.py	/^    def save(self, save_path):$/;"	m	class:PolicyWithValue
 save	baselines/baselines/deepq/deepq.py	/^    def save(self, path):$/;"	m	class:ActWrapper
 save	baselines/baselines/her/ddpg.py	/^    def save(self, save_path):$/;"	m	class:DDPG
+save	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def save(self, label):$/;"	m	class:BaseModel
+save	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def save(self, path, label):$/;"	m	class:DistModel
 save_act	baselines/baselines/deepq/deepq.py	/^    def save_act(self, path=None):$/;"	m	class:ActWrapper
+save_done	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def save_done(self, flag=False):$/;"	m	class:BaseModel
+save_network	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def save_network(self, network, path, network_label, epoch_label):$/;"	m	class:BaseModel
 save_policy	baselines/baselines/her/rollout.py	/^    def save_policy(self, path):$/;"	m	class:RolloutWorker
 save_state	baselines/baselines/common/tf_util.py	/^def save_state(fname, sess=None):$/;"	f
 save_variables	baselines/baselines/common/tf_util.py	/^def save_variables(save_path, variables=None, sess=None):$/;"	f
+scale3d_mat	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def scale3d_mat(s_x, s_y, s_z):$/;"	f
+scale_mat	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def scale_mat(s_x, s_y):$/;"	f
 schedules	baselines/baselines/a2c/utils.py	/^schedules = {$/;"	v
 scope_name	baselines/baselines/deepq/build_graph.py	/^def scope_name():$/;"	f
 scope_vars	baselines/baselines/deepq/build_graph.py	/^def scope_vars(scope, trainable_only=False):$/;"	f
 scoped_configure	baselines/baselines/logger.py	/^def scoped_configure(dir=None, format_strs=None, comm=None):$/;"	f
+score_2afc_dataset	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^def score_2afc_dataset(data_loader, func, name=''):$/;"	f
+score_jnd_dataset	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^def score_jnd_dataset(data_loader, func, name=''):$/;"	f
 searchFactors	baselines/baselines/acktr/kfac.py	/^        def searchFactors(gradient, graph):$/;"	f	function:KfacOptimizer.getFactors
 seed	baselines/baselines/common/retro_wrappers.py	/^    def seed(self, s):$/;"	m	class:StochasticFrameSkip
 seed	baselines/baselines/common/tests/envs/fixed_sequence_env.py	/^    def seed(self, seed=None):$/;"	m	class:FixedSequenceEnv
@@ -1502,6 +1826,8 @@ seq_to_batch	baselines/baselines/a2c/utils.py	/^def seq_to_batch(h, flat = False
 set_comm	baselines/baselines/logger.py	/^    def set_comm(self, comm):$/;"	m	class:Logger
 set_comm	baselines/baselines/logger.py	/^def set_comm(comm):$/;"	f
 set_global_seeds	baselines/baselines/common/misc_util.py	/^def set_global_seeds(i):$/;"	f
+set_grad_none	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def set_grad_none(model, targets):$/;"	f
+set_input	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def set_input(self, data):$/;"	m	class:DistModel
 set_level	baselines/baselines/logger.py	/^    def set_level(self, level):$/;"	m	class:Logger
 set_level	baselines/baselines/logger.py	/^def set_level(level):$/;"	f
 setup_actor_optimizer	baselines/baselines/ddpg/ddpg_learner.py	/^    def setup_actor_optimizer(self):$/;"	m	class:DDPG
@@ -1519,18 +1845,25 @@ shuffle	baselines/baselines/common/dataset.py	/^    def shuffle(self):$/;"	m	cla
 simple_goal_subtract	baselines/baselines/her/experiment/config.py	/^def simple_goal_subtract(a, b):$/;"	f
 simple_test	baselines/baselines/common/tests/util.py	/^def simple_test(env_fn, learn_fn, min_reward_fraction, n_trials=N_TRIALS):$/;"	f
 single_threaded_session	baselines/baselines/common/tf_util.py	/^def single_threaded_session():$/;"	f
+size	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    size = g_ema.output_shape[2]$/;"	v
+sizes	ucb_rl2_meta/stylegan2-pytorch/prepare_data.py	/^    sizes = [int(s.strip()) for s in args.size.split(',')]$/;"	v
 sk2r	baselines/baselines/common/plot_util.py	/^    sk2r = defaultdict(list) # splitkey2results$/;"	v
+slerp	ucb_rl2_meta/stylegan2-pytorch/ppl.py	/^def slerp(a, b, t):$/;"	f
 smoketest	baselines/baselines/common/tests/util.py	/^def smoketest(argstr, **kwargs):$/;"	f
 smooth	baselines/baselines/common/plot_util.py	/^def smooth(y, radius, mode='two_sided', valid_only=False):$/;"	f
 smooth_reward_curve	baselines/baselines/her/experiment/plot.py	/^def smooth_reward_curve(x, y):$/;"	f
 some_random_steps	baselines/baselines/common/retro_wrappers.py	/^    def some_random_steps(self):$/;"	m	class:StartDoingRandomActionsWrapper
 sources	ucb_rl2_meta/op/fused_act.py	/^    sources=[$/;"	v
 sources	ucb_rl2_meta/op/upfirdn2d.py	/^    sources=[$/;"	v
+spatial_average	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^def spatial_average(in_tens, keepdim=True):$/;"	f
 split_by_task	baselines/baselines/results_plotter.py	/^def split_by_task(taskpath):$/;"	f
 splitkey	baselines/baselines/common/plot_util.py	/^        splitkey = split_fn(result)$/;"	v
+squeezenet	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^class squeezenet(torch.nn.Module):$/;"	c
 sresults	baselines/baselines/common/plot_util.py	/^        sresults = sk2r[sk]$/;"	v
 stage_batch	baselines/baselines/her/ddpg.py	/^    def stage_batch(self, batch=None):$/;"	m	class:DDPG
 start_video_recorder	baselines/baselines/common/vec_env/vec_video_recorder.py	/^    def start_video_recorder(self):$/;"	m	class:VecVideoRecorder
+state_dict	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    state_dict = fill_statedict(state_dict, g_ema.vars, size)$/;"	v
+state_dict	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    state_dict = g.state_dict()$/;"	v
 stats	baselines/baselines/gail/statistics.py	/^class stats():$/;"	c
 step	baselines/baselines/acer/policies.py	/^        def step(ob, *args, **kwargs):$/;"	f	function:AcerCnnPolicy.__init__
 step	baselines/baselines/acer/policies.py	/^        def step(ob, state, mask, *args, **kwargs):$/;"	f	function:AcerLstmPolicy.__init__
@@ -1589,7 +1922,13 @@ sync	baselines/baselines/common/mpi_adam.py	/^    def sync(self):$/;"	m	class:Mp
 sync_from_root	baselines/baselines/common/mpi_util.py	/^def sync_from_root(sess, variables, comm=None):$/;"	f
 synchronize	baselines/baselines/her/normalizer.py	/^    def synchronize(self):$/;"	m	class:IdentityNormalizer
 synchronize	baselines/baselines/her/normalizer.py	/^    def synchronize(self, local_sum, local_sumsq, local_count, root=None):$/;"	m	class:Normalizer
+synchronize	ucb_rl2_meta/stylegan2-pytorch/distributed.py	/^def synchronize():$/;"	f
 take	baselines/baselines/acer/buffer.py	/^    def take(self, x, idx, envx):$/;"	m	class:Buffer
+tensor2im	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def tensor2im(image_tensor, imtype=np.uint8, cent=1., factor=255.\/2.):$/;"	f
+tensor2np	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def tensor2np(tensor_obj):$/;"	f
+tensor2tensorlab	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def tensor2tensorlab(image_tensor,to_norm=True,mc_only=False):$/;"	f
+tensor2vec	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def tensor2vec(vector_tensor):$/;"	f
+tensorlab2tensor	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def tensorlab2tensor(lab_tensor,return_inbnd=False):$/;"	f
 test	baselines/baselines/gail/dataset/mujoco_dset.py	/^def test(expert_path, traj_limitation, plot):$/;"	f
 test_MpiAdam	baselines/baselines/common/mpi_adam.py	/^def test_MpiAdam():$/;"	f
 test_cartpole	baselines/baselines/common/tests/test_cartpole.py	/^def test_cartpole(alg):$/;"	f
@@ -1667,6 +2006,7 @@ train	baselines/baselines/ppo2/microbatched_model.py	/^    def train(self, lr, c
 train	baselines/baselines/ppo2/model.py	/^    def train(self, lr, cliprange, obs, returns, masks, actions, values, neglogpacs, states=None):$/;"	m	class:Model
 train	baselines/baselines/run.py	/^def train(args, extra_args):$/;"	f
 train	train.py	/^def train(args):$/;"	f
+train	ucb_rl2_meta/stylegan2-pytorch/train.py	/^def train(args, loader, generator, discriminator, g_optim, d_optim, g_ema, device):$/;"	f
 train_iter	ucb_rl2_meta/algo/meta_drac.py	/^    def train_iter(self, rollouts):$/;"	m	class:MetaDrAC
 train_mode	baselines/baselines/common/tests/envs/mnist_env.py	/^    def train_mode(self):$/;"	m	class:MnistEnv
 trainable_vars	baselines/baselines/ddpg/models.py	/^    def trainable_vars(self):$/;"	m	class:Model
@@ -1675,7 +2015,17 @@ traj_segment_generator	baselines/baselines/gail/trpo_mpi.py	/^def traj_segment_g
 traj_segment_generator	baselines/baselines/ppo1/pposgd_simple.py	/^def traj_segment_generator(pi, env, horizon, stochastic):$/;"	f
 traj_segment_generator	baselines/baselines/trpo_mpi/trpo_mpi.py	/^def traj_segment_generator(pi, env, horizon, stochastic):$/;"	f
 transform	data_augs.py	/^    def transform(self, inputs):$/;"	m	class:ColorJitter
+transform	ucb_rl2_meta/stylegan2-pytorch/calc_inception.py	/^    transform = transforms.Compose($/;"	v
+transform	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    transform = transforms.Compose($/;"	v
 transitions_in_episode_batch	baselines/baselines/her/util.py	/^def transitions_in_episode_batch(episode_batch):$/;"	f
+translate3d_mat	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def translate3d_mat(t_x, t_y, t_z):$/;"	f
+translate_mat	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def translate_mat(t_x, t_y):$/;"	f
+trunc	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^    trunc = g.mean_latent(4096)$/;"	v
+truncation	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^        truncation=args.truncation,$/;"	v
+truncation	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^            truncation=0.5,$/;"	v
+truncation_latent	ucb_rl2_meta/stylegan2-pytorch/apply_factor.py	/^        truncation_latent=trunc,$/;"	v
+truncation_latent	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^            truncation_latent=latent_avg.to(device),$/;"	v
+try_sample_affine_and_pad	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def try_sample_affine_and_pad(img, p, pad_k, G=None):$/;"	f
 ts2xy	baselines/baselines/results_plotter.py	/^def ts2xy(ts, xaxis, yaxis):$/;"	f
 type	ucb_rl2_meta/arguments.py	/^    type=float, $/;"	v
 type	ucb_rl2_meta/arguments.py	/^    type=float,$/;"	v
@@ -1683,6 +2033,7 @@ type	ucb_rl2_meta/arguments.py	/^    type=int, $/;"	v
 type	ucb_rl2_meta/arguments.py	/^    type=int,$/;"	v
 type	ucb_rl2_meta/arguments.py	/^    type=str,$/;"	v
 unflatten_vector	baselines/baselines/common/math_util.py	/^def unflatten_vector(vec, shapes):$/;"	f
+uniform_sample	ucb_rl2_meta/stylegan2-pytorch/non_leaking.py	/^def uniform_sample(size, low, high):$/;"	f
 unwrapped	baselines/baselines/common/vec_env/vec_env.py	/^    def unwrapped(self):$/;"	m	class:VecEnv
 update	baselines/baselines/bench/monitor.py	/^    def update(self, ob, rew, done, info):$/;"	m	class:Monitor
 update	baselines/baselines/common/misc_util.py	/^    def update(self, new_val):$/;"	m	class:RunningAvg
@@ -1692,15 +2043,19 @@ update	baselines/baselines/common/running_mean_std.py	/^    def update(self, x):
 update	baselines/baselines/common/running_mean_std.py	/^    def update(self, x):$/;"	m	class:TfRunningMeanStd
 update	baselines/baselines/her/normalizer.py	/^    def update(self, v):$/;"	m	class:Normalizer
 update	baselines/baselines/her/normalizer.py	/^    def update(self, x):$/;"	m	class:IdentityNormalizer
+update	ucb_rl2_meta/algo/adversarial_drac.py	/^    def update(self, rollouts):$/;"	m	class:AdversarialDrAC
 update	ucb_rl2_meta/algo/conv_drac.py	/^    def update(self, rollouts):$/;"	m	class:ConvDrAC
 update	ucb_rl2_meta/algo/drac.py	/^    def update(self, rollouts):$/;"	m	class:DrAC
 update	ucb_rl2_meta/algo/meta_drac.py	/^    def update(self, rollouts):$/;"	m	class:MetaDrAC
 update	ucb_rl2_meta/algo/rl2_drac.py	/^    def update(self, rollouts):$/;"	m	class:RL2DrAC
 update	ucb_rl2_meta/algo/ucb_drac.py	/^    def update(self, rollouts):$/;"	m	class:UCBDrAC
+update	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^def update(state_dict, new):$/;"	f
 updateAccumStats	baselines/baselines/acktr/kfac.py	/^        def updateAccumStats():$/;"	f	function:KfacOptimizer.apply_stats
 updateOptimOp	baselines/baselines/acktr/kfac.py	/^                        def updateOptimOp():$/;"	f	function:KfacOptimizer.apply_gradients_kfac.dequeue_op.no_op_wrapper.optimOp
 updateRunningAvgStats	baselines/baselines/acktr/kfac.py	/^        def updateRunningAvgStats(statsUpdates, fac_iter=1):$/;"	f	function:KfacOptimizer.apply_stats
 update_from_moments	baselines/baselines/common/running_mean_std.py	/^    def update_from_moments(self, batch_mean, batch_var, batch_count):$/;"	m	class:RunningMeanStd
+update_learning_rate	ucb_rl2_meta/stylegan2-pytorch/lpips/base_model.py	/^    def update_learning_rate():$/;"	m	class:BaseModel
+update_learning_rate	ucb_rl2_meta/stylegan2-pytorch/lpips/dist_model.py	/^    def update_learning_rate(self,nepoch_decay):$/;"	m	class:DistModel
 update_mean_var_count_from_moments	baselines/baselines/common/running_mean_std.py	/^def update_mean_var_count_from_moments(mean, var, count, batch_mean, batch_var, batch_count):$/;"	f
 update_priorities	baselines/baselines/deepq/replay_buffer.py	/^    def update_priorities(self, idxes, priorities):$/;"	m	class:PrioritizedReplayBuffer
 update_scale	baselines/baselines/deepq/build_graph.py	/^        def update_scale():$/;"	f	function:build_act_with_param_noise
@@ -1711,6 +2066,7 @@ upfirdn2d	ucb_rl2_meta/op/upfirdn2d.cpp	/^torch::Tensor upfirdn2d(const torch::T
 upfirdn2d	ucb_rl2_meta/op/upfirdn2d.py	/^def upfirdn2d(input, kernel, up=1, down=1, pad=(0, 0)):$/;"	f
 upfirdn2d_native	ucb_rl2_meta/op/upfirdn2d.py	/^def upfirdn2d_native($/;"	f
 upfirdn2d_op	ucb_rl2_meta/op/upfirdn2d.py	/^upfirdn2d_op = load($/;"	v
+upsample	ucb_rl2_meta/stylegan2-pytorch/lpips/networks_basic.py	/^def upsample(in_tens, out_H=64): # assumes scale factor is same for H and W$/;"	f
 url	baselines/setup.py	/^      url='https:\/\/github.com\/openai\/baselines',$/;"	v
 validate_probtype	baselines/baselines/common/distributions.py	/^def validate_probtype(probtype, pdparam):$/;"	f
 value	baselines/baselines/a2c/utils.py	/^    def value(self):$/;"	m	class:Scheduler
@@ -1723,9 +2079,13 @@ value_steps	baselines/baselines/a2c/utils.py	/^    def value_steps(self, steps):
 var_shape	baselines/baselines/common/tf_util.py	/^def var_shape(x):$/;"	f
 vars	baselines/baselines/ddpg/models.py	/^    def vars(self):$/;"	m	class:Model
 version	baselines/setup.py	/^      version='0.1.6')$/;"	v
+vgg16	ucb_rl2_meta/stylegan2-pytorch/lpips/pretrained_networks.py	/^class vgg16(torch.nn.Module):$/;"	c
 viewer	baselines/baselines/common/vec_env/vec_env.py	/^    viewer = None$/;"	v	class:VecEnv
+voc_ap	ucb_rl2_meta/stylegan2-pytorch/lpips/__init__.py	/^def voc_ap(rec, prec, use_07_metric=False):$/;"	f
+wandb	ucb_rl2_meta/stylegan2-pytorch/train.py	/^    wandb = None$/;"	v
 warmKFACstart	baselines/baselines/acktr/kfac.py	/^        def warmKFACstart():$/;"	f	function:KfacOptimizer.apply_gradients
 warn	baselines/baselines/logger.py	/^def warn(*args):$/;"	f
+weight_mat	ucb_rl2_meta/stylegan2-pytorch/closed_form_factorization.py	/^    weight_mat = []$/;"	v
 white	baselines/baselines/common/console_util.py	/^    white=37,$/;"	v
 window_func	baselines/baselines/results_plotter.py	/^def window_func(x, y, window, func):$/;"	f
 with_mpi	baselines/baselines/common/tests/test_with_mpi.py	/^def with_mpi(nproc=2, timeout=30, skip_if_no_mpi=True):$/;"	f
@@ -1749,4 +2109,5 @@ yellow	baselines/baselines/common/console_util.py	/^    yellow=33,$/;"	v
 ymean	baselines/baselines/common/plot_util.py	/^                ymean = np.mean(ys, axis=0)$/;"	v
 ystd	baselines/baselines/common/plot_util.py	/^                ystd = np.std(ys, axis=0)$/;"	v
 ystderr	baselines/baselines/common/plot_util.py	/^                ystderr = ystd \/ np.sqrt(len(ys))$/;"	v
+z	ucb_rl2_meta/stylegan2-pytorch/convert_weight.py	/^    z = np.random.RandomState(0).randn(n_sample, 512).astype("float32")$/;"	v
 zipsame	baselines/baselines/common/misc_util.py	/^def zipsame(*seqs):$/;"	f
