@@ -1467,7 +1467,7 @@ mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	cla
 mode	baselines/baselines/common/distributions.py	/^    def mode(self):$/;"	m	class:Pd
 mode	ucb_rl2_meta/distributions.py	/^    def mode(self):$/;"	m	class:FixedCategorical
 model	baselines/baselines/deepq/experiments/custom_cartpole.py	/^def model(inpt, num_actions, scope, reuse=False):$/;"	f
-modelbased	train.py	/^modelbased = True$/;"	v
+modelbased	train.py	/^modelbased = False$/;"	v
 modulate	ucb_rl2_meta/stylegan2-pytorch/closed_form_factorization.py	/^    modulate = {$/;"	v
 module_path	ucb_rl2_meta/op/fused_act.py	/^module_path = os.path.dirname(__file__)$/;"	v
 module_path	ucb_rl2_meta/op/upfirdn2d.py	/^module_path = os.path.dirname(__file__)$/;"	v

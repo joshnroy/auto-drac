@@ -37,7 +37,7 @@ aug_to_func = {
         'color-jitter': data_augs.ColorJitter,
 }
 
-modelbased = True
+modelbased = False
 
 def train(args):
     args.cuda = not args.no_cuda and torch.cuda.is_available()
@@ -53,6 +53,9 @@ def train(args):
 
     log_file = '-{}-{}-reproduce-s{}'.format(args.run_name, args.env_name, args.seed)
     logger.configure(dir=args.log_dir, format_strs=['csv', 'stdout'], log_suffix=log_file)
+
+    pretraining_venv_names = ["bigfish", ]
+    finetuning_venv_name = args.env_name
 
     venv = ProcgenEnv(num_envs=args.num_processes, env_name=args.env_name, \
         num_levels=args.num_levels, start_level=args.start_level, \
@@ -163,7 +166,7 @@ def train(args):
                 num_actions=envs.action_space.n, 
                 device=device)
 
-    elif False: # Regular Drac
+    elif True: # Regular Drac
         aug_id = data_augs.Identity
         aug_func = aug_to_func[args.aug_type](batch_size=batch_size)
 
