@@ -14,11 +14,14 @@ from baselines.common.vec_env import (
 from ucb_rl2_meta.envs import VecPyTorchProcgen, TransposeImageProcgen
 
 
-def evaluate(args, actor_critic, device, num_processes=1, aug_id=None):
+def evaluate(args, actor_critic, device, num_processes=1, aug_id=None, env_name=None):
     actor_critic.eval()
+
+    if env_name == None:
+        env_name = args.env_name
     
     # Sample Levels From the Full Distribution 
-    venv = ProcgenEnv(num_envs=num_processes, env_name=args.env_name, \
+    venv = ProcgenEnv(num_envs=num_processes, env_name=env_name, \
         num_levels=0, start_level=0, \
         distribution_mode=args.distribution_mode)
     venv = VecExtractDictObs(venv, "rgb")
