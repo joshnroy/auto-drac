@@ -270,10 +270,10 @@ def train(args):
 
 
     prefix = ""
-    if False:
+    if True:
         prefix = "finetuning/"
         # Meta-Learning
-        if True:
+        if False:
             curr_env_idx = 0
             curr_env_name = list(pretraining_venvs.keys())[curr_env_idx]
             curr_env = pretraining_venvs[curr_env_name]
@@ -571,30 +571,30 @@ def train(args):
                         np.median(episode_rewards), dist_entropy, value_loss,
                         action_loss))
             
-            logger.logkv("prefix + train/nupdates", j)
-            logger.logkv("prefix + train/total_num_steps", total_num_steps)            
+            logger.logkv(prefix + "train/nupdates", j)
+            logger.logkv(prefix + "train/total_num_steps", total_num_steps)            
 
-            logger.logkv("prefix + losses/dist_entropy", dist_entropy)
-            logger.logkv("prefix + losses/value_loss", value_loss)
-            logger.logkv("prefix + losses/action_loss", action_loss)
+            logger.logkv(prefix + "losses/dist_entropy", dist_entropy)
+            logger.logkv(prefix + "losses/value_loss", value_loss)
+            logger.logkv(prefix + "losses/action_loss", action_loss)
             if isinstance(agent, algo.ConvDrAC):
-                logger.logkv("prefix + losses/transition_model_loss", transition_model_loss)
-                logger.logkv("prefix + losses/reward_model_loss", reward_model_loss)
-                logger.logkv("prefix + losses/reconstruction_loss", reconstruction_loss)
-                logger.logkv("prefix + losses/next_obs_reconstruction_loss", next_obs_reconstruction_loss)
-                logger.logkv("prefix + debug/feature_variance", feature_variance)
+                logger.logkv(prefix + "losses/transition_model_loss", transition_model_loss)
+                logger.logkv(prefix + "losses/reward_model_loss", reward_model_loss)
+                logger.logkv(prefix + "losses/reconstruction_loss", reconstruction_loss)
+                logger.logkv(prefix + "losses/next_obs_reconstruction_loss", next_obs_reconstruction_loss)
+                logger.logkv(prefix + "debug/feature_variance", feature_variance)
 
-            logger.logkv("prefix + train/mean_episode_reward", np.mean(episode_rewards))
-            logger.logkv("prefix + train/median_episode_reward", np.median(episode_rewards))
+            logger.logkv(prefix + "train/mean_episode_reward", np.mean(episode_rewards))
+            logger.logkv(prefix + "train/median_episode_reward", np.median(episode_rewards))
 
             ### Eval on the Full Distribution of Levels ###
             eval_episode_rewards, eval_reconstruction_error, eval_reward_model_error = evaluate(args, actor_critic, device, aug_id=aug_id, env_name=finetuning_venv_name)
 
             if isinstance(agent, algo.ConvDrAC):
-                logger.logkv("prefix + test/reconstruction_error", np.mean(eval_reconstruction_error))
-                logger.logkv("prefix + test/reward_model_error", np.mean(eval_reward_model_error))
-            logger.logkv("prefix + test/mean_episode_reward", np.mean(eval_episode_rewards))
-            logger.logkv("prefix + test/median_episode_reward", np.median(eval_episode_rewards))
+                logger.logkv(prefix + "test/reconstruction_error", np.mean(eval_reconstruction_error))
+                logger.logkv(prefix + "test/reward_model_error", np.mean(eval_reward_model_error))
+            logger.logkv(prefix + "test/mean_episode_reward", np.mean(eval_episode_rewards))
+            logger.logkv(prefix + "test/median_episode_reward", np.median(eval_episode_rewards))
 
             logger.dumpkvs()
         if j % args.save_interval == 0 and len(episode_rewards) > 1:
