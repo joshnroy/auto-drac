@@ -71,7 +71,8 @@ def train(args):
     pretraining_venv_names = deepcopy(venv_names)
     pretraining_venv_names.remove(finetuning_venv_name)
 
-    pretraining_venvs = {k: create_venv(args.num_processes, k, args.num_levels, args.start_level, args.distribution_mode, device) for k in venv_names}
+    pretraining_venvs = {k: create_venv(args.num_processes, k, args.num_levels, args.start_level, args.distribution_mode, device) for k in pretraining_venv_names}
+    pretraining_episode_rewards = {k: deque(maxlen=10) for k in pretraining_venv_names}
     finetuning_venv = create_venv(args.num_processes, finetuning_venv_name, args.num_levels, args.start_level, args.distribution_mode, device)
 
     
@@ -273,7 +274,7 @@ def train(args):
     curr_env_name = list(pretraining_venvs.keys())[curr_env_idx]
     curr_env = pretraining_venvs[curr_env_name]
 
-    switch_num = 2
+    switch_num = 1
 
     obs = curr_env.reset()
     rollouts.obs[0].copy_(obs)
@@ -281,7 +282,6 @@ def train(args):
         rollouts.next_obs[0].copy_(obs) # TODO: is this right?
     rollouts.to(device)
 
-    episode_rewards = deque(maxlen=10)
     num_updates = int(
         args.num_env_steps) // args.num_steps // args.num_processes
 
@@ -305,7 +305,7 @@ def train(args):
             obs, reward, done, infos = curr_env.step(action)
             for info in infos:
                 if 'episode' in info.keys():
-                    episode_rewards.append(info['episode']['r'])
+                    pretraining_episode_rewards[curr_env_name].append(info['episode']['r'])
 
             # If done then clean the history of observations.
             masks = torch.FloatTensor(
@@ -335,12 +335,12 @@ def train(args):
 
         # save for every interval-th episode or for the last epoch
         total_num_steps = (j + 1) * args.num_processes * args.num_steps
-        if j % args.log_interval == 0 and len(episode_rewards) > 1:
+        if j % args.log_interval == 0 and len(pretraining_episode_rewards[curr_env_name]) > 1:
             total_num_steps = (j + 1) * args.num_processes * args.num_steps
-            print("\nUpdate {}, step {} \n Last {} training episodes: mean/median reward {:.1f}/{:.1f}"
+            print("\n" + curr_env_name + " Update {}, step {} \n Last {} training episodes: mean/median reward {:.1f}/{:.1f}"
                 .format(j, total_num_steps,
-                        len(episode_rewards), np.mean(episode_rewards),
-                        np.median(episode_rewards), dist_entropy, value_loss,
+                        len(pretraining_episode_rewards[curr_env_name]), np.mean(pretraining_episode_rewards[curr_env_name]),
+                        np.median(pretraining_episode_rewards[curr_env_name]), dist_entropy, value_loss,
                         action_loss))
             
             logger.logkv("pretraining/train/nupdates", j)
@@ -356,8 +356,8 @@ def train(args):
                 logger.logkv("pretraining/losses/next_obs_reconstruction_loss", next_obs_reconstruction_loss)
                 logger.logkv("pretraining/debug/feature_variance", feature_variance)
 
-            logger.logkv("pretraining/" + curr_env_name + "_train/mean_episode_reward", np.mean(episode_rewards))
-            logger.logkv("pretraining/" + curr_env_name + "_train/median_episode_reward", np.median(episode_rewards))
+            logger.logkv("pretraining/" + curr_env_name + "_train/mean_episode_reward", np.mean(pretraining_episode_rewards[curr_env_name]))
+            logger.logkv("pretraining/" + curr_env_name + "_train/median_episode_reward", np.median(pretraining_episode_rewards[curr_env_name]))
 
             ### Eval on the Full Distribution of Levels ###
             eval_episode_rewards, eval_reconstruction_error, eval_reward_model_error = evaluate(args, actor_critic, device, aug_id=aug_id, env_name=curr_env_name)
@@ -369,7 +369,7 @@ def train(args):
             logger.logkv("pretraining/" + curr_env_name + "_test/median_episode_reward", np.median(eval_episode_rewards))
 
             logger.dumpkvs()
-        if j % args.save_interval == 0 and len(episode_rewards) > 1:
+        if j % args.save_interval == 0 and len(pretraining_episode_rewards[curr_env_name]) > 1:
             torch.save({"step_num": j, "model_state_dict": actor_critic.state_dict()}, args.log_dir + "/pretraining_model" + str(j) + ".pth")
 
 

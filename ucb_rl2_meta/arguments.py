@@ -78,7 +78,7 @@ parser.add_argument(
 parser.add_argument(
     '--log_interval',
     type=int,
-    default=10,
+    default=16,
     help='log interval, one log per n updates')
 parser.add_argument(
     '--save_interval',
