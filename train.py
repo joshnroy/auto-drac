@@ -287,7 +287,7 @@ def train(args):
             rollouts.to(device)
 
             num_updates = int(
-                args.num_env_steps) // args.num_steps // args.num_processes
+                args.num_env_steps * 2.) // args.num_steps // args.num_processes
 
             for j in trange(num_updates):
                 if j % switch_num == 0:
