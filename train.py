@@ -270,7 +270,7 @@ def train(args):
 
 
     prefix = ""
-    if True:
+    if False:
         prefix = "finetuning/"
         # Meta-Learning
         if False:

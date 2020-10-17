@@ -25,4 +25,4 @@ trial=$(($ID_INNER / 16))
 # env_name=${envs[9]}
 # trial=$(($ID_INNER))
 
-source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir pretraining/vanilla_ppo_switch1_longer/${env_name}/${env_name}-${trial} --aug_coef 0.
+source ~/miniconda3/bin/activate && conda activate auto-drac && python train.py --env_name ${env_name} --log_dir novisualvariation/vanilla_ppo/${env_name}/${env_name}-${trial} --aug_coef 0.
