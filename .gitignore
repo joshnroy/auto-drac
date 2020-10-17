@@ -11,3 +11,6 @@ baselines/
 reconstruction_debugging/frozen_models/
 reconstruction_debugging/training_samples/
 reconstruction_debug_testing/
+old_runs/
+pretraining/
+rewards.png
